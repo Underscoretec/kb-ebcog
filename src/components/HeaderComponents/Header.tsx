@@ -20,7 +20,7 @@ export default function Header() {
             <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-24 py-2">
                 <div className="flex h-16 justify-between">
                     <div className="flex">
-                        <div className="-ml-2 mr-2 flex items-center md:hidden">
+                        <div className="-ml-2 mr-2 flex items-center lg:hidden">
                             {/* Mobile menu button */}
                             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                 <span className="absolute -inset-0.5" />
@@ -30,7 +30,7 @@ export default function Header() {
                             </DisclosureButton>
                         </div>
                         <div className="flex shrink-0 items-center gap-8">
-                            <div className='w-[150px] h-auto cursor-pointer'>
+                            <div className="w-[150px] h-auto cursor-pointer">
                                 <ImageComponent
                                     src={ebcog}
                                     alt="Image"
@@ -40,7 +40,7 @@ export default function Header() {
                                 />
                             </div>
 
-                            <div className='w-[200px] h-auto cursor-pointer'>
+                            <div className="w-[200px] h-auto cursor-pointer">
                                 <ImageComponent
                                     src={kblogo}
                                     alt="Image"
@@ -50,7 +50,8 @@ export default function Header() {
                                 />
                             </div>
                         </div>
-                        <div className="hidden md:ml-6 lg:ml-20 md:flex md:space-x-8">
+                        {/* Navbar items visible from lg screens */}
+                        <div className="hidden lg:ml-20 lg:flex lg:space-x-8">
                             {headerLinks.map((link, index) => (
                                 <Link
                                     key={index}
@@ -77,7 +78,8 @@ export default function Header() {
                 </div>
             </div>
 
-            <DisclosurePanel className="md:hidden">
+            {/* Mobile Menu visible below lg screens */}
+            <DisclosurePanel className="lg:hidden">
                 <div className="space-y-1 pb-3 pt-2">
                     {headerLinks.map((link, index) => (
                         <DisclosureButton
