@@ -14,12 +14,12 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
  
   return (<>
       <Head>
-        <link
+        {/* <link
           rel="icon"
           type="image/png"
           sizes="32x32"
           href="/favicon.svg"
-        />
+        /> */}
         <title>KB-EBCOG</title>
         <meta
           name="EBCOG"

@@ -8,7 +8,7 @@ interface CommonLayoutProps {
  
 const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
   return (
-    <div className='min-h-screen flex flex-col justify-between w-[100%]'>
+    <div className='min-h-screen w-[100%]'>
       <div>
         <Header/>
         <div className="body-main ">{children}</div>
