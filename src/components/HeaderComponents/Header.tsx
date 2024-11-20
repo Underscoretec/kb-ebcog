@@ -30,7 +30,7 @@ const Header = () => {
                         <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[28px] md:text-[32px] cursor-pointer`}
                             onClick={handleSidebar} />
                             <Link href="/">
-                            <div className='w-[150px] xl:w-[200px] h-full cursor-pointer'>
+                            <div className='w-[150px] xl:w-[150px] h-full cursor-pointer'>
                                 <Image src="/ebcog.png" alt="no img" width={500} height={500} className='w-full h-full' />
                             </div>
                         </Link>
@@ -41,17 +41,17 @@ const Header = () => {
                         </Link>
                     </div>
  
-                    <div className={`hidden lg:block w-[80%] h-full`}>
+                    <div className={`hidden lg:block w-[58%] h-full`}>
                         <Navbar menuArray={menuitems} />
                     </div>
  
                     <Link href='/login' >
-                        <h1 className="text-white font-semibold rounded-[6px] flex justify-center items-center py-2 xl:py-4 px-6 lg:px-2 xl:px-3 2xl:px-12 text-[13px] xl:text-[18px] leading-[15px] bg-[#F05A27] border border-[#F05A27] hover:bg-transparent hover:text-[#F05A27]">
-                            Login
+                        <h1 className="text-white font-semibold rounded-[6px] flex justify-center items-center py-2 xl:py-4 px-6 lg:px-2 xl:px-3 2xl:px-12 text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] border border-[#E4087F] hover:bg-transparent hover:text-[#E4087F]">
+                            Join Now
                         </h1>
                     </Link>
                     {/* <Link href="/profile">
-            <div className='flex items-center justify-center rounded-full bg-[#F05A27] text-white h-10 xl:h-12 w-10 xl:w-12 text-[20px] font-semibold cursor-pointer'>{user_name.charAt(0)}</div>
+            <div className='flex items-center justify-center rounded-full bg-[#E4087F] text-white h-10 xl:h-12 w-10 xl:w-12 text-[20px] font-semibold cursor-pointer'>{user_name.charAt(0)}</div>
           </Link> */}
                 </div>
  

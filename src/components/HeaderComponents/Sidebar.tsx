@@ -55,11 +55,11 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
               onClick={() => handleMenuItemClick(item)}
             >
               <div className={`ml-0 py-4
-              ${depth == 0 ? "ml-6 text-[12px] md:text-[14px] lg:text-[16px] text-[#CE5E39] font-bold" : ""}
-              ${depth == 1 ? "ml-0 pl-6 md:pl-[40px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fcc262] w-full hover:bg-[#CE5E39] hover:text-white" : ""}
-              ${depth == 2 ? "ml-0 pl-6 md:pl-[60px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fdcf85] w-full hover:bg-[#CE5E39] hover:text-white" : ""}
-              ${depth == 3 ? "ml-0 pl-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fee4b9] w-full hover:bg-[#CE5E39] hover:text-white" : ""}
-              ${depth == 4 ? "ml-0 pl-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#ffefd6] w-full hover:bg-[#CE5E39] hover:text-white" : ""}`}
+              ${depth == 0 ? "ml-6 text-[12px] md:text-[14px] lg:text-[16px] text-[#E4087F] font-bold" : ""}
+              ${depth == 1 ? "ml-0 pl-6 md:pl-[40px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fcc262] w-full hover:bg-[#E4087F] hover:text-white" : ""}
+              ${depth == 2 ? "ml-0 pl-6 md:pl-[60px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fdcf85] w-full hover:bg-[#E4087F] hover:text-white" : ""}
+              ${depth == 3 ? "ml-0 pl-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fee4b9] w-full hover:bg-[#E4087F] hover:text-white" : ""}
+              ${depth == 4 ? "ml-0 pl-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#ffefd6] w-full hover:bg-[#E4087F] hover:text-white" : ""}`}
               >
                 {item.title}
               </div>
