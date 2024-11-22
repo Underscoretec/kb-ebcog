@@ -26,7 +26,7 @@ const FacultyCard: React.FC<FacultyCardProps> = ({ faculty }) => {
                 />
             </div>
             <div className="w-[80%]">
-                <h3 className="font-bold text-[#E4087F] font-montserrat text-md leading-8">
+                <h3 className="font-bold text-[#E4087F] font-montserrat text-md leading-6">
                 {faculty?.facultyName} {faculty?.Role && `(${faculty.Role})`}
                 </h3>
                 <p className="font-montserrat text-sm font-medium leading-[22px]">

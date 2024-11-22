@@ -1,36 +1,45 @@
-import React from 'react'
 
-const RadioListTable = () => {
-    return (
-        <fieldset aria-label="Privacy setting">
-            <div className="-space-y-px rounded-md bg-white">
-                <label aria-label="Public access" aria-description="This project would be available to anyone who has the link" className="relative flex cursor-pointer rounded-tl-md rounded-tr-md border p-4 focus:outline-none">
-                    <input type="radio" name="privacy-setting" value="Public access" className="mt-0.5 size-4 shrink-0 cursor-pointer border-gray-300 text-indigo-600 focus:ring-indigo-600 active:ring-2 active:ring-indigo-600 active:ring-offset-2"/> 
-                        <span className="ml-3 flex flex-col">
-                            <span className="block text-sm font-medium">Reproductive Medicine and Endocrinology</span>
-                        </span>
-                </label>
-                <label aria-label="Private to Project Members" aria-description="Only members of this project would be able to access" className="relative flex cursor-pointer border p-4 focus:outline-none">
-                    <input type="radio" name="privacy-setting" value="Private to Project Members" className="mt-0.5 size-4 shrink-0 cursor-pointer border-gray-300 text-indigo-600 focus:ring-indigo-600 active:ring-2 active:ring-indigo-600 active:ring-offset-2"/>
-                        <span className="ml-3 flex flex-col">
-                            <span className="block text-sm font-medium">Ultrasound and Prenatal Medicine</span>
-                        </span>
-                </label>
-                <label aria-label="Private to you" aria-description="You are the only one able to access this project" className="relative flex cursor-pointer rounded-bl-md rounded-br-md border p-4 focus:outline-none">
-                    <input type="radio" name="privacy-setting" value="Private to you" className="mt-0.5 size-4 shrink-0 cursor-pointer border-gray-300 text-indigo-600 focus:ring-indigo-600 active:ring-2 active:ring-indigo-600 active:ring-offset-2"/>
-                        <span className="ml-3 flex flex-col">
-                            <span className="block text-sm font-medium">Hysteroscopy and Laparoscopy</span>
-                        </span>
-                </label>
-                <label aria-label="Private to you" aria-description="You are the only one able to access this project" className="relative flex cursor-pointer rounded-bl-md rounded-br-md border p-4 focus:outline-none">
-                    <input type="radio" name="privacy-setting" value="Private to you" className="mt-0.5 size-4 shrink-0 cursor-pointer border-gray-300 text-indigo-600 focus:ring-indigo-600 active:ring-2 active:ring-indigo-600 active:ring-offset-2"/>
-                        <span className="ml-3 flex flex-col">
-                            <span className="block text-sm font-medium">Maternal Medicine</span>
-                        </span>
-                </label>
-            </div>
-        </fieldset>
-    )
+import { useState } from 'react'
+import { Radio, RadioGroup } from '@headlessui/react'
+
+
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ')
 }
 
-export default RadioListTable
+export default function RadioListTable({settings,label}:any) {
+  const [selected, setSelected] = useState(settings[0])
+
+  return (
+    <fieldset aria-label="Privacy setting">
+        <div className='text-[#374151] font-montserrat text-[14px] font-semibold leading-5 pb-2'>{label}</div>
+      <RadioGroup value={selected} onChange={setSelected} className="-space-y-px rounded-md bg-white">
+        {settings.map((setting:any, settingIdx:any) => (
+          <Radio
+            key={setting.name}
+            value={setting}
+            aria-label={setting.name}
+            aria-description={setting.description}
+            className={classNames(
+              settingIdx === 0 ? 'rounded-tl-md rounded-tr-md' : '',
+              settingIdx === settings.length - 1 ? 'rounded-bl-md rounded-br-md' : '',
+              'group relative flex cursor-pointer border border-gray-200 p-4 focus:outline-none data-[checked]:z-10 data-[checked]:border-indigo-200 data-[checked]:bg-indigo-50',
+            )}
+          >
+            <span
+              aria-hidden="true"
+              className="mt-0.5 flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white group-data-[checked]:border-transparent group-data-[checked]:bg-indigo-600 group-data-[focus]:ring-2 group-data-[focus]:ring-indigo-600 group-data-[focus]:ring-offset-2"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-white" />
+            </span>
+            <span className="ml-3 flex flex-col">
+              <span className="block text-gray-900 group-data-[checked]:text-indigo-900 font-montserrat text-sm font-medium leading-5">
+                {setting.name}
+              </span>
+            </span>
+          </Radio>
+        ))}
+      </RadioGroup>
+    </fieldset>
+  )
+}

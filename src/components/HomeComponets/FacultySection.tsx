@@ -168,14 +168,14 @@ const FacultySection = () => {
 
 
     return (
-        <div className='bg-[#290849] text-white p-24'>
-            <h1 className='font-oswald text-[55px] font-normal leading-[54px] text-center mb-14'>Diploma leads and Faculty</h1>
-            <div className='flex justify-between gap-6'>
+        <div className='bg-[#290849] text-white px-4 xs:px-8 py-10 md:py-16 xl:p-16 3xl:p-24'>
+            <h1 className='font-oswald text-[35px] xs:text-[40px] md:text-[48px] xl:text-[55px] font-normal leading-[40px] xs:leading-[54px] text-center mb-10 xl:mb-14'>Diploma leads and Faculty</h1>
+            <div className='flex justify-between gap-3 2xl:gap-4 flex-wrap'>
                 {CoursesFaculty.map((item, index) => {
-                    return (<div key={index} className='w-[25%] flex flex-col gap-6'>
+                    return (<div key={index} className='w-[100%] sm:w-[48%] md:w-[49%] lg:w-[24%] flex flex-col gap-3 xs:gap-5 sm:gap-4 lg:gap-3 2xl:gap-5'>
                         <div className='w-full flex'>
-                            <div className='bg-[#F7B7D3] text-[#302F80] p-2 rounded-tr-[50px] rounded-br-[50px] w-[80%] font-montserrat text-sm font-bold leading-5 h-16 flex items-center'>{item.name}</div>
-                            <div className='w-[20%] flex justify-center items-center'>
+                            <div className='bg-[#F7B7D3] text-[#302F80] p-2 rounded-tr-[50px] rounded-br-[50px] w-[88%] xl:w-[80%] font-montserrat text-sm font-bold leading-5 h-12 xs:h-16 flex items-center'>{item.name}</div>
+                            <div className='w-[12%] xl:w-[20%] flex justify-center items-center'>
                                 <div className='border-t border-[#888888] w-[99%]'></div>
                                 <div className='border-l border-[#888888] h-[40%] w-[2%]'></div>
                             </div>

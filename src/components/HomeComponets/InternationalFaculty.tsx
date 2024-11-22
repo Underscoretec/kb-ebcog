@@ -43,7 +43,7 @@ const InternationalFaculty = () => {
     {
       id: 4,
       course: "Diploma in Maternal Medicine",
-      facultyName: 'by Prof. Chittaranjan N. Purandare',
+      facultyName: 'Prof. Chittaranjan N. Purandare',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i5.png',
@@ -52,7 +52,7 @@ const InternationalFaculty = () => {
     {
       id: 5,
       course: "Diploma in Maternal Medicine",
-      facultyName: 'by Prof. Diogo Ayres de Campos',
+      facultyName: 'Prof. Diogo Ayres de Campos',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i6.png',
@@ -61,7 +61,7 @@ const InternationalFaculty = () => {
     {
       id: 8,
       course: "Diploma in Reproductive Endocrinology & Infertility",
-      facultyName: 'by Dr. Edgar Mocanu',
+      facultyName: 'Dr. Edgar Mocanu',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i7.png',
@@ -70,7 +70,7 @@ const InternationalFaculty = () => {
     {
       id: 9,
       course: "Diploma in Maternal Medicine",
-      facultyName: 'by Prof. Frank Louwen (Lead)',
+      facultyName: 'Prof. Frank Louwen (Lead)',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i8.png',
@@ -79,7 +79,7 @@ const InternationalFaculty = () => {
     {
       id: 10,
       course: "Diploma in Gynaecology Endoscopy",
-      facultyName: 'by Dr. Helder Ferreira',
+      facultyName: 'Dr. Helder Ferreira',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i9.png',
@@ -88,7 +88,7 @@ const InternationalFaculty = () => {
     {
       id: 11,
       course: "Diploma in Gynaecology Endoscopy",
-      facultyName: 'by Dr. Istvan Argay',
+      facultyName: 'Dr. Istvan Argay',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i10.png',
@@ -97,7 +97,7 @@ const InternationalFaculty = () => {
     {
       id: 12,
       course: "Diploma in Fetal Medicine and Ultrasound",
-      facultyName: 'by Prof. Justin Konje',
+      facultyName: 'Prof. Justin Konje',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i11.png',
@@ -106,7 +106,7 @@ const InternationalFaculty = () => {
     {
       id: 13,
       course: "Diploma in Fetal Medicine and Ultrasound",
-      facultyName: 'by Prof. Karl Oliver Kagan',
+      facultyName: 'Prof. Karl Oliver Kagan',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i12.png',
@@ -115,7 +115,7 @@ const InternationalFaculty = () => {
     {
       id: 14,
       course: "Diploma in Maternal Medicine",
-      facultyName: 'by Dr. Komal Chavan',
+      facultyName: 'Dr. Komal Chavan',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i13.png',
@@ -124,7 +124,7 @@ const InternationalFaculty = () => {
     {
       id: 15,
       course: "Diploma in Reproductive Endocrinology & Infertility",
-      facultyName: 'by Dr. Karunakara Marikinti',
+      facultyName: 'Dr. Karunakara Marikinti',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i14.png',
@@ -133,7 +133,7 @@ const InternationalFaculty = () => {
     {
       id: 16,
       course: "Diploma in Gynaecology Endoscopy",
-      facultyName: 'by Prof. Munna Talak',
+      facultyName: 'Prof. Munna Talak',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i15.png',
@@ -142,7 +142,7 @@ const InternationalFaculty = () => {
     {
       id: 17,
       course: "Diploma in Reproductive Endocrinology & Infertility",
-      facultyName: 'by Dr. Rajalaxmi Walavalkar',
+      facultyName: 'Dr. Rajalaxmi Walavalkar',
       courseDuration: '1 week',
       totalLearners: '154',
       facultyImage:'/i16.png',
@@ -151,7 +151,7 @@ const InternationalFaculty = () => {
     {
       id: 19,
       course: "Diploma in Maternal Medicine",
-      facultyName: 'by Prof. Stephen Rulisa',
+      facultyName: 'Prof. Stephen Rulisa',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i17.png',
@@ -160,7 +160,7 @@ const InternationalFaculty = () => {
     {
       id: 20,
       course: "Diploma in Reproductive Endocrinology & Infertility",
-      facultyName: 'by Prof. Stratics kolibianakis',
+      facultyName: 'Prof. Stratics kolibianakis',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i18.png',
@@ -169,7 +169,7 @@ const InternationalFaculty = () => {
     {
       id: 21,
       course: "Diploma in Gynaecology Endoscopy",
-      facultyName: 'by Dr. Sandesh Khade',
+      facultyName: 'Dr. Sandesh Khade',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i19.png',
@@ -178,7 +178,7 @@ const InternationalFaculty = () => {
     {
       id: 22,
       course: "Diploma in Fetal Medicine and Ultrasound",
-      facultyName: 'by Prof. Sebastian Kwiatkowski',
+      facultyName: 'Prof. Sebastian Kwiatkowski',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i20.png',
@@ -187,7 +187,7 @@ const InternationalFaculty = () => {
     {
       id: 6,
       course: "Diploma in Fetal Medicine and Ultrasound",
-      facultyName: 'by Prof. Samina Dornan',
+      facultyName: 'Prof. Samina Dornan',
       courseDuration: '1 week',
       totalLearners: '156',
       facultyImage:'/i21.png',
@@ -196,7 +196,7 @@ const InternationalFaculty = () => {
     {
       id: 7,
       course: "Diploma in Fetal Medicine and Ultrasound",
-      facultyName: 'by Prof. Ulrich Honemeyer',
+      facultyName: 'Prof. Ulrich Honemeyer',
       courseDuration: '1 week',
       totalLearners: '156',
       facultyImage:'/i22.png',
@@ -205,9 +205,9 @@ const InternationalFaculty = () => {
   ]
 
   return (
-    <div className='px-24 py-16'>
-      <div className='text-[#290849] font-oswald text-[55px] font-normal leading-[54px] mb-12'>Popular International and EBCOG Diploma Faculty</div>
-      <div className='flex flex-wrap gap-5'>
+    <div className='px-4 xs:px-8 xl:px-16 3xl:px-24 py-16'>
+      <div className='text-[#290849] font-oswald text-[40px] 2xl:text-[55px] font-normal leading-[45px] 2xl:leading-[54px] mb-12'>Popular International and EBCOG Diploma Faculty</div>
+      <div className='flex flex-wrap gap-3 xl:gap-5'>
         {FacultyData.map((item,index)=>{
           return(
             <InternationalFacultyCard key={index} data={item}/>

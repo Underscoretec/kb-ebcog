@@ -23,9 +23,18 @@ export default {
       boxShadow: {
         custom: '0px 2px 8px 0px rgba(99, 99, 99, 0.2)',
       },
+      screens: {
+        'xs' : '491px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1700px',
+      },
     },
   },
   plugins: [
-    // require('@tailwindcss/forms'),
+    require('@tailwindcss/forms'),
   ],
 } satisfies Config;

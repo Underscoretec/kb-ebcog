@@ -1,9 +1,18 @@
 import Button from '@/common/uicomponents/Button'
+import ImageUploader from '@/common/uicomponents/ImageUploader'
 import InputField from '@/common/uicomponents/InputField'
 import RadioListTable from '@/common/uicomponents/RadioListTable'
 import React from 'react'
 
 const RegistrationCard = () => {
+
+    const settings = [
+        { name: 'Reproductive Medicine and Endocrinology' },
+        { name: 'Ultrasound and Prenatal Medicine' },
+        { name: 'Hysteroscopy and Laparoscopy' },
+        { name: 'Maternal Medicine' },
+      ]
+      
     return (
         <div className="flex flex-col items-center justify-center bg-[#F9FAFB] pt-20 pb-32">
             <h2 className="font-montserrat text-2xl font-extrabold leading-9 text-[#111827]">
@@ -44,7 +53,9 @@ const RegistrationCard = () => {
                         id="country"
                         required
                     />
-                    <RadioListTable />
+                    <RadioListTable label='Please choose Diploma course for which you want to Register' settings={settings}/>
+                    <ImageUploader label='Upload Your Latest Degree Certificate'/>
+                    <ImageUploader label='Upload Your Basic Degree Document'/>
                     <Button
                         type="submit"
                         label="Submit"

@@ -2,15 +2,15 @@ import CommonLayout from '@/common/layouts/CommonLayout'
 import RegistrationCard from '@/components/RegistrationCard/RegistrationCard'
 import React, { ReactElement } from 'react'
 
-const Registration = () => {
+const RegistrationForm = () => {
   return (
     <><RegistrationCard /></>
   )
 }
 
-export default Registration
+export default RegistrationForm
 
-Registration.getLayout = function getLayout(page:ReactElement) {
+RegistrationForm.getLayout = function getLayout(page:ReactElement) {
     return (
       <CommonLayout>
         {page}
