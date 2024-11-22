@@ -1,6 +1,5 @@
-import FacultyCard from '@/common/uicomponents/FacultyCard'
-import ImageComponent from '@/common/uicomponents/ImageComponent'
 import React from 'react'
+import FacultyCard from './FacultyCard'
 
 const FacultySection = () => {
 
@@ -170,7 +169,7 @@ const FacultySection = () => {
 
     return (
         <div className='bg-[#290849] text-white p-24'>
-            <h1 className='className="font-oswald text-[55px] font-normal leading-[54px] text-center mb-14'>Diploma leads and Faculty</h1>
+            <h1 className='font-oswald text-[55px] font-normal leading-[54px] text-center mb-14'>Diploma leads and Faculty</h1>
             <div className='flex justify-between gap-6'>
                 {CoursesFaculty.map((item, index) => {
                     return (<div key={index} className='w-[25%] flex flex-col gap-6'>
