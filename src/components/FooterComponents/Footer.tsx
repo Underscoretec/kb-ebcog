@@ -43,23 +43,20 @@ const navigation = {
 }
 
 export default function Footer() {
-  const [loading, setLoading] = useState(true)
-  const [captcha, setCaptcha] = useState(generateCaptcha());
+  // const [captcha, setCaptcha] = useState(generateCaptcha());
 
-  function generateCaptcha() {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    return Array.from({ length: 6 }, () =>
-      chars[Math.floor(Math.random() * chars.length)]
-    ).join("");
-    setLoading(false)
-  }
+  // function generateCaptcha() {
+  //   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  //   return Array.from({ length: 6 }, () =>
+  //     chars[Math.floor(Math.random() * chars.length)]
+  //   ).join("");
+  // }
 
   // Function to handle reload
-  function reloadCaptcha() {
-    setCaptcha(generateCaptcha());
-  }
+  // function reloadCaptcha() {
+  //   setCaptcha(generateCaptcha());
+  // }
   
-  if(loading) return <></>;
 
 
   return (
@@ -150,9 +147,9 @@ export default function Footer() {
 
               <div className="flex items-center pt-4">
                 <div className="bg-gray-200 border border-gray-300 text-gray-800 flex items-center font-semibold px-4 py-2 rounded-md text-lg shadow-md tracking-wide">
-                  {captcha}
+                  {/* {captcha} */}
                   <button
-                    onClick={reloadCaptcha}
+                    // onClick={reloadCaptcha}
                     className="ml-4 text-gray-600 hover:text-gray-800 focus:outline-none"
                   >
                     <svg
