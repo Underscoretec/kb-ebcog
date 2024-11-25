@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
  
 const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
   const [openSubmenus, setOpenSubmenus]: any = useState([]);
@@ -37,9 +36,9 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
     }
   };
  
-  const handelClose = () => {
-    setOpenSubmenus([])
-  }
+  // const handelClose = () => {
+  //   setOpenSubmenus([])
+  // }
  
  
  

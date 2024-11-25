@@ -42,7 +42,8 @@ const navigation = {
   ],
 }
 
-export default function Example() {
+export default function Footer() {
+  const [loading, setLoading] = useState(true)
   const [captcha, setCaptcha] = useState(generateCaptcha());
 
   function generateCaptcha() {
@@ -50,12 +51,17 @@ export default function Example() {
     return Array.from({ length: 6 }, () =>
       chars[Math.floor(Math.random() * chars.length)]
     ).join("");
+    setLoading(false)
   }
 
   // Function to handle reload
   function reloadCaptcha() {
     setCaptcha(generateCaptcha());
   }
+  
+  if(loading) return <></>;
+
+
   return (
     <footer className="bg-[#290849]">
       <div className="mx-auto  px-6 pb-8 pt-20 sm:pt-24 lg:px-40 lg:pt-32">

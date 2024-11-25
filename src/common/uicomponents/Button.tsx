@@ -8,7 +8,6 @@ interface ButtonProps {
     isLoading?: boolean;
     disabled?: boolean;
     className?: string;
-    bgColor?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,7 +17,6 @@ const Button: React.FC<ButtonProps> = ({
     isLoading = false,
     disabled = false,
     className = '',
-    bgColor = ''
 }) => {
     return (
         <button

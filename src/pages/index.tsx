@@ -7,9 +7,7 @@ export default function Home() {
   return (
     <>
    <Head><title>KB-EBCOG</title></Head>
-    <main
-      className={`  `}
-    >
+    <main>
       <HomePage/>
     </main> </>
   )

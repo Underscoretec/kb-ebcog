@@ -1,3 +1,4 @@
+import FaqSection from '@/components/HomeComponets/FaqSection'
 import BannerSection from '@/components/HomeComponets/BannerSection'
 import FacultySection from '@/components/HomeComponets/FacultySection'
 import InternationalFaculty from '@/components/HomeComponets/InternationalFaculty'
@@ -9,6 +10,7 @@ const HomePage = () => {
       <BannerSection/>
       <FacultySection />
       <InternationalFaculty />
+      <FaqSection/>
     </>
   )
 }
