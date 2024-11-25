@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+ 
 const ImageComponent: React.FC<{
     src: any;
     alt: string;
@@ -23,3 +23,7 @@ const ImageComponent: React.FC<{
   };
    
   export default ImageComponent;
+
+
+
+/* eslint-disable @typescript-eslint/no-explicit-any */

@@ -20,7 +20,7 @@ const Header = () => {
         setIsSidebarOpen(false);
     };
  
-    const user_name = 'John'
+    // const user_name = 'John'
  
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
