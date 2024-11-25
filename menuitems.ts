@@ -12,10 +12,10 @@ export  const menuitems = [
         id:'5', title: "Diplomas",
         url: "#",
         submenu: [
-            { id:'6', title: 'Maternal Medicine', url: '#' },
-            { id:'7', title: 'Reproductive Endocrinology & Infertility', url: '#' },
-            { id:'8', title: 'Gynaecology Endoscopy', url: '#' },
-            { id:'9', title: 'Fetal Medicine and Ultrasound', url: '#' },
+            { id:'maternal-medical', title: 'Maternal Medicine', url: '/diploma/maternal-medical' },
+            { id:'reproductive-endocrinology', title: 'Reproductive Endocrinology & Infertility', url: '/diploma/reproductive-endocrinology' },
+            { id:'gynaecology-endoscopy', title: 'Gynaecology Endoscopy', url: '/diploma/gynaecology-endoscopy' },
+            { id:'fetal-medicine-and-ultrasound', title: 'Fetal Medicine and Ultrasound', url: '/diploma/fetal-medicine-and-ultrasound' },
         ],
     },
     {
