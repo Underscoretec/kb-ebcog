@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import React, { useState, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { ClickAwayListener } from '@mui/material';
 import { FaAngleDown } from 'react-icons/fa'; // Import the dropdown arrow icon
  
 const Navbar = (props: any) => {
-  const myref = useRef();
+  // const myref = useRef();
   const [menuStatus, setMenuStatus] = useState([]);
  
   return (

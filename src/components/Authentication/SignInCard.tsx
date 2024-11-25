@@ -11,7 +11,7 @@ const SignInCard: React.FC = () => {
     const [password, setPassword] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const router = useRouter(); // Initialize useRouter
+    // const router = useRouter(); // Initialize useRouter
 
     const handleSignIn = async (e: React.FormEvent) => {
         e.preventDefault();

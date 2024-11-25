@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
  
 const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
   const [openSubmenus, setOpenSubmenus]: any = useState([]);
@@ -37,9 +36,9 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
     }
   };
  
-  const handelClose = () => {
-    setOpenSubmenus([])
-  }
+  // const handelClose = () => {
+  //   setOpenSubmenus([])
+  // }
  
  
  
@@ -48,16 +47,16 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
       <ul className={`${depth + 1} relative flex flex-col ${isNested ? `` : ''}`}>
         {items.map((item: any) => (
           <li key={item.id}
-            className={` hover:bg-[#FFE6A9] ${isSubmenuOpen(item.id) ? 'hover:bg-transparent' : 'bg-white'}`}>
+            className={` hover:bg-[#f7e9f1] ${isSubmenuOpen(item.id) ? 'hover:bg-transparent' : 'bg-white'}`}>
             <a
               href={item.url}
               className={`w-full ${depth == 0 ? "border-b-2" : ""} flex items-center justify-between`}
               onClick={() => handleMenuItemClick(item)}
             >
               <div className={`ml-0 py-4
-              ${depth == 0 ? "ml-6 text-[12px] md:text-[14px] lg:text-[16px] text-[#E4087F] font-bold" : ""}
-              ${depth == 1 ? "ml-0 pl-6 md:pl-[40px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fcc262] w-full hover:bg-[#E4087F] hover:text-white" : ""}
-              ${depth == 2 ? "ml-0 pl-6 md:pl-[60px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fdcf85] w-full hover:bg-[#E4087F] hover:text-white" : ""}
+              ${depth == 0 ? "ml-6 text-[12px] md:text-[14px] lg:text-[16px] text-[#5c5a5b] font-bold" : ""}
+              ${depth == 1 ? "ml-0 pl-6 md:pl-[40px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#f9ddec] w-full hover:bg-[#E4087F] hover:text-white" : ""}
+              ${depth == 2 ? "ml-0 pl-6 md:pl-[60px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#f6f1f3] w-full hover:bg-[#E4087F] hover:text-white" : ""}
               ${depth == 3 ? "ml-0 pl-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#fee4b9] w-full hover:bg-[#E4087F] hover:text-white" : ""}
               ${depth == 4 ? "ml-0 pl-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium bg-[#ffefd6] w-full hover:bg-[#E4087F] hover:text-white" : ""}`}
               >

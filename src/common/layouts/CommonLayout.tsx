@@ -13,7 +13,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
         <Header/>
         <div className="body-main ">{children}</div>
       </div>
-      <div className='w-full flex items-end '>
+      <div className='w-full '>
         <Footer/>
       </div>
     </div>

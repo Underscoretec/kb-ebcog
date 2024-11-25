@@ -45,7 +45,7 @@ const Header = () => {
                         <Navbar menuArray={menuitems} />
                     </div>
  
-                    <Link href='/login' >
+                    <Link href='/signup' >
                         <h1 className="text-white font-semibold rounded-[6px] flex justify-center items-center py-2 xl:py-4 px-6 lg:px-2 xl:px-3 2xl:px-12 text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] border border-[#E4087F] hover:bg-transparent hover:text-[#E4087F]">
                             Join Now
                         </h1>
