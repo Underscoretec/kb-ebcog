@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const navigation = {

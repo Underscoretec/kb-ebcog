@@ -18,8 +18,11 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
   };
  
   useEffect(() => {
-    isSidebarOpen ? setOpenSubmenus([]) : ""
-  }, [isSidebarOpen])
+    if (isSidebarOpen) {
+      setOpenSubmenus([]);
+    }
+  }, [isSidebarOpen]);
+  
  
  
   const isSubmenuOpen = (itemId: any) => {

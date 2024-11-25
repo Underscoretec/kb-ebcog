@@ -1,6 +1,5 @@
 // components/SignInCard.tsx
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import Button from "@/common/uicomponents/Button";
 import InputField from "@/common/uicomponents/InputField";
 import CheckBox from "@/common/uicomponents/CheckBox";
