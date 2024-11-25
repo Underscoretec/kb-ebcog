@@ -205,9 +205,9 @@ const InternationalFaculty = () => {
   ]
 
   return (
-    <div className='px-4 xs:px-8 xl:px-16 3xl:px-24 py-16'>
-      <div className='text-[#290849] font-oswald text-[40px] 2xl:text-[55px] font-normal leading-[45px] 2xl:leading-[54px] mb-12'>Popular International and EBCOG Diploma Faculty</div>
-      <div className='flex flex-wrap gap-3 xl:gap-5'>
+    <div className='px-4 xs:px-8 xl:px-16 3xl:px-24 py-12 md:py-16'>
+      <div className='text-[#290849] font-oswald text-[26px] sm:text-[30px] md:text-[36px] lg:text-[40px] 2xl:text-[55px] font-normal leading-[32px] sm:leading-[45px] 2xl:leading-[54px] mb-6 xs:mb-8 lg:mb-12'>Popular International and EBCOG Diploma Faculty</div>
+      <div className='flex flex-wrap gap-3 xs:gap-1 sm:gap-3 xl:gap-5'>
         {FacultyData.map((item,index)=>{
           return(
             <InternationalFacultyCard key={index} data={item}/>
