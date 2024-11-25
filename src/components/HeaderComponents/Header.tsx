@@ -30,12 +30,12 @@ const Header = () => {
                         <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[28px] md:text-[32px] cursor-pointer`}
                             onClick={handleSidebar} />
                             <Link href="/">
-                            <div className='w-[150px] xl:w-[150px] h-full cursor-pointer'>
+                            <div className='w-[70px] xs:w-[100px] sm:w-[150px] xl:w-[150px] h-full cursor-pointer'>
                                 <Image src="/ebcog.png" alt="no img" width={500} height={500} className='w-full h-full' />
                             </div>
                         </Link>
                         <Link href="/">
-                            <div className='w-[150px] xl:w-[200px] h-full cursor-pointer'>
+                            <div className='w-[70px] xs:w-[100px] sm:w-[150px] xl:w-[200px] h-full cursor-pointer'>
                                 <Image src="/kblogo.png" alt="no img" width={500} height={500} className='w-full h-full' />
                             </div>
                         </Link>
@@ -46,7 +46,7 @@ const Header = () => {
                     </div>
  
                     <Link href='/signup' >
-                        <h1 className="text-white font-semibold rounded-[6px] flex justify-center items-center py-2 xl:py-4 px-6 lg:px-2 xl:px-3 2xl:px-12 text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] border border-[#E4087F] hover:bg-transparent hover:text-[#E4087F]">
+                        <h1 className="text-white font-semibold rounded-[6px] flex justify-center items-center py-2 xl:py-4 px-2 sm:px-6 lg:px-2 xl:px-3 2xl:px-12 text-[10px] xs:text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] border border-[#E4087F] hover:bg-transparent hover:text-[#E4087F]">
                             Join Now
                         </h1>
                     </Link>

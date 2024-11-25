@@ -55,7 +55,7 @@ export default function Footer() {
   // function reloadCaptcha() {
   //   setCaptcha(generateCaptcha());
   // }
-  
+
 
 
   return (
@@ -129,7 +129,7 @@ export default function Footer() {
                 required
                 placeholder="Enter your email"
                 autoComplete="email"
-                className="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:w-64 sm:text-sm/6 xl:w-full"
+                className="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
               />
 
               {/* <div className="flex items-center pt-4">
@@ -144,12 +144,12 @@ export default function Footer() {
               </div> */}
 
 
-              <div className="flex items-center pt-4">
-                <div className="bg-gray-200 border border-gray-300 text-gray-800 flex items-center font-semibold px-4 py-2 rounded-md text-lg shadow-md tracking-wide">
+              <div className="flex items-center pt-4 w-full">
+                <div className="w-full bg-gray-200 border-4 border-gray-300 text-gray-800 flex items-center gap-2 font-semibold rounded-md text-lg shadow-md tracking-wide">
                   {/* {captcha} */}
                   <button
                     // onClick={reloadCaptcha}
-                    className="ml-4 text-gray-600 hover:text-gray-800 focus:outline-none"
+                    className="ml- text-gray-600 hover:text-gray-800 focus:outline-none"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -166,12 +166,12 @@ export default function Footer() {
                       />
                     </svg>
                   </button>
-                </div>
-                <input
+                  <input
                   type="text"
                   placeholder="Enter Captcha"
-                  className="flex-1 px-4 py-2 ml-4 text-gray-700 bg-gray-200 placeholder-gray-400 rounded-md shadow-sm focus:outline-none"
+                  className="flex-1 px-4 py-2 ml- text-gray-700 bg-gray-200 placeholder-gray-400 rounded-md shadow-sm focus:outline-none"
                 />
+                </div>
               </div>
 
 
