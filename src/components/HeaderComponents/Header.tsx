@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
             <div className='z-[100] sticky top-0 w-auto h-auto'>
-                <div className='bg-white w-full h-[70px] md:h-[80px] flex items-center justify-between px-6 lg:px-[20px] xl:px-[40px] 2xl:px-[50px] gap-2 2xl:gap-6 shadow-xl'>
+                <div className='bg-white w-full h-[70px] md:h-[80px] flex items-center justify-between px-4 xs:px-8 md:px-10 lg:px-[40px] xl:px-[40px] 2xl:px-[70px] gap-2 2xl:gap-6 shadow-xl'>
                     <div className='flex items-center gap-4'>
                         <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[28px] md:text-[32px] cursor-pointer`}
                             onClick={handleSidebar} />
@@ -41,7 +41,7 @@ const Header = () => {
                         </Link>
                     </div>
  
-                    <div className={`hidden lg:block w-[58%] h-full`}>
+                    <div className={`hidden lg:block w-[55%] h-full`}>
                         <Navbar menuArray={menuitems} />
                     </div>
  
