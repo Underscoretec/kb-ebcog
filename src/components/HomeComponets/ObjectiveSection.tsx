@@ -1,6 +1,7 @@
-import ImageComponent from '@/common/uicomponents/ImageComponent'
 import React from 'react'
 import objective from '../../../public/objective.png'
+import Image from 'next/image';
+import icon from '../../../public/icon.png'
 
 const ObjectiveSection = () => {
 
@@ -29,25 +30,30 @@ const ObjectiveSection = () => {
 
     return (
         <div className='bg-[#FFF4F8]'>
-            <div className='text-[52px] text-[#290849] w-[90%] border-2 border-lime-600'>
+            <div className='text-[22px] xs:text-[42px] xl:text-[52px] text-[#290849] font-[oswald] leading-[30px] xs:leading-[55px] w-[100%] lg:w-[87%] xl:w-[76%] xl:px-16 3xl:px-24 px-4 xs:px-8'>
                 {`Emirates Institute of Postgraduate Medical Sciences &`} <span className='text-[#E4087F]'>{`KnowledgeBridge International`}</span> {`Objectives of launching courses with`} <span className='text-[#E4087F]'>{`EBCOG`}</span>
-             </div>
+            </div>
 
-            <div className='flex'>
-                <div className='w-[50%]'>
+            <div className='flex-row lg:flex xl:px-16 3xl:px-24 px-4 xs:px-8 pb-20 lg:pb-36 '>
+                <div className='w-[100%] lg:w-[50%] xl:mt-4'>
                     {contentData.map((item, index) => (
-                        <div key={index} className="mb-6">
-                            <div className="text-[26px] text-[#290849] font-semibold">{item.title}</div>
-                            <div className="text-[17px] text-[#000000]">{item.description}</div>
+                        <div key={index} className="mt-2 lg:mt-1 xl:mt-2">
+                            <div className='flex items-center gap-1 xl:gap-2'>
+                                <Image src={icon} alt='icon' className='xl:h-[4%] xl:w-[4%] h-[3%] w-[3%]' />
+                                <div className="text-[20px] xl:text-[26px] text-[#290849] font-oswald">{item.title}</div>
+                            </div>
+
+                            <div className="text-[14px] xl:text-[17px] text-[#000000] font-montserrat lg:pr-8 xl:pr-24">{item.description}</div>
                         </div>
                     ))}
                 </div>
-                <div className='w-[50%]'>
-                    <ImageComponent
+                <div className='w-[100%] lg:w-[50%] relative lg:right-0 lg:bottom-16 xl:bottom-10 2xl:bottom-24'>
+                    <Image
                         src={objective}
                         alt="objective"
                         width={3000}
                         height={3000}
+                        className='h-auto w-full static lg:absolute'
                     />
                 </div>
             </div>
