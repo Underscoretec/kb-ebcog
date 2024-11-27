@@ -3,8 +3,8 @@ import React from 'react'
 const CourseOverview = ({data}:any) => {
 
     return (
-        <div className='p-6'>
-            <div className='text-[#555555] font-montserrat text-[16px] xl:text-[18px] font-normal leading-[25px] xl:leading-[27px]'>
+        <div className='xl:p-6'>
+            <div className='text-[#555555] font-montserrat text-[15px] xs:text-[16px] xl:text-[18px] font-normal leading-[25px] xl:leading-[27px]'>
                 {data?.text}
             </div>
             <div>
@@ -17,7 +17,7 @@ const CourseOverview = ({data}:any) => {
                             <div className='font-montserrat text-[16px] xl:text-[18px] font-semibold leading-[30px]'>
                                 {reason?.heading}
                             </div>
-                            <div className='text-[#555555] font-montserrat text-[16px] xl:text-[18px] font-normal leading-[23px]'>
+                            <div className='text-[#555555] font-montserrat text-[15px] xs:text-[16px] xl:text-[18px] font-normal leading-[23px]'>
                                 {reason?.description}
                             </div>
                         </div>
