@@ -8,8 +8,9 @@ import Image from 'next/image';
 import Button from '../../common/uicomponents/Button';
 
 const InternationalFacultyCard = ({ data }: any) => {
+    
     return (
-        <div className='w-[100%] xs:w-[49%] sm:w-[48.5%] md:w-[32%] lg:w-[24%] xl:w-[23.5%] 3xl:w-[24%] border border-[#EAEAEA] rounded-[20px]'>
+        <>
             <div className='relative'>
                 <ImageComponent
                     src={bg}
@@ -28,7 +29,7 @@ const InternationalFacultyCard = ({ data }: any) => {
                 </div>
                 <div className='h-[70%] 2xl:h-[75%] absolute bottom-0 right-0'>
                     <Image
-                        src={data.facultyImage}
+                        src={data?.facultyImage}
                         alt="facultyImag"
                         className="h-[100%] w-full"
                         width={1000}
@@ -36,7 +37,7 @@ const InternationalFacultyCard = ({ data }: any) => {
                     />
                 </div>
             </div>
-            <div className='p-2 sm:p-3 xl:p-4'>
+            <div className='p-2 sm:p-3 xl:p-4 border border-[#EAEAEA] bg-white border-t-0 rounded-bl-[20px] rounded-br-[20px]'>
                 <div className='font-poppins text-[15px] xs:text-[12px] sm:text-[15px] md:text-[13px] xl:text-base font-normal leading-6 text-[#555555]'>by <span className='text-[#000]'>{data?.facultyName}</span></div>
                 <div className='flex gap-3 xl:gap-4 font-montserrat text-[13px] font-semibold leading-[19.5px] text-[#555555] pt-1'>
                     <div className='flex gap-1 xl:gap-2 items-center'><MdAccessTimeFilled className='text-[#EE7E22]' /> {data?.courseDuration}</div>
@@ -50,7 +51,7 @@ const InternationalFacultyCard = ({ data }: any) => {
                     />
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
