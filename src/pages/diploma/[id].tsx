@@ -5,11 +5,13 @@ import DiplomaCourse from '@/container/diplomaCourse/DiplomaCourse';
 
 const CoursePage = () => {
     const router = useRouter();
+    
     const { id } = router.query;
+    const courseId = typeof id === 'string' ? id : '';
     
     return (
         <>
-            <DiplomaCourse courseId={id} />
+            <DiplomaCourse courseId={courseId} />
         </>
     )
 }

@@ -9,10 +9,10 @@ import { RiGraduationCapFill } from "react-icons/ri";
 import { useRouter } from 'next/navigation';
 
 interface DiplomaCourseProps {
-    courseId?: string;
+    courseId: string;
   }
 
-const DiplomaCourse = ({ courseId }: any) => {
+const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
     const router = useRouter();
     const [courseData, setcourseData] = useState<any | null>(null);
 
@@ -602,7 +602,7 @@ const DiplomaCourse = ({ courseId }: any) => {
     
     useEffect(() => {
         if (courseId) {
-            const diplomaCourse = data.find(item => item.id === courseId);
+            const diplomaCourse = data?.find(item => item.id === courseId);
             setcourseData(diplomaCourse || null);
         }
     }, [courseId]);
