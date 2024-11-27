@@ -1,50 +1,5 @@
 import React from 'react';
 
-// Sample data from the JSON
-const curriculumData = {
-  curriculumSections: [
-    {
-      title: "Labor and Delivery",
-      items: [
-        "Advanced Delivery Techniques",
-        "Innovative Tools",
-        "Surgical Skills"
-      ]
-    },
-    {
-      title: "Medical Disorders in Pregnancy",
-      items: [
-        "Comprehensive Patient Care",
-        "Neurological and Respiratory Considerations",
-        "Postpartum Management"
-      ]
-    },
-    {
-      title: "Special / High-Risk Conditions in Pregnancy",
-      items: [
-        "Fetal Care",
-        "Pregnancy Complications",
-        "Nutritional and Metabolic Health"
-      ]
-    },
-    {
-      title: "Critical Care in Obstetrics",
-      items: [
-        "Emergency Management",
-        "Severe Complications"
-      ]
-    },
-    {
-      title: "Workstations / Hands-on Training",
-      items: [
-        "Practical Skills Development",
-        "Innovative Tools",
-        "Real-World Application"
-      ]
-    }
-  ]
-};
-
 const CourseCurriculum = ({data}:any) => {
   return (
     <div className='flex flex-col gap-8'>
