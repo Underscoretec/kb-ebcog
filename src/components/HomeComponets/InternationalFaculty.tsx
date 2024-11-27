@@ -210,7 +210,7 @@ const InternationalFaculty = () => {
       <div className='flex flex-wrap gap-3 xs:gap-1 sm:gap-3 xl:gap-5'>
         {FacultyData.map((item,index)=>{
           return(
-            <div className='w-[100%] xs:w-[49%] sm:w-[48.5%] md:w-[32%] lg:w-[24%] xl:w-[23.5%] 3xl:w-[24%]'>
+            <div key={index} className='w-[100%] xs:w-[49%] sm:w-[48.5%] md:w-[32%] lg:w-[24%] xl:w-[23.5%] 3xl:w-[24%]'>
               <InternationalFacultyCard key={index} data={item}/>
             </div>
           )

@@ -590,7 +590,6 @@ const DiplomaCourse = ({ courseId }: any) => {
         },]
 
 
-    console.log(courseId, "courseId")
     useEffect(() => {
         if (courseId) {
             const diplomaCourse = data.find(item => item.id === courseId);
