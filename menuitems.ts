@@ -22,7 +22,7 @@ export  const menuitems = [
         id:'10', title: "Academic Resources",
         url: "#",
         submenu: [
-            { id:'11', title: 'Acadmic Calendar', url: '/acadmic-calendar' },
+            { id:'11', title: 'Academic Calendar', url: '/academic-calendar' },
         ],
     },
     {
