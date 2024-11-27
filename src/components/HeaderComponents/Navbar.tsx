@@ -96,7 +96,7 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
           // className={`${menuStatus.find((v: any) => v === menuData.id) ? 'block' : 'hidden border-0'}
             onMouseLeave={() => { setOpenSubmenus((prev) => ({ ...prev, [index]: false })); }}
             className={`${openSubmenus[index] ? 'block' : 'hidden'}
-              ${depth === 1 ? 'top-[calc(100%)] left-0 w-[calc(120%)] xl:w-[calc(200%)]' :
+              ${depth === 1 ? 'top-[calc(100%)] left-0 w-[calc(200%)] xl:w-[calc(200%)]' :
                 `${depth === 2 ? "w-[calc(100%)] 2xl:w-[calc(70%)]" : "w-[calc(100%)] xl:w-[calc(85%)]"} top-0 ml-[calc(100%)] bg-white`}
               shadow-2xl absolute border-2 border-t-0 hover:border-0`}
           >

@@ -4,7 +4,7 @@ export  const menuitems = [
         id:'2', title: "About Us",
         url: "#",
         submenu: [
-            { id:'3', title: 'EBCOG', url: '#' },
+            { id:'3', title: 'EBCOG', url: '#ebcog' },
             { id:'4', title: 'KnowledgeBridge', url: '#' },
         ],
     },
@@ -29,9 +29,5 @@ export  const menuitems = [
     {
         id:'13', title: "Meet Us in Person",
         url: "#",
-        submenu: [
-            { id:'14', title: 'EBCOG', url: '#' },
-            { id:'15', title: 'KnowledgeBridge', url: '#' },
-        ],
     },
 ];

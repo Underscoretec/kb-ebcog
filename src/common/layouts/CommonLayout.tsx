@@ -10,11 +10,11 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
   return (
     <div className='min-h-screen w-[100%] flex flex-col justify-between'>
       <div>
-        {/* <Header/> */}
+        <Header/>
         <div className="body-main ">{children}</div>
       </div>
       <div className='w-full '>
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </div>
   )

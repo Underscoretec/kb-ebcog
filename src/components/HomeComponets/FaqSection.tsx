@@ -79,8 +79,8 @@ const FaqSection = () => {
     ]
 
     return (
-        <div className="bg-white">
-            <div className="mx-auto max-w-7xl px-6 py-10 sm:py-10 lg:px-8 lg:py-16 bg-[#F9FAFB]">
+        <div className="bg-[#F9FAFB]">
+            <div className="mx-auto max-w-7xl px-6 py-10 sm:py-10 lg:px-8 lg:py-16">
                 <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
                     <h2 className="flex justify-center text-[50px] font-oswald tracking-tight text-[#290849] sm:text-[55px]">
                         Frequently asked questions
