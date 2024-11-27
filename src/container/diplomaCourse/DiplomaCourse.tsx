@@ -8,11 +8,11 @@ import { MdAccessTimeFilled, MdFileCopy } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
 import { useRouter } from 'next/navigation';
 
-interface DiplomaCourseProps {
-    courseId: string;
-  }
+// interface DiplomaCourseProps {
+//     courseId: string;
+//   }
 
-const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
+const DiplomaCourse = ({ courseId }: any) => {
     const router = useRouter();
     const [courseData, setcourseData] = useState<any | null>(null);
 
