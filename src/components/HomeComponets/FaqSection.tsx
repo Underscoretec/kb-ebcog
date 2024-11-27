@@ -90,7 +90,7 @@ const FaqSection = () => {
                             <Disclosure key={faq.question} as="div" className="pt-6" defaultOpen={index === 0}>
                                 <dt>
                                     <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">
-                                        <span className="text-20px font-Montserrat text-black">{faq.question}</span>
+                                        <span className="text-20px font-montserrat text-black">{faq.question}</span>
                                         <span className="ml-6 flex h-7 items-center">
                                             <MdKeyboardArrowDown aria-hidden="true" className="size-6 group-data-[open]:hidden" />
                                             <MdKeyboardArrowUp aria-hidden="true" className="size-6 [.group:not([data-open])_&]:hidden" />
@@ -98,7 +98,7 @@ const FaqSection = () => {
                                     </DisclosureButton>
                                 </dt>
                                 <DisclosurePanel as="dd" className="mt-2 pr-12">
-                                    <p className="text-16px font-Montserrat text-[#6B7280]">{faq.answer}</p>
+                                    <p className="text-16px font-montserrat text-[#6B7280]">{faq.answer}</p>
                                 </DisclosurePanel>
                             </Disclosure>
                         ))}

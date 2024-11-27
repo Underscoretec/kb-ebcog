@@ -8,9 +8,9 @@ import { MdAccessTimeFilled, MdFileCopy } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
 import { useRouter } from 'next/navigation';
 
-// interface DiplomaCourseProps {
-//     courseId: string;
-//   }
+interface DiplomaCourseProps {
+    courseId?: string;
+  }
 
 const DiplomaCourse = ({ courseId }: any) => {
     const router = useRouter();
@@ -614,12 +614,12 @@ const DiplomaCourse = ({ courseId }: any) => {
             <BreadCrumbs routes = {[{ name: 'Diploma Courses', href: '/', current: false },{ name: courseData?.courseName, href: '#', current: true }]}/>
             <div className='bg-[#290849] flex gap-8 xs:gap-0 flex-col-reverse xs:flex-row px-4 xs:px-8 xl:px-16 3xl:px-24 py-8 lg:py-12 justify-between text-white'>
                 <div className='flex flex-col gap-4 w-[100%] xs:w-[47%] md:w-[60%] lg:w-auto'>
-                    <h1 className='font-Montserrat text-[24px] xs:text-[20px] sm:text-[28px] lg:text-[30px] xl:text-[36px] font-bold leading-[34px] xs:leading-[30px] sm:leading-[38px] lg:leading-[45px] md:w-[90%] xl:w-[84%]'>{courseData?.courseName}</h1>
+                    <h1 className='font-montserrat text-[24px] xs:text-[20px] sm:text-[28px] lg:text-[30px] xl:text-[36px] font-bold leading-[34px] xs:leading-[30px] sm:leading-[38px] lg:leading-[45px] md:w-[90%] xl:w-[84%]'>{courseData?.courseName}</h1>
                     <Button
                         label="Fees & Scholarships"
-                        className="w-[12rem] sm:w-[16rem] lg:w-[20rem] py-1 lg:py-2 bg-[#E4087F] border border-[#E4087F] font-semibold text-white rounded-md hover:bg-white hover:text-[#E4087F] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-[12rem] sm:w-[16rem] lg:w-[20rem] py-1 lg:py-2 bg-[#E4087F] font-semibold text-white rounded-md hover:bg-[#ac0660]"
                     />
-                    <div className='flex flex-col md:flex-row gap-2 md:gap-8 font-Montserrat text-base font-medium leading-6 text-[#9D9D9D]'>
+                    <div className='flex flex-col md:flex-row gap-2 md:gap-8 font-montserrat text-base font-medium leading-6 text-[#9D9D9D]'>
                         <div className='flex gap-1 xl:gap-2 items-center'><MdAccessTimeFilled className='text-[#EE7E22]' /> {courseData?.duration}</div>
                         <div className='flex gap-1 xl:gap-2 items-center'><RiGraduationCapFill className='text-[#EE7E22]' /> {courseData?.learners} Learners</div>
                         <div className='flex gap-1 xl:gap-2 items-center'><MdFileCopy className='text-[#EE7E22]' /> {courseData?.lessons} Lessons</div>

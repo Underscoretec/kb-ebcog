@@ -47,7 +47,7 @@ const InternationalFacultyCard = (props: any) => {
                 <div className='flex justify-end border-t border-[#EAEAEA] mt-3'>
                     <Button
                         type="submit"
-                        className="py-2 2xl:py-3 px-4 2xl:px-6 bg-[#E4087F] font-poppins text-sm font-medium leading-4 text-white rounded-[6px] mt-3 border border-transparent transition-all duration-400 ease-in-out hover:border-[#E4087F] hover:bg-white hover:text-[#E4087F]"
+                        className="py-2 2xl:py-3 px-4 2xl:px-6 bg-[#E4087F] font-poppins text-sm font-medium leading-4 text-white rounded-[6px] mt-3 transition-all duration-400 ease-in-out hover:bg-[#ac0660]"
                         label={props?.btn_label}
                         onClick={props?.handleClick}
                     />

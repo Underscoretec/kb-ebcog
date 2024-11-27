@@ -27,7 +27,7 @@ const CourseTabSection = ({courseData}:any) => {
 
   return (
     <div className="bg-[#FFF4F8] rounded-[20px]">
-      <div className="border border-[#EAEAEA] flex font-Montserrat text-lg font-bold leading-6 text-center bg-white rounded-tl-[20px] rounded-tr-[20px] cursor-pointer overflow-hidden">
+      <div className="border border-[#EAEAEA] flex font-montserrat text-lg font-bold leading-6 text-center bg-white rounded-tl-[20px] rounded-tr-[20px] cursor-pointer overflow-hidden">
         {tabs.map((tab) => (
           <div
             key={tab}

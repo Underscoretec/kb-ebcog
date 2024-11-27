@@ -104,7 +104,7 @@ const SignUpCard: React.FC = () => {
                         type="submit"
                         label="Sign Up"
                         isLoading={isSubmitting}
-                        className="w-full py-2 bg-[#E4087F] border border-[#E4087F] font-semibold text-white ${bgColor} rounded-md hover:bg-white hover:text-[#E4087F] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full py-2 bg-[#E4087F] font-semibold text-white ${bgColor} rounded-md hover:bg-[#ac0660] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
                 </form>
                 <p className="text-sm text-center text-gray-600">

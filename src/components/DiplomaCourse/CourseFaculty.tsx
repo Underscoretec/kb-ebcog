@@ -59,7 +59,7 @@ const CourseFaculty = ({data}:any) => {
             </p>
             <Button
               label='Know More'
-              className="py-2 px-4 bg-[#E4087F] font-poppins text-sm font-medium leading-4 text-white rounded-[6px] border border-transparent transition-all duration-400 ease-in-out hover:border-[#E4087F] hover:bg-white hover:text-[#E4087F]"
+              className="py-2 px-4 bg-[#E4087F] font-poppins text-sm font-medium leading-4 text-white rounded-[6px] transition-all duration-400 ease-in-out hover:bg-[#ac0660]"
             />
           </div>
         </div>

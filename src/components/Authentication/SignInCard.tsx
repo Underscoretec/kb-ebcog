@@ -48,13 +48,13 @@ const SignInCard: React.FC = () => {
                     />
                     <div className="flex justify-between">
                         <CheckBox label='Remember me' />
-                        <Link href='#'><div className="text-[#4F46E5] font-Montserrat text-sm font-medium leading-5">Forgot your password?</div></Link>
+                        <Link href='#'><div className="text-[#4F46E5] font-montserrat text-sm font-medium leading-5">Forgot your password?</div></Link>
                     </div>
                     <Button
                         type="submit"
                         label="Sign In"
                         isLoading={isSubmitting}
-                        className="w-full py-2 bg-[#E4087F] border border-[#E4087F] font-semibold text-white ${bgColor} rounded-md hover:bg-white hover:text-[#E4087F] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full py-2 bg-[#E4087F] font-semibold text-white ${bgColor} rounded-md hover:bg-[#ac0660] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
                 </form>
             </div>
