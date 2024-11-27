@@ -53,7 +53,7 @@ const Calendar = () => {
   return (
     <>
       <div>
-      <BreadCrumbs routes={[{ name: 'Academic Calendar', href: '/academic-calendar', corrent: true }]} />
+      <BreadCrumbs routes={[{ name: 'Academic Calendar', href: '/', current: true }]} />
         <div className="space-y-8 sm:px-6 lg:px- xl:p-16 3xl:p-24 p-4 xs:p-8">
           {calendarData.map((item, index) => (
             <div key={index} className="border rounded-lg overflow-hidden">

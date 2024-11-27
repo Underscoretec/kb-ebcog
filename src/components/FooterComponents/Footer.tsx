@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { TbReload } from "react-icons/tb";
 
 const navigation = {
   solutions: [
@@ -140,27 +141,16 @@ export default function Footer() {
               {/* Single Captcha Section */}
               <div className="flex items-center pt-4 w-full">
                 <div className="w-full pl-3 bg-gray-200 border border-gray-300 text-gray-800 flex items-center gap-1 rounded-md text-sm shadow-md tracking-wide">
+                  <div className="flex gap-1">
                   {captcha}
                   <button
                     onClick={reloadCaptcha}
                     type="button"
-                    className="text-gray-600 hover:text-gray-800 focus:outline-none"
+                    className="text-gray-600 hover:text-gray-800 focus:outline-none text-[16px]"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                      className="w-4 h-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 9.75a7.5 7.5 0 0113.5-3m0 0l-3 3m3-3h-3m6 7.5a7.5 7.5 0 01-13.5 3m0 0l3-3m-3 3h3"
-                      />
-                    </svg>
+                    <TbReload/>
                   </button>
+                  </div>
                   <input
                     type="text"
                     placeholder="Enter Captcha"

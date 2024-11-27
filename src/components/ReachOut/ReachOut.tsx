@@ -10,7 +10,7 @@ const ReachOut = () => {
   return (
     <>
     <div>
-    <BreadCrumbs routes={[{ name: 'Reach Out', href: '/reach-out', corrent: true }]} />
+    <BreadCrumbs routes={[{ name: 'Reach Out', href: '/', current: true }]} />
     <div className="relative w-full h-screen">
       {/* Background Image */}
       <Image
