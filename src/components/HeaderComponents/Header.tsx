@@ -24,8 +24,8 @@ const Header = () => {
  
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
-            <div className='z-[100] sticky top-0 w-auto h-auto'>
-                <div className='bg-white w-full h-[70px] md:h-[80px] flex items-center justify-between px-4 xs:px-8 md:px-10 lg:px-[40px] xl:px-[40px] 2xl:px-[70px] gap-2 2xl:gap-6 shadow-xl'>
+            <div className='z-[100] sticky top-0 w-auto h-auto'> 
+                <div className='bg-white w-full h-[70px] md:h-[80px] flex items-center justify-between px-4 xs:px-8 xl:px-16 3xl:px-24 gap-2 2xl:gap-6 shadow-xl'>
                     <div className='flex items-center gap-4'>
                         <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[28px] md:text-[32px] cursor-pointer`}
                             onClick={handleSidebar} />
@@ -46,7 +46,7 @@ const Header = () => {
                     </div>
  
                     <Link href='/signup' >
-                        <h1 className="text-white font-semibold font-montserrat rounded-[6px] flex justify-center items-center py-2 xl:py-4 px-2 sm:px-6 lg:px-2 xl:px-3 2xl:px-12 text-[10px] xs:text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] border border-[#E4087F] hover:bg-transparent hover:text-[#E4087F]">
+                        <h1 className="text-white font-semibold rounded-[6px] flex justify-center items-center py-2 xl:py-4 px-2 sm:px-6 lg:px-2 xl:px-3 2xl:px-12 text-[10px] xs:text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] hover:bg-[#ac0660]">
                             Join Now
                         </h1>
                     </Link>

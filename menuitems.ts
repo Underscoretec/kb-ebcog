@@ -1,5 +1,5 @@
 export  const menuitems = [
-    { id:'1', title: "Home", url: "#" },
+    { id:'1', title: "Home", url: "/" },
     {
         id:'2', title: "About Us",
         url: "#",
@@ -22,8 +22,7 @@ export  const menuitems = [
         id:'10', title: "Academic Resources",
         url: "#",
         submenu: [
-            { id:'11', title: 'EBCOG', url: '#' },
-            { id:'12', title: 'KnowledgeBridge', url: '#' },
+            { id:'11', title: 'Academic Calendar', url: '/academic-calendar' },
         ],
     },
     {

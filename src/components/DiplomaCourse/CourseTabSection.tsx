@@ -27,12 +27,12 @@ const CourseTabSection = ({courseData}:any) => {
 
   return (
     <div className="bg-[#FFF4F8] rounded-[20px]">
-      <div className="border border-[#EAEAEA] flex font-Montserrat text-lg font-bold leading-6 text-center bg-white rounded-tl-[20px] rounded-tr-[20px] cursor-pointer overflow-hidden">
+      <div className="border border-[#EAEAEA] flex font-montserrat text-lg font-bold leading-6 text-center bg-white rounded-tl-[20px] rounded-tr-[20px] cursor-pointer overflow-hidden">
         {tabs.map((tab) => (
           <div
             key={tab}
-            className={`w-[25%] py-3 border-r border-[#EAEAEA] ${
-              selectedTab === tab ? 'bg-[#FFF4F8] text-[#E4087F]' : 'hover:bg-[#FFF4F8] hover:text-[#E4087F]'
+            className={`w-[25%] py-1 xs:py-3 border-r border-[#EAEAEA] text-[12px] xs:text-[16px] lg:text-[18px] ${
+              selectedTab === tab ? 'bg-[#FFF4F8] text-[#E4087F]' : 'hover:bg-[#FFF4F8] hover:text-[#E4087F] '
             }`}
             onClick={() => setSelectedTab(tab)}
           >
@@ -40,7 +40,7 @@ const CourseTabSection = ({courseData}:any) => {
           </div>
         ))}
       </div>
-      <div className="p-6">{renderTabContent()}</div>
+      <div className="p-4 md:p-6">{renderTabContent()}</div>
     </div>
   );
 };
