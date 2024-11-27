@@ -66,8 +66,8 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
       <div
         className={`relative h-full border-b-2 text-gray-500 border-white
           ${depth > 1 ?
-            'bg-white text-[#000000] hover:text-white hover:bg-[#E4087F] z-[100] hover:border-b-0' :
-            'bg-white hover:text-[#E4087F] hover:border-b-2 hover:border-[#E4087F]'
+            'bg-white text-[#6B7280] hover:text-white hover:bg-[#b2adb0] z-[100] hover:border-b-0' :
+            'bg-white hover:text-[#111827]'
           }`}
       >
         <ul
@@ -76,7 +76,7 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
           onClick={() => { toggleSubMenu(index); }}
           className="h-full w-full flex items-center cursor-pointer"
         >
-          <Link href={menuData.url} className={`w-full ${isActive ? 'border-[#E4087F] text-[#E4087F] hover:text-gray-500' : ''}`}>
+          <Link href={menuData.url} className={`w-full ${isActive ? ' text-[#111827] hover:text-gray-500' : ''}`}>
             <li
               key={index}
               className={`text-[12px] xl:text-[14px] 2xl:text-[16px] font-medium cursor-pointer flex justify-between items-center ${depth === 1 ? 'py-0' : 'p-3 2xl:p-4'}`}
