@@ -11,7 +11,7 @@ const addressData = [
     },
     {
         id: 2,
-        name: 'KnowledgeBridge International Private Limited - address-2',
+        name: 'KnowledgeBridge International Private Limited - Address-2',
         address: '506, Centre Point, 5th Floor, J.B. Nagar, Andheri Kurla Road, Andheri (East), Mumbai - 400059, Maharashtra, India',
         phone: '+91-022-45360005',
         email: 'abcd@gmail.com',
@@ -24,9 +24,9 @@ const AddressMap = () => {
     const [selectedAddress, setSelectedAddress] = useState(addressData[0]);
 
     return (
-        <div className='px-4 xs:px-8 xl:px-16 3xl:px-24 py-8 flex justify-between text-[#111827]'>
+        <div className='px-4 xs:px-8 xl:px-16 3xl:px-24 py-8 flex flex-col md:flex-row justify-between text-[#111827]'>
             {/* Address List */}
-            <div className='w-[30%] flex flex-col gap-8'>
+            <div className='w-full md:w-[36%] lg:w-[30%] flex flex-col gap-8'>
                 {addressData.map((item, index) => (
                     <div
                         key={index}
@@ -46,7 +46,7 @@ const AddressMap = () => {
             </div>
 
             {/* Map */}
-            <div className='w-[65%] bg-white'>
+            <div className='w-full md:w-[60%] lg:w-[65%] bg-white'>
                 <iframe
                     src={selectedAddress.iframe}
                     width="600"
