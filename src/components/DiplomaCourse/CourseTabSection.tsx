@@ -31,8 +31,8 @@ const CourseTabSection = ({courseData}:any) => {
         {tabs.map((tab) => (
           <div
             key={tab}
-            className={`w-[25%] py-3 border-r border-[#EAEAEA] ${
-              selectedTab === tab ? 'bg-[#FFF4F8] text-[#E4087F]' : 'hover:bg-[#FFF4F8] hover:text-[#E4087F]'
+            className={`w-[25%] py-3 border-r border-[#EAEAEA] text-[16px] lg:text-[18px] ${
+              selectedTab === tab ? 'bg-[#FFF4F8] text-[#E4087F]' : 'hover:bg-[#FFF4F8] hover:text-[#E4087F] '
             }`}
             onClick={() => setSelectedTab(tab)}
           >

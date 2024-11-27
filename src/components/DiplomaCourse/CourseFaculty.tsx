@@ -38,10 +38,10 @@ import ImageComponent from '@/common/uicomponents/ImageComponent'
 
 const CourseFaculty = ({data}:any) => {
   return (
-    <div>
+    <div className='flex flex-col gap-12'>
       {data?.map((faculty:any, index:any) => (
-        <div key={index} className='p-6 flex gap-6'>
-          <div className="w-[8%]">
+        <div key={index} className='flex gap-4 xl:gap-6'>
+          <div className="w-[10%] xl:w-[8%]">
             <ImageComponent
               src={faculty?.image}
               alt="faculty image"
@@ -51,10 +51,10 @@ const CourseFaculty = ({data}:any) => {
             />
           </div>
           <div className="w-[90%]">
-            <h3 className="font-montserrat text-[20px] font-semibold leading-[24px]">
+            <h3 className="font-montserrat text-[18px] xl:text-[20px] font-semibold leading-[24px]">
               {faculty?.name} {faculty.role && `(${faculty?.role})`}
             </h3>
-            <p className="text-[#555555] font-montserrat text-[18px] font-normal leading-[27px] my-3">
+            <p className="text-[#555555] font-montserrat text-[16px] xl:text-[18px] font-normal leading-[27px] my-2 xl:my-3">
               {faculty?.description}
             </p>
             <Button

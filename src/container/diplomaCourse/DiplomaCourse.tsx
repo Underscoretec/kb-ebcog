@@ -622,7 +622,7 @@ const DiplomaCourse = ({ courseId }: any) => {
                     </div>
                 </div>
             </div>
-            <div className='px-4 xs:px-8 xs:pr-16 md:pr-0 xl:pl-16 3xl:pl-24 py-12 w-[100%] md:w-[64%] lg:w-[68%] xl:w-[70%]'>
+            <div className='px-4 xs:px-8 xs:pr-8 md:pr-0 xl:pl-16 3xl:pl-24 py-12 w-[100%] md:w-[64%] lg:w-[68%] xl:w-[70%]'>
                 <CourseTabSection courseData={courseData} />
             </div>
         </div>
