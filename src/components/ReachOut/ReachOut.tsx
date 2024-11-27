@@ -3,9 +3,14 @@ import React from 'react';
 import imagegroup from '../../../public/imagegroup.png';
 import InputField from '@/common/uicomponents/InputField';
 import Button from '@/common/uicomponents/Button';
+import BreadCrumbs from '@/common/uicomponents/BreadCrumbs';
+import TextAreaField from '@/common/uicomponents/TextArea';
 
 const ReachOut = () => {
   return (
+    <>
+    <div>
+    <BreadCrumbs routes={[{ name: 'Reach Out', href: '/reach-out', corrent: true }]} />
     <div className="relative w-full h-screen">
       {/* Background Image */}
       <Image
@@ -16,11 +21,11 @@ const ReachOut = () => {
       />
 
       {/* Form Container */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#F5F5F5] rounded-lg shadow-lg w-full max-w-2xl p-8 z-10">
-        <h2 className="text-[18px] text-[#000000] font-montserrat  mb-2">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#F5F5F5] rounded-lg shadow-lg h-[65%] xs:h-auto overflow-y-auto xs:overflow-y-hidden w-full max-w-2xl p-4 xs:p-8 z-10">
+        <h2 className="text-[18px] text-[#000000] font-montserrat mb-2 flex justify-center xs:justify-start">
           Reach out to us for assistance.
         </h2>
-        <h1 className="text-[25px] font-montserrat font-bold mb-6">Need Help, Contact Us</h1>
+        <h1 className="text-[25px] font-montserrat font-bold mb-6 flex justify-center xs:justify-start">Need Help, Contact Us</h1>
 
         {/* Form */}
         <form className="space-y-4">
@@ -34,7 +39,7 @@ const ReachOut = () => {
           />
 
           {/* Email and Mobile Fields */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols xs:grid-cols-2 gap-4">
             <InputField
               label="Email"
               type="email"
@@ -52,11 +57,12 @@ const ReachOut = () => {
           </div>
 
           {/* Query Field */}
-          <InputField
+          <TextAreaField
             label="Write your query"
-            type="textarea"
+            rows={4}
             id="query"
             placeholder="Describe your query here"
+            className='flex flex-col gap-1 w-full'
           />
 
           {/* Submit Button */}
@@ -84,6 +90,8 @@ const ReachOut = () => {
         </div>
       </div>
     </div>
+    </div>
+    </>
   );
 };
 
