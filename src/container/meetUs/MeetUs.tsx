@@ -4,8 +4,7 @@ import React from 'react'
 
 const MeetUs = () => {
 
-    const cardData = [
-        {
+    const cardData = [{
             id: '0',
             image: '/person1.png',
             title: 'EBCOG’s European Congress of Obstetrics and Gynaecology',
