@@ -7,10 +7,10 @@ import React from 'react'
 const RegistrationCard = () => {
 
     const settings = [
-        { name: 'Reproductive Medicine and Endocrinology' },
-        { name: 'Ultrasound and Prenatal Medicine' },
-        { name: 'Hysteroscopy and Laparoscopy' },
         { name: 'Maternal Medicine' },
+        { name: 'Reproductive Endocrinology & Infertility' },
+        { name: 'Gynaecology Endoscopy' },
+        { name: 'Fetal Medicine and Ultrasound' },
       ]
       
     return (

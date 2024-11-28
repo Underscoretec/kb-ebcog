@@ -18,7 +18,8 @@ const navigation = {
   company: [
     { name: 'About', href: '#' },
     { name: 'Diplomas', href: '#' },
-    { name: 'Need Help, Contact Us', href: '#' },
+    { name: 'Need Help, Contact Us', href: '/reach-out' },
+    { name: 'Contact Us', href: '/contact-us' },
   ],
   legal: [
     { name: 'FAQ', href: '#' },
