@@ -7,7 +7,7 @@ const InternationalFaculty = () => {
     {
       id: 0,
       course: "Diploma in Maternal Medicine",
-      facultyName: 'Dr. Komal Chavan',
+      facultyName: 'Dr. Amala Nazareth',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i1.png',
@@ -16,7 +16,7 @@ const InternationalFaculty = () => {
     {
       id: 1,
       course: "Diploma in Gynaecology Endoscopy",
-      facultyName: 'Dr. Komal Chavan',
+      facultyName: 'Dr. Alan Abdallah',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i2.png',
@@ -25,7 +25,7 @@ const InternationalFaculty = () => {
     {
       id: 2,
       course: "Diploma in Fetal Medicine and Ultrasound",
-      facultyName: 'Dr. Komal Chavan',
+      facultyName: 'Dr. Asma Khalil',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage:'/i3.png',
