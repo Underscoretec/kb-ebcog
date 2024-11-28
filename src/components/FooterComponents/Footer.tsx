@@ -4,13 +4,13 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const navigation = {
   solutions: [
-    { name: 'Maternal Medicine', href: '#' },
-    { name: 'Reproductive Endocrinology & Infertility', href: '#' },
-    { name: 'Gynaecology Endoscopy', href: '#' },
-    { name: 'Fetal Medicine and Ultrasound', href: '#' },
+    { name: 'Maternal Medicine', href: '/diploma/maternal-medical' },
+    { name: 'Reproductive Endocrinology & Infertility', href: '/diploma/reproductive-endocrinology' },
+    { name: 'Gynaecology Endoscopy', href: '/diploma/gynaecology-endoscopy' },
+    { name: 'Fetal Medicine and Ultrasound', href: '/diploma/fetal-medicine-and-ultrasound' },
   ],
   support: [
-    { name: 'Academic Calendar', href: '#' },
+    { name: 'Academic Calendar', href: '/academic-calendar' },
     { name: 'Publications', href: '#' },
   ],
   company: [
