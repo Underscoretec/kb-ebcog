@@ -611,7 +611,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
 
     return (
         <div className='min-h-[70rem]'>
-            <BreadCrumbs routes = {[{ name: 'Diploma Courses', href: '/', current: false },{ name: courseData?.courseName, href: '#', current: true }]}/>
+            <BreadCrumbs routes = {[{ name: 'Diploma Courses', href: '/', current: false },{ name: courseData?.courseName, href: courseData?.id, current: true }]}/>
             <div className='bg-[#290849] flex gap-8 xs:gap-0 flex-col-reverse xs:flex-row px-4 xs:px-8 xl:px-16 3xl:px-24 py-8 lg:py-12 justify-between text-white'>
                 <div className='flex flex-col gap-4 w-[100%] xs:w-[47%] md:w-[60%] lg:w-auto'>
                     <h1 className='font-montserrat text-[24px] xs:text-[20px] sm:text-[28px] lg:text-[30px] xl:text-[36px] font-bold leading-[34px] xs:leading-[30px] sm:leading-[38px] lg:leading-[45px] md:w-[90%] xl:w-[84%]'>{courseData?.courseName}</h1>

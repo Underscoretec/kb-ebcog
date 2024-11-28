@@ -27,6 +27,6 @@ export  const menuitems = [
     },
     {
         id:'13', title: "Meet Us in Person",
-        url: "#",
+        url: "/meet-us-in-person",
     },
 ];

@@ -7,7 +7,7 @@ import ContactForm from '@/components/Contact/ContactForm'
 const ContactUs = () => {
     return (
         <div>
-            <BreadCrumbs routes={[{ name: 'Contact us', href: '#', current: true }]} />
+            <BreadCrumbs routes={[{ name: 'Contact us', href: '/contact-us', current: true }]} />
             <AddressMap />
             <ContactForm />
         </div>
