@@ -57,11 +57,11 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
               onClick={() => handleMenuItemClick(item)}
             >
               <div className={`ml-0 py-4
-              ${depth == 0 ? "ml-6 text-[12px] md:text-[14px] lg:text-[16px] text-[#5c5a5b] font-bold" : ""}
-              ${depth == 1 ? "ml-0 pl-6 pr-6 md:pl-[40px] text-[12px] md:text-[14px] text-[#000] font-medium w-full hover:text-[#000]" : ""}
-              ${depth == 2 ? "ml-0 pl-6 pr-6 md:pl-[60px] text-[12px] md:text-[14px] text-[#000] font-medium w-full hover:text-[#000]" : ""}
-              ${depth == 3 ? "ml-0 pl-6 pr-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium w-full hover:text-[#000]" : ""}
-              ${depth == 4 ? "ml-0 pl-6 pr-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium w-full hover:text-[#000]" : ""}`}
+              ${depth == 0 ? "ml-6 text-[12px] md:text-[14px] lg:text-[16px] text-[#5c5a5b] font-bold font-montserrat" : ""}
+              ${depth == 1 ? "ml-0 pl-6 pr-6 md:pl-[40px] text-[12px] md:text-[14px] text-[#000] font-medium font-montserrat w-full hover:text-[#000]" : ""}
+              ${depth == 2 ? "ml-0 pl-6 pr-6 md:pl-[60px] text-[12px] md:text-[14px] text-[#000] font-medium font-montserrat w-full hover:text-[#000]" : ""}
+              ${depth == 3 ? "ml-0 pl-6 pr-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium font-montserrat w-full hover:text-[#000]" : ""}
+              ${depth == 4 ? "ml-0 pl-6 pr-6 md:pl-[80px] text-[12px] md:text-[14px] text-[#000] font-medium font-montserrat w-full hover:text-[#000]" : ""}`}
               >
                 {item.title}
               </div>

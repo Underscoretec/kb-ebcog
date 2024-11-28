@@ -81,7 +81,7 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
           <Link href={menuData.url} className={`w-full ${isActive ? ' text-[#111827] hover:text-gray-500' : ''}`}>
             <li
               key={index}
-              className={`text-[12px] xl:text-[14px] 2xl:text-[16px] font-medium cursor-pointer flex justify-between items-center ${depth === 1 ? 'py-0' : 'p-3 2xl:p-4'}`}
+              className={`text-[12px] xl:text-[14px] 2xl:text-[16px] font-medium font-montserrat cursor-pointer flex justify-between items-center ${depth === 1 ? 'py-0' : 'p-3 2xl:p-4'}`}
             >
               <span>{menuData.title}</span>
               {menuData.submenu && (
