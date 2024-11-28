@@ -65,10 +65,12 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
     <ClickAwayListener onClickAway={handleClickAway}>
       <div
         className={`relative h-full border-b-2 text-gray-500 border-white
+          transition duration-300 ease-in-out
           ${depth > 1 ?
-            'bg-white text-[#6B7280] hover:text-white hover:bg-[#b2adb0] z-[100] hover:border-b-0' :
+            'bg-white text-[#6B7280] hover:text-black hover:bg-[#ebe7ea] z-[100] hover:border-b-0' :
             'bg-white hover:text-[#111827]'
           }`}
+
       >
         <ul
          // onClick={() => { handleMouseEnter(); toggleSubMenu(index); }}
