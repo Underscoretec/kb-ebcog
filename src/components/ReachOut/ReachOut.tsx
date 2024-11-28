@@ -21,7 +21,7 @@ const ReachOut = () => {
       />
 
       {/* Form Container */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#F5F5F5] rounded-lg shadow-lg h-[65%] xs:h-auto overflow-y-auto xs:overflow-y-hidden w-full max-w-2xl p-4 xs:p-8 z-10">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#F5F5F5] rounded-lg shadow-lg h-[76%] xs:h-auto overflow-y-auto xs:overflow-y-hidden w-full max-w-2xl p-4 xs:p-8 z-10">
         <h2 className="text-[18px] text-[#000000] font-montserrat mb-2 flex justify-center xs:justify-start">
           Reach out to us for assistance.
         </h2>
