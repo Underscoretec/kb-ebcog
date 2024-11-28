@@ -17,7 +17,7 @@ export default {
       },
       fontFamily: {
         oswald: ['Oswald', 'sans-serif'],
-        montserrat: ['Montserrate', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif']
       },
       boxShadow: {

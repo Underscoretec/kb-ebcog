@@ -22,15 +22,15 @@ body {
 }
 
 @font-face {
-  font-family: 'Montserrate';
-  src: url('/fonts/Montserrate/Montserrat-Regular') format('truetype');
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins/Poppins-Regular') format('truetype');
+  src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
