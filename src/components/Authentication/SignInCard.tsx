@@ -24,7 +24,7 @@ const SignInCard: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center bg-[#F9FAFB] pt-20 pb-32">
-            <h2 className="font-montserrat text-2xl font-extrabold leading-9 text-[#111827]">
+            <h2 className="text-[#111827] font-montserrat text-[30px] font-extrabold leading-[36px]">
                 Sign in to your account
             </h2>
             <div className="text-[#4F46E5] font-montserrat text-sm font-semibold leading-5 pt-2 pb-12">Welcome back</div>
