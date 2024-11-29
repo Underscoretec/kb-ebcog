@@ -1,9 +1,10 @@
 import ImageComponent from '@/common/uicomponents/ImageComponent'
 import React from 'react'
-import { Tooltip } from '@mui/material'; 
+import { Tooltip } from '@mui/material';
 import { FiMapPin } from "react-icons/fi";
 import { GoArrowRight } from "react-icons/go";
 import { LuClock4 } from "react-icons/lu";
+import Link from 'next/link';
 
 const MeetUsCard = ({ data }: any) => {
     return (
@@ -19,9 +20,9 @@ const MeetUsCard = ({ data }: any) => {
             </div>
             <div className='w-[98%] xs:w-[66%] sx:w-[72%] lg:w-[70%] flex flex-col justify-center'>
                 <Tooltip title={data?.title || ''} arrow>
-                    <div 
-                        className='font-montserrat text-[18px] lg:text-[22px] 2xl:text-[25px] font-bold leading-[22px] 2xl:leading-[30.48px] truncate' 
-                        style={{ cursor: 'pointer' }} 
+                    <div
+                        className='font-montserrat text-[18px] lg:text-[22px] 2xl:text-[25px] font-bold leading-[22px] 2xl:leading-[30.48px] truncate'
+                        style={{ cursor: 'pointer' }}
                     >
                         {data?.title}
                     </div>
@@ -36,9 +37,11 @@ const MeetUsCard = ({ data }: any) => {
                         <div className='font-montserrat text-[16px] lg:text-[18px] 2xl:text-[20px] font-medium leading-[24.38px]'>{data?.time}</div>
                     </div>
                 </div>
-                <div className='flex gap-2 items-center text-[#E4087F] hover:text-[#ac0660] cursor-pointer font-montserrat text-[15px] lg:text-[18px] 2xl:text-[20px] font-medium leading-[24.38px]'>Visit Website
-                    <GoArrowRight />
-                </div>
+                <Link href={data?.link || '#'} target='_blank'>
+                    <div className='flex gap-2 items-center text-[#E4087F] hover:text-[#ac0660] cursor-pointer font-montserrat text-[15px] lg:text-[18px] 2xl:text-[20px] font-medium leading-[24.38px]'>Visit Website
+                        <GoArrowRight />
+                    </div>
+                </Link>
             </div>
         </div>
     )

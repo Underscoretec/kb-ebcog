@@ -7,38 +7,19 @@ const MeetUs = () => {
     const cardData = [
         {
             id: '0',
-            image: '/person1.png',
-            title: 'EBCOG’s European Congress of Obstetrics and Gynaecology',
-            location: 'Frankfurt',
-            time: '5th to the 7th of June, 2025'
+            image: '/allperson.png',
+            title: '67th All India Congress of Obstetrics and Gynaecology 2025​',
+            location: 'Mumbai',
+            time: '8 - 12 January, 2025',
+            link:'https://aicogmumbai2025.com/'
         },
         {
             id: '1',
-            image: '/person2.png',
+            image: '/allperson.png',
             title: 'EBCOG’s European Congress of Obstetrics and Gynaecology',
             location: 'Frankfurt',
-            time: '5th to the 7th of June, 2025'
-        },
-        {
-            id: '2',
-            image: '/person3.png',
-            title: 'EBCOG’s European Congress of Obstetrics and Gynaecology',
-            location: 'Frankfurt',
-            time: '5th to the 7th of June, 2025'
-        },
-        {
-            id: '3',
-            image: '/person4.png',
-            title: 'EBCOG’s European Congress of Obstetrics and Gynaecology',
-            location: 'Frankfurt',
-            time: '5th to the 7th of June, 2025'
-        },
-        {
-            id: '4',
-            image: '/person5.png',
-            title: 'EBCOG’s European Congress of Obstetrics and Gynaecology',
-            location: 'Frankfurt',
-            time: '5th to the 7th of June, 2025'
+            time: '5 - 7 June, 2025',
+            link:'https://www.ebcog-congress.eu/'
         },
     ]
     return (
