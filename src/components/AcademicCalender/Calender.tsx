@@ -44,38 +44,40 @@ const Calendar = () => {
                             </div>
                             {/* Table */}
                             <div className="overflow-x-auto">
-                                {item.activities.length === 0 ? <div className='h-[12rem] bg-[#F9FAFB] flex items-center justify-center font-montserrat text-[27px] xs:text-[40px] font-medium leading-[48.76px] text-[#111827]'>Coming soon...</div> :
-                                <table className="min-w-full divide-y divide-gray-300">
-                                    <thead className="bg-[#F9FAFB]">
-                                        <tr>
-                                            <th
-                                                scope="col"
-                                                className="py-3 pl-4 pr-3 text-left text-[12px] font-semibold font-montserrat text-[#6B7280] sm:pl-6"
-                                            >
-                                                S.N
-                                            </th>
-                                            <th
-                                                scope="col"
-                                                className="px-3 py-3 text-left text-[12px] font-semibold font-montserrat text-[#6B7280]"
-                                            >
-                                                ACTIVITIES
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="bg-white divide-y divide-gray-200">
-                                        {item.activities.map((activity, activityIndex) => (
-                                            <tr key={activityIndex} className="even:bg-[#F9FAFB]">
-                                                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-[15px] leading-[20px] font-montserrat font-medium text-[#111827] sm:pl-6">
-                                                    {activityIndex + 1}
-                                                </td>
-                                                <td className="whitespace-nowrap px-3 py-4 text-[15px] leading-[20px] font-montserrat font-medium text-[#111827]">
-                                                    {activity}
-                                                </td>
+                                {item.activities.length === 0 ?
+                                    <div className='h-[12rem] bg-[#F9FAFB] flex items-center justify-center font-montserrat text-[27px] xs:text-[40px] font-medium leading-[48.76px] text-[#111827]'>Coming soon...</div>
+                                    :
+                                    <table className="min-w-full divide-y divide-gray-300">
+                                        <thead className="bg-[#F9FAFB]">
+                                            <tr>
+                                                <th
+                                                    scope="col"
+                                                    className="py-3 pl-4 pr-3 text-left text-[12px] font-semibold font-montserrat text-[#6B7280] sm:pl-6"
+                                                >
+                                                    S.N
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    className="px-3 py-3 text-left text-[12px] font-semibold font-montserrat text-[#6B7280]"
+                                                >
+                                                    ACTIVITIES
+                                                </th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-}
+                                        </thead>
+                                        <tbody className="bg-white divide-y divide-gray-200">
+                                            {item.activities.map((activity, activityIndex) => (
+                                                <tr key={activityIndex} className="even:bg-[#F9FAFB]">
+                                                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-[15px] leading-[20px] font-montserrat font-medium text-[#111827] sm:pl-6">
+                                                        {activityIndex + 1}
+                                                    </td>
+                                                    <td className="whitespace-nowrap px-3 py-4 text-[15px] leading-[20px] font-montserrat font-medium text-[#111827]">
+                                                        {activity}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                }
                             </div>
                         </div>
                     ))}
