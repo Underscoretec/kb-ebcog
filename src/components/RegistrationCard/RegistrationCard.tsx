@@ -38,8 +38,8 @@ const RegistrationCard = () => {
             city: Yup.string().required('City/District/Town is required'),
             country: Yup.string().required('Country is required'),
             diplomaCourse: Yup.string().required('Please select a diploma course'),
-            degreeCertificate: Yup.mixed().required('Degree certificate is required'),
-            basicDegreeDocument: Yup.mixed().required('Basic degree document is required'),
+            // degreeCertificate: Yup.mixed().required('Degree certificate is required'),
+            // basicDegreeDocument: Yup.mixed().required('Basic degree document is required'),
         }),
         onSubmit: (values) => {
             console.log('Form Data:', values);
@@ -71,6 +71,7 @@ const RegistrationCard = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={formik.touched.name && formik.errors.name}
+                        requiredDesign
                     />
                     <InputField
                         label="Email Id"
@@ -80,6 +81,7 @@ const RegistrationCard = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={formik.touched.email && formik.errors.email}
+                        requiredDesign
                     />
                     <InputField
                         label="Whatsapp Number"
@@ -88,6 +90,7 @@ const RegistrationCard = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={formik.touched.number && formik.errors.number}
+                        requiredDesign
                     />
                     <InputField
                         label="City"
@@ -96,6 +99,7 @@ const RegistrationCard = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={formik.touched.city && formik.errors.city}
+                        requiredDesign
                     />
                     <InputField
                         label="State"
@@ -104,6 +108,7 @@ const RegistrationCard = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={formik.touched.state && formik.errors.state}
+                        requiredDesign
                     />
                     <InputField
                         label="Country"
@@ -112,20 +117,24 @@ const RegistrationCard = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={formik.touched.country && formik.errors.country}
+                        requiredDesign
                     />
                     <RadioListTable
                         label="Please choose Diploma course for which you want to Register"
                         settings={settings}
                         selectedCourse={formik.values.diplomaCourse}
                         onChange={(value: any) => formik.setFieldValue('diplomaCourse', value)}
+                        required
                     />
                     <ImageUploader
                         label="Upload Your Latest Degree Certificate"
+                        id="degreeCertificate"
                         onUpload={handleDegreeCertificateUpload}
                         value={formik.values.degreeCertificate}
                     />
                     <ImageUploader
                         label="Upload Your Basic Degree Document"
+                        id="basicDegreeDocument"
                         onUpload={handleBasicDegreeDocumentUpload}
                         value={formik.values.basicDegreeDocument}
                     />

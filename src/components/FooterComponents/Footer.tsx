@@ -12,18 +12,18 @@ const navigation = {
     { name: 'Fetal Medicine and Ultrasound', href: '/diploma/fetal-medicine-and-ultrasound' },
   ],
   support: [
-    { name: 'Academic Calendar', href: '/academic-calendar' },
-    { name: 'Publications', href: '#' },
+    { name: 'Academic Calendar', href: '/academic-calender' },
+    { name: 'Publications', href: '/publications' },
   ],
   company: [
-    { name: 'About', href: '#' },
-    { name: 'Diplomas', href: '#' },
+    { name: 'About', href: '/#ebcog' },
+    { name: 'Diplomas', href: '/#diplomas' },
     { name: 'Need Help, Contact Us', href: '/reach-out' },
     { name: 'Contact Us', href: '/contact-us' },
   ],
   legal: [
-    { name: 'FAQ', href: '#' },
-    { name: 'Privacy', href: '#' },
+    { name: 'FAQ', href: '/#faq' },
+    { name: 'Privacy', href: '/privacy-policy' },
   ],
   social: [
     {

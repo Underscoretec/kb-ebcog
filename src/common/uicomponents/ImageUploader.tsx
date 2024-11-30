@@ -5,30 +5,44 @@ import { ImFilePdf } from "react-icons/im";
 
 interface ImageUploaderProps {
     label: string;
+    id: string;
     onUpload: (file: File | null) => void;
-    value?: File | null; 
+    value?: File | null;
     accept?: string;
 }
 
-const ImageUploader: React.FC<ImageUploaderProps> = ({ label, onUpload, value, accept = 'image/*,application/pdf' }) => {
+const ImageUploader: React.FC<ImageUploaderProps> = ({
+    label,
+    id,
+    onUpload,
+    value,
+    accept = 'image/jpeg,image/png,application/pdf',
+}) => {
     const [file, setFile] = useState<File | null>(value || null);
+    const [error, setError] = useState<string | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFile = event.target.files?.[0];
         if (selectedFile) {
+            if (!accept.split(',').includes(selectedFile.type)) {
+                setError('Invalid file type. Please upload a JPG, JPEG, PNG, or PDF file.');
+                return;
+            }
             setFile(selectedFile);
-            onUpload(selectedFile); 
+            onUpload(selectedFile);
+            setError(null); 
         }
     };
 
     const handleRemoveFile = () => {
         setFile(null);
-        onUpload(null); 
+        onUpload(null);
+        setError(null);
     };
 
     return (
         <div className="col-span-full">
-            <label htmlFor="file-upload" className="block text-sm font-medium text-gray-900">
+            <label htmlFor={id} className="block text-sm font-medium text-gray-900">
                 {label}
             </label>
             {!file ? (
@@ -37,13 +51,13 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ label, onUpload, value, a
                         <PhotoIcon aria-hidden="true" className="mx-auto h-12 w-12 text-gray-300" />
                         <div className="mt-4 flex text-sm text-gray-600">
                             <label
-                                htmlFor="file-upload"
+                                htmlFor={id}
                                 className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 hover:text-indigo-500"
                             >
                                 <span>Upload a file</span>
                                 <input
-                                    id="file-upload"
-                                    name="file-upload"
+                                    id={id}
+                                    name={id}
                                     type="file"
                                     accept={accept}
                                     className="sr-only"
@@ -61,11 +75,11 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ label, onUpload, value, a
                         <img
                             src={URL.createObjectURL(file)}
                             alt="Uploaded preview"
-                            className="w-auto h-[100px] object-cover"
+                            className="w-auto h-[100px] object-contain"
                         />
                     ) : (
                         <div className="w-[100px] h-[100px] flex items-center justify-center text-gray-600">
-                            <ImFilePdf className=' w-[60px] h-[60px] text-[#c91e14]'/>
+                            <ImFilePdf className="w-[60px] h-[60px] text-[#c91e14]" />
                         </div>
                     )}
                     <div className="text-center pt-2 text-sm">{file.name}</div>
@@ -75,6 +89,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ label, onUpload, value, a
                     />
                 </div>
             )}
+            {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
         </div>
     );
 };

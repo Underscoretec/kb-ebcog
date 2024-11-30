@@ -9,13 +9,14 @@ interface RadioListTableProps {
     label: string;
     selectedCourse: any;
     onChange: (value: any) => void;
+    required: boolean;
 }
 
-export default function RadioListTable({ settings, label, selectedCourse, onChange }: RadioListTableProps) {
+export default function RadioListTable({ settings, label, selectedCourse, onChange,required }: RadioListTableProps) {
     
     return (
         <fieldset aria-label="Privacy setting">
-            <div className="text-[#374151] font-montserrat text-[14px] font-semibold leading-5 pb-2">{label}</div>
+            <div className="text-[#374151] font-montserrat text-[14px] font-semibold leading-5 pb-2">{label}{required && <span className="text-[#EB5757]"> *</span>}</div>
             <RadioGroup value={selectedCourse} onChange={onChange} className="-space-y-px rounded-md bg-white">
                 {settings.map((setting, settingIdx) => (
                     <Radio
