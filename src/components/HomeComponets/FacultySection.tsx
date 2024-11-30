@@ -81,6 +81,12 @@ const FacultySection = () => {
                     "facultyName": "Dr. Rajalaxmi Walavalkar",
                     "about": "Medical Director and IVF Consultant at Cocoon Fertility Pvt Ltd, Member of the MRCOG and the Certificate of Completion of Training (CCT).",
                     "image": "/faculty11.png"
+                },
+                {
+                    "id": "REI6",
+                    "facultyName": "Dr. Anagha Karkhanis",
+                    "about": "Director and Consultant Gynecologist at Cocoon Fertility Pvt Ltd,Certifications from the DRCOG and MRCPI Memberships of FOGSI, MOGS, and ESH RE",
+                    "image": "/faculty11B.png"
                 }
             ]
         },
@@ -168,7 +174,7 @@ const FacultySection = () => {
 
 
     return (
-        <div className='bg-[#290849] text-white px-4 xs:px-8 py-10 md:py-16 xl:p-16 3xl:p-24'>
+        <div className='bg-[#290849] text-white px-4 xs:px-8 py-10 md:py-16 xl:p-16 3xl:p-24' id='diplomas'>
             <h1 className='font-oswald text-[35px] xs:text-[40px] md:text-[48px] xl:text-[55px] font-normal leading-[40px] xs:leading-[54px] text-center mb-10 xl:mb-14'>Diploma leads and Faculty</h1>
             <div className='flex justify-between gap-12 sm:gap-3 2xl:gap-4 flex-wrap'>
                 {CoursesFaculty.map((item, index) => {
