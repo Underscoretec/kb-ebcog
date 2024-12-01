@@ -1,48 +1,42 @@
-// components/SignUpCard.tsx
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import InputField from "@/common/uicomponents/InputField";
 import Button from "@/common/uicomponents/Button";
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const SignUpCard: React.FC = () => {
-    const [fullName, setFullName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [phoneError, setPhoneError] = useState("");
-    const [isSubmitting, setIsSubmitting] = useState(false);
-
     const router = useRouter();
 
-    const phoneRegex = /^\+?\d{10,15}$/; // Allows optional "+" and 10-15 digits
-
-    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const input = e.target.value;
-        setPhone(input);
-
-        if (input && !phoneRegex.test(input)) {
-            setPhoneError("Please enter a valid phone number (e.g., +919876543215)");
-        } else {
-            setPhoneError("");
-        }
-    };
-
-    const handleSignUp = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        // Ensure the phone number is valid before proceeding
-        if (!phone || phoneError) {
-            alert("Please enter a valid phone number.");
-            return;
-        }
-
-        setIsSubmitting(true);
-
-        // Simulate an API call
-        setTimeout(() => {
-            console.log("Sign up with", { fullName, email, phone });
-            setIsSubmitting(false);
-        }, 2000); // Replace this with actual sign-up logic
-    };
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            number: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+            state: '',
+            city: '',
+            country: '',
+        },
+        validationSchema: Yup.object({
+            name: Yup.string().required('Name is required'),
+            number: Yup.string()
+                .matches(/^[0-9]{10}$/, 'Mobile number must be 10 digits')
+                .required('Mobile number is required'),
+            password: Yup.string().required('Password is required'),
+            confirmPassword: Yup.string().required('Confirm Password is required'),
+            email: Yup.string()
+                .email('Invalid email address')
+                .required('Email is required'),
+            state: Yup.string().required('State is required'),
+            city: Yup.string().required('City/District/Town is required'),
+            country: Yup.string().required('Country is required'),
+        }),
+        onSubmit: (values) => {
+            console.log('Form Data:', values);
+        },
+    });
 
     return (
         <div className="flex flex-col items-center justify-center bg-[#F9FAFB] pt-12 pb-32">
@@ -51,60 +45,80 @@ const SignUpCard: React.FC = () => {
             </h2>
             <div className="text-[#4F46E5] font-montserrat text-sm font-semibold leading-5 pt-1 pb-8">Welcome</div>
             <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
-                <h2 className="text-2xl font-bold text-center text-gray-800">
-
-                </h2>
-                <form className="space-y-4" onSubmit={handleSignUp}>
+                <form className="space-y-4" onSubmit={formik.handleSubmit}>
                     <InputField
                         label="Full Name"
                         type="text"
-                        id="fullName"
-                        value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
-                        required
+                        id="name"
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.name && formik.errors.name}
                     />
                     <InputField
                         label="Email Address"
                         type="email"
                         id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.email && formik.errors.email}
                     />
-                    <div>
-                        <InputField
-                            label="Phone Number"
-                            type="tel"
-                            id="phone"
-                            value={phone}
-                            onChange={handlePhoneChange}
-                            placeholder="e.g., +919876543215"
-                            required
-                        />
-                        {phoneError && (
-                            <p className="mt-1 text-sm text-red-500">{phoneError}</p>
-                        )}
-                    </div>
+                    <InputField
+                        label="Phone Number"
+                        type="tel"
+                        id="number"
+                        value={formik.values.number}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.number && formik.errors.number}
+                    />
+                    <InputField
+                        label="Password"
+                        type="password"
+                        id="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.password && formik.errors.password}
+                    />
+                    <InputField
+                        label="Confirm Password"
+                        type="password"
+                        id="confirmPassword"
+                        value={formik.values.confirmPassword}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.confirmPassword && formik.errors.confirmPassword}
+                    />
                     <InputField
                         label="City"
                         id="city"
-                        required
+                        value={formik.values.city}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.city && formik.errors.city}
                     />
                     <InputField
                         label="State"
                         id="state"
-                        required
+                        value={formik.values.state}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.state && formik.errors.state}
                     />
                     <InputField
                         label="Country"
                         id="country"
-                        required
+                        value={formik.values.country}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.country && formik.errors.country}
                     />
                     <Button
                         type="submit"
                         label="Sign Up"
-                        isLoading={isSubmitting}
-                        className="w-full py-2 bg-[#E4087F] font-semibold text-white ${bgColor} rounded-md hover:bg-[#ac0660] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full py-2 bg-[#E4087F] font-semibold text-white rounded-md hover:bg-[#ac0660]"
                     />
                 </form>
                 <p className="text-sm text-center text-gray-600">

@@ -1,10 +1,7 @@
 import React from 'react'
 import ImageComponent from '../../common/uicomponents/ImageComponent'
-import bg from "../../../public/cardbg.png"
 import { MdAccessTimeFilled } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
-import { FiAward } from "react-icons/fi";
-import Image from 'next/image';
 import Button from '../../common/uicomponents/Button';
 
 
@@ -14,13 +11,13 @@ const InternationalFacultyCard = (props: any) => {
         <>
             <div className='relative'>
                 <ImageComponent
-                    src={bg}
-                    alt="bg"
+                    src={props?.data?.facultyImage}
+                    alt="facultyImag"
                     className="h-auto w-full rounded-tl-[20px] rounded-tr-[20px]"
                     width={1000}
                     height={1000}
                 />
-                <div className='absolute h-full w-full top-0 flex justify-between'>
+                {/* <div className='absolute h-full w-full top-0 flex justify-between'>
                     <div className='font-oswald text-[30px] xs:text-[22px] sm:text-[28px] md:text-[22px] lg:text-[20px] xl:text-[24px] font-normal leading-[36px] xs:leading-[26px] sm:leading-[36px] md:leading-[26px] xl:leading-[36px] w-[60%] text-white p-3 xl:p-4 2xl:p-6'>{props?.data?.course}</div>
                     <div className='font-oswald text-2xl font-normal leading-9 mt-3 xl:mt-6'>
                         <div className='flex gap-1 md:gap-2 2xl:gap-3 items-center font-jost text-[14px] font-medium text-[#312E81] bg-[#FCEFF5] rounded-tl-[8px] rounded-bl-[8px] px-3 xs:px-2 lg:px-4 2xl:px-8'>
@@ -36,7 +33,7 @@ const InternationalFacultyCard = (props: any) => {
                         width={1000}
                         height={1000}
                     />
-                </div>
+                </div> */}
             </div>
             <div className='p-2 sm:p-3 xl:p-4 border border-[#EAEAEA] bg-white border-t-0 rounded-bl-[20px] rounded-br-[20px]'>
                 <div className='font-poppins text-[15px] xs:text-[12px] sm:text-[15px] md:text-[13px] xl:text-base font-normal leading-6 text-[#555555]'>by <span className='text-[#000]'>{props?.data?.facultyName}</span></div>

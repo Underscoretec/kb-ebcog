@@ -24,7 +24,7 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
     error
 }) => (
     <div className={className}>
-        {label && <label htmlFor={id} className="font-inter text-sm font-semibold leading-[17px] text-[#454C5C]">
+        {label && <label htmlFor={id} className="font-inter text-sm font-normal leading-[17px] text-[#242830]">
             {label}
         </label>}
         <textarea

@@ -4,7 +4,7 @@ export  const menuitems = [
         id:'2', title: "About Us",
         url: "#",
         submenu: [
-            { id:'3', title: 'EBCOG', url: '#ebcog' },
+            { id:'3', title: 'EBCOG', url: '/#ebcog' },
             { id:'4', title: 'KnowledgeBridge', url: '#' },
         ],
     },
@@ -19,10 +19,14 @@ export  const menuitems = [
         ],
     },
     {
-        id:'10', title: "Academic Resources",
+        id:'10', 
+        title: "Academic Resources",
         url: "#",
         submenu: [
-            { id:'11', title: 'Academic Calendar', url: '/academic-calendar' },
+            { id:'11', title: 'Maternal Medicine', url: '/maternal-medicine.pdf' },
+            { id:'12', title: 'Reproductive Endocrinology & Infertility', url: '/Reproductive-endocrinology-infertility.pdf' },
+            { id:'13', title: 'Gynaecology Endoscopy', url: '/gynaecology-endoscopy.pdf' },
+            { id:'14', title: 'Fetal Medicine and Ultrasound', url: '/fetal-medicine-and-ultrasound.pdf' },
         ],
     },
     {

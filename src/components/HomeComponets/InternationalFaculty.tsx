@@ -6,20 +6,29 @@ const InternationalFaculty = () => {
   const FacultyData = [
     {
       id: 0,
-      course: "Diploma in Maternal Medicine",
-      facultyName: 'Dr. Amala Nazareth',
-      courseDuration: '1 week',
-      totalLearners: '15,674',
-      facultyImage:'/i1.png',
-      AboutLink: '#'
-    },
-    {
-      id: 1,
       course: "Diploma in Gynaecology Endoscopy",
       facultyName: 'Dr. Alan Abdallah',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i2.png',
+      facultyImage:'/if1.png',
+      AboutLink: '#'
+    },
+    {
+      id: 1,
+      course: "Diploma in Maternal Medicine",
+      facultyName: 'Dr. Amala Nazareth',
+      courseDuration: '1 week',
+      totalLearners: '15,674',
+      facultyImage:'/if2.png',
+      AboutLink: '#'
+    },
+    {
+      id: 11,
+      course: "Diploma in Reproductive Endocrinology & Infertility",
+      facultyName: 'Dr. Anagha Karkhanis',
+      courseDuration: '1 week',
+      totalLearners: '15,674',
+      facultyImage:'/if3.png',
       AboutLink: '#'
     },
     {
@@ -28,7 +37,7 @@ const InternationalFaculty = () => {
       facultyName: 'Dr. Asma Khalil',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i3.png',
+      facultyImage:'/if4.png',
       AboutLink: '#'
     },
     {
@@ -37,7 +46,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Basil C. Tarlatzis (Lead)',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i4.png',
+      facultyImage:'/if5.png',
       AboutLink: '#'
     },
     {
@@ -46,7 +55,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Chittaranjan N. Purandare',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i5.png',
+      facultyImage:'/if6.png',
       AboutLink: '#'
     },
     {
@@ -55,7 +64,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Diogo Ayres de Campos',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i6.png',
+      facultyImage:'/if7.png',
       AboutLink: '#'
     },
     {
@@ -64,7 +73,7 @@ const InternationalFaculty = () => {
       facultyName: 'Dr. Edgar Mocanu',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i7.png',
+      facultyImage:'/if8.png',
       AboutLink: '#'
     },
     {
@@ -73,7 +82,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Frank Louwen (Lead)',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i8.png',
+      facultyImage:'/if9.png',
       AboutLink: '#'
     },
     {
@@ -82,7 +91,7 @@ const InternationalFaculty = () => {
       facultyName: 'Dr. Helder Ferreira',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i9.png',
+      facultyImage:'/if10.png',
       AboutLink: '#'
     },
     {
@@ -91,7 +100,7 @@ const InternationalFaculty = () => {
       facultyName: 'Dr. Istvan Argay',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i10.png',
+      facultyImage:'/if11.png',
       AboutLink: '#'
     },
     {
@@ -100,7 +109,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Justin Konje',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i11.png',
+      facultyImage:'/if12.png',
       AboutLink: '#'
     },
     {
@@ -109,7 +118,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Karl Oliver Kagan',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i12.png',
+      facultyImage:'/if13.png',
       AboutLink: '#'
     },
     {
@@ -118,7 +127,7 @@ const InternationalFaculty = () => {
       facultyName: 'Dr. Komal Chavan',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i13.png',
+      facultyImage:'/if14.png',
       AboutLink: '#'
     },
     {
@@ -127,7 +136,7 @@ const InternationalFaculty = () => {
       facultyName: 'Dr. Karunakara Marikinti',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i14.png',
+      facultyImage:'/if15.png',
       AboutLink: '#'
     },
     {
@@ -136,7 +145,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Munna Talak',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i15.png',
+      facultyImage:'/if16.png',
       AboutLink: '#'
     },
     {
@@ -145,7 +154,7 @@ const InternationalFaculty = () => {
       facultyName: 'Dr. Rajalaxmi Walavalkar',
       courseDuration: '1 week',
       totalLearners: '154',
-      facultyImage:'/i16.png',
+      facultyImage:'/if17.png',
       AboutLink: '#'
     },
     {
@@ -154,7 +163,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Stephen Rulisa',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i17.png',
+      facultyImage:'/if18.png',
       AboutLink: '#'
     },
     {
@@ -163,7 +172,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Stratics kolibianakis',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i18.png',
+      facultyImage:'/if19.png',
       AboutLink: '#'
     },
     {
@@ -172,7 +181,7 @@ const InternationalFaculty = () => {
       facultyName: 'Dr. Sandesh Khade',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i19.png',
+      facultyImage:'/if20.png',
       AboutLink: '#'
     },
     {
@@ -181,7 +190,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Sebastian Kwiatkowski',
       courseDuration: '1 week',
       totalLearners: '15,674',
-      facultyImage:'/i20.png',
+      facultyImage:'/if21.png',
       AboutLink: '#'
     },
     {
@@ -190,7 +199,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Samina Dornan',
       courseDuration: '1 week',
       totalLearners: '156',
-      facultyImage:'/i21.png',
+      facultyImage:'/if22.png',
       AboutLink: '#'
     },
     {
@@ -199,7 +208,7 @@ const InternationalFaculty = () => {
       facultyName: 'Prof. Ulrich Honemeyer',
       courseDuration: '1 week',
       totalLearners: '156',
-      facultyImage:'/i22.png',
+      facultyImage:'/if23.png',
       AboutLink: '#'
     },
   ]
