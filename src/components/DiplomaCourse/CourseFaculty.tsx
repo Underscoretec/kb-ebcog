@@ -1,8 +1,15 @@
 import React from 'react'
 import Button from '@/common/uicomponents/Button'
 import ImageComponent from '@/common/uicomponents/ImageComponent'
+import router from 'next/router';
 
 const CourseFaculty = ({ data }: any) => {
+
+    const handleClick = (id: string) => {
+        router.push(`/${id}`);
+      };
+
+    
     return (
         <div className='flex flex-col gap-12'>
             {data?.map((faculty: any, index: any) => (
@@ -26,6 +33,7 @@ const CourseFaculty = ({ data }: any) => {
                         <Button
                             label='Know More'
                             className="py-2 px-4 bg-[#E4087F] font-poppins text-sm font-medium leading-4 text-white rounded-[6px] transition-all duration-400 ease-in-out hover:bg-[#ac0660]"
+                            onClick={() => handleClick(faculty?.id)}
                         />
                     </div>
                 </div>

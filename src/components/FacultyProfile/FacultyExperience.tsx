@@ -51,7 +51,7 @@ const FacultyExperience = ({data}:any) => {
     return (
         <div className="px-4 md:px-8">
             <div className="flex flex-col gap-8 border-b border-[#E5E7EB] py-8">
-                {data.facultyExperience.map((section:any, index:any) => (
+                {data?.facultyExperience?.map((section:any, index:any) => (
                     <div key={index}>
                         <div className="font-montserrat text-[16px] font-semibold leading-[20px] pb-1">
                             {section.title}
@@ -68,7 +68,7 @@ const FacultyExperience = ({data}:any) => {
                 Achievements and Recognition
             </div>
             <div className="flex flex-col gap-8 pb-8">
-                {data.achievements.map((section:any, index:any) => (
+                {data?.achievements?.map((section:any, index:any) => (
                     <div key={index}>
                         <div className="font-montserrat text-[16px] font-semibold leading-[20px] pb-1">
                             {section.title}
