@@ -5,30 +5,32 @@ import Button from '@/common/uicomponents/Button';
 import ImageUploader from '@/common/uicomponents/ImageUploader';
 import InputField from '@/common/uicomponents/InputField';
 import RadioListTable from '@/common/uicomponents/RadioListTable';
+import { useUserHook } from '@/container/UserModel/useUserHooks';
 
 const RegistrationCard = () => {
+    const { createCourseRegistrationApi } = useUserHook();
     const settings = [
-        { name: 'Maternal Medicine' },
-        { name: 'Reproductive Endocrinology & Infertility' },
-        { name: 'Gynaecology Endoscopy' },
-        { name: 'Fetal Medicine and Ultrasound' },
+        { name: 'Maternal Medicine', value:'maternalMedicine'},
+        { name: 'Reproductive Endocrinology & Infertility', value:'reproductiveEndocrinology_Infertility' },
+        { name: 'Gynaecology Endoscopy', value:'gynaecologyEndoscopy' },
+        { name: 'Fetal Medicine and Ultrasound', value:'fetalMedicine_Ultrasound' },
     ];
 
     const formik = useFormik({
         initialValues: {
-            name: '',
-            number: '',
+            fullName: '',
+            whatsAppNumber: '',
             email: '',
             state: '',
             city: '',
             country: '',
-            diplomaCourse: settings[0].name,
+            diplomaCourse: settings[0].value,
             degreeCertificate: null,
             basicDegreeDocument: null,
         },
         validationSchema: Yup.object({
-            name: Yup.string().required('Name is required'),
-            number: Yup.string()
+            fullName: Yup.string().required('Please enter your full name.'),
+            whatsAppNumber: Yup.string()
                 .matches(/^[0-9]{10}$/, 'Mobile number must be 10 digits')
                 .required('Mobile number is required'),
             email: Yup.string()
@@ -41,8 +43,19 @@ const RegistrationCard = () => {
             // degreeCertificate: Yup.mixed().required('Degree certificate is required'),
             // basicDegreeDocument: Yup.mixed().required('Basic degree document is required'),
         }),
-        onSubmit: (values) => {
-            console.log('Form Data:', values);
+        onSubmit: async (values, action) => {
+            console.log('Form Data: ##', values);
+            if (values) {
+                const result:any = await createCourseRegistrationApi(values,action);
+                console.log(result?.response, 'result ##');
+                if (result?.response?.data?.code === 'REGISTRATION_RECORD_FOUND') {
+                    alert("Email already exist!")
+                }
+
+            } else {
+                console.log('error');
+            }
+
         },
     });
 
@@ -66,11 +79,11 @@ const RegistrationCard = () => {
                 <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-custom">
                     <InputField
                         label="Name"
-                        id="name"
-                        value={formik.values.name}
+                        id="fullName"
+                        value={formik.values.fullName}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        error={formik.touched.name && formik.errors.name}
+                        error={formik.touched.fullName && formik.errors.fullName}
                         requiredDesign
                     />
                     <InputField
@@ -85,11 +98,11 @@ const RegistrationCard = () => {
                     />
                     <InputField
                         label="Whatsapp Number"
-                        id="number"
-                        value={formik.values.number}
+                        id="whatsAppNumber"
+                        value={formik.values.whatsAppNumber}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        error={formik.touched.number && formik.errors.number}
+                        error={formik.touched.whatsAppNumber && formik.errors.whatsAppNumber}
                         requiredDesign
                     />
                     <InputField

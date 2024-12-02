@@ -5,7 +5,7 @@ function classNames(...classes: string[]) {
 }
 
 interface RadioListTableProps {
-    settings: { name: string }[];
+    settings: { name: string, value: string}[];
     label: string;
     selectedCourse: any;
     onChange: (value: any) => void;
@@ -21,7 +21,7 @@ export default function RadioListTable({ settings, label, selectedCourse, onChan
                 {settings.map((setting, settingIdx) => (
                     <Radio
                         key={setting.name}
-                        value={setting.name} 
+                        value={setting.value} 
                         aria-label={setting.name}
                         className={classNames(
                             settingIdx === 0 ? 'rounded-tl-md rounded-tr-md' : '',
