@@ -24,11 +24,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "learners": "15,674",
             "lessons": '20',
             "cardData": {
-                "course": 'Maternal Medicine By Prof. Frank Louwen',
-                "facultyName": 'Prof. Frank Louwen (Lead)',
-                "courseDuration": '1 Week',
-                "totalLearners": "15,674",
-                "facultyImage": '/i8.png'
+                "facultyImage": '/if9.png'
             },
             "overview": {
                 "text": "The EBCOG Maternal Medicine Diploma provides a rigorous and comprehensive training in maternal medicine, addressing the full spectrum of normal and complicated pregnancies. This program is structured to empower healthcare professionals with advanced skills and knowledge to manage and improve outcomes in both labor and delivery and maternal medical disorders.",
@@ -182,11 +178,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "learners": "15,674",
             "lessons": '20',
             "cardData": {
-                "course": 'Reproductive Endocrinology & Infertility By Prof. Basil C. Tarlatzis',
-                "facultyName": 'by Prof. Basil C. Tarlatzis (Lead)',
-                "courseDuration": '1 Week',
-                "totalLearners": "15,674",
-                "facultyImage": '/i4.png'
+                "facultyImage": '/if5.png'
             },
             "overview": {
                 "text": "The EBCOG Maternal Medicine Diploma provides a rigorous and comprehensive training in maternal medicine, addressing the full spectrum of normal and complicated pregnancies. This program is structured to empower healthcare professionals with advanced skills and knowledge to manage and improve outcomes in both labor and delivery and maternal medical disorders.",
@@ -245,6 +237,11 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                     "name": "Dr. Rajalaxmi Walavalkar",
                     "description": "Medical Director and IVF Consultant at Cocoon Fertility Pvt Ltd, Member of the MRCOG and the Certificate of Completion of Training (CCT).",
                     "image": "/faculty11.png"
+                },
+                {
+                    "name": "Dr. Anagha Karkhanis",
+                    "description": "Director and Consultant Gynecologist at Cocoon Fertility Pvt Ltd,Certifications from the DRCOG and MRCPI Memberships of FOGSI, MOGS, and ESH RE",
+                    "image": "/faculty11B.png"
                 }
             ],
             "faqs": [
@@ -305,11 +302,11 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "learners": "156",
             "lessons": '20',
             "cardData": {
-                "course": 'Gynaecology Endoscopy By Dr Helder Ferreira',
-                "facultyName": 'Dr. Helder Ferreira',
-                "courseDuration": '1 Week',
-                "totalLearners": "156",
-                "facultyImage": '/i9.png'
+                // "course": 'Gynaecology Endoscopy By Dr Helder Ferreira',
+                // "facultyName": 'Dr. Helder Ferreira',
+                // "courseDuration": '1 Week',
+                // "totalLearners": "156",
+                "facultyImage": '/if10.png'
             },
             "overview": {
                 "text": "The EBCOG Maternal Medicine Diploma provides a rigorous and comprehensive training in maternal medicine, addressing the full spectrum of normal and complicated pregnancies. This program is structured to empower healthcare professionals with advanced skills and knowledge to manage and improve outcomes in both labor and delivery and maternal medical disorders.",
@@ -460,11 +457,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "learners": "15,674",
             "lessons": '20',
             "cardData": {
-                "course": 'Maternal Medicine By Prof. Frank Louwen',
-                "facultyName": 'Prof. Asma Khalil',
-                "courseDuration": '1 Week',
-                "totalLearners": "15,674",
-                "facultyImage": '/i3.png'
+                "facultyImage": '/if4.png'
             },
             "overview": {
                 "text": "The EBCOG Maternal Medicine Diploma provides a rigorous and comprehensive training in maternal medicine, addressing the full spectrum of normal and complicated pregnancies. This program is structured to empower healthcare professionals with advanced skills and knowledge to manage and improve outcomes in both labor and delivery and maternal medical disorders.",
