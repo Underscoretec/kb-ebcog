@@ -85,7 +85,7 @@ const FacultySection = () => {
                 {
                     "id": "REI6",
                     "facultyName": "Dr. Anagha Karkhanis",
-                    "about": "Director and Consultant Gynecologist at Cocoon Fertility Pvt Ltd,Certifications from the DRCOG and MRCPI Memberships of FOGSI, MOGS, and ESH RE",
+                    "about": "Director and Consultant Gynecologist at Cocoon Fertility Pvt Ltd,Certifications from the DRCOG and MRCPI Memberships of FOGSI, MOGS, and ESHRE",
                     "image": "/faculty11B.png"
                 }
             ]
@@ -109,18 +109,24 @@ const FacultySection = () => {
                 },
                 {
                     "id": "GE3",
+                    "facultyName": "Dr. Hugo Rodrigues Gaspar",
+                    "about": "Specialist in Obstetrics and Gynecology Hospital Particular da Madeira and Madeira Medical Center Grupo HPA Saúde network Madeira, Portugal",
+                    "image": "/faculty23.png"
+                },
+                {
+                    "id": "GE4",
                     "facultyName": "Dr. Munna Talaak",
                     "about": "Dr. Muna Tahlak Chief Executive Officer of Latifa Hospital for Women and Children in Dubai President of the International Hospital Federation (IHF) Chief Medical Officer of the Dubai Academic Health Corporation and Vice Provost of Clinical Practice at the Mohammed Bin Rashid University of Medicine and Health Sciences.",
                     "image": "/faculty14.png"
                 },
                 {
-                    "id": "GE4",
-                    "facultyName": "Dr. Sandesh Khade",
+                    "id": "GE5",
+                    "facultyName": "Dr. Sandesh Kade",
                     "about": "Gynecologist and laparoscopic surgeon Burjeel Medical City in Abu Dhabi. Member of the American Association of Gynecological Laparoscopists (AAGL), the Federation of Obstetrics and Gynecology Society of India (FOGSI), and the Indian Association of Gynecological Endoscopists (IAGE).",
                     "image": "/faculty15.png"
                 },
                 {
-                    "id": "GE5",
+                    "id": "GE6",
                     "facultyName": "Dr. Alan Abdallah",
                     "about": "Obstetrician & Gynaecologist Emirates Hospital L.L.C in Jumeirah, Dubai and Emirates Speciality Hospital Fz-Llc in Dubai Healthcare City, Dubai",
                     "image": "/faculty16.png"

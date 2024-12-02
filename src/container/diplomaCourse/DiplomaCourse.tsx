@@ -24,6 +24,9 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "learners": "15,674",
             "lessons": '20',
             "cardData": {
+                "facultyName": 'Prof. Frank Louwen (Lead)',
+                "courseDuration": '1 Week',
+                "totalLearners": "15,674",
                 "facultyImage": '/if9.png'
             },
             "overview": {
@@ -178,6 +181,9 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "learners": "15,674",
             "lessons": '20',
             "cardData": {
+                "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
+                "courseDuration": '1 Week',
+                "totalLearners": "15,674",
                 "facultyImage": '/if5.png'
             },
             "overview": {
@@ -303,9 +309,9 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "lessons": '20',
             "cardData": {
                 // "course": 'Gynaecology Endoscopy By Dr Helder Ferreira',
-                // "facultyName": 'Dr. Helder Ferreira',
-                // "courseDuration": '1 Week',
-                // "totalLearners": "156",
+                "facultyName": 'Dr. Helder Ferreira',
+                "courseDuration": '1 Week',
+                "totalLearners": "156",
                 "facultyImage": '/if10.png'
             },
             "overview": {
@@ -388,7 +394,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 },
                 {
 
-                    "name": "Dr. Sandesh Khade",
+                    "name": "Dr. Sandesh Kade",
                     "description": "Gynecologist and laparoscopic surgeon Burjeel Medical City in Abu Dhabi. Member of the American Association of Gynecological Laparoscopists (AAGL), the Federation of Obstetrics and Gynecology Society of India (FOGSI), and the Indian Association of Gynecological Endoscopists (IAGE).",
                     "image": "/faculty15.png"
                 },
@@ -457,6 +463,9 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "learners": "15,674",
             "lessons": '20',
             "cardData": {
+                "facultyName": 'Prof. Asma Khalil',
+                "courseDuration": '1 Week',
+                "totalLearners": "15,674",
                 "facultyImage": '/if4.png'
             },
             "overview": {
