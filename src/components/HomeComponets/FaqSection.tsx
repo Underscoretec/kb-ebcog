@@ -8,73 +8,65 @@ const FaqSection = () => {
     const faqs = [
         {
             question: "1. What are the EBCOG Diplomas?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
         },
         {
             question: "2. Who are these diplomas designed for?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "The diplomas are designed for obstetricians, gynecologists, and other healthcare professionals who wish to gain specialized expertise in these fields. Applicants should have relevant medical qualifications and experience to maximize their learning."
         },
         {
             question: "3. What topics are covered in the diploma programs?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Each diploma focuses on its specific area:",
+            subItems: [
+                'Fetal Medicine and Ultrasound: Advanced Fetal diagnosis and ultrasound techniques.',
+                'Maternal Medicine: Managing medical conditions in pregnancy.',
+                'Gynaecological Endoscopy: Minimally invasive gynaecological surgical procedures.',
+                'Reproductive Endocrinology and Infertility: Infertility treatments and reproductive hormonal disorders.'
+            ]
         },
         {
             question: "4. What are the key benefits of obtaining an EBCOG Diploma?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "The diplomas offer advanced clinical training, practical expertise, and recognition by EBCOG. They enhance professional credentials and career opportunities in specialized fields of obstetrics and gynaecology.",
         },
         {
             question: "5. How are the diploma programs structured?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "The programs combine theoretical knowledge, case-based learning, firsthand workshops, and possible mentorship from experts. Each diploma includes practical training relevant to its specialization.",
         },
         {
             question: "6. Is there an assessment or certification for the diplomas?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Yes, participants must complete written and/or practical assessments to earn their diplomas. Certification is recognized by EBCOG and DHA.",
         },
         {
             question: "7. What is the duration of each diploma program?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Specific timelines and schedules are provided during the application process or upon inquiry.",
         },
         {
             question: "8. What resources are provided during the programs?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Participants receive access to simulation, case studies, and expert mentorship (one on one interaction) tailored to their chosen diploma.",
         },
         {
             question: "9. How can I apply for an EBCOG Diploma?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Applications can be submitted online via the EBCOG portal. Required documents include proof of medical qualifications, a professional short CV, and any other specified credentials.",
         },
         {
             question: "10. What are the eligibility requirements for these diplomas?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Applicants should have a background in obstetrics, gynaecology, or a related field. Some diplomas may require prior clinical experience in their respective specializations.",
         },
         {
             question: "11. Are the diplomas suitable for international applicants?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Yes, the diplomas are internationally recognized and suitable for candidates worldwide. The training and certification adhere to global standards.",
         },
         {
             question: "12. How much do the diploma programs cost, and are financial aid    options available?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Detailed fee structures are available upon inquiry. Some financial aid or sponsorship opportunities may be available for eligible applicants.",
         },
         {
             question: "13. Can I enroll in more than one diploma program?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "Yes, candidates can choose to enroll in multiple diploma programs sequentially, depending on their professional goals and schedules.",
         },
         {
             question: "14. What is the significance of EBCOG certification?",
-            answer:
-                "The EBCOG Diplomas are specialized programs in key areas of obstetrics and gynaecology: Fetal Medicine and Ultrasound, Maternal Medicine, Gynaecological Endoscopy, and Reproductive Endocrinology and Infertility. Each diploma focuses on advanced clinical and practical skills in its respective field.",
+            answer: "EBCOG certification signifies a high standard of expertise and training in obstetrics and gynaecology. It is recognized internationally and adds value to a professional’s qualifications.",
         },
     ]
 
@@ -86,7 +78,7 @@ const FaqSection = () => {
                         Frequently asked questions
                     </h2>
                     <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
-                        {faqs.map((faq,index) => (
+                        {faqs.map((faq, index) => (
                             <Disclosure key={faq.question} as="div" className="pt-6" defaultOpen={index === 0}>
                                 <dt>
                                     <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">
@@ -99,6 +91,15 @@ const FaqSection = () => {
                                 </dt>
                                 <DisclosurePanel as="dd" className="mt-2 pr-12">
                                     <p className="text-16px font-montserrat text-[#6B7280]">{faq.answer}</p>
+                                    {faq.subItems?.length ? (
+                                        <ul className="pl-6 mt-2 list-disc">
+                                            {faq.subItems.map((item, index) => (
+                                                <li key={index} className="text-16px font-montserrat text-[#6B7280]">
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : null}
                                 </DisclosurePanel>
                             </Disclosure>
                         ))}

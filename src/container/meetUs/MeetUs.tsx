@@ -21,6 +21,14 @@ const MeetUs = () => {
             time: '5 - 7 June, 2025',
             link:'https://www.ebcog-congress.eu/'
         },
+        {
+            id: '2',
+            image: '/allperson.png',
+            title: 'XXV FIGO World Congress of Gynecology and Obstetrics',
+            location: 'Cape Town',
+            time: '5 - 9 October, 2025',
+            link:'https://figo2025.org/  '
+        },
     ]
     return (
         <>
