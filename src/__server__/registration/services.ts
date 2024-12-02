@@ -13,38 +13,61 @@ interface ExtendApiRequest extends NextApiRequest {
 
 const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[Registration-001] Course Registration create api call`);
-    const { fullName, email, whatsAppNumber, phoneNo, address, courseName, gender, } = req.body
+    const { fullName, email, whatsAppNumber, address, courseName, } = req.body
     try {
+        const query: any = { enabled: 1 }
+        console.log(email,whatsAppNumber,'whatsAppNumber >>>>>' );
+        if (email) {
+            query.email = email?.toLowerCase();
+        }
+        // if (phoneNo) {
+        //     query.phoneNo = phoneNo;
+        // }
+        const exist = await Registration.findOne(query);
+        console.log(exist,'exits >>>>>');
+        if (exist) {
+            return res.status(400).json({
+                message: messages['REGISTRATION_RECORD_FOUND'],
+                error: true,
+                code: 'REGISTRATION_RECORD_FOUND',
+                result: {}
+            });
+        }
         // @ts-ignore
         const latestDegreeCertificate = req.files?.["latestDegreeCertificate"]?.[0];
+        console.log(latestDegreeCertificate,'latestDegreeCertificate >>>>>>');
         // @ts-ignore
         const basicDegreeDocument = req.files?.['basicDegreeDocument']?.[0];
+        console.log(basicDegreeDocument, 'basicDegreeDocument >>>');
+        console.log(address,'address >>>>>');
 
         const createObj = {
-            name: fullName,
+            fullName: fullName,
             email: email,
             whatsAppNumber: whatsAppNumber,
-            phoneNo: phoneNo,
+            // phoneNo: phoneNo,
             address: address && JSON.parse(address),
             courseName: courseName,
-            gender: gender,
-            LatestDegreeCertificate: latestDegreeCertificate,
+            // gender: gender,
+            latestDegreeCertificate: latestDegreeCertificate,
             basicDegreeDocument: basicDegreeDocument,
             createdAt: Date.now(),
         }
 
         const saveRegistration = await new Registration(createObj).save();
-        
-
-
-        return res.status(201).json({
-            message: messages['COURSES_SAVED'],
-            error: false,
-            code: 'COURSES_SAVED',
-            result: saveRegistration
-        });
+        console.log(saveRegistration, '>>>>>>>');
+        if (saveRegistration) {
+            return res.status(201).json({
+                message: messages['REGISTRATION_CREATED'],
+                error: false,
+                code: 'REGISTRATION_CREATED',
+                result: saveRegistration
+            });
+        }
+       
         
     } catch (error) {
+        logger.error(error, "[Registration-001] Error creating new registration! ");
         return res.status(500).json(errorResponse(error));
     }
     

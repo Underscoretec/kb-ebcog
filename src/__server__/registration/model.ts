@@ -15,22 +15,22 @@ const registrationSchema: any = new Schema(
         },
         whatsAppNumber: {
             type: String,
-            unique: true
+            // unique: true
         },
-        phoneNo: {
-            type: String,
-            unique: true
-        },
+        // phoneNo: {
+        //     type: String,
+        //     unique: true
+        // },
         address: {
             city: String,
             state: String,
             country: String,
             pinCode: String,
-            required: true,
+            // required: true,
         },
         courseName: {
             type: String,
-            enum: ["maternalMedicine", "reproductiveEndocrinology&Infertility", "gynaecologyEndoscopy", "fetalMedicine&Ultrasound"],
+            enum: ["maternalMedicine", "reproductiveEndocrinology_Infertility", "gynaecologyEndoscopy", "fetalMedicine_Ultrasound"],
             required: true,
         },
         latestDegreeCertificate: {

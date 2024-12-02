@@ -142,5 +142,8 @@
     "BOOKMARK_NOT_FOUND":"Bookmark not found",
     "BOOKMARK_DELETED":"Bookmark deleted successfully",
     "BOOKMARKS_FOUND":"Bookmarks found successfully",
-    "BOOKMARKS_NOT_FOUND":"Bookmark not found"
+    "BOOKMARKS_NOT_FOUND":"Bookmark not found",
+    "REGISTRATION_CREATED":"Registration created successfully",
+    "REGISTRATION_FAILED":"Registration failed",
+    "REGISTRATION_RECORD_FOUND":"Email already exist!"
   }
