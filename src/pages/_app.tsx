@@ -35,15 +35,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <link rel="apple-touch-icon" sizes="72x72" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="60x60" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="57x57" href="/favicon.ico" />
-      <link rel="manifest" href="/favicon.ico" />
-      <meta property="og:image" content="<generated>" />
-      <meta property="og:image:type" content="<generated>" />
-      <meta property="og:image:width" content="<generated>" />
-      <meta property="og:image:height" content="<generated>" />
-      <meta name="twitter:image" content="<generated>" />
-      <meta name="twitter:image:type" content="<generated>" />
-      <meta name="twitter:image:width" content="<generated>" />
-      <meta name="twitter:image:height" content="<generated>" />
+      <meta property="og:title" content="EBCOG" key="title" />
+      <meta property="og:description" content="YOUR PATHWAY TO MAKING A DIFFERENCE" key="title" />
+      <meta property="og:image" content="/favicon.ico" key="title" />
+      <meta name="twitter:image" content="/favicon.ico" key="title" />
     </Head>
     {getLayout ?
       getLayout(<Component {...pageProps} />) : <Component {...pageProps} />}
