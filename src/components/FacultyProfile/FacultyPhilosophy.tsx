@@ -10,7 +10,7 @@ const FacultyPhilosophy = ({data}:any) => {
                         {item.title}
                     </h2>
                     <div className="text-[#555555] font-montserrat text-[18px] font-normal leading-[27px]">
-                        {`"{item.content}"`}
+                        {`"${item.content}"`}
                     </div>
                 </div>
             ))}
