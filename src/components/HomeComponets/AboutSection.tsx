@@ -2,6 +2,7 @@ import ImageComponent from '@/common/uicomponents/ImageComponent'
 import React from 'react'
 import about from '../../../public/about.png'
 import Button from '@/common/uicomponents/Button'
+import Link from 'next/link'
 
 const AboutSection = () => {
     return (
@@ -25,9 +26,12 @@ const AboutSection = () => {
                     special interest societies, trainees, and European interest groups to achieve these goals. EBCOG also works closely
                     with the European trainees' organization, ENTOG, to offer fellowships together annually."`}</div>
 
-                    <div className='pt-8 xl:pt-5 2xl:pt-10'>
-                        <Button label='Join Now' className='bg-[#E4087F] rounded-md flex justify-center px-2 xs:px-5 py-2 text-[#FFFFFF] w-[40%] xs:w-[30%]hover:bg-[#ac0660]'/>
-                    </div>
+                <div className='pt-8 xl:pt-5 2xl:pt-10'>
+                    <Link href='/registration'>
+                        <Button label='Join Now' className='bg-[#E4087F] rounded-md flex justify-center px-2 xs:px-5 py-2 text-[#FFFFFF] w-[40%] xs:w-[30%] hover:bg-[#ac0660]' />
+                    </Link>
+
+                </div>
             </div>
         </div>
     )

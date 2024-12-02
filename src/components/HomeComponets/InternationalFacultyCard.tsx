@@ -5,7 +5,10 @@ import { RiGraduationCapFill } from "react-icons/ri";
 import Button from '../../common/uicomponents/Button';
 
 
+
 const InternationalFacultyCard = (props: any) => {
+
+    
     
     return (
         <>
@@ -46,7 +49,7 @@ const InternationalFacultyCard = (props: any) => {
                         type="submit"
                         className="py-2 2xl:py-3 px-4 2xl:px-6 bg-[#E4087F] font-poppins text-sm font-medium leading-4 text-white rounded-[6px] mt-3 transition-all duration-400 ease-in-out hover:bg-[#ac0660]"
                         label={props?.btn_label}
-                        onClick={props?.handleClick}
+                        onClick={props?.handleClick }
                     />
                 </div>
             </div>
