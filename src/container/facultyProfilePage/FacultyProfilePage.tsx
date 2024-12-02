@@ -131,6 +131,127 @@ const FacultyProfile = () => {
                     ],
                 },
             ]
+        },
+        {
+            "id": "p-0005RPI",
+            "name": 'Prof. Basil C. Tarlatzis (Lead)',
+            "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
+            "cardData": {
+                "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
+                "courseDuration": '1 Week',
+                "totalLearners": "15,674",
+                "facultyImage": '/if5.png'
+            },
+            "philosophy": [
+                {
+                    "title": "Teaching Philosophy",
+                    "content": "Advancing women's health through innovative research, comprehensive education, and compassionate clinical practice."
+                },
+                {
+                    "title": "Message to Students",
+                    "content": "Commit to lifelong learning and innovation in obstetrics and gynecology to enhance maternal and fetal health outcomes globally."
+                }
+            ],
+            "experience": {
+                "facultyExperience": [
+                    {
+                        "title": "Early Career:",
+                        "items": [
+                            "Licensed to practice medicine (1989 - 1994)",
+                            "Specialized training in gynecology at the University Women's Clinic in Münster",
+                            "Recognized as a specialist and appointed Senior Physician"
+                        ]
+                    },
+                    {
+                        "title": "Academic Roles:",
+                        "items": [
+                            "Appointed Professor of Obstetrics and Perinatology at Johann Wolfgang Goethe University, Frankfurt am Main (2002)",
+                            "Head of Obstetrics and Prenatal Medicine, leading the Perinatal Center at Frankfurt University Hospital"
+                        ]
+                    },
+                    {
+                        "title": "Research Focus:",
+                        "items": [
+                            "Molecular biochemistry and cell biology (stem cells)",
+                            "Complications in obesity and hypertensive disorders during pregnancy (preeclampsia, HELLP syndrome)",
+                            "Care and delivery of multiple pregnancies and breech births",
+                            "Initiator of the FIGO & WATOG initiative \"Teach the Breech\""
+                        ]
+                    }
+                ],
+                "achievements": [
+                    {
+                        "title": "Current Roles:",
+                        "items": [
+                            "President-Elect of FIGO",
+                            "President of EBCOG (2023 - 2025)"
+                        ]
+                    },
+                    {
+                        "title": "Academic Contributions:",
+                        "items": [
+                            "Significant research in hypertensive disorders during pregnancy and breech birth management",
+                            "Leadership in perinatal care and education"
+                        ]
+                    }
+                ]
+            },
+            "PersonalDetails": [
+                {
+                    "title": "Designation",
+                    "items": [
+                        {
+                            "logo": "/p-logo1.png",
+                            "title": "President-Elect",
+                            "description": "International Federation of Gynecology and Obstetrics (FIGO)",
+                        },
+                        {
+                            "logo": "/logo.png",
+                            "title": "President",
+                            "description":
+                                "European Board and College of Obstetrics and Gynecology (EBCOG)",
+                        },
+                    ],
+                },
+                {
+                    "title": "Academic Background",
+                    "items": [
+                        {
+                            "logo": "/logo3.png",
+                            "title": "Medical Degree",
+                            "description": "University of Münster, Germany",
+                        },
+                        {
+                            "logo": "/logo4.png",
+                            "title": "Doctorate (1993)",
+                            "description": "Thesis on the definition criteria of HELLP syndrome",
+                        },
+                    ],
+                },
+                {
+                    "title": "Why Train Under Professor Frank Louwen?",
+                    "items": [
+                        {
+                            "title": "Leadership Experience",
+                            "description": [
+                                "Extensive involvement in international and national professional societies",
+                                "12 years on the board of the German Society of Obstetrics and Gynecology (DGGG)",
+                            ],
+                        },
+                        {
+                            "title": "Advocacy and Service",
+                            "description": [
+                                "Chairman of the Board, German Foundation for Women's Health",
+                                "Chairman of the Board, Pro Familia Hessen",
+                            ],
+                        },
+                        {
+                            "title": "Innovative Initiatives",
+                            "description": ["Development of programs like 'Teach the Breech' to improve clinical practices"],
+                        },
+                    ],
+                },
+            ]
         }
     ];
 
