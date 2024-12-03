@@ -45,7 +45,10 @@ const Calendar = () => {
                             {/* Table */}
                             <div className="overflow-x-auto">
                                 {item.activities.length === 0 ?
-                                    <div className='h-[12rem] bg-[#F9FAFB] flex items-center justify-center font-montserrat text-[27px] xs:text-[40px] font-medium leading-[48.76px] text-[#111827]'>Coming soon...</div>
+                                    <div className='h-[12rem] bg-[#FFF4F8] flex justify-center flex-col items-center leading-[48.76px] text-[#290849]'>
+                                        <div className='text-[27px] xs:text-[50px] font-RobotoCondensed font-normal leading-[50px] capitalize tracking-tighter'>COMING</div>
+                                        <div className='text-[27px] xs:text-[41px] font-Yesteryear font-normal leading-[50px] capitalize tracking-tighter'>SOON...</div>
+                                    </div>
                                     :
                                     <table className="min-w-full divide-y divide-gray-300">
                                         <thead className="bg-[#F9FAFB]">

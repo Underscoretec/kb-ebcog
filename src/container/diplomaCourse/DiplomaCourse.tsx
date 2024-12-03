@@ -34,16 +34,13 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 "title": "Why Train with Us?",
                 "reasons": [
                     {
-                        "heading": "Expert Faculty",
-                        "description": "Learn from leading specialists with global experience."
+                        "description": "Expert-led Instruction: Learn from a faculty of renowned specialists and leaders in maternal-fetal medicine"
                     },
                     {
-                        "heading": "Facilities",
-                        "description": "Get trained on advance equipments with latest techniques."
+                        "description": "Multidisciplinary Approach: Gain a holistic understanding and practical skills through a curriculum that covers the latest in both theory and practice"
                     },
                     {
-                        "heading": "Career Advancement",
-                        "description": "Gain credentials that elevate your professional standing and expertise."
+                        "description": "Career Advancement: Elevate your professional qualifications and readiness to handle complex cases in maternal medicine"
                     }
                 ]
             },
@@ -193,7 +190,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 "facultyImage": '/if5.png'
             },
             "overview": {
-                "text": "The EBCOG Maternal Medicine Diploma provides a rigorous and comprehensive training in maternal medicine, addressing the full spectrum of normal and complicated pregnancies. This program is structured to empower healthcare professionals with advanced skills and knowledge to manage and improve outcomes in both labor and delivery and maternal medical disorders.",
+                "text": "This Advanced Diploma in Reproductive Endocrinology and Infertility is meticulously designed to provide in-depth knowledge and skills to healthcare professionals specializing in the field of reproductive medicine. From understanding the basic anatomy and physiology to mastering complex fertility treatments, our program covers every aspect essential for a successful career in Reproductive Endocrinology and Infertility.",
                 "title": "Why Train with Us?",
                 "reasons": [
                     {
@@ -327,20 +324,17 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 "facultyImage": '/if10.png'
             },
             "overview": {
-                "text": "The EBCOG Maternal Medicine Diploma provides a rigorous and comprehensive training in maternal medicine, addressing the full spectrum of normal and complicated pregnancies. This program is structured to empower healthcare professionals with advanced skills and knowledge to manage and improve outcomes in both labor and delivery and maternal medical disorders.",
+                "text": "Embark on a comprehensive five-day journey into the world of Gynaecology Endoscopy with our EBCOG Diploma. Designed for gynaecologists aiming to master laparoscopic and hysteroscopic procedures, this intensive program combines theoretical learning with hands-on training, led by distinguished experts in the field.",
                 "title": "Why Train with Us?",
                 "reasons": [
                     {
-                        "heading": "Expert Faculty",
-                        "description": "Learn from leading specialists with global experience."
+                        "description": "Expert-Led Instruction: Gain insights and training from leading specialists in gynaecology endoscopy"
                     },
                     {
-                        "heading": "Facilities",
-                        "description": "Get trained on advance equipments with latest techniques."
+                        "description": "Cutting-Edge Facilities: Practice with state-of-the-art equipment in a simulated environment"
                     },
                     {
-                        "heading": "Career Advancement",
-                        "description": "Gain credentials that elevate your professional standing and expertise."
+                        "description": "Career Advancement: Enhance your skills and qualifications in one of the fastest-growing areas of gynaecology"
                     }
                 ]
             },
@@ -481,21 +475,27 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 "facultyImage": '/if4.png'
             },
             "overview": {
-                "text": "The EBCOG Maternal Medicine Diploma provides a rigorous and comprehensive training in maternal medicine, addressing the full spectrum of normal and complicated pregnancies. This program is structured to empower healthcare professionals with advanced skills and knowledge to manage and improve outcomes in both labor and delivery and maternal medical disorders.",
-                "title": "Why Train with Us?",
+                "text": "Our Diploma in Fetal Medicine provides an exhaustive curriculum designed to advance the skills of healthcare professionals in the realm of prenatal diagnosis and care. This specialized program encompasses theoretical knowledge, practical training, and cutting-edge research in fetal medicine, ensuring our diploma holders are leaders in the field.",
+                "title": "Global Standards and Practices",
                 "reasons": [
                     {
-                        "heading": "Expert Faculty",
-                        "description": "Learn from leading specialists with global experience."
+                        "description": "Routine and advanced ultrasound scans following international guidelines "
                     },
                     {
-                        "heading": "Facilities",
-                        "description": "Get trained on advance equipments with latest techniques."
+                        "description": "Accuracy and ethical considerations in prenatal screening and diagnosis"
+                    },
+                ],
+                "question": "Why Train with Us?",
+                "answer": [
+                    {
+                        "point": "Expert Faculty: Learn from leading specialists with global experience"
                     },
                     {
-                        "heading": "Career Advancement",
-                        "description": "Gain credentials that elevate your professional standing and expertise."
-                    }
+                        "point": "Facilities: Get trained on advance equipments with latest techniques"
+                    },
+                    {
+                        "point": "Career Advancement: Gain credentials that elevate your professional standing and expertise"
+                    },
                 ]
             },
             "curriculum": {
@@ -613,7 +613,8 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                     "answer": "Completing this course equips practitioners with advanced skills in fetal diagnosis and management, making them better prepared for complex cases in fetal medicine. The certification is also a significant credential for career advancement in maternal-fetal medicine.&nbsp;"
                 },
             ]
-        },]
+        },
+    ]
     
     const handleEnroll = () =>{
         router.push('/registration');

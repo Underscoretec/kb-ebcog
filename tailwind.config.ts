@@ -18,7 +18,9 @@ export default {
       fontFamily: {
         oswald: ['Oswald', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif']
+        poppins: ['Poppins', 'sans-serif'],
+        RobotoCondensed: ['Roboto Condensed', 'sans-serif'],
+        Yesteryear: ['Yesteryear', 'sans-serif']
       },
       boxShadow: {
         custom: '0px 2px 8px 0px rgba(99, 99, 99, 0.2)',
