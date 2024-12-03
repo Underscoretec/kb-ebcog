@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import BannerSection from '@/components/HomeComponets/BannerSection';
 import AboutSection from '@/components/HomeComponets/AboutSection';
 import ObjectiveSection from '@/components/HomeComponets/ObjectiveSection';
@@ -15,6 +15,8 @@ const HomePage = () => {
   const internationalRef = useRef(null);
   const faqRef = useRef(null);
 
+  const [activeSection, setActiveSection] = useState(0);
+
   const sections = [
     { ref: bannerRef, title: 'Banner' },
     { ref: aboutRef, title: 'About' },
@@ -23,6 +25,42 @@ const HomePage = () => {
     { ref: internationalRef, title: 'International' },
     { ref: faqRef, title: 'FAQ' },
   ];
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null, 
+      threshold: 0.5, 
+    };
+
+    const observerCallback = (entries: any) => {
+      entries.forEach((entry: any, index: number) => {
+        if (entry.isIntersecting) {
+          const activeIndex = sections.findIndex(
+            (section) => section.ref.current === entry.target
+          );
+          setActiveSection(activeIndex);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe each section
+    sections.forEach((section) => {
+      if (section.ref.current) {
+        observer.observe(section.ref.current);
+      }
+    });
+
+    return () => {
+      // Clean up observer
+      sections.forEach((section) => {
+        if (section.ref.current) {
+          observer.unobserve(section.ref.current);
+        }
+      });
+    };
+  }, [sections]);
 
   return (
     <>
@@ -44,7 +82,10 @@ const HomePage = () => {
       <div ref={faqRef}>
         <FaqSection />
       </div>
-      <DotsNavigation sections={sections} />
+      <DotsNavigation 
+      sections={sections} 
+      activeSection={activeSection} 
+      />
     </>
   );
 };
