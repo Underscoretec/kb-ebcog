@@ -35,6 +35,20 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'RobotoCondensed';
+  src: url('/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Yesteryear';
+  src: url('/fonts/Yesteryear/Yesteryear-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html{
   scroll-behavior: smooth;
 }
