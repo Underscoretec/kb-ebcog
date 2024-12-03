@@ -178,7 +178,6 @@ const FacultySection = () => {
         }
     ]
 
-
     return (
         <div className='bg-[#290849] text-white px-4 xs:px-8 py-10 md:py-16 xl:p-16 3xl:p-24' id='diplomas'>
             <h1 className='font-oswald text-[35px] xs:text-[40px] md:text-[48px] xl:text-[55px] font-normal leading-[40px] xs:leading-[54px] text-center mb-10 xl:mb-14'>Diploma leads and Faculty</h1>
