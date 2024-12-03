@@ -73,6 +73,11 @@ export const menuitems = [
                 title: 'Reproductive Endocrinology & Infertility',
                 url: '/Reproductive-endocrinology-infertility.pdf'
             },
+            {
+                id: '13',
+                title: 'Know your Faculty (link this faculty wise pages of Know more)',
+                url: '/Reproductive-endocrinology-infertility.pdf'
+            },
         ],
     },
     {

@@ -613,7 +613,8 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                     "answer": "Completing this course equips practitioners with advanced skills in fetal diagnosis and management, making them better prepared for complex cases in fetal medicine. The certification is also a significant credential for career advancement in maternal-fetal medicine.&nbsp;"
                 },
             ]
-        },]
+        },
+    ]
     
     const handleEnroll = () =>{
         router.push('/registration');
