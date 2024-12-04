@@ -20,8 +20,8 @@ const DotsNavigation = ({ sections, activeSection }:any) => {
           <div
             className={`w-1 h-1 rounded-full cursor-pointer transition-all duration-300 ease-in-out ${
               activeSection === section.id
-                ? 'w-3 h-3 bg-black'
-                : 'bg-black hover:w-3 hover:h-3'
+                ? 'w-3 h-3 bg-[#E4087F]'
+                : 'bg-[#E4087F] hover:w-3 hover:h-3'
             }`}
           ></div>
         </div>

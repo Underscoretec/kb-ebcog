@@ -13,13 +13,13 @@ const FacultyProfile = () => {
     const data = [
         {
             "id": "p-0009MM",
-            "name": 'Professor Frank Louwen',
+            "name": 'Prof. Frank Louwen',
             "about": "Obstetrics and Perinatology, Maternal-Fetal Medicine, Hypertensive Disorders in Pregnancy, Breech Birth Management.",
             "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if9.png'
             },
             "PersonalDetails": [
@@ -50,7 +50,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Professor Frank Louwen?",
+                    "title": "Why Train Under Prof. Frank Louwen?",
                     "items": [
                         {
                             "title": "Leadership Experience",
@@ -130,13 +130,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0010GE",
-            "name": 'Professor Hélder Ferreira',
+            "name": 'Dr. Helder Ferreira',
             "about": "Advanced Laparoscopic Surgery, Robotic Gynecological Surgery, Management of Deep Endometriosis, Gynecologic Oncology,Treatment of Genital Prolapse, Correction of Uterovaginal Malformations",
             "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Helder Ferreira (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if10.png'
             },
             "PersonalDetails": [
@@ -163,7 +163,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Professor Frank Louwen?",
+                    "title": "Why Train Under Dr. Helder Ferreira?",
                     "items": [
                         {
                             "title": "Expertise:",
@@ -175,7 +175,6 @@ const FacultyProfile = () => {
                             "title": "Innovation:",
                             "description": [
                                 "Gain insights into the latest surgical techniques and technologies in the field.",
-                                "Chairman of the Board, Pro Familia Hessen",
                             ],
                         },
                         {
@@ -217,7 +216,8 @@ const FacultyProfile = () => {
                         "title": "Leadership Positions:",
                         "items": [
                             "Full Executive Board Member of ESGE",
-                            "Advisory Board Member of EEL"
+                            "Advisory Board Member of EEL",
+                            "President of the Portuguese Society of Minimally Invasive Surgery"
                         ]
                     },
                     {
@@ -242,13 +242,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0004FMU",
-            "name": 'Professor Asma Khalil',
+            "name": 'Prof. Asma Khalil',
             "about": "Twin and Multiple Pregnancies, Fetal Growth Restriction, Hypertensive Disorders in Pregnancy",
             "department":'fetal-medicine-and-ultrasound',
             "cardData": {
-                "facultyName": 'Dr. Asma Khalil (Lead)',
+                "facultyName": 'Prof. Asma Khalil (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if4.png'
             },
             "PersonalDetails": [
@@ -275,7 +275,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Professor Asma Khalil?",
+                    "title": "Why Train Under Prof. Asma Khalil",
                     "items": [
                         {
                             "description": [
@@ -323,13 +323,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0005RPI",
-            "name": 'Professor Basil C. Tarlatzis',
+            "name": 'Prof. Basil C. Tarlatzis',
             "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
             "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if5.png'
             },
             "PersonalDetails": [
@@ -364,7 +364,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Professor Basil C. Tarlatzis?",
+                    "title": "Why Train Under Prof. Basil C. Tarlatzis?",
                     "items": [
                         {
                             "description": [
@@ -422,13 +422,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0001GE",
-            "name": 'Dr. Alain Abdallah',
+            "name": 'Dr. Alan Abdallah',
             "about": "Minimally Invasive/Laparoscopic Surgeries",
             "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Alan Abdallah',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if1.png',
             },
             "PersonalDetails": [
@@ -459,7 +459,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Dr. Alain Abdallah?",
+                    "title": "Why Train Under Dr. Alan Abdallah?",
                     "items": [
                         {
                             "description": [
@@ -505,13 +505,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0002MM",
-            "name": 'Dr. Amala Lovetto Nazareth',
+            "name": 'Dr. Amala Nazareth',
             "about": "High-Risk Obstetrics, Operative Gynecology, Infertility Treatments, and Minimally Invasive Surgeries",
             "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Dr. Amala Nazareth',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if2.png',
             },
             "PersonalDetails": [
@@ -541,7 +541,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Dr. Amala Lovetto Nazareth?",
+                    "title": "Why Train Under Dr. Amala Nazareth?",
                     "items": [
                         {
                             "description": [
@@ -593,7 +593,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Anagha Karkhanis',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if3.png',
             },
             "PersonalDetails": [
@@ -683,13 +683,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0006MM",
-            "name": "Prof. Chittaranjan Narahari Purandare",
+            "name": "Prof. Chittaranjan N. Purandare",
             "about": "Maternal Health, Women's Health, Obstetrics, Gynecology",
             "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Chittaranjan N. Purandare',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if6.png',
             },
             "PersonalDetails": [
@@ -724,7 +724,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Prof. Chittaranjan Narahari Purandare?",
+                    "title": "Why Train Under Prof. Chittaranjan N. Purandare?",
                     "items": [
                         {
                             "description": [
@@ -775,13 +775,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0007MM",
-            "name": "Professor Diogo Ayres-de-Campos",
+            "name": "Prof. Diogo Ayres de Campos",
             "about": "Intrapartum Fetal Monitoring, Obstetric Simulation",
             "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Diogo Ayres de Campos',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if7.png',
             },
             "PersonalDetails": [
@@ -817,7 +817,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Professor Diogo Ayres-de-Campos?",
+                    "title": "Why Train Under Prof. Diogo Ayres de Campos?",
                     "items": [
                         {
                             "title": "Pioneering Research:",
@@ -907,13 +907,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0008REI",
-            "name": "Professor Edgar V. Mocanu",
+            "name": "Dr. Edgar Mocanu",
             "about": "Reproductive Medicine and Surgery, Infertility Treatment, Reproductive Endocrinology",
             "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Edgar Mocanu',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if8.png',
             },
             "PersonalDetails": [
@@ -956,7 +956,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Professor Edgar V. Mocanu?",
+                    "title": "Why Train Under Dr. Edgar Mocanu?",
                     "items": [
                         {
                             "title": "Comprehensive Expertise:",
@@ -1034,7 +1034,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Hugo Rodrigues Gaspar',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if24.png',
             },
             "PersonalDetails": [
@@ -1114,13 +1114,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0011GE",
-            "name": "Dr. István Máté Argay",
+            "name": "Dr. Istvan Argay",
             "about": "Laparoscopic Surgery, Endoscopic Gynecology, Obstetrics and Gynecology",
             "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Istvan Argay',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if11.png',
             },
             "PersonalDetails": [
@@ -1151,7 +1151,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Dr. István Argay?",
+                    "title": "Why Train Under Dr. Istvan Argay?",
                     "items": [
                         {
                             "title": "Hands-On Experience:",
@@ -1226,13 +1226,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0012FMU",
-            "name": "Professor Justin Konje",
+            "name": "Prof. Justin Konje",
             "about": "High-Risk Pregnancies (including diabetes), Fetal Medicine, Endometriosis and Chronic Pelvic Pain, Recurrent Pregnancy Loss, Menstrual Disorders, Reproductive Endocrinology,Family Planning",
             "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Justin Konje',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if12.png',
             },
             "PersonalDetails": [
@@ -1250,7 +1250,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Professor Justin Konje?",
+                    "title": "Why Train Under Prof. Justin Konje?",
                     "items": [
                         {
                             "title": "Extensive Clinical Experience",
@@ -1325,13 +1325,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0013FMU",
-            "name": "Professor Karl Oliver Kagan",
+            "name": "Prof. Karl Oliver Kagan",
             "about": "Prenatal Diagnostics, Fetal Medicine, High-Risk Pregnancies, Ultrasound Diagnostics",
             "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Karl Oliver Kagan',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if13.png',
             },
             "PersonalDetails": [
@@ -1362,7 +1362,7 @@ const FacultyProfile = () => {
                     ]
                 },
                 {
-                    "title": "Why Train Under Prof. Dr. med. Karl Oliver Kagan?",
+                    "title": "Why Train Under Prof. Karl Oliver Kagan?",
                     "items": [
                         {
                             "title": "Innovative Research",
@@ -1447,7 +1447,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Karunakara Marikinti',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if15.png',
             },
             "PersonalDetails": [
@@ -1581,13 +1581,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0015MM",
-            "name": "Dr. Komal N. Chavan",
+            "name": "Dr. Komal Chavan",
             "about": "Gynecology and Obstetrics, Infertility Treatment, Gynecological Endoscopy, Preventive Oncology, Postnatal Care",
             "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Dr. Komal Chavan',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if14.png',
             },
             "PersonalDetails": [
@@ -1634,7 +1634,7 @@ const FacultyProfile = () => {
                     ]
                 },
                 {
-                    "title": "Why Train Under Dr. Komal N. Chavan?",
+                    "title": "Why Train Under Dr. Komal Chavan?",
                     "items": [
                         {
                             "title": "Comprehensive Expertise",
@@ -1707,13 +1707,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0016GE",
-            "name": "Dr. Muna AbdulRazzaq Tahlak",
+            "name": "Prof. Munna Talak",
             "about": "Obstetrics and Gynecology, Minimally Invasive Surgery, High-Risk Pregnancies",
             "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Prof. Munna Talak',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if16.png',
             },
             "PersonalDetails": [
@@ -1748,7 +1748,7 @@ const FacultyProfile = () => {
                     ]
                 },
                 {
-                    "title": "Why Train Under Dr. Muna Tahlak?",
+                    "title": "Why Train Under Prof. Munna Talak?",
                     "items": [
                         {
                             "description": [
@@ -1893,7 +1893,7 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-006FMU",
-            "name": "Dr. Samina Dornan",
+            "name": "Prof. Samina Dornan",
             "about": "Maternal and Fetal Medicine , Prenatal Diagnosis and Fetal Therapy , High-Risk Pregnancy Management , Fetal Genetic Disorders and Structural Abnormalities",
             "department":'fetal-medicine-and-ultrasound',
             "cardData": {
@@ -1933,7 +1933,7 @@ const FacultyProfile = () => {
                     ]
                 },
                 {
-                    "title": "Why Train Under Dr. Samina Dornan?",
+                    "title": "Why Train Under Prof. Samina Dornan?",
                     "items": [
                         {
                             "title": "Comprehensive Expertise:",
@@ -1997,7 +1997,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Sandesh Kade',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if20.png',
             },
             "PersonalDetails": [
@@ -2090,13 +2090,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0022FMU",
-            "name": "Prof. Dr. Hab. N. Med. Sebastian Karol Kwiatkowski",
+            "name": "Prof. Sebastian Kwiatkowski",
             "about": "Maternal-Fetal Medicine (Perinatology) , Placental Pathology and Obstetric Complications , Prenatal Care and Diagnostics",
             "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Sebastian Kwiatkowski',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if21.png',
             },
             "PersonalDetails": [
@@ -2127,7 +2127,7 @@ const FacultyProfile = () => {
                     ]
                 },
                 {
-                    "title": "Why Train Under Prof. Sebastian Kwiatkowski?",
+                    "title": "Why Train Under Prof. Sebastian Kwiatkowski",
                     "items": [
                         {
                             "title": "Research Leadership:",
@@ -2184,13 +2184,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0019MM",
-            "name": "Professor Stephen Rulisa",
+            "name": "Prof. Stephen Rulisa",
             "about": "Maternal and Child Health , Infectious Diseases in Reproductive Health, Epidemiology and Health Systems Strengthening",
             "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Stephen Rulisa',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if18.png',
             },
             "PersonalDetails": [
@@ -2225,7 +2225,7 @@ const FacultyProfile = () => {
                     ]
                 },
                 {
-                    "title": "Why Train Under Professor Stephen Rulisa?",
+                    "title": "Why Train Under Prof. Stephen Rulisa?",
                     "items": [
                         {
                             "title": "Research Leadership:",
@@ -2294,13 +2294,13 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0020RFI",
-            "name": "Professor Stratis Kolibianakis",
+            "name": "Prof. Stratics kolibianakis",
             "about": "Assisted Reproduction , Reproductive Endocrinology , Infertility Treatment , Ovarian Stimulation",
             "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Prof. Stratics kolibianakis',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if19.png',
             },
             "PersonalDetails": [
@@ -2331,7 +2331,7 @@ const FacultyProfile = () => {
                     ]
                 },
                 {
-                    "title": "Why Train Under Professor Stratis Kolibianakis?",
+                    "title": "Why Train Under Prof. Stratics kolibianakis?",
                     "items": [
                         {
                             "title": "Comprehensive Expertise:",
@@ -2391,7 +2391,7 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0007FMU",
-            "name": "Dr. Hermann Ulrich Honemeyer",
+            "name": "Prof. Ulrich Honemeyer",
             "about": "Advanced Ultrasonography, Maternal-Fetal Medicine, Fetal Neurological Development",
             "department":'fetal-medicine-and-ultrasound',
             "cardData": {
@@ -2433,7 +2433,7 @@ const FacultyProfile = () => {
 
                 },
                 {
-                    "title": "Why Train Under Dr. Hermann Ulrich Honemeyer?",
+                    "title": "Why Train Under Prof. Ulrich Honemeyer?",
                     "items": [
                         {
                             "title": "Comprehensive Expertise:",
