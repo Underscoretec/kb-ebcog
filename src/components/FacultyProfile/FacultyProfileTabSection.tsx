@@ -9,6 +9,7 @@ const FacultyProfileTabSection = ({ facultyData }: any) => {
     const [selectedTab, setSelectedTab] = useState('Personal Details');
     const tabs = ['Personal Details', 'Professional Experience', 'Teaching Philosophy'];
     const router = useRouter();
+    const source = router.query.source;
 
     const renderTabContent = () => {
         switch (selectedTab) {
@@ -23,8 +24,12 @@ const FacultyProfileTabSection = ({ facultyData }: any) => {
         }
     };
 
-    const handleBack = () =>{
-        router.push(`/diploma/${facultyData.department}?section=faculty`);
+    const handleBack = () => {
+        if (source === 'faculties') {
+            router.push('/faculties');
+        } else {    
+            router.push(`/diploma/${facultyData.department}?section=faculty`);
+        }
     }
 
     return (
