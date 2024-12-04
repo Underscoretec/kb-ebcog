@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import BannerSection from '@/components/HomeComponets/BannerSection';
 import AboutSection from '@/components/HomeComponets/AboutSection';
 import ObjectiveSection from '@/components/HomeComponets/ObjectiveSection';
@@ -8,84 +8,46 @@ import FaqSection from '@/components/HomeComponets/FaqSection';
 import DotsNavigation from '../../common/uicomponents/DotNavigation';
 
 const HomePage = () => {
-  const bannerRef = useRef(null);
-  const aboutRef = useRef(null);
-  const objectiveRef = useRef(null);
-  const facultyRef = useRef(null);
-  const internationalRef = useRef(null);
-  const faqRef = useRef(null);
-
-  const [activeSection, setActiveSection] = useState(0);
-
   const sections = [
-    { ref: bannerRef, title: 'Banner' },
-    { ref: aboutRef, title: 'About' },
-    { ref: objectiveRef, title: 'Objective' },
-    { ref: facultyRef, title: 'Faculty' },
-    { ref: internationalRef, title: 'International' },
-    { ref: faqRef, title: 'FAQ' },
+    { id: 'banner', title: 'Banner' },
+    { id: 'ebcog', title: 'About' },
+    { id: 'objective', title: 'Objective' },
+    { id: 'diplomas', title: 'Faculty' },
+    { id: 'international', title: 'International' },
+    { id: 'faq', title: 'FAQ' },
+    { id: 'footer', title: 'Footer' },
   ];
 
+  const [activeSection, setActiveSection] = useState(sections[0].id);
+
   useEffect(() => {
-    const observerOptions = {
-      root: null, 
-      threshold: 0.5, 
-    };
-
-    const observerCallback = (entries: any) => {
-      entries.forEach((entry: any, index: number) => {
-        if (entry.isIntersecting) {
-          const activeIndex = sections.findIndex(
-            (section) => section.ref.current === entry.target
-          );
-          setActiveSection(activeIndex);
+    const handleScroll = () => {
+      const current = sections.find((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top >= 0 && rect.top <= window.innerHeight / 2;
         }
+        return false;
       });
+      if (current) setActiveSection(current.id);
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe each section
-    sections.forEach((section) => {
-      if (section.ref.current) {
-        observer.observe(section.ref.current);
-      }
-    });
-
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      // Clean up observer
-      sections.forEach((section) => {
-        if (section.ref.current) {
-          observer.unobserve(section.ref.current);
-        }
-      });
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [sections]);
 
   return (
     <>
-      <div ref={bannerRef}>
-        <BannerSection />
-      </div>
-      <div ref={aboutRef}>
-        <AboutSection />
-      </div>
-      <div ref={objectiveRef}>
-        <ObjectiveSection />
-      </div>
-      <div ref={facultyRef}>
-        <FacultySection />
-      </div>
-      <div ref={internationalRef}>
-        <InternationalFaculty />
-      </div>
-      <div ref={faqRef}>
-        <FaqSection />
-      </div>
-      <DotsNavigation 
-      sections={sections} 
-      activeSection={activeSection} 
-      />
+      <div id="banner"><BannerSection /></div>
+      <div id="ebcog"><AboutSection /></div>
+      <div id="objective"><ObjectiveSection /></div>
+      <div id="diplomas"><FacultySection /></div>
+      <div id="international"><InternationalFaculty /></div>
+      <div id="faq"><FaqSection /></div>
+      <DotsNavigation sections={sections} activeSection={activeSection} />
     </>
   );
 };
