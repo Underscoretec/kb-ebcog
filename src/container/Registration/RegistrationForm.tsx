@@ -5,8 +5,8 @@ import RegistrationCard from '@/components/RegistrationCard/RegistrationCard'
 
 const RegistrationForm = () => {
     return (
-        <div className='flex flex-col-reverse lg:flex-row justify-between items-center'>
-            <div className='w-[95%] sm:w-[60%] lg:w-[53%] 3xl:w-[49%] pl-4 pt-4 lg:pt-20 pb-10'>
+        <div className='flex flex-col-reverse lg:flex-row justify-between items-center lg:items-start'>
+            <div className='w-[95%] sm:w-[60%] lg:w-[53%] 3xl:w-[48%] pl-8 pt-4 lg:pt-20 pb-6 flex justify-centeritems-center'>
                 <ImageComponent
                     src={registration}
                     alt="Banner"
