@@ -73,7 +73,6 @@ const RegistrationCard = () => {
                 <h2 className="text-[#000000] font-montserrat text-[36px] font-extrabold leading-[36px]">
                     Register Now
                 </h2>
-                
                 {/* <div className="text-[#4F46E5] font-montserrat text-sm font-semibold leading-5 pt-2 pb-12 text-center px-2">
                     Diploma courses by European Board & College of Obstetrics and Gynaecology
                 </div> */}
