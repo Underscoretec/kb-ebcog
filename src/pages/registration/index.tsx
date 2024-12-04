@@ -1,19 +1,22 @@
 import CommonLayout from '@/common/layouts/CommonLayout'
-import RegistrationCard from '@/components/RegistrationCard/RegistrationCard'
+import RegistrationForm from '@/container/Registration/RegistrationForm'
 import React, { ReactElement } from 'react'
 
-const RegistrationForm = () => {
+const RegistrationFormPage = () => {
   return (
-    <><RegistrationCard /></>
+    <>
+    <RegistrationForm />
+      {/* <RegistrationCard /> */}
+    </>
   )
 }
 
-export default RegistrationForm
+export default RegistrationFormPage
 
-RegistrationForm.getLayout = function getLayout(page:ReactElement) {
-    return (
-      <CommonLayout>
-        {page}
-      </CommonLayout>
-    )
-  }
+RegistrationFormPage.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <CommonLayout>
+      {page}
+    </CommonLayout>
+  )
+}
