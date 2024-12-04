@@ -69,14 +69,14 @@ const RegistrationCard = () => {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <div className="bg-[#fff] pl-10 lg:pl-2 pt-6 lg:pt-24 pb-10">
+            <div className="bg-[#fff] pl-4 xs:pl-8 lg:pl-2 pt-6 lg:pt-24 pb-10">
                 <h2 className="text-[#000000] font-montserrat text-[36px] font-extrabold leading-[36px]">
                     Register Now
                 </h2>
                 {/* <div className="text-[#4F46E5] font-montserrat text-sm font-semibold leading-5 pt-2 pb-12 text-center px-2">
                     Diploma courses by European Board & College of Obstetrics and Gynaecology
                 </div> */}
-                <div className="w-full pr-10 2xl:pr-20 pt-8 space-y-6 bg-white ">
+                <div className="w-full pr-4 xs:pr-8 2xl:pr-20 pt-8 space-y-6 bg-white ">
                     <div className='flex gap-2 md:gap-3 flex-wrap justify-between'>
                         <InputField
                             label="Name"

@@ -35,7 +35,7 @@ const FacultyProfileTabSection = ({ facultyData }: any) => {
                     {tabs.map((tab, index) => (
                         <div
                             key={tab}
-                            className={`w-[33.3%] py-2 xs:py-4 font-montserrat font-bold leading-[24px] text-[12px] xs:text-[17px] lg:text-[20px] ${selectedTab === tab ? 'bg-[#FFF4F8] text-[#E4087F]' : ''} ${index < tabs.length - 1 ? 'border-r border-[#EAEAEA]' : ''}`}
+                            className={`px-1 flex items-center justify-center w-[33.3%] py-2 sm:py-4 font-montserrat font-bold leading-[24px] text-[13px] md:text-[15px] xl:text-[17px] 2xl:text-[20px] ${selectedTab === tab ? 'bg-[#FFF4F8] text-[#E4087F]' : ''} ${index < tabs.length - 1 ? 'border-r border-[#EAEAEA]' : ''}`}
                             onClick={() => setSelectedTab(tab)}
                         >
                             {tab.charAt(0).toUpperCase() + tab.slice(1)}

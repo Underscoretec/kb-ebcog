@@ -2506,18 +2506,18 @@ const FacultyProfile = () => {
     return (
         <div className="min-h-[60rem]">
             <BreadCrumbs routes={[{ name: facultyData?.name, href: `/${id}`, current: true }]} />
-            <div className="bg-[#290849] flex gap-8 xs:gap-0 flex-col-reverse xs:flex-row px-4 xs:px-8 xl:px-16 3xl:px-24 py-8 lg:py-12 justify-between text-white">
-                <div className="flex flex-col gap-4 w-[100%] xs:w-[47%] md:w-[60%] lg:w-auto">
-                    <h1 className="font-montserrat text-[28px] font-bold leading-[33.6px] md:w-[90%] xl:w-[84%]">{facultyData?.name}</h1>
-                    <div className="text-[#D1D5DB] font-montserrat text-[16px] font-medium leading-[24px] w-[80%]">{facultyData?.about}</div>
+            <div className="bg-[#290849] flex gap-8 sm:gap-0 flex-col-reverse sm:flex-row px-4 xs:px-8 xl:px-16 3xl:px-24 py-8 lg:py-12 justify-between text-white">
+                <div className="flex flex-col gap-4 w-[100%] sm:w-[47%] md:w-[62%] lg:w-[70%]">
+                    <h1 className="font-montserrat text-[28px] font-bold leading-[33.6px] lg:w-[90%] xl:w-[84%]">{facultyData?.name}</h1>
+                    <div className="text-[#D1D5DB] font-montserrat text-[16px] font-medium leading-[24px] w-[100%] sm:w-[90%] lg:w-[80%]">{facultyData?.about}</div>
                 </div>
-                <div className="relative w-[100%] xs:w-[51%] sm:w-[46%] md:w-[32%] lg:w-[30%] xl:w-[26%] 2xl:w-[24%] 3xl:w-[22%]">
-                    <div className="md:absolute w-[100%] top-0 rounded-[20px] overflow-hidden">
+                <div className="relative w-[100%] xs:w-[51%] sm:w-[46%] md:w-[36%] lg:w-[30%] xl:w-[26%] 2xl:w-[24%] 3xl:w-[22%]">
+                    <div className="lg:absolute w-[100%] top-0 rounded-[20px] overflow-hidden">
                         <InternationalFacultyCard data={facultyData?.cardData} btn_label="Enroll" handleClick={handleEnroll} />
                     </div>
                 </div>
             </div>
-            <div className="px-4 xs:px-8 xs:pr-8 md:pr-0 xl:pl-16 3xl:pl-24 py-4 xs:py-8 sm:py-12 w-[100%] md:w-[64%] lg:w-[68%] xl:w-[70%]">
+            <div className="px-4 sm:px-8 sm:pr-8 lg:pr-0 xl:pl-16 3xl:pl-24 py-4 xs:py-8 sm:py-12 w-[100%] lg:w-[68%] xl:w-[70%]">
                 <FacultyProfileTabSection facultyData={facultyData} />
             </div>
         </div>
