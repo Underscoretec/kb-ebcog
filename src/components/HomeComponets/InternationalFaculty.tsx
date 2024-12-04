@@ -10,7 +10,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Gynaecology Endoscopy",
       facultyName: 'Dr. Alan Abdallah',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if1.png',
       AboutLink: '#'
     },
@@ -19,7 +19,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Maternal Medicine",
       facultyName: 'Dr. Amala Nazareth',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if2.png',
       AboutLink: '#'
     },
@@ -28,7 +28,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Reproductive Endocrinology & Infertility",
       facultyName: 'Dr. Anagha Karkhanis',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if3.png',
       AboutLink: '#'
     },
@@ -37,7 +37,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Fetal Medicine and Ultrasound",
       facultyName: 'Prof. Asma Khalil',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if4.png',
       AboutLink: '#'
     },
@@ -46,7 +46,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Reproductive Endocrinology & Infertility",
       facultyName: 'Prof. Basil C. Tarlatzis (Lead)',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if5.png',
       AboutLink: '#'
     },
@@ -55,7 +55,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Maternal Medicine",
       facultyName: 'Prof. Chittaranjan N. Purandare',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if6.png',
       AboutLink: '#'
     },
@@ -64,7 +64,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Maternal Medicine",
       facultyName: 'Prof. Diogo Ayres de Campos',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if7.png',
       AboutLink: '#'
     },
@@ -73,7 +73,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Reproductive Endocrinology & Infertility",
       facultyName: 'Dr. Edgar Mocanu',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if8.png',
       AboutLink: '#'
     },
@@ -82,7 +82,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Maternal Medicine",
       facultyName: 'Prof. Frank Louwen (Lead)',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if9.png',
       AboutLink: '#'
     },
@@ -91,7 +91,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Gynaecology Endoscopy",
       facultyName: 'Dr. Helder Ferreira',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if10.png',
       AboutLink: '#'
     },
@@ -100,7 +100,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Gynaecology Endoscopy",
       facultyName: 'Dr. Hugo Rodrigues Gaspar',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if24.png',
       AboutLink: '#'
     },
@@ -109,7 +109,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Gynaecology Endoscopy",
       facultyName: 'Dr. Istvan Argay',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if11.png',
       AboutLink: '#'
     },
@@ -118,7 +118,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Fetal Medicine and Ultrasound",
       facultyName: 'Prof. Justin Konje',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if12.png',
       AboutLink: '#'
     },
@@ -127,7 +127,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Fetal Medicine and Ultrasound",
       facultyName: 'Prof. Karl Oliver Kagan',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if13.png',
       AboutLink: '#'
     },
@@ -136,7 +136,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Reproductive Endocrinology & Infertility",
       facultyName: 'Dr. Karunakara Marikinti',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if15.png',
       AboutLink: '#'
     },
@@ -145,7 +145,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Maternal Medicine",
       facultyName: 'Dr. Komal Chavan',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if14.png',
       AboutLink: '#'
     },
@@ -154,7 +154,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Gynaecology Endoscopy",
       facultyName: 'Prof. Munna Talak',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if16.png',
       AboutLink: '#'
     },
@@ -181,7 +181,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Gynaecology Endoscopy",
       facultyName: 'Dr. Sandesh Kade',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if20.png',
       AboutLink: '#'
     },
@@ -190,7 +190,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Fetal Medicine and Ultrasound",
       facultyName: 'Prof. Sebastian Kwiatkowski',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if21.png',
       AboutLink: '#'
     },
@@ -199,7 +199,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Maternal Medicine",
       facultyName: 'Prof. Stephen Rulisa',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if18.png',
       AboutLink: '#'
     },
@@ -208,7 +208,7 @@ const InternationalFaculty = () => {
       course: "Diploma in Reproductive Endocrinology & Infertility",
       facultyName: 'Prof. Stratics kolibianakis',
       courseDuration: '1 week',
-      totalLearners: '15,674',
+      totalLearners: '70',
       facultyImage: '/if19.png',
       AboutLink: '#'
     },
@@ -224,7 +224,7 @@ const InternationalFaculty = () => {
   ]
 
   const handleClick = (id: string) => {
-    router.push(`/${id}`);
+    router.push(`/${id}/?source=faculties`);
   };
 
   return (

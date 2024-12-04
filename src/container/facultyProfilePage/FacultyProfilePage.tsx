@@ -19,7 +19,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if9.png'
             },
             "PersonalDetails": [
@@ -136,7 +136,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Helder Ferreira (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if10.png'
             },
             "PersonalDetails": [
@@ -248,7 +248,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Asma Khalil (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if4.png'
             },
             "PersonalDetails": [
@@ -329,7 +329,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if5.png'
             },
             "PersonalDetails": [
@@ -428,7 +428,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Alan Abdallah',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if1.png',
             },
             "PersonalDetails": [
@@ -511,7 +511,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Amala Nazareth',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if2.png',
             },
             "PersonalDetails": [
@@ -593,7 +593,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Anagha Karkhanis',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if3.png',
             },
             "PersonalDetails": [
@@ -689,7 +689,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Chittaranjan N. Purandare',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if6.png',
             },
             "PersonalDetails": [
@@ -781,7 +781,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Diogo Ayres de Campos',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if7.png',
             },
             "PersonalDetails": [
@@ -913,7 +913,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Edgar Mocanu',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if8.png',
             },
             "PersonalDetails": [
@@ -1034,7 +1034,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Hugo Rodrigues Gaspar',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if24.png',
             },
             "PersonalDetails": [
@@ -1120,7 +1120,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Istvan Argay',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if11.png',
             },
             "PersonalDetails": [
@@ -1232,7 +1232,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Justin Konje',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if12.png',
             },
             "PersonalDetails": [
@@ -1331,7 +1331,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Karl Oliver Kagan',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if13.png',
             },
             "PersonalDetails": [
@@ -1447,7 +1447,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Karunakara Marikinti',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if15.png',
             },
             "PersonalDetails": [
@@ -1587,7 +1587,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Komal Chavan',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if14.png',
             },
             "PersonalDetails": [
@@ -1713,7 +1713,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Munna Talak',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if16.png',
             },
             "PersonalDetails": [
@@ -1997,7 +1997,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Sandesh Kade',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if20.png',
             },
             "PersonalDetails": [
@@ -2096,7 +2096,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Sebastian Kwiatkowski',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if21.png',
             },
             "PersonalDetails": [
@@ -2190,7 +2190,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Stephen Rulisa',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if18.png',
             },
             "PersonalDetails": [
@@ -2300,7 +2300,7 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Prof. Stratics kolibianakis',
                 "courseDuration": '1 week',
-                "totalLearners": '15,674',
+                "totalLearners": '70',
                 "facultyImage": '/if19.png',
             },
             "PersonalDetails": [

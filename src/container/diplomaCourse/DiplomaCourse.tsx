@@ -21,12 +21,12 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "id": "maternal-medical",
             "courseName": 'Diploma in Maternal Medicine',
             "duration": '1 week',
-            "learners": "15,674",
+            "learners": "70",
             "lessons": '20',
             "cardData": {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if9.png'
             },
             "overview": {
@@ -181,12 +181,12 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "id": "reproductive-endocrinology",
             "courseName": 'Diploma in Reproductive Endocrinology & Infertility',
             "duration": '1 week',
-            "learners": "15,674",
+            "learners": "70",
             "lessons": '20',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if5.png'
             },
             "overview": {
@@ -472,12 +472,12 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "id": "fetal-medicine-and-ultrasound",
             "courseName": 'Diploma in Fetal Medicine and Ultrasound',
             "duration": '1 week',
-            "learners": "15,674",
+            "learners": "70",
             "lessons": '20',
             "cardData": {
                 "facultyName": 'Prof. Asma Khalil',
                 "courseDuration": '1 Week',
-                "totalLearners": "15,674",
+                "totalLearners": "70",
                 "facultyImage": '/if4.png'
             },
             "overview": {
