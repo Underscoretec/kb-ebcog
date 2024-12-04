@@ -21,10 +21,8 @@ const AboutSection = () => {
                 <div className='text-[22px] xs:text-[42px] sm:text-[45px] md:text-[55px] lg:text-[35px] xl:text-[45px] 2xl:text-[55px] pr-5 font-oswald text-[#290849]'>{`(European Board & College of Obstetrics and Gynaecology)`}</div>
                 <div className='text-[15px] sm:text-[15px] md:text-[20px] lg:text-[15px] xl:text-[18px] 2xl:text-[20px] font-oswald text-[#000000] leading-[25px] 2xl:leading-[32px] w-full lg:w-[98%] xl:w-[90%] 2xl:w-[90%]'>{`"EBCOG is the Board and College of the Section of Gynaecology and Obstetrics of the Union Européenne des Médecins
                     Spécialistes (UEMS), representing 37 European national societies in Obstetrics and Gynaecology. The aim of EBCOG
-                    is to improve the health of women, as well as unborn and newborn babies,by promoting the highest possible standards
-                    of care. EBCOG's core activities focus on education and training, working collaboratively with subspecialties,
-                    special interest societies, trainees, and European interest groups to achieve these goals. EBCOG also works closely
-                    with the European trainees' organization, ENTOG, to offer fellowships together annually."`}</div>
+                    is to improve the health of women, as well as unborn and newborn babies, by promoting the highest possible standards
+                    of care. EBCOG works closely with subspecialist societies like ESHRE, EAPM, EUGA & ESGO. European network of trainees (ENTOG) collaborates with EBCOG in curriculum development and recognition of training centres"`}</div>
 
                 <div className='pt-8 xl:pt-5 2xl:pt-10'>
                     <Link href='/registration'>
