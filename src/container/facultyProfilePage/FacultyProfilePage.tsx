@@ -216,7 +216,8 @@ const FacultyProfile = () => {
                         "title": "Leadership Positions:",
                         "items": [
                             "Full Executive Board Member of ESGE",
-                            "Advisory Board Member of EEL"
+                            "Advisory Board Member of EEL",
+                            "President of the Portuguese Society of Minimally Invasive Surgery"
                         ]
                     },
                     {
@@ -241,11 +242,11 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0004FMU",
-            "name": 'Dr. Asma Khalil',
+            "name": 'Prof. Asma Khalil',
             "about": "Twin and Multiple Pregnancies, Fetal Growth Restriction, Hypertensive Disorders in Pregnancy",
             "department":'fetal-medicine-and-ultrasound',
             "cardData": {
-                "facultyName": 'Dr. Asma Khalil (Lead)',
+                "facultyName": 'Prof. Asma Khalil (Lead)',
                 "courseDuration": '1 Week',
                 "totalLearners": "15,674",
                 "facultyImage": '/if4.png'
@@ -274,7 +275,7 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Dr. Asma Khalil",
+                    "title": "Why Train Under Prof. Asma Khalil",
                     "items": [
                         {
                             "description": [

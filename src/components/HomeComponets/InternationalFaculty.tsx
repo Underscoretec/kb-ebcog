@@ -35,7 +35,7 @@ const InternationalFaculty = () => {
     {
       id: "p-0004FMU",
       course: "Diploma in Fetal Medicine and Ultrasound",
-      facultyName: 'Dr. Asma Khalil',
+      facultyName: 'Prof. Asma Khalil',
       courseDuration: '1 week',
       totalLearners: '15,674',
       facultyImage: '/if4.png',
