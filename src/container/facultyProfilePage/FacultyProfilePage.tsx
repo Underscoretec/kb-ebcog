@@ -15,6 +15,7 @@ const FacultyProfile = () => {
             "id": "p-0009MM",
             "name": 'Professor Frank Louwen',
             "about": "Obstetrics and Perinatology, Maternal-Fetal Medicine, Hypertensive Disorders in Pregnancy, Breech Birth Management.",
+            "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
@@ -131,6 +132,7 @@ const FacultyProfile = () => {
             "id": "p-0010GE",
             "name": 'Professor Hélder Ferreira',
             "about": "Advanced Laparoscopic Surgery, Robotic Gynecological Surgery, Management of Deep Endometriosis, Gynecologic Oncology,Treatment of Genital Prolapse, Correction of Uterovaginal Malformations",
+            "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Helder Ferreira (Lead)',
                 "courseDuration": '1 Week',
@@ -242,6 +244,7 @@ const FacultyProfile = () => {
             "id": "p-0004FMU",
             "name": 'Professor Asma Khalil',
             "about": "Twin and Multiple Pregnancies, Fetal Growth Restriction, Hypertensive Disorders in Pregnancy",
+            "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Dr. Asma Khalil (Lead)',
                 "courseDuration": '1 Week',
@@ -322,6 +325,7 @@ const FacultyProfile = () => {
             "id": "p-0005RPI",
             "name": 'Professor Basil C. Tarlatzis',
             "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
+            "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
@@ -420,6 +424,7 @@ const FacultyProfile = () => {
             "id": "p-0001GE",
             "name": 'Dr. Alain Abdallah',
             "about": "Minimally Invasive/Laparoscopic Surgeries",
+            "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Alan Abdallah',
                 "courseDuration": '1 week',
@@ -502,6 +507,7 @@ const FacultyProfile = () => {
             "id": "p-0002MM",
             "name": 'Dr. Amala Lovetto Nazareth',
             "about": "High-Risk Obstetrics, Operative Gynecology, Infertility Treatments, and Minimally Invasive Surgeries",
+            "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Dr. Amala Nazareth',
                 "courseDuration": '1 week',
@@ -583,6 +589,7 @@ const FacultyProfile = () => {
             "id": "p-0003REI",
             "name": "Dr. Anagha Karkhanis",
             "about": 'Reproductive Medicine, Infertility Management, Minimal Access Surgery, and Advanced Gynecological Endoscopy',
+            "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Anagha Karkhanis',
                 "courseDuration": '1 week',
@@ -678,6 +685,7 @@ const FacultyProfile = () => {
             "id": "p-0006MM",
             "name": "Prof. Chittaranjan Narahari Purandare",
             "about": "Maternal Health, Women's Health, Obstetrics, Gynecology",
+            "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Chittaranjan N. Purandare',
                 "courseDuration": '1 week',
@@ -769,6 +777,7 @@ const FacultyProfile = () => {
             "id": "p-0007MM",
             "name": "Professor Diogo Ayres-de-Campos",
             "about": "Intrapartum Fetal Monitoring, Obstetric Simulation",
+            "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Diogo Ayres de Campos',
                 "courseDuration": '1 week',
@@ -900,6 +909,7 @@ const FacultyProfile = () => {
             "id": "p-0008REI",
             "name": "Professor Edgar V. Mocanu",
             "about": "Reproductive Medicine and Surgery, Infertility Treatment, Reproductive Endocrinology",
+            "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Edgar Mocanu',
                 "courseDuration": '1 week',
@@ -1020,6 +1030,7 @@ const FacultyProfile = () => {
             "id": "p-0024GE",
             "name": "Dr. Hugo Rodrigues Gaspar",
             "about": "Gynecological Oncology, Surgical Anatomy in Pelvic Gynecology,Genetic Mutations in Ovarian Cancer",
+            "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Hugo Rodrigues Gaspar',
                 "courseDuration": '1 week',
@@ -1105,6 +1116,7 @@ const FacultyProfile = () => {
             "id": "p-0011GE",
             "name": "Dr. István Máté Argay",
             "about": "Laparoscopic Surgery, Endoscopic Gynecology, Obstetrics and Gynecology",
+            "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Istvan Argay',
                 "courseDuration": '1 week',
@@ -1216,6 +1228,7 @@ const FacultyProfile = () => {
             "id": "p-0012FMU",
             "name": "Professor Justin Konje",
             "about": "High-Risk Pregnancies (including diabetes), Fetal Medicine, Endometriosis and Chronic Pelvic Pain, Recurrent Pregnancy Loss, Menstrual Disorders, Reproductive Endocrinology,Family Planning",
+            "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Justin Konje',
                 "courseDuration": '1 week',
@@ -1313,7 +1326,8 @@ const FacultyProfile = () => {
         {
             "id": "p-0013FMU",
             "name": "Professor Karl Oliver Kagan",
-            "about": "Prenatal Diagnostics, Fetal Medicine, High-Risk Pregnancies, Ultrasound Diagnostics",
+            "about": "Prenatal Diagnostics, Fetal Medicine, High-Risk Pregnancies, Ultrasound Diagnostics",
+            "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Karl Oliver Kagan',
                 "courseDuration": '1 week',
@@ -1429,6 +1443,7 @@ const FacultyProfile = () => {
             "id": "p-0014REI",
             "name": "Dr. Karunakara Marikinti",
             "about": "Infertility Treatments , In Vitro Fertilization (IVF) , Recurrent Miscarriage Management , Advanced Ultrasound Diagnostics , Minimally Invasive Gynecological Procedures",
+            "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Karunakara Marikinti',
                 "courseDuration": '1 week',
@@ -1568,6 +1583,7 @@ const FacultyProfile = () => {
             "id": "p-0015MM",
             "name": "Dr. Komal N. Chavan",
             "about": "Gynecology and Obstetrics, Infertility Treatment, Gynecological Endoscopy, Preventive Oncology, Postnatal Care",
+            "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Dr. Komal Chavan',
                 "courseDuration": '1 week',
@@ -1693,6 +1709,7 @@ const FacultyProfile = () => {
             "id": "p-0016GE",
             "name": "Dr. Muna AbdulRazzaq Tahlak",
             "about": "Obstetrics and Gynecology, Minimally Invasive Surgery, High-Risk Pregnancies",
+            "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Prof. Munna Talak',
                 "courseDuration": '1 week',
@@ -1782,6 +1799,7 @@ const FacultyProfile = () => {
             "id": "p-0017REI",
             "name": "Dr. Rajalaxmi Walavalkar",
             "about": "Reproductive Medicine, Infertility Treatment, Gynecological Endoscopy",
+            "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Rajalaxmi Walavalkar',
                 "courseDuration": '1 week',
@@ -1877,6 +1895,7 @@ const FacultyProfile = () => {
             "id": "p-006FMU",
             "name": "Dr. Samina Dornan",
             "about": "Maternal and Fetal Medicine , Prenatal Diagnosis and Fetal Therapy , High-Risk Pregnancy Management , Fetal Genetic Disorders and Structural Abnormalities",
+            "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Samina Dornan',
                 "courseDuration": '1 week',
@@ -1974,6 +1993,7 @@ const FacultyProfile = () => {
             "id": "p-0021GE",
             "name": "Dr. Sandesh Kade",
             "about": "Advanced Laparoscopic Surgeries , Fertility-Enhancing Surgeries , Treatment of Endometriosis , Pelvic Floor Repair Surgeries , Hysteroscopy",
+            "department":'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Sandesh Kade',
                 "courseDuration": '1 week',
@@ -2072,6 +2092,7 @@ const FacultyProfile = () => {
             "id": "p-0022FMU",
             "name": "Prof. Dr. Hab. N. Med. Sebastian Karol Kwiatkowski",
             "about": "Maternal-Fetal Medicine (Perinatology) , Placental Pathology and Obstetric Complications , Prenatal Care and Diagnostics",
+            "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Sebastian Kwiatkowski',
                 "courseDuration": '1 week',
@@ -2165,6 +2186,7 @@ const FacultyProfile = () => {
             "id": "p-0019MM",
             "name": "Professor Stephen Rulisa",
             "about": "Maternal and Child Health , Infectious Diseases in Reproductive Health, Epidemiology and Health Systems Strengthening",
+            "department":'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Stephen Rulisa',
                 "courseDuration": '1 week',
@@ -2274,6 +2296,7 @@ const FacultyProfile = () => {
             "id": "p-0020RFI",
             "name": "Professor Stratis Kolibianakis",
             "about": "Assisted Reproduction , Reproductive Endocrinology , Infertility Treatment , Ovarian Stimulation",
+            "department":'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Prof. Stratics kolibianakis',
                 "courseDuration": '1 week',
@@ -2370,6 +2393,7 @@ const FacultyProfile = () => {
             "id": "p-0007FMU",
             "name": "Dr. Hermann Ulrich Honemeyer",
             "about": "Advanced Ultrasonography, Maternal-Fetal Medicine, Fetal Neurological Development",
+            "department":'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Ulrich Honemeyer',
                 "courseDuration": '1 week',

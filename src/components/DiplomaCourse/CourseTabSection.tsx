@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CourseOverview from './CourseOverview';
 import CourseFaculty from './CourseFaculty';
 import CourseCurriculum from './CourseCurriculum';
 import CourseFAQs from './CourseFAQs';
+import { useRouter } from 'next/router';
 
 const CourseTabSection = ({ courseData }: any) => {
+    const router = useRouter();
     const [selectedTab, setSelectedTab] = useState('overview');
-
     const tabs = ['overview', 'curriculum', 'faculty', 'faqs'];
+    const { section } = router.query;
+
+    useEffect(()=>{
+        if(section){
+            setSelectedTab("faculty");
+        }else {
+            setSelectedTab('overview'); 
+        }
+    },[section])
 
 
     const renderTabContent = () => {

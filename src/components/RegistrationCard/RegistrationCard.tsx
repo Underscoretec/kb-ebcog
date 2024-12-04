@@ -10,10 +10,10 @@ import { useUserHook } from '@/container/UserModel/useUserHooks';
 const RegistrationCard = () => {
     const { createCourseRegistrationApi } = useUserHook();
     const settings = [
-        { name: 'Maternal Medicine', value:'maternalMedicine'},
-        { name: 'Reproductive Endocrinology & Infertility', value:'reproductiveEndocrinology_Infertility' },
-        { name: 'Gynaecology Endoscopy', value:'gynaecologyEndoscopy' },
-        { name: 'Fetal Medicine and Ultrasound', value:'fetalMedicine_Ultrasound' },
+        { name: 'Maternal Medicine', value: 'maternalMedicine' },
+        { name: 'Reproductive Endocrinology & Infertility', value: 'reproductiveEndocrinology_Infertility' },
+        { name: 'Gynaecology Endoscopy', value: 'gynaecologyEndoscopy' },
+        { name: 'Fetal Medicine and Ultrasound', value: 'fetalMedicine_Ultrasound' },
     ];
 
     const formik = useFormik({
@@ -46,7 +46,7 @@ const RegistrationCard = () => {
         onSubmit: async (values, action) => {
             console.log('Form Data: ##', values);
             if (values) {
-                const result:any = await createCourseRegistrationApi(values,action);
+                const result: any = await createCourseRegistrationApi(values, action);
                 console.log(result?.response, 'result ##');
                 if (result?.response?.data?.code === 'REGISTRATION_RECORD_FOUND') {
                     alert("Email already exist!")
@@ -69,69 +69,84 @@ const RegistrationCard = () => {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <div className="flex flex-col items-center justify-center bg-[#F9FAFB] pt-20 pb-32">
-                <h2 className="text-[#111827] font-montserrat text-[30px] font-extrabold leading-[36px]">
-                    Registration
+            <div className="bg-[#fff] pl-10 lg:pl-2 pt-6 lg:pt-24 pb-10">
+                <h2 className="text-[#000000] font-montserrat text-[36px] font-extrabold leading-[36px]">
+                    Register Now
                 </h2>
-                <div className="text-[#4F46E5] font-montserrat text-sm font-semibold leading-5 pt-2 pb-12 text-center px-2">
+                {/* <div className="text-[#4F46E5] font-montserrat text-sm font-semibold leading-5 pt-2 pb-12 text-center px-2">
                     Diploma courses by European Board & College of Obstetrics and Gynaecology
-                </div>
-                <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-custom">
-                    <InputField
-                        label="Name"
-                        id="fullName"
-                        value={formik.values.fullName}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.touched.fullName && formik.errors.fullName}
-                        requiredDesign
-                    />
-                    <InputField
-                        label="Email Id"
-                        type="email"
-                        id="email"
-                        value={formik.values.email}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.touched.email && formik.errors.email}
-                        requiredDesign
-                    />
-                    <InputField
-                        label="Whatsapp Number"
-                        id="whatsAppNumber"
-                        value={formik.values.whatsAppNumber}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.touched.whatsAppNumber && formik.errors.whatsAppNumber}
-                        requiredDesign
-                    />
-                    <InputField
-                        label="City"
-                        id="city"
-                        value={formik.values.city}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.touched.city && formik.errors.city}
-                        requiredDesign
-                    />
-                    <InputField
-                        label="State"
-                        id="state"
-                        value={formik.values.state}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.touched.state && formik.errors.state}
-                        requiredDesign
-                    />
-                    <InputField
-                        label="Country"
-                        id="country"
-                        value={formik.values.country}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.touched.country && formik.errors.country}
-                        requiredDesign
-                    />
+                </div> */}
+                <div className="w-full pr-10 2xl:pr-20 pt-8 space-y-6 bg-white ">
+                    <div className='flex gap-2 md:gap-3 flex-wrap justify-between'>
+                        <InputField
+                            label="Name"
+                            id="fullName"
+                            className='flex flex-col gap-1 w-full lg:w-[48%]'
+                            value={formik.values.fullName}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.fullName && formik.errors.fullName}
+                            requiredDesign
+                        />
+                        <InputField
+                            label="Email Id"
+                            type="email"
+                            id="email"
+                            className='flex flex-col gap-1 w-full lg:w-[48%]'
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.email && formik.errors.email}
+                            requiredDesign
+                        />
+                    </div>
+                    <div className='flex gap-2 md:gap-3 flex-wrap justify-between'>
+                        <InputField
+                            label="Whatsapp Number"
+                            id="whatsAppNumber"
+                            className='flex flex-col gap-1 w-full lg:w-[48%]'
+                            value={formik.values.whatsAppNumber}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.whatsAppNumber && formik.errors.whatsAppNumber}
+                            requiredDesign
+                        />
+                        <InputField
+                            label="City"
+                            id="city"
+                            className='flex flex-col gap-1 w-full lg:w-[48%]'
+                            value={formik.values.city}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.city && formik.errors.city}
+                            requiredDesign
+                        />
+                    </div>
+
+                    <div className='flex gap-2 md:gap-3 flex-wrap justify-between'>
+                        <InputField
+                            label="State"
+                            id="state"
+                            className='flex flex-col gap-1 w-full lg:w-[48%]'
+                            value={formik.values.state}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.state && formik.errors.state}
+                            requiredDesign
+                        />
+                        <InputField
+                            label="Country"
+                            id="country"
+                            className='flex flex-col gap-1 w-full lg:w-[48%]'
+                            value={formik.values.country}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.country && formik.errors.country}
+                            requiredDesign
+                        />
+                    </div>
+
+
                     <RadioListTable
                         label="Please choose Diploma course for which you want to Register"
                         settings={settings}
@@ -139,18 +154,25 @@ const RegistrationCard = () => {
                         onChange={(value: any) => formik.setFieldValue('diplomaCourse', value)}
                         required
                     />
-                    <ImageUploader
-                        label="Upload Your Latest Degree Certificate"
-                        id="degreeCertificate"
-                        onUpload={handleDegreeCertificateUpload}
-                        value={formik.values.degreeCertificate}
-                    />
-                    <ImageUploader
-                        label="Upload Your Basic Degree Document"
-                        id="basicDegreeDocument"
-                        onUpload={handleBasicDegreeDocumentUpload}
-                        value={formik.values.basicDegreeDocument}
-                    />
+                    <div className='flex flex-col sm:flex-row gap-4 justify-between'>
+                        <div className='w-[100%] sm:w-[47%]'>
+                            <ImageUploader
+                                label="Upload Your Latest Degree Certificate"
+                                id="degreeCertificate"
+                                onUpload={handleDegreeCertificateUpload}
+                                value={formik.values.degreeCertificate}
+                            />
+                        </div>
+                        <div className='w-[100%] sm:w-[47%]'>
+                            <ImageUploader
+                                label="Upload Your Basic Degree Document"
+                                id="basicDegreeDocument"
+                                onUpload={handleBasicDegreeDocumentUpload}
+                                value={formik.values.basicDegreeDocument}
+                            />
+                        </div>
+
+                    </div>
 
                     <Button
                         type="submit"
