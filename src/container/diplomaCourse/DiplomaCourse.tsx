@@ -22,7 +22,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "courseName": 'Diploma in Maternal Medicine',
             "duration": '1 week',
             "learners": "70",
-            "lessons": '20',
+            "lessons": '40',
             "cardData": {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
@@ -182,7 +182,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "courseName": 'Diploma in Reproductive Endocrinology & Infertility',
             "duration": '1 week',
             "learners": "70",
-            "lessons": '20',
+            "lessons": '40',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
@@ -315,7 +315,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "courseName": 'Diploma in Gynaecology Endoscopy',
             "duration": '1 week',
             "learners": "156",
-            "lessons": '20',
+            "lessons": '40',
             "cardData": {
                 // "course": 'Gynaecology Endoscopy By Dr Helder Ferreira',
                 "facultyName": 'Dr. Helder Ferreira',
@@ -473,7 +473,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "courseName": 'Diploma in Fetal Medicine and Ultrasound',
             "duration": '1 week',
             "learners": "70",
-            "lessons": '20',
+            "lessons": '40',
             "cardData": {
                 "facultyName": 'Prof. Asma Khalil',
                 "courseDuration": '1 Week',
@@ -649,7 +649,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                     <div className='flex flex-col md:flex-row gap-2 md:gap-8 font-montserrat text-base font-medium leading-6 text-[#9D9D9D]'>
                         <div className='flex gap-1 xl:gap-2 items-center'><MdAccessTimeFilled className='text-[#EE7E22]' /> {courseData?.duration}</div>
                         <div className='flex gap-1 xl:gap-2 items-center'><RiGraduationCapFill className='text-[#EE7E22]' /> {courseData?.learners} Learners</div>
-                        <div className='flex gap-1 xl:gap-2 items-center'><MdFileCopy className='text-[#EE7E22]' /> {courseData?.lessons} Lessons</div>
+                        <div className='flex gap-1 xl:gap-2 items-center'><MdFileCopy className='text-[#EE7E22]' /> {courseData?.lessons} Lectures</div>
                     </div>
                 </div>
                 <div className='relative w-[100%] xs:w-[51%] sm:w-[46%] md:w-[32%] lg:w-[30%] xl:w-[26%] 2xl:w-[24%] 3xl:w-[22%]'>
