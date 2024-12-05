@@ -37,6 +37,20 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
         }));
     };
 
+    const openSubMenu = (index: any) => {
+        setOpenSubmenus((prev) => ({
+            ...prev,
+            [index]: true,
+        }));
+    };
+
+    const closeSubMenu = (index: any) => {
+        setOpenSubmenus((prev) => ({
+            ...prev,
+            [index]: false,
+        }));
+    };
+
     const handleClickAway = () => {
         setOpenSubmenus({});
     };
@@ -46,60 +60,48 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
             <div
-                className={`relative h-full border-b-2 text-gray-500 border-white
-          transition duration-300 ease-in-out
-          ${depth > 1 ?
-                        'bg-white text-[#6B7280] hover:text-black hover:bg-[#ebe7ea] z-[100] hover:border-b-0' :
-                        'bg-white hover:text-[#111827]'
-                    }`}
-
+                className={`relative h-full text-gray-500 transition duration-300 ease-in-out ${depth > 1 ? 'bg-white text-[#6B7280] hover:text-black hover:bg-[#ebe7ea] z-[100]' : 'bg-white hover:text-[#111827]'}`}
+                onMouseEnter={() => openSubMenu(index)} // Open submenu on hover
+                onMouseLeave={() => closeSubMenu(index)} // Close submenu when the mouse leaves
             >
-                <ul
-                    onClick={() => { toggleSubMenu(index); }}
-                    className="h-full w-full flex items-center cursor-pointer"
-                >
+                <ul onClick={() => toggleSubMenu(index)} className="h-full w-full flex items-center cursor-pointer">
                     <Link
                         href={menuData.url}
                         target={menuData.url.endsWith('.pdf') ? '_blank' : '_self'}
                         rel={menuData.url.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
                         className={`w-full ${isActive ? ' text-[#111827] hover:text-gray-500' : ''}`}
                     >
-                        <li
-                            key={index}
-                            className={`text-[12px] xl:text-[14px] 2xl:text-[16px] font-medium font-montserrat cursor-pointer flex justify-between items-center ${depth === 1 ? 'py-0' : 'p-3 2xl:p-4'}`}
-                        >
+                        <li key={index} className={`text-[12px] xl:text-[14px] 2xl:text-[16px] font-medium font-montserrat cursor-pointer flex justify-between items-center ${depth === 1 ? 'py-0' : 'p-3 2xl:p-4'}`}>
                             <span>{menuData.title}</span>
                             {menuData.submenu && (
                                 <FaAngleDown className={`transition-transform transform duration-500 ml-2 text-sm ${openSubmenus[index] ? 'rotate-180' : ''}`} />
                             )}
                         </li>
                     </Link>
-
                 </ul>
 
-                {/* Only render the submenu if it exists */}
+                {/* Render the submenu */}
                 {menuData.submenu && (
                     <ul
-                        onMouseLeave={() => { setOpenSubmenus((prev) => ({ ...prev, [index]: false })); }}
                         className={`${openSubmenus[index] ? 'block' : 'hidden'}
-              ${depth === 1 ? 'top-[calc(100%)] left-0 w-[calc(200%)] xl:w-[calc(200%)]' :
-                                `${depth === 2 ? "w-[calc(100%)] 2xl:w-[calc(70%)]" : "w-[calc(100%)] xl:w-[calc(85%)]"} top-0 ml-[calc(100%)] bg-white`}
-              shadow-2xl absolute border-2 border-t-0 hover:border-0`}
+                            ${depth === 1 ? 'top-[calc(100%)] left-0 w-[calc(200%)] xl:w-[calc(200%)]' : `${depth === 2 ? "w-[calc(100%)] 2xl:w-[calc(70%)]" : "w-[calc(100%)] xl:w-[calc(85%)]"} top-0 ml-[calc(100%)] bg-white`} shadow-2xl absolute border-2 border-t-0`}
                     >
-                        {openSubmenus[index] && menuData.submenu.map((subMenu: any, subMenuIndex: any) => (
-                            <CreateMenu
-                                key={subMenuIndex}
-                                menuData={subMenu}
-                                depth={depth + 1}
-                                menuStatus={menuStatus}
-                                setMenuStatus={setMenuStatus}
-                            />
-                        ))}
+                        {openSubmenus[index] &&
+                            menuData.submenu.map((subMenu: any, subMenuIndex: any) => (
+                                <CreateMenu
+                                    key={subMenuIndex}
+                                    menuData={subMenu}
+                                    depth={depth + 1}
+                                    menuStatus={menuStatus}
+                                    setMenuStatus={setMenuStatus}
+                                />
+                            ))}
                     </ul>
                 )}
             </div>
         </ClickAwayListener>
     );
 };
+
 
 export default Navbar;
