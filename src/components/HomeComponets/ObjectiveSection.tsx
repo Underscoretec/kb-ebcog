@@ -30,7 +30,7 @@ const ObjectiveSection = () => {
 
     return (
         <div className='bg-[#FFF4F8]'>
-            <div className='text-[22px] xs:text-[42px] xl:text-[52px] pt-12 text-[#290849] font-[oswald] leading-[30px] xs:leading-[55px] w-[100%] lg:w-[87%] xl:w-[76%] xl:px-16 3xl:px-24 px-4 xs:px-8'>
+            <div className='text-[22px] xs:text-[42px] xl:text-[52px] pt- text-[#290849] font-[oswald] leading-[30px] xs:leading-[55px] w-[100%] lg:w-[87%] xl:w-[76%] xl:px-16 3xl:px-24 px-4 xs:px-8'>
                 {`Emirates Institute of Postgraduate Medical Sciences &`} <span className='text-[#E4087F]'>{`KnowledgeBridge International`}</span> {`Objectives of launching courses with`} <span className='text-[#E4087F]'>{`EBCOG`}</span>
             </div>
 
