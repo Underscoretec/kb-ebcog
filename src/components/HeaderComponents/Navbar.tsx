@@ -71,7 +71,7 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
                         rel={menuData.url.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
                         className={`w-full ${isActive ? ' text-[#111827] hover:text-gray-500' : ''}`}
                     >
-                        <li key={index} className={`text-[12px] xl:text-[14px] 2xl:text-[16px] font-medium font-montserrat cursor-pointer flex justify-between items-center ${depth === 1 ? 'py-0' : 'p-3 2xl:p-4'}`}>
+                        <li key={index} className={`text-[16px] xl:text-[14px] 2xl:text-[16px] font-medium font-montserrat cursor-pointer flex justify-between items-center ${depth === 1 ? 'py-0' : 'p-3 2xl:p-4'}`}>
                             <span>{menuData.title}</span>
                             {menuData.submenu && (
                                 <FaAngleDown className={`transition-transform transform duration-500 ml-2 text-sm ${openSubmenus[index] ? 'rotate-180' : ''}`} />
