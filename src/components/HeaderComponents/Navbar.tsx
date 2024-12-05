@@ -62,7 +62,7 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
             <div
                 className={`relative h-full text-gray-500 transition duration-300 ease-in-out ${depth > 1 ? 'bg-white text-[#6B7280] hover:text-black hover:bg-[#ebe7ea] z-[100]' : 'bg-white hover:text-[#111827]'}`}
                 onMouseEnter={() => openSubMenu(index)} // Open submenu on hover
-                onMouseLeave={() => closeSubMenu(index)} // Close submenu when the mouse leaves
+                onMouseLeave={() => closeSubMenu(index)} 
             >
                 <ul onClick={() => toggleSubMenu(index)} className="h-full w-full flex items-center cursor-pointer">
                     <Link
