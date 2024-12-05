@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "starttest": "next start -p 30050",
-    "startprod": "next start -p 30051",
+    "startprod": "next start -p 30118",
     "lint": "next lint"
   },
   "dependencies": {
