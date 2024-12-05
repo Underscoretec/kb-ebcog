@@ -17,7 +17,7 @@ export const menuitems = [
             {
                 id: '4',
                 title: 'KnowledgeBridge',
-                url: '#'
+                url: '/#knowledgeBridge'
             },
         ],
     },
