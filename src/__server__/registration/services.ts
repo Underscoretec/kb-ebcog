@@ -6,6 +6,10 @@ import messages from "@/__server__/utils/message.json";
 import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
 
+
+const env = process.env.ENV!;
+const appName = process.env.APP_NAME!;
+
 interface ExtendApiRequest extends NextApiRequest {
     files?: Express.MulterS3.File[], user?: any
 }
@@ -34,12 +38,12 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
             });
         }
         // @ts-ignore
-        const latestDegreeCertificate = req.files?.["latestDegreeCertificate"]?.[0];
+        let latestDegreeCertificate = req.files?.["latestDegreeCertificate"]?.[0];
+        latestDegreeCertificate = latestDegreeCertificate.replace(`${appName}/${env}/`);
         console.log(latestDegreeCertificate,'latestDegreeCertificate >>>>>>');
         // @ts-ignore
-        const basicDegreeDocument = req.files?.['basicDegreeDocument']?.[0];
-        console.log(basicDegreeDocument, 'basicDegreeDocument >>>');
-        console.log(address,'address >>>>>');
+        let basicDegreeDocument = req.files?.['basicDegreeDocument']?.[0];
+        basicDegreeDocument = basicDegreeDocument.replace(`${appName}/${env}/`);        
 
         const createObj = {
             fullName: fullName,
