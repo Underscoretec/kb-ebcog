@@ -25,22 +25,22 @@ const Header = () => {
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
             <div className='z-[100] sticky top-0 w-auto h-auto'>
-                <div className='bg-white w-full h-[60px] sm:h-[75px] md:h-[85px] 2xl:h-[100px] flex items-center justify-between px-4 xs:px-8 xl:px-16 3xl:px-24 gap-2 2xl:gap-6 xl:shadow-xl'>
-                    <div className='flex items-center gap-3 md:gap-4'>
-                        <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[28px] md:text-[32px] cursor-pointer`}
+                <div className='bg-white w-full h-[65px] xs:h-[75px] md:h-[85px] 2xl:h-[100px] flex items-center justify-between px-4 xs:px-8 xl:px-16 3xl:px-24 gap-2 2xl:gap-6 shadow-xl lg:shadow-0 xl:shadow-xl'>
+                    <div className='flex items-center gap-1 xs:gap-2 sm:gap-3 md:gap-4'>
+                        <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[22px] xs:text-[28px] md:text-[32px] cursor-pointer`}
                             onClick={handleSidebar} />
                         <Link href="/">
-                            <div className='w-[70px] xs:w-[100px] sm:w-[140px] xl:w-[150px] h-full cursor-pointer'>
+                            <div className='w-[75px] xs:w-[110px] xl:w-[150px] h-full cursor-pointer'>
                                 <Image src="/ebcog.png" alt="no img" width={500} height={500} className='w-full h-full' />
                             </div>
                         </Link>
                         <Link href="/">
-                            <div className='w-[70px] xs:w-[100px] sm:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
+                            <div className='w-[90px] xs:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
                                 <Image src="/e_logo.png" alt="no img" width={500} height={500} className='w-full h-full' />
                             </div>
                         </Link>
                         <Link href="/">
-                            <div className='w-[70px] xs:w-[100px] sm:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
+                            <div className='w-[100px] xs:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
                                 <Image src="/kblogo.png" alt="no img" width={500} height={500} className='w-full h-full' />
                             </div>
                         </Link>
@@ -51,7 +51,7 @@ const Header = () => {
                     </div>
 
                     <Link href='/registration' >
-                        <h1 className="text-white font-semibold rounded-[6px] flex justify-center items-center py-2 xl:py-4 px-2 sm:px-4 lg:px-2 xl:px-3 text-[10px] xs:text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] hover:bg-[#ac0660]">
+                        <h1 className="text-white font-semibold rounded-[6px] hidden sm:flex justify-center items-center py-2 xl:py-4 px-2 sm:px-4 lg:px-2 xl:px-3 text-[10px] xs:text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] hover:bg-[#ac0660]">
                             Join Now
                         </h1>
                     </Link>
