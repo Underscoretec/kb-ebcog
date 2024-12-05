@@ -27,7 +27,7 @@ const AboutSection = () => {
                     of care. EBCOG works closely with subspecialist societies like ESHRE, EAPM, EUGA & ESGO. European network of trainees (ENTOG) collaborates with EBCOG in curriculum development and recognition of training centres"`}</div>
                 </div>
 
-                <div id='ebcog'>
+                <div id='knowledgeBridge'>
                     <div className='mt-4 lg:mt-3 xl:mt-4 2xl:mt-8 text-[22px] xs:text-[42px] sm:text-[42px] md:text-[42px] lg:text-[32px] xl:text-[42px] 2xl:text-[42px] font-oswald text-[#290849]'>About <span className='text-[#E4087F]'>KnowledgeBridge International</span></div>
 
                     <div className='mt-2 lg:mt-2 xl:mt-3 2xl:mt-8 text-[15px] sm:text-[15px] md:text-[20px] lg:text-[15px] xl:text-[18px] 2xl:text-[20px] font-oswald text-[#000000] leading-[25px] 2xl:leading-[32px] w-full lg:w-[98%] xl:w-[90%] 2xl:w-[90%]'>
