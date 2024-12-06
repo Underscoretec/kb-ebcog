@@ -10,7 +10,7 @@ import AlertModal from '@/common/uicomponents/AlertModal';
 
 const RegistrationCard = () => {
     const { createCourseRegistrationApi } = useUserHook();
-    const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMessage, setModalMessage] = useState("");
     const settings = [
         { name: 'Maternal Medicine', value: 'maternalMedicine' },
@@ -49,8 +49,8 @@ const RegistrationCard = () => {
         onSubmit: async (values, action) => {
             console.log('Form Data: ##', values);
             // alert("Email already exist!")
-            setModalMessage("Email already exists!"); // Set modal message
-            setIsModalOpen(true);
+            // setModalMessage("Please Check Your Inbox."); 
+            // setIsModalOpen(true);
             if (values) {
                 const result: any = await createCourseRegistrationApi(values, action);
                 console.log(result?.response, 'result ##');
@@ -191,7 +191,7 @@ const RegistrationCard = () => {
             </form>
             <AlertModal
                 isOpen={isModalOpen}
-                title="Alert"
+                title="Thank You For Your Registration."
                 message={modalMessage}
                 onClose={() => setIsModalOpen(false)}
             />
