@@ -26,7 +26,7 @@ export const useUserHook = () => {
             console.log(res,'res createCourseRegistrationApi ##');
             if (res.status === 201) {
 
-                alert("Registration successfully done");
+                // alert("Registration successfully done");
                 action.resetForm();
                 // dispatch(getPostQuestionSuccess(true))
             } 
