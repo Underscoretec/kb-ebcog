@@ -103,7 +103,7 @@ const RegistrationCard = () => {
                             <InputField
                                 label="Name"
                                 id="fullName"
-                                className='flex flex-col gap-1 w-full lg:w-[48%]'
+                                className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.fullName}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -114,7 +114,7 @@ const RegistrationCard = () => {
                                 label="Email Id"
                                 type="email"
                                 id="email"
-                                className='flex flex-col gap-1 w-full lg:w-[48%]'
+                                className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.email}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -126,7 +126,7 @@ const RegistrationCard = () => {
                             <InputField
                                 label="Whatsapp Number"
                                 id="whatsAppNumber"
-                                className='flex flex-col gap-1 w-full lg:w-[48%]'
+                                className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.whatsAppNumber}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -136,7 +136,7 @@ const RegistrationCard = () => {
                             <InputField
                                 label="City"
                                 id="city"
-                                className='flex flex-col gap-1 w-full lg:w-[48%]'
+                                className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.city}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -149,7 +149,7 @@ const RegistrationCard = () => {
                             <InputField
                                 label="State"
                                 id="state"
-                                className='flex flex-col gap-1 w-full lg:w-[48%]'
+                                className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.state}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -159,7 +159,7 @@ const RegistrationCard = () => {
                             <InputField
                                 label="Country"
                                 id="country"
-                                className='flex flex-col gap-1 w-full lg:w-[48%]'
+                                className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.country}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
