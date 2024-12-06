@@ -412,7 +412,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 },
                 {
                     "id": "p-0001GE",
-                    "name": "Dr. Alan Abdallah",
+                    "name": "Dr. Alian Abdallah",
                     "description": "Obstetrician & Gynaecologist Emirates Hospital L.L.C in Jumeirah, Dubai and Emirates Speciality Hospital Fz-Llc in Dubai Healthcare City, Dubai",
                     "image": "/faculty16.png"
                 }
