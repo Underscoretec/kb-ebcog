@@ -26,7 +26,7 @@ const Header = () => {
         <ClickAwayListener onClickAway={handleClickAway}>
             <div className='z-[100] sticky top-0 w-auto h-auto'>
                 <div className='bg-white w-full h-[65px] xs:h-[75px] md:h-[85px] 2xl:h-[100px] flex items-center justify-between px-4 xs:px-8 xl:px-16 3xl:px-24 gap-2 2xl:gap-6 shadow-xl lg:shadow-0 xl:shadow-xl'>
-                    <div className='flex items-center gap-1 xs:gap-2 sm:gap-3 md:gap-4'>
+                    <div className='flex items-center gap-1 xs:gap-2 sm:gap-3'>
                         <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[22px] xs:text-[28px] md:text-[32px] cursor-pointer`}
                             onClick={handleSidebar} />
                         <Link href="/">
