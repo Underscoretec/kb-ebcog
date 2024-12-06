@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { PhotoIcon } from '@heroicons/react/24/solid';
 import { RxCrossCircled } from 'react-icons/rx';
-import { ImFilePdf } from "react-icons/im";
+import { ImFilePdf } from 'react-icons/im';
 
 interface ImageUploaderProps {
     label: string;
@@ -30,7 +31,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
             }
             setFile(selectedFile);
             onUpload(selectedFile);
-            setError(null); 
+            setError(null);
         }
     };
 
@@ -72,13 +73,15 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
             ) : (
                 <div className="mt-3 p-3 relative flex flex-col items-center border border-dashed border-gray-300 rounded-lg">
                     {file.type.startsWith('image/') ? (
-                        <img
+                        <Image
                             src={URL.createObjectURL(file)}
                             alt="Uploaded preview"
-                            className="w-auto h-[100px] object-contain"
+                            width={100}
+                            height={100}
+                           className="w-auto h-[120px] object-contain"
                         />
                     ) : (
-                        <div className="w-[100px] h-[100px] flex items-center justify-center text-gray-600">
+                        <div className="w-[120px] h-[120px] flex items-center justify-center text-gray-600">
                             <ImFilePdf className="w-[60px] h-[60px] text-[#c91e14]" />
                         </div>
                     )}

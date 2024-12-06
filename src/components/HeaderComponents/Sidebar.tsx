@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
     const [openSubmenus, setOpenSubmenus]: any = useState([]);
@@ -33,9 +34,9 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
     const handleMenuItemClick = (item: any) => {
         if (!item.submenu) {
             if (item.url.endsWith('.pdf')) {
-                window.open(item.url, '_blank', 'noopener noreferrer'); 
+                window.open(item.url, '_blank', 'noopener noreferrer');
             } else {
-                router.push(item.url); 
+                router.push(item.url);
             }
         } else {
             toggleSubmenu(item.id);
@@ -79,6 +80,11 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
     return (
         <div className="z-[200] bg-white text-black min-h-full w-full shadow-2xl pt-14 md:pt-20">
             {renderMenu(menuItems)}
+            <Link href='/registration' >
+                <h1 className="m-4 p-2 text-white font-semibold rounded-[6px] flex sm:hidden justify-center items-center text-[16px] leading-[17px] bg-[#E4087F] hover:bg-[#ac0660]">
+                    Join Now
+                </h1>
+            </Link>
         </div>
     );
 };
