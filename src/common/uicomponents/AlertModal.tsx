@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const AlertModal = ({ isOpen, title, message, onClose }: any) => {
@@ -8,12 +9,14 @@ const AlertModal = ({ isOpen, title, message, onClose }: any) => {
       <div className="bg-white rounded-lg shadow-md p-6 w-[90%] max-w-xs">
         <h2 className="text-lg font-semibold mb-4">{title}</h2>
         <p className="text-sm text-gray-700 mb-6">{message}</p>
+        {/* <Link href='/'> */}
         <button
           className="w-full py-2 bg-[#E4087F] text-white rounded-md hover:bg-[#ac0660] cursor-pointer"
           onClick={onClose}
         >
           OK
         </button>
+        {/* </Link> */}
       </div>
     </div>
   );

@@ -7,11 +7,21 @@ import InputField from '@/common/uicomponents/InputField';
 import RadioListTable from '@/common/uicomponents/RadioListTable';
 import { useUserHook } from '@/container/UserModel/useUserHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
+import { useRouter } from 'next/router';
 
 const RegistrationCard = () => {
     const { createCourseRegistrationApi } = useUserHook();
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalMessage, setModalMessage] = useState("");
+    const router = useRouter();
+    const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '' });
+
+    const showModal = (title: any, message: any) => {
+        setModalData({ isOpen: true, title, message });
+    };
+
+    const hideModal = () => {
+        setModalData({ ...modalData, isOpen: false });
+    };
+    
     const settings = [
         { name: 'Maternal Medicine', value: 'maternalMedicine' },
         { name: 'Reproductive Endocrinology & Infertility', value: 'reproductiveEndocrinology_Infertility' },
@@ -48,17 +58,19 @@ const RegistrationCard = () => {
         }),
         onSubmit: async (values, action) => {
             console.log('Form Data: ##', values);
-            // alert("Email already exist!")
-            // setModalMessage("Please Check Your Inbox."); 
-            // setIsModalOpen(true);
+            
             if (values) {
                 const result: any = await createCourseRegistrationApi(values, action);
                 console.log(result, 'result ##');
                 if (result?.response?.data?.code === 'REGISTRATION_RECORD_FOUND') {
-                    alert("Email already exist!")
+                    // alert("Email already exist!")
+                    showModal("Registration Error", "Email already exists!");
                 }
-                if (result?.data?.code === 'REGISTRATION_CREATED') {
+               else if (result?.data?.code === 'REGISTRATION_CREATED') {
                     action.resetForm();
+                    showModal("Thank You For Your Registration", "Please check your inbox for further instructions.");
+                    router.push('/');
+                    
                 }
 
             } else {
@@ -193,10 +205,10 @@ const RegistrationCard = () => {
                 </div>
             </form>
             <AlertModal
-                isOpen={isModalOpen}
-                title="Thank You For Your Registration."
-                message={modalMessage}
-                onClose={() => setIsModalOpen(false)}
+                isOpen={modalData.isOpen}
+                title={modalData.title}
+                message={modalData.message}
+                onClose={hideModal}
             />
         </>
     );
