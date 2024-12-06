@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 
 const AlertModal = ({ isOpen, title, message, onClose }: any) => {
