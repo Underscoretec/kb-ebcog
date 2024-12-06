@@ -46,7 +46,7 @@ const Header = () => {
                         </Link>
                     </div>
 
-                    <div className={`hidden xl:block w-[48%] h-full`}>
+                    <div className={`hidden xl:block w-[47%] h-full`}>
                         <Navbar menuArray={menuitems} />
                     </div>
 
