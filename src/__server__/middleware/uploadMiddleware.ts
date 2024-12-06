@@ -7,7 +7,7 @@ const bucketName = process.env.AWS_BUCKET_NAME!;
 const region = process.env.AWS_BUCKET_REGION!;
 const accessKeyId = process.env.AWS_ACCESS_KEY!;
 const secretAccessKey = process.env.AWS_SECRET_KEY!;
-const env = process.env.ENV!;
+const nodeEnv = process.env.NODE_ENV!;
 const appName = process.env.APP_NAME!;
 
 const clientS3 = new S3Client({ region, credentials: { accessKeyId, secretAccessKey } });
@@ -23,7 +23,7 @@ const uploadMiddleware = multer({
         .toLowerCase()
         .split(" ")
         .join("-");
-      cb(null, `${appName}/${env}/${file.fieldname}/${fileName}-${Date.now()}${fileExtension}`);
+      cb(null, `${appName}/${nodeEnv}/${file.fieldname}/${fileName}-${Date.now()}${fileExtension}`);
     },
   }),
 

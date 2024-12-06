@@ -5,9 +5,10 @@ import Registration from "./model";
 import messages from "@/__server__/utils/message.json";
 import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
+import { sendEmailRegistrationAcknowledgement } from '@/__server__/mail/services';
 
 
-const env = process.env.ENV!;
+const nodeEnv = process.env.NODE_ENV!;
 const appName = process.env.APP_NAME!;
 
 interface ExtendApiRequest extends NextApiRequest {
@@ -20,7 +21,6 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
     const { fullName, email, whatsAppNumber, address, courseName, } = req.body
     try {
         const query: any = { enabled: 1 }
-        console.log(email,whatsAppNumber,'whatsAppNumber >>>>>' );
         if (email) {
             query.email = email?.toLowerCase();
         }
@@ -28,7 +28,6 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
         //     query.phoneNo = phoneNo;
         // }
         const exist = await Registration.findOne(query);
-        console.log(exist,'exits >>>>>');
         if (exist) {
             return res.status(400).json({
                 message: messages['REGISTRATION_RECORD_FOUND'],
@@ -38,12 +37,24 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
             });
         }
         // @ts-ignore
-        let latestDegreeCertificate = req.files?.["latestDegreeCertificate"]?.[0];
-        latestDegreeCertificate = latestDegreeCertificate.replace(`${appName}/${env}/`);
-        console.log(latestDegreeCertificate,'latestDegreeCertificate >>>>>>');
+        const latestDegreeCertificate = req.files?.["latestDegreeCertificate"]?.[0];
+        const latestDegreeCertificateObj = {
+            key: latestDegreeCertificate?.key.replace(`${appName}/${nodeEnv}/`,''),
+            name: latestDegreeCertificate?.originalname,
+            mimetype: latestDegreeCertificate?.mimetype,
+            location: latestDegreeCertificate?.location,
+            size: latestDegreeCertificate?.size
+        }
+
         // @ts-ignore
-        let basicDegreeDocument = req.files?.['basicDegreeDocument']?.[0];
-        basicDegreeDocument = basicDegreeDocument.replace(`${appName}/${env}/`);        
+        const basicDegreeDocument = req.files?.['basicDegreeDocument']?.[0];
+        const basicDegreeDocumentObj = {
+            key: basicDegreeDocument?.key.replace(`${appName}/${nodeEnv}/`,''),
+            name: basicDegreeDocument?.originalname,
+            mimetype: basicDegreeDocument?.mimetype,
+            location: basicDegreeDocument?.location,
+            size: basicDegreeDocument?.size
+        }
 
         const createObj = {
             fullName: fullName,
@@ -53,14 +64,14 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
             address: address && JSON.parse(address),
             courseName: courseName,
             // gender: gender,
-            latestDegreeCertificate: latestDegreeCertificate,
-            basicDegreeDocument: basicDegreeDocument,
+            latestDegreeCertificate: latestDegreeCertificateObj,
+            basicDegreeDocument: basicDegreeDocumentObj,
             createdAt: Date.now(),
         }
 
         const saveRegistration = await new Registration(createObj).save();
-        console.log(saveRegistration, '>>>>>>>');
         if (saveRegistration) {
+            sendEmailRegistrationAcknowledgement({email: email, name: fullName, courseName: courseName})
             return res.status(201).json({
                 message: messages['REGISTRATION_CREATED'],
                 error: false,
