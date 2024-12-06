@@ -10,7 +10,7 @@ import { sendEmailToRegisterUser } from './templates/sendEmailToRegisterUser';
 
 const sendEmailRegistrationAcknowledgement = async (data: any) => {
     try {
-        const userName = `${"Dear"} ${data?.fullName}`
+        const userName = `${"Dear"} ${data?.name}`
         let city = 'Dubai, UAE';
         if (data?.courseName === 'gynaecologyEndoscopy') {
             city = 'Sharjah, UAE';
@@ -35,7 +35,7 @@ const sendEmailRegistrationAcknowledgement = async (data: any) => {
                 Charset: "UTF-8",
                 Data: `Thank You for Your Enrolment to European Board & College of Obstetrics & Gynecology Diploma`,
             },
-            cc:['ayan.sinha@underscoretec.com']
+            // cc:['ayan.sinha@underscoretec.com']
         });
     } catch (error) {
         logger.error(error, `Registration ACK Email send error!`)
