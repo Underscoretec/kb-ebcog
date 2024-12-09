@@ -1,11 +1,13 @@
 // components/SignInCard.tsx
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
 // import Button from "@/common/uicomponents/Button";
 import InputField from "@/common/uicomponents/InputField";
 import { TbReload } from "react-icons/tb";
 // import CheckBox from "@/common/uicomponents/CheckBox";
 // import Link from "next/link";
 import { useRouter } from "next/router";
+import AlertModal from "@/common/uicomponents/AlertModal";
 // import { useFormik } from "formik";
 
 const CallbackCard: React.FC = () => {
@@ -16,14 +18,23 @@ const CallbackCard: React.FC = () => {
     const [isCaptchaValid, setIsCaptchaValid] = useState(true);
     const [subId, setSubId]:any = useState("");
     const router = useRouter(); // Initialize useRouter
-    const id = router.query.email;
+  const id = router.query.email;
+  const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
+  
+//   const showModal = (title: any, message: any, redirect: boolean) => {
+//     setModalData({ isOpen: true, title, message, redirect: redirect });
+// };
 
-    useEffect(() => {
-        if (id) {
-            setSubId(id);
-        }
-        console.log(subId);
-    })
+const hideModal = () => {
+    setModalData({ ...modalData, isOpen: false });
+};
+
+  useEffect(() => {
+    if (id) {
+      setSubId(id);
+    }
+    console.log(id,subId,router.query.email);
+  }, [router.query.email]);
 
 
     const [isButtonActive, setIsButtonActive] = useState(false);
@@ -45,11 +56,12 @@ const CallbackCard: React.FC = () => {
         return captchaInput === captcha;
       }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    function checkButtonState(emailValue:any, captchaValue:any) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const isEmailValid = emailRegex.test(emailValue);
+  function checkButtonState(phone: any, captchaValue: any) {
+    
+        // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailValid = phone?.length == 10;
         const isCaptchaFilled = captchaValue.length > 0;
-        setIsButtonActive(isEmailValid && isCaptchaFilled);
+        setIsButtonActive(isCaptchaFilled && isEmailValid);
       }
 
     
@@ -61,12 +73,47 @@ const CallbackCard: React.FC = () => {
         if (!validateCaptcha()) {
             setIsCaptchaValid(false);
             return;
-          }
+        }
+      const payload = {
+        id: id,
+        phoneNumber: phone
+      }
+      if (payload) {
+        updatePhoneNumber(payload);
+      }
+      router.push('/');
+      
         setTimeout(() => {
             // console.log("Signed in with", { email, password });
             // setIsSubmitting(false);
         }, 2000); // Replace with actual sign-in logic
     };
+  
+  const updatePhoneNumber = async (payload:any) => {
+    try {
+      // dispatch(postQustionRequest(true))
+      // dispatch(getPostQuestionError(false))
+      const res = await axios.put('/api/campaigns/callback',
+        
+        {
+          id: payload?.id,
+          phoneNumber: payload?.phoneNumber
+      })
+      // dispatch(postQustionRequest(false))
+      console.log(res,'res updatePhoneNumber ##');
+      if (res.status === 200) {
+        router.push('/');
+          // alert("Registration successfully done");
+          // action.resetForm();
+          // dispatch(getPostQuestionSuccess(true))
+      } 
+      return res;
+
+  } catch (error) {
+      return error;
+      
+  }
+  }
 
     // const router = useRouter();
 
@@ -114,7 +161,7 @@ const CallbackCard: React.FC = () => {
                         id="number"
                         value={phone}
                         // onChange={formik.handleChange}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={(e) => { setPhone(e.target.value); checkButtonState(e.target.value, captchaInput) }}
                         required
                         // error={formik.touched.number && formik.errors.number}
                     />
@@ -137,7 +184,7 @@ const CallbackCard: React.FC = () => {
                     value={captchaInput}
                     onChange={(e) => {
                       setCaptchaInput(e.target.value);
-                    //   checkButtonState(email, e.target.value);
+                      checkButtonState(phone, e.target.value);
                     }}
                     className="w-full min-w-0 appearance-none rounded-md border-none bg-white py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-[#6B7280] focus:ring-2 focus:ring-indigo-600 sm:text-[16px]"
                   />
@@ -146,29 +193,6 @@ const CallbackCard: React.FC = () => {
               {!isCaptchaValid && (
                 <p className="mt-2 text-sm text-red-500">Captcha does not match. Please try again.</p>
               )}
-                     {/* <InputField
-                        label=""
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    /> */}
-                    {/* <InputField
-                        label="Password"
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    /> */}
-                    
-                    {/* <Button
-                        type="submit"
-                        label="Submit"
-                        isLoading={isSubmitting}
-                        className="w-full py-2 bg-[#E4087F] font-semibold text-white ${bgColor} rounded-md hover:bg-[#ac0660] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                    /> */}
                     <div className="mt-4 sm:mt-6 sm:shrink-0">
                 <button
                   type="submit"
@@ -183,7 +207,14 @@ const CallbackCard: React.FC = () => {
                 </button>
               </div>
                 </form>
-            </div>
+        </div>
+        <AlertModal
+                isOpen={modalData.isOpen}
+                title={modalData.title}
+                message={modalData.message}
+                redirect={modalData.redirect}
+                onClose={hideModal}
+            />
         </div>
     );
 };

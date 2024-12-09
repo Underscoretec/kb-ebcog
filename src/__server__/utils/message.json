@@ -148,5 +148,7 @@
     "REGISTRATION_RECORD_FOUND":"Email already exist!",
     "CAMPAIGN_DATA_CREATED":"Campaign list updated",
     "CAMPAIGN_NOT_FOUND":"Campaign not found",
-    "EMAIL_UNSUBCRIPBED":"Email unsubcribed"
+    "CALLBACK_REQUEST_SEND":"Callback request saved",
+    "CALLBACK_REQUEST_CREATE_ERROR":"Error to create Callback",
+    "EMAIL_UNSUBSCRIBED":"Email unsubscribed!"
   }
