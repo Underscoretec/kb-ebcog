@@ -7,21 +7,21 @@ import InputField from '@/common/uicomponents/InputField';
 import RadioListTable from '@/common/uicomponents/RadioListTable';
 import { useUserHook } from '@/container/UserModel/useUserHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 const RegistrationCard = () => {
     const { createCourseRegistrationApi } = useUserHook();
-    const router = useRouter();
-    const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '' });
+    // const router = useRouter();
+    const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
-    const showModal = (title: any, message: any) => {
-        setModalData({ isOpen: true, title, message });
+    const showModal = (title: any, message: any, redirect: boolean) => {
+        setModalData({ isOpen: true, title, message, redirect: redirect });
     };
 
     const hideModal = () => {
         setModalData({ ...modalData, isOpen: false });
     };
-    
+
     const settings = [
         { name: 'Maternal Medicine', value: 'maternalMedicine' },
         { name: 'Reproductive Endocrinology & Infertility', value: 'reproductiveEndocrinology_Infertility' },
@@ -58,19 +58,18 @@ const RegistrationCard = () => {
         }),
         onSubmit: async (values, action) => {
             console.log('Form Data: ##', values);
-            
+
             if (values) {
                 const result: any = await createCourseRegistrationApi(values, action);
                 console.log(result, 'result ##');
                 if (result?.response?.data?.code === 'REGISTRATION_RECORD_FOUND') {
                     // alert("Email already exist!")
-                    showModal("Registration Error", "Email already exists!");
+                    showModal("Registration Error", "Email already exists!", false);
                 }
-               else if (result?.data?.code === 'REGISTRATION_CREATED') {
+                else if (result?.data?.code === 'REGISTRATION_CREATED') {
                     action.resetForm();
-                    showModal("Thank You For Your Registration", "Please check your inbox for further instructions.");
-                    router.push('/');
-                    
+                    showModal("Thank You For Your Registration", "Please check your inbox for further instructions.", true);
+
                 }
 
             } else {
@@ -208,6 +207,7 @@ const RegistrationCard = () => {
                 isOpen={modalData.isOpen}
                 title={modalData.title}
                 message={modalData.message}
+                redirect={modalData.redirect}
                 onClose={hideModal}
             />
         </>
