@@ -200,7 +200,7 @@ const FacultyProfile = () => {
                         "items": [
                             "Specializes in advanced laparoscopic and robotic surgeries for conditions such as endometriosis, gynecologic cancers, genital prolapse, and uterovaginal malformations",
                         ]
-                    },
+                    },  
                     {
                         "title": "Academic Contributions:",
                         "items": [
@@ -2228,21 +2228,21 @@ const FacultyProfile = () => {
                     "title": "Why Train Under Prof. Stephen Rulisa?",
                     "items": [
                         {
-                            "title": "Research Leadership:",
+                            "title": "Comprehensive Expertise:",
                             "description": [
-                                "Co-authored 167 scientific papers with a cumulative impact factor of 274, focusing on placental pathology and prenatal complications."
+                                "Extensive knowledge in maternal health, reproductive medicine, and infectious diseases."
                             ]
                         },
                         {
-                            "title": "Educational Excellence:",
+                            "title": "Innovative Research:",
                             "description": [
-                                "Founder of PRENATALPROJEKT, an innovative educational platform for obstetrics and gynecology."
+                                "Published over 100 peer-reviewed articles in international journals."
                             ]
                         },
                         {
-                            "title": "Global Recognition:",
+                            "title": "Leadership and Mentorship:",
                             "description": [
-                                "Holds leadership positions in national and European obstetric societies, shaping future guidelines and standards."
+                                "Founding fellow and active contributor to ECSACOG, shaping the future of obstetrics and gynecology education."
                             ]
                         }
                     ]
