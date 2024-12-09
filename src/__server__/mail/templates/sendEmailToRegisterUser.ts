@@ -97,7 +97,7 @@ export const sendEmailToRegisterUser = (userName: string, courseName: string, ci
                 style="background-color:#ffffff;text-align:left;padding:8px 40px 16px 40px"
               >
                 <a
-                  href="https://test.ebcog.sudors.in/"
+                  href="https://ebcogdiplomas.com/"
                   style="color:#FFFFFF;font-size:15px;font-weight:bold;background-color:#E4087F;border-radius:64px;display:inline-block;padding:8px 12px;text-decoration:none"
                   target="_blank"
                   ><span
