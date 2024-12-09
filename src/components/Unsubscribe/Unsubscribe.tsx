@@ -16,8 +16,8 @@ const Unsubscribe = () => {
                     />
                 </div>
                 <div className="border border-gray-300"></div>
-                <h1 className="text-2xl font-bold mb-4 text-start mt-8">Unsubscribe</h1>
-                <p className="text-black mb-6 text-start font-semibold">
+                <h1 className="text-2xl font-bold mb-4 text-start mt-8 text-[18px] sm:text-[25px]">Unsubscribe</h1>
+                <p className="text-gray-900 mb-6 text-start font-semibold text-[14px] sm:text-[20px]">
                     Do you want to unsubscribe from this mailing list?
                 </p>
                 <div className="flex items-center justify-start mb-6">
@@ -26,7 +26,7 @@ const Unsubscribe = () => {
                         id="unsubscribe-checkbox"
                         className="mr-2"
                     />
-                    <label htmlFor="unsubscribe-checkbox" className="text-gray-700 font-semibold">
+                    <label htmlFor="unsubscribe-checkbox" className="text-gray-600 font-semibold text-[12px] sm:text-[18px]">
                         Unsubscribe from all future e-mails.
                     </label>
                 </div>
