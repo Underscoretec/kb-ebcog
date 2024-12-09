@@ -70,7 +70,7 @@ const unSubscribeEmail = async (req: NextApiRequest, res: NextApiResponse) => {
     const { id, value } = req.body;
     try {
         logger.info("Call addData function");
-        const campaign = await CampaignsModel.findOne({ _id: id, enabled: 1 })
+        const campaign = await CampaignsModel.findOne({ _id: id})
         if (!campaign) {
             return res.status(404).json({
                 message: messages["CAMPAIGN_NOT_FOUND"],
@@ -91,9 +91,9 @@ const unSubscribeEmail = async (req: NextApiRequest, res: NextApiResponse) => {
                 
                 
                 return res.status(200).json({
-                    message: messages["CONTRIBUTION_UPDATE"],
+                    message: messages["EMAIL_UNSUBSCRIBED"],
                     error: false,
-                    code: "CONTRIBUTION_UPDATE",
+                    code: "EMAIL_UNSUBSCRIBED",
                     result: updateCampaign
                 })
             }
@@ -114,7 +114,7 @@ const requestForCallback = async (req: NextApiRequest, res: NextApiResponse) => 
     const { id, phoneNumber } = req.body;
     try {
         logger.info("Call addData function");
-        const campaign = await CampaignsModel.findOne({ _id: id, enabled: 1 })
+        const campaign = await CampaignsModel.findOne({ _id: id})
         if (!campaign) {
             return res.status(404).json({
                 message: messages["CAMPAIGN_NOT_FOUND"],
@@ -133,9 +133,9 @@ const requestForCallback = async (req: NextApiRequest, res: NextApiResponse) => 
 
             if (updateCampaign) {
                 return res.status(200).json({
-                    message: messages["CONTRIBUTION_UPDATE"],
+                    message: messages["CALLBACK_REQUEST_SEND"],
                     error: false,
-                    code: "CONTRIBUTION_UPDATE",
+                    code: "CALLBACK_REQUEST_SEND",
                     result: updateCampaign
                 })
             }

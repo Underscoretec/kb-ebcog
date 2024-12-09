@@ -15,7 +15,7 @@ connectDB();
 
 router.put(campaignService.requestForCallback);
 
-export const config = { api: { bodyParser: false } };
+// export const config = { api: { bodyParser: false } };
 
 // create a handler from router with custom onError and onNoMatch
 export default router.handler({
