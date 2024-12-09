@@ -16,7 +16,7 @@ export function sendEmail({ receiverAddress, body, subject, cc, }: any) {
         Source: `${process.env.emailAlias} <${process.env.senderEmail}>`,
         Destination: {
             ToAddresses: [receiverAddress],
-            CcAddresses: cc,
+            CcAddresses: [cc],
 
         },
         ReplyToAddresses: [],
