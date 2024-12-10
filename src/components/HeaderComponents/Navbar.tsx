@@ -10,7 +10,7 @@ const Navbar = (props: any) => {
 
     return (
         <>
-            <div className="h-full w-full justify-around items-center hidden lg:flex">
+            <div className="h-full w-full justify-around items-center hidden md:flex">
                 {props.menuArray.map((menuItem: any, index: any) => (
                     <CreateMenu
                         key={index}

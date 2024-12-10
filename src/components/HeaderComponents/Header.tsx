@@ -46,7 +46,7 @@ const Header = () => {
                         </Link>
                     </div>
 
-                    <div className={`hidden xl:block w-[47%] h-full`}>
+                    <div className={`hidden w-[47%] h-full`}>
                         <Navbar menuArray={menuitems} />
                     </div>
 
@@ -59,8 +59,8 @@ const Header = () => {
                             <div className='flex items-center justify-center rounded-full bg-[#E4087F] text-white h-10 xl:h-12 w-10 xl:w-12 text-[20px] font-semibold cursor-pointer'>{user_name.charAt(0)}</div>
                         </Link> */}
                 </div>
-                <div className='hidden lg:flex xl:hidden items-center justify-center py-[14px] border-t border-[#c9c8c8] bg-white shadow-xl'>
-                    <div className={` w-[70%] h-full`}>
+                <div className='hidden md:flex  items-center justify-center py-[14px] border-t border-[#c9c8c8] bg-white shadow-xl'>
+                    <div className={`md:w-[88%] lg:w-[70%] w-[70%] h-full`}>
                         <Navbar menuArray={menuitems} />
                     </div>
                 </div>
