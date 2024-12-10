@@ -1,20 +1,17 @@
-import connectDB from "@/__server__/database/index";
+import connectDB from "@/__server__/database";
 import { NextApiRequest, NextApiResponse } from "next";
 import { createRouter } from "next-connect";
 import campaignService from "@/__server__/campaign/services";
 import errorHandler from "@/__server__/utils/errorHandler";
 import noMatchHandler from "@/__server__/utils/noMatchHandler";
 
-// create api router with next-connect
-const router = createRouter<NextApiRequest, NextApiResponse>();
 
-// connect Database
+const router = createRouter<NextApiRequest, NextApiResponse>();
 connectDB();
 
-router.put(campaignService.requestForCallback);
+router.put(campaignService.sendEmails);
 
-// create a handler from router with custom onError and onNoMatch
 export default router.handler({
     onError: errorHandler,
     onNoMatch: noMatchHandler,
-});
+})
