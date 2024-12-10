@@ -145,5 +145,11 @@
     "BOOKMARKS_NOT_FOUND":"Bookmark not found",
     "REGISTRATION_CREATED":"Registration created successfully",
     "REGISTRATION_FAILED":"Registration failed",
-    "REGISTRATION_RECORD_FOUND":"Email already exist!"
+    "REGISTRATION_RECORD_FOUND":"Email already exist!",
+    "CAMPAIGN_DATA_CREATED":"Campaign list updated",
+    "CAMPAIGN_NOT_FOUND":"Campaign not found",
+    "CALLBACK_REQUEST_SEND":"Callback request saved",
+    "CALLBACK_REQUEST_CREATE_ERROR":"Error to create Callback",
+    "EMAIL_UNSUBSCRIBED":"Email unsubscribed!",
+    "EMAIL_FIRED":"Email send"
   }
