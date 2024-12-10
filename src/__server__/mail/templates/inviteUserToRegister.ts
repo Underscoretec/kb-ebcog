@@ -1,6 +1,6 @@
 // emailTemplate.js
 
-export const inviteUserToRegister = (userName: string, id:string) => `
+export const inviteUserToRegister = (userName: string, email: string) => `
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
@@ -394,7 +394,7 @@ export const inviteUserToRegister = (userName: string, id:string) => `
                               <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
                               <div align="center">
                                 <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://ebcogdiplomas.com/" style="height:39px; v-text-anchor:middle; width:123px;" arcsize="66.5%"  strokecolor="#e4087f" strokeweight="1px" fillcolor="#ffffff"><w:anchorlock/><center style="color:#e4087f;font-family: 'Cabin',sans-serif; "><![endif]-->
-                                <a href="https://ebcogdiplomas.com/callmeback?email=${id}" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #e4087f; background-color: #ffffff; border-radius: 26px;-webkit-border-radius: 26px; -moz-border-radius: 26px; width:100%; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;border-top-width: 1px; border-top-style: solid; border-top-color: #e4087f; border-left-width: 1px; border-left-style: solid; border-left-color: #e4087f; border-right-width: 1px; border-right-style: solid; border-right-color: #e4087f; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4087f;font-family: 'Cabin',sans-serif; font-size: 16px;font-weight: 700; ">
+                                <a href="https://ebcogdiplomas.com/callmeback?email=${email}" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #e4087f; background-color: #ffffff; border-radius: 26px;-webkit-border-radius: 26px; -moz-border-radius: 26px; width:100%; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;border-top-width: 1px; border-top-style: solid; border-top-color: #e4087f; border-left-width: 1px; border-left-style: solid; border-left-color: #e4087f; border-right-width: 1px; border-right-style: solid; border-right-color: #e4087f; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #e4087f;font-family: 'Cabin',sans-serif; font-size: 16px;font-weight: 700; ">
                                   <span style="display:block;padding:10px 8px;line-height:120%;"><span style="line-height: 19.2px;">Call Me</span></span>
                                 </a>
                                 <!--[if mso]></center></v:roundrect><![endif]-->
