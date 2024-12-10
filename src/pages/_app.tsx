@@ -20,10 +20,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           sizes="32x32"
           href="/favicon.svg"
         /> */}
-      <title>KB-EBCOG</title>
+      <title>EBCOG-EIPMS</title>
       <meta
-        name="EBCOG"
-        content="EBCOG "
+        name="EBCOG-EIPMS"
+        content="EBCOG-EIPMS "
       />
       <link rel="shortcut icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
@@ -35,8 +35,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <link rel="apple-touch-icon" sizes="72x72" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="60x60" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="57x57" href="/favicon.ico" />
-      <meta property="og:title" content="EBCOG" key="title" />
-      <meta property="og:description" content="YOUR PATHWAY TO MAKING A DIFFERENCE" key="title" />
+      <meta property="og:title" content="EBCOG-EIPMS" key="title" />
+      <meta property="og:description" content="
+Join us to advance your career through knowledge and skill enhancement. Benefit from comprehensive training and unwavering support from our esteemed EBCOG faculty. You'll be fully equipped to tackle challenges and embrace the opportunities to enhance outcomes in women's health." key="title" />
       <meta property="og:image" content="/favicon.ico" key="title" />
       <meta name="twitter:image" content="/favicon.ico" key="title" />
     </Head>

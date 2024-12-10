@@ -6,7 +6,7 @@ import React, { ReactElement } from 'react'
 export default function Home() {
   return (
     <>
-   <Head><title>KB-EBCOG</title></Head>
+   <Head><title>EBCOG-EIPMS</title></Head>
     <main>
       <HomePage/>
     </main> </>
