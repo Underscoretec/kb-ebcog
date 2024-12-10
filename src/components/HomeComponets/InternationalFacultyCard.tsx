@@ -3,13 +3,13 @@ import ImageComponent from '../../common/uicomponents/ImageComponent'
 import { MdAccessTimeFilled } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
 import Button from '../../common/uicomponents/Button';
+import { GB, PL, DE, QA, RU, AE } from 'country-flag-icons/react/3x2'
 
 
 
 const InternationalFacultyCard = (props: any) => {
 
-    
-    
+
     return (
         <>
             <div className='relative'>
@@ -40,16 +40,30 @@ const InternationalFacultyCard = (props: any) => {
             </div>
             <div className='p-2 sm:p-3 xl:p-4 border border-[#EAEAEA] bg-white border-t-0 rounded-bl-[20px] rounded-br-[20px]'>
                 <div className='font-poppins text-[15px] xs:text-[12px] sm:text-[15px] md:text-[13px] xl:text-base font-normal leading-6 text-[#555555]'>by <span className='text-[#000]'>{props?.data?.facultyName}</span></div>
-                <div className='flex gap-3 xl:gap-4 font-montserrat text-[13px] font-semibold leading-[19.5px] text-[#555555] pt-1'>
-                    <div className='flex gap-1 xl:gap-2 items-center'><MdAccessTimeFilled className='text-[#EE7E22]' /> {props?.data?.courseDuration}</div>
-                    <div className='flex gap-1 xl:gap-2 items-center'><RiGraduationCapFill className='text-[#EE7E22]' /> {props?.data?.totalLearners} Learners</div>
+                <div className='flex justify-between'>
+
+                    <div className='flex gap-3 xl:gap-4 font-montserrat text-[13px] font-semibold leading-[19.5px] text-[#555555] pt-1'>
+                        <div className='flex gap-1 xl:gap-2 items-center'><MdAccessTimeFilled className='text-[#EE7E22]' /> {props?.data?.courseDuration}</div>
+                        <div className='flex gap-1 xl:gap-2 items-center'><RiGraduationCapFill className='text-[#EE7E22]' /> {props?.data?.totalLearners} Learners</div>
+                    </div>
+
+                    <div className='flex gap-1 justify-end'>
+                        {props?.data?.flag === 'gb' && <GB title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'pl' && <PL title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'de' && <DE title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'qa' && <QA title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'ru' && <RU title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'ae' && <AE title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                    </div>
+
+
                 </div>
                 <div className='flex justify-end border-t border-[#EAEAEA] mt-3'>
                     <Button
                         type="submit"
                         className="py-2 2xl:py-3 px-4 2xl:px-6 bg-[#E4087F] font-poppins text-sm font-medium leading-4 text-white rounded-[6px] mt-3 transition-all duration-400 ease-in-out hover:bg-[#ac0660]"
                         label={props?.btn_label}
-                        onClick={props?.handleClick }
+                        onClick={props?.handleClick}
                     />
                 </div>
             </div>
