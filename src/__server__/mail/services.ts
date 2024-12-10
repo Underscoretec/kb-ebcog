@@ -8,7 +8,7 @@ import { inviteUserToRegister } from '@/__server__/mail/templates/inviteUserToRe
 
 const sendEmailRegistrationAcknowledgement = async (data: any) => {
     try {
-        const userName = `${"Dear"} ${data?.name}`
+        const userName = `${"Dear Dr."} ${data?.name}`
         let city = 'Dubai, UAE';
         let courseName = '';
         switch (data?.courseName) {
