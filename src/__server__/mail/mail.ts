@@ -73,6 +73,6 @@ export async function sendEmailWithNodemeler(data: any) {
         const info = await transporter.sendMail(mailOptions);
         logger.info(`Email sent to ${data?.email} with bcc ${bccEmail} : => ${info.response}`);
     } catch (error) {
-        logger.error(error, "Error in Fun: sendEmailWithNodemeler")
+        logger.error("Error in Fun: sendEmailWithNodemeler", error);
     }
 }

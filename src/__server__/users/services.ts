@@ -110,7 +110,7 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
         }
 
     } catch (error) {
-        logger.error(error, "[User 001] Error sign up");
+        logger.error("[User 001] Error sign up",error);
         return res.status(500).json(errorResponse(error));
     }
 }
@@ -200,7 +200,7 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
         }
     } catch (error) {
         
-        logger.error(error, "[User 002] Error login");
+        logger.error("[User 002] Error login",error);
         return res.status(500).json(errorResponse(error));
 
     }

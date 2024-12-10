@@ -82,7 +82,7 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
        
         
     } catch (error) {
-        logger.error(error, "[Registration-001] Error creating new registration! ");
+        logger.error("[Registration-001] Error creating new registration! ",error);
         return res.status(500).json(errorResponse(error));
     }
     

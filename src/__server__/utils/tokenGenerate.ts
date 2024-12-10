@@ -22,6 +22,6 @@ export default async function tokenGenerate(payload: Payload, expiresIn?: string
             return cipherToken;
         }
     } catch (error) {
-        logger.error(error, "Error in generate token")
+        logger.error("Error in generate token", error);
     }
 }

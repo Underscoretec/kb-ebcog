@@ -45,7 +45,7 @@ const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
 
     } catch (error) {
         
-        logger.error(error, "[COURSES-001] Error in adding Courses")
+        logger.error("[COURSES-001] Error in adding Courses", error);
         return res.status(500).json(errorResponse(error));
     }
 }
