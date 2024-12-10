@@ -1,7 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { FaAngleDown } from 'react-icons/fa';
+import { FaAngleDown, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+
+const navigation = {
+    social: [
+        {
+            name: 'Facebook',
+            href: '#',
+            icon: <FaFacebook />,
+        },
+        {
+            name: 'Instagram',
+            href: '#',
+            icon: <FaInstagram />,
+        },
+        {
+            name: 'X',
+            href: '#',
+            icon: <FaTwitter />,
+        },
+    ],
+}
 
 const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
     const [openSubmenus, setOpenSubmenus]: any = useState([]);
@@ -81,10 +101,18 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
         <div className="z-[200] bg-white text-black min-h-full w-full shadow-2xl pt-14 md:pt-20">
             {renderMenu(menuItems)}
             <Link href='/registration' >
-                <h1 className="m-4 p-2 text-white font-semibold rounded-[6px] flex sm:hidden justify-center items-center text-[16px] leading-[17px] bg-[#E4087F] hover:bg-[#ac0660]">
+                <h1 className="m-4 p-2 text-white font-semibold rounded-[6px] flex lg:hidden justify-center items-center text-[16px] leading-[17px] bg-[#E4087F] hover:bg-[#ac0660]">
                     Join Now
                 </h1>
             </Link>
+
+            <div className="flex justify-center gap-x-6 md:order-2 text-[25px] lg:hidden">
+                {navigation.social.map((item) => (
+                    <Link key={item.name} href={item.href} className="text-[#E4087F] hover:text-[#eb98c4]">
+                        {item.icon}
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 };
