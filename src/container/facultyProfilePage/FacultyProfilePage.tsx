@@ -20,7 +20,8 @@ const FacultyProfile = () => {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
-                "facultyImage": '/if9.png'
+                "facultyImage": '/if9.png',
+                "flag": 'de',
             },
             "PersonalDetails": [
                 {
@@ -137,7 +138,8 @@ const FacultyProfile = () => {
                 "facultyName": 'Dr. Helder Ferreira (Lead)',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
-                "facultyImage": '/if10.png'
+                "facultyImage": '/if10.png',
+                "flag": 'pt',
             },
             "PersonalDetails": [
                 {
@@ -332,7 +334,8 @@ const FacultyProfile = () => {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
-                "facultyImage": '/if5.png'
+                "facultyImage": '/if5.png',
+                "flag": 'gr',
             },
             "PersonalDetails": [
                 {
@@ -432,6 +435,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if1.png',
+                "flag": 'ae',
             },
             "PersonalDetails": [
                 {
@@ -515,6 +519,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if2.png',
+                "flag": 'ae',
             },
             "PersonalDetails": [
                 {
@@ -597,6 +602,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if3.png',
+                "flag": 'in',
             },
             "PersonalDetails": [
                 {
@@ -693,6 +699,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if6.png',
+                "flag": 'in',
             },
             "PersonalDetails": [
                 {
@@ -785,6 +792,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if7.png',
+                "flag": 'pt',
             },
             "PersonalDetails": [
                 {
@@ -917,6 +925,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if8.png',
+                "flag": 'ie',
             },
             "PersonalDetails": [
                 {
@@ -1038,6 +1047,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if24.png',
+                "flag": 'pt',
             },
             "PersonalDetails": [
                 {
@@ -1124,6 +1134,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if11.png',
+                "flag": 'hu',
             },
             "PersonalDetails": [
                 {
@@ -1455,6 +1466,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if15.png',
+                "flag": 'ae',
             },
             "PersonalDetails": [
                 {
@@ -1595,6 +1607,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if14.png',
+                "flag": 'in',
             },
             "PersonalDetails": [
                 {
@@ -1721,6 +1734,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if16.png',
+                "flag": 'ae',
             },
             "PersonalDetails": [
                 {
@@ -1809,8 +1823,9 @@ const FacultyProfile = () => {
             "cardData": {
                 "facultyName": 'Dr. Rajalaxmi Walavalkar',
                 "courseDuration": '1 week',
-                "totalLearners": '154',
+                "totalLearners": '70',
                 "facultyImage": '/if17.png',
+                "flag": 'in',
             },
             "PersonalDetails": [
                 {
@@ -2007,6 +2022,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if20.png',
+                "flag": 'ae',
             },
             "PersonalDetails": [
                 {
@@ -2202,6 +2218,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if18.png',
+                "flag": 'rw',
             },
             "PersonalDetails": [
                 {
@@ -2312,6 +2329,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if19.png',
+                "flag": 'gr',
             },
             "PersonalDetails": [
                 {

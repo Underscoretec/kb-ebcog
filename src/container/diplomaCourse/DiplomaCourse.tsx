@@ -27,7 +27,8 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
-                "facultyImage": '/if9.png'
+                "facultyImage": '/if9.png',
+                "flag": 'de',
             },
             "overview": {
                 "text": "The EBCOG Maternal Medicine Diploma provides a rigorous and comprehensive training in maternal medicine, addressing the full spectrum of normal and complicated pregnancies. This program is structured to empower healthcare professionals with advanced skills and knowledge to manage and improve outcomes in both labor and delivery and maternal medical disorders.",
@@ -187,7 +188,8 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
-                "facultyImage": '/if5.png'
+                "facultyImage": '/if5.png',
+                "flag": 'gr',
             },
             "overview": {
                 "text": "This Advanced Diploma in Reproductive Endocrinology and Infertility is meticulously designed to provide in-depth knowledge and skills to healthcare professionals specializing in the field of reproductive medicine. From understanding the basic anatomy and physiology to mastering complex fertility treatments, our program covers every aspect essential for a successful career in Reproductive Endocrinology and Infertility.",
@@ -321,7 +323,8 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 "facultyName": 'Dr. Helder Ferreira',
                 "courseDuration": '1 Week',
                 "totalLearners": "156",
-                "facultyImage": '/if10.png'
+                "facultyImage": '/if10.png',
+                "flag": 'pt',
             },
             "overview": {
                 "text": "Embark on a comprehensive five-day journey into the world of Gynaecology Endoscopy with our EBCOG Diploma. Designed for gynaecologists aiming to master laparoscopic and hysteroscopic procedures, this intensive program combines theoretical learning with hands-on training, led by distinguished experts in the field.",
@@ -478,7 +481,8 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 "facultyName": 'Prof. Asma Khalil',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
-                "facultyImage": '/if4.png'
+                "facultyImage": '/if4.png',
+                "flag": 'gb',
             },
             "overview": {
                 "text": "Our Diploma in Fetal Medicine provides an exhaustive curriculum designed to advance the skills of healthcare professionals in the realm of prenatal diagnosis and care. This specialized program encompasses theoretical knowledge, practical training, and cutting-edge research in fetal medicine, ensuring our diploma holders are leaders in the field.",
