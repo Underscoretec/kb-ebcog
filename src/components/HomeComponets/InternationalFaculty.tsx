@@ -8,7 +8,7 @@ const InternationalFaculty = () => {
     {
       id: "p-0001GE",
       course: "Diploma in Gynaecology Endoscopy",
-      facultyName: 'Dr. Alan Abdallah',
+      facultyName: 'Dr. Alian Abdallah',
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if1.png',

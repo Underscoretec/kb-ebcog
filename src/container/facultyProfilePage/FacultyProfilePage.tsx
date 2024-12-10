@@ -192,7 +192,7 @@ const FacultyProfile = () => {
                             "Full Executive Board Member, European Society for Gynaecological Endoscopy (ESGE)",
                             "Advisory Board Member, European Endometriosis League (EEL)",
                             "Board Member, Portuguese Society of Gynecology",
-                            "President, Portuguese Society of Minimally Invasive SurgerySpecialized training in gynecology at the University Women's Clinic in Münster",
+                            "President, Portuguese Society of Minimally Invasive Surgery",
                         ]
                     },
                     {
@@ -200,7 +200,7 @@ const FacultyProfile = () => {
                         "items": [
                             "Specializes in advanced laparoscopic and robotic surgeries for conditions such as endometriosis, gynecologic cancers, genital prolapse, and uterovaginal malformations",
                         ]
-                    },
+                    },  
                     {
                         "title": "Academic Contributions:",
                         "items": [
@@ -272,7 +272,7 @@ const FacultyProfile = () => {
                         },
                         {
                             "title": "Research and Education:",
-                            "description": ["To Published over 450 peer-reviewed papers, books, and chapters", "Focus on twin pregnancies, fetal growth restriction, and pregnancy-related hypertensive disorders"],
+                            "description": ["Published over 450 peer-reviewed papers, books, and chapters", "Focus on twin pregnancies, fetal growth restriction, and pregnancy-related hypertensive disorders"],
                         },
                     ],
                 },
@@ -424,11 +424,11 @@ const FacultyProfile = () => {
         },
         {
             "id": "p-0001GE",
-            "name": 'Dr. Alan Abdallah',
+            "name": 'Dr. Alian Abdallah',
             "about": "Minimally Invasive/Laparoscopic Surgeries",
             "department": 'gynaecology-endoscopy',
             "cardData": {
-                "facultyName": 'Dr. Alan Abdallah',
+                "facultyName": 'Dr. Alian Abdallah',
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if1.png',
@@ -461,11 +461,11 @@ const FacultyProfile = () => {
                     ],
                 },
                 {
-                    "title": "Why Train Under Dr. Alan Abdallah?",
+                    "title": "Why Train Under Dr. Alian Abdallah?",
                     "items": [
                         {
                             "description": [
-                                "Benefit from his extensive experience in reproductive medicine and assisted reproduction technologiesLearn advanced minimally invasive surgical techniques that prioritize patient outcomes, including aesthetic results, shorter recovery times, and minimal scarring",
+                                "Learn advanced minimally invasive surgical techniques that prioritize patient outcomes, including aesthetic results, shorter recovery times, and minimal scarring",
                                 "Gain insight into managing complex gynecological and obstetric cases with a compassionate, detail-oriented approach",
                                 "Access real-world experience in both surgical and obstetric care from a highly skilled and empathetic practitioner",
                             ],
@@ -717,11 +717,11 @@ const FacultyProfile = () => {
                         },
                         {
                             "title": "Masters in the Art of Obstetrics (MAO)",
-                            "description": [" Germany"],
+                            "description": [" National university of Ireland"],
                         },
                         {
                             "title": "Fellowships",
-                            "description": ["National University of Ireland"],
+                            "description": ["RCOG,ACOG, Germany"],
                         },
                     ],
                 },
@@ -848,14 +848,14 @@ const FacultyProfile = () => {
                         "title": "Academic Roles:",
                         "items": [
                             "Full Professor and Chair, Department of Obstetrics and Gynecology, Medical School, University of Lisbon",
-                            "Expert in managing infertility, reproductive medicine, and advanced gynecological surgeriesFormer Associate Professor, University of Porto Medical School",
+                            "Former Associate Professor, University of Porto Medical School",
                         ]
                     },
                     {
                         "title": "Clinical Roles:",
                         "items": [
                             "Chair, Department of Obstetrics and Gynecology, Santa Maria University Hospital, Lisbon",
-                            "ICH-GCP Course (Royal Holloway University of London, UK)Former Senior Consultant, S. João Hospital, Porto",
+                            "Former Senior Consultant, S. João Hospital, Porto",
                         ]
                     },
                     {
@@ -949,7 +949,7 @@ const FacultyProfile = () => {
                         },
                         {
                             "title": "Diploma in Ethics of Medical Research and Biotechnology (2008)",
-                            "description": ["Endoscopy & Minimal Access Surgery, ICOG", "Advanced Infertility Management, Mumbai"],
+                            "description": ["Keele University, UK"],
                         },
                         {
                             "title": "Doctor of Medicine (MD) (2011)",
@@ -2238,21 +2238,21 @@ const FacultyProfile = () => {
                     "title": "Why Train Under Prof. Stephen Rulisa?",
                     "items": [
                         {
-                            "title": "Research Leadership:",
+                            "title": "Comprehensive Expertise:",
                             "description": [
-                                "Co-authored 167 scientific papers with a cumulative impact factor of 274, focusing on placental pathology and prenatal complications."
+                                "Extensive knowledge in maternal health, reproductive medicine, and infectious diseases."
                             ]
                         },
                         {
-                            "title": "Educational Excellence:",
+                            "title": "Innovative Research:",
                             "description": [
-                                "Founder of PRENATALPROJEKT, an innovative educational platform for obstetrics and gynecology."
+                                "Published over 100 peer-reviewed articles in international journals."
                             ]
                         },
                         {
-                            "title": "Global Recognition:",
+                            "title": "Leadership and Mentorship:",
                             "description": [
-                                "Holds leadership positions in national and European obstetric societies, shaping future guidelines and standards."
+                                "Founding fellow and active contributor to ECSACOG, shaping the future of obstetrics and gynecology education."
                             ]
                         }
                     ]
