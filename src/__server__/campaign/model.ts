@@ -26,7 +26,7 @@ const campaignSchema = new Schema({
             type: Date,
         }
     },
-    batchNo: {
+    batch: {
         type: String,
     },
     societyName: {
@@ -73,6 +73,10 @@ const campaignSchema = new Schema({
         timeStamp: {
             type: Date
         }
+    },
+    enabled: {
+        type: Number,
+        default: 1, //0:delete, 1:user, 2:disable
     },
 },
     {

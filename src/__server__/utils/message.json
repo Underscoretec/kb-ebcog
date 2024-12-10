@@ -150,5 +150,6 @@
     "CAMPAIGN_NOT_FOUND":"Campaign not found",
     "CALLBACK_REQUEST_SEND":"Callback request saved",
     "CALLBACK_REQUEST_CREATE_ERROR":"Error to create Callback",
-    "EMAIL_UNSUBSCRIBED":"Email unsubscribed!"
+    "EMAIL_UNSUBSCRIBED":"Email unsubscribed!",
+    "EMAIL_FIRED":"Email send"
   }
