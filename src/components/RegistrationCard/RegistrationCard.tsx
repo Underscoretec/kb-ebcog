@@ -175,6 +175,15 @@ const RegistrationCard = () => {
                             onChange={(value: any) => formik.setFieldValue('diplomaCourse', value)}
                             required
                         />
+
+                        <div className='flex gap-2 bg-[#ffe2f2] px-3 py-3 rounded-lg'>
+                            <p className='font-bold text-[12px] text-[#E4087F]'>NOTE:</p>
+                            <div className='text-[12px] font-medium '>
+                                Kindly upload the following documents to help us verify your expertise and years of experience.
+                                Please note that this is optional and not mandatory
+                            </div>
+                        </div>
+
                         <div className='flex flex-col sm:flex-row gap-4 justify-between'>
                             <div className='w-[100%] sm:w-[47%]'>
                                 <ImageUploader

@@ -13,9 +13,7 @@ const router = createRouter<NextApiRequest, NextApiResponse>();
 // connect Database
 connectDB();
 
-router.post(campaignService.addData);
-
-export const config = { api: { bodyParser: false } };
+router.post(campaignService.importData);
 
 // create a handler from router with custom onError and onNoMatch
 export default router.handler({
