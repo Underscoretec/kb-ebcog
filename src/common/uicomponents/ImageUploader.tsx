@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { PhotoIcon } from '@heroicons/react/24/solid';
 import { RxCrossCircled } from 'react-icons/rx';
@@ -21,6 +21,10 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
 }) => {
     const [file, setFile] = useState<File | null>(value || null);
     const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        setFile(value || null);
+    }, [value]);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFile = event.target.files?.[0];
