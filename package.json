@@ -27,6 +27,7 @@
     "aws-sdk": "^2.1692.0",
     "axios": "^1.7.8",
     "bcryptjs": "^2.4.3",
+    "country-flag-icons": "^1.5.13",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "formik": "^2.4.6",

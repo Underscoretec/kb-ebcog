@@ -39,7 +39,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if4.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'gb'
     },
     {
       id: "p-0005RPI",
@@ -120,7 +121,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if12.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'qa'
     },
     {
       id: "p-0013FMU",
@@ -129,7 +131,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if13.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'de'
     },
     {
       id: "p-0014REI",
@@ -174,7 +177,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '156',
       facultyImage: '/if22.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ae'
     },
     {
       id: "p-0021GE",
@@ -192,7 +196,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if21.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'pl'
     },
     {
       id: "p-0019MM",
@@ -219,7 +224,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '156',
       facultyImage: '/if23.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ru'
     },
   ]
 
@@ -234,7 +240,12 @@ const InternationalFaculty = () => {
         {FacultyData.map((item, index) => {
           return (
             <div key={index} className='w-[100%] xs:w-[49%] sm:w-[48.5%] md:w-[32%] lg:w-[24%] xl:w-[23.5%] 3xl:w-[24%]'>
-              <InternationalFacultyCard key={index} data={item} btn_label="Know More" handleClick={() => handleClick(item?.id)} />
+              <InternationalFacultyCard
+                key={index}
+                data={item}
+                btn_label="Know More"
+                handleClick={() => handleClick(item?.id)}
+              />
             </div>
           )
         })}

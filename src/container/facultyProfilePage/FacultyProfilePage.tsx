@@ -15,7 +15,7 @@ const FacultyProfile = () => {
             "id": "p-0009MM",
             "name": 'Prof. Frank Louwen',
             "about": "Obstetrics and Perinatology, Maternal-Fetal Medicine, Hypertensive Disorders in Pregnancy, Breech Birth Management.",
-            "department":'maternal-medical',
+            "department": 'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
@@ -132,7 +132,7 @@ const FacultyProfile = () => {
             "id": "p-0010GE",
             "name": 'Dr. Helder Ferreira',
             "about": "Advanced Laparoscopic Surgery, Robotic Gynecological Surgery, Management of Deep Endometriosis, Gynecologic Oncology,Treatment of Genital Prolapse, Correction of Uterovaginal Malformations",
-            "department":'gynaecology-endoscopy',
+            "department": 'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Helder Ferreira (Lead)',
                 "courseDuration": '1 Week',
@@ -244,12 +244,14 @@ const FacultyProfile = () => {
             "id": "p-0004FMU",
             "name": 'Prof. Asma Khalil',
             "about": "Twin and Multiple Pregnancies, Fetal Growth Restriction, Hypertensive Disorders in Pregnancy",
-            "department":'fetal-medicine-and-ultrasound',
+            "department": 'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Asma Khalil (Lead)',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
-                "facultyImage": '/if4.png'
+                "facultyImage": '/if4.png',
+                "flag": 'gb',
+
             },
             "PersonalDetails": [
                 {
@@ -325,7 +327,7 @@ const FacultyProfile = () => {
             "id": "p-0005RPI",
             "name": 'Prof. Basil C. Tarlatzis',
             "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
-            "department":'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
@@ -424,7 +426,7 @@ const FacultyProfile = () => {
             "id": "p-0001GE",
             "name": 'Dr. Alan Abdallah',
             "about": "Minimally Invasive/Laparoscopic Surgeries",
-            "department":'gynaecology-endoscopy',
+            "department": 'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Alan Abdallah',
                 "courseDuration": '1 week',
@@ -507,7 +509,7 @@ const FacultyProfile = () => {
             "id": "p-0002MM",
             "name": 'Dr. Amala Nazareth',
             "about": "High-Risk Obstetrics, Operative Gynecology, Infertility Treatments, and Minimally Invasive Surgeries",
-            "department":'maternal-medical',
+            "department": 'maternal-medical',
             "cardData": {
                 "facultyName": 'Dr. Amala Nazareth',
                 "courseDuration": '1 week',
@@ -589,7 +591,7 @@ const FacultyProfile = () => {
             "id": "p-0003REI",
             "name": "Dr. Anagha Karkhanis",
             "about": 'Reproductive Medicine, Infertility Management, Minimal Access Surgery, and Advanced Gynecological Endoscopy',
-            "department":'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Anagha Karkhanis',
                 "courseDuration": '1 week',
@@ -685,7 +687,7 @@ const FacultyProfile = () => {
             "id": "p-0006MM",
             "name": "Prof. Chittaranjan N. Purandare",
             "about": "Maternal Health, Women's Health, Obstetrics, Gynecology",
-            "department":'maternal-medical',
+            "department": 'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Chittaranjan N. Purandare',
                 "courseDuration": '1 week',
@@ -777,7 +779,7 @@ const FacultyProfile = () => {
             "id": "p-0007MM",
             "name": "Prof. Diogo Ayres de Campos",
             "about": "Intrapartum Fetal Monitoring, Obstetric Simulation",
-            "department":'maternal-medical',
+            "department": 'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Diogo Ayres de Campos',
                 "courseDuration": '1 week',
@@ -909,7 +911,7 @@ const FacultyProfile = () => {
             "id": "p-0008REI",
             "name": "Dr. Edgar Mocanu",
             "about": "Reproductive Medicine and Surgery, Infertility Treatment, Reproductive Endocrinology",
-            "department":'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Edgar Mocanu',
                 "courseDuration": '1 week',
@@ -1030,7 +1032,7 @@ const FacultyProfile = () => {
             "id": "p-0024GE",
             "name": "Dr. Hugo Rodrigues Gaspar",
             "about": "Gynecological Oncology, Surgical Anatomy in Pelvic Gynecology,Genetic Mutations in Ovarian Cancer",
-            "department":'gynaecology-endoscopy',
+            "department": 'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Hugo Rodrigues Gaspar',
                 "courseDuration": '1 week',
@@ -1116,7 +1118,7 @@ const FacultyProfile = () => {
             "id": "p-0011GE",
             "name": "Dr. Istvan Argay",
             "about": "Laparoscopic Surgery, Endoscopic Gynecology, Obstetrics and Gynecology",
-            "department":'gynaecology-endoscopy',
+            "department": 'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Istvan Argay',
                 "courseDuration": '1 week',
@@ -1228,12 +1230,14 @@ const FacultyProfile = () => {
             "id": "p-0012FMU",
             "name": "Prof. Justin Konje",
             "about": "High-Risk Pregnancies (including diabetes), Fetal Medicine, Endometriosis and Chronic Pelvic Pain, Recurrent Pregnancy Loss, Menstrual Disorders, Reproductive Endocrinology,Family Planning",
-            "department":'fetal-medicine-and-ultrasound',
+            "department": 'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Justin Konje',
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if12.png',
+                "flag": 'qa',
+
             },
             "PersonalDetails": [
                 {
@@ -1327,12 +1331,14 @@ const FacultyProfile = () => {
             "id": "p-0013FMU",
             "name": "Prof. Karl Oliver Kagan",
             "about": "Prenatal Diagnostics, Fetal Medicine, High-Risk Pregnancies, Ultrasound Diagnostics",
-            "department":'fetal-medicine-and-ultrasound',
+            "department": 'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Karl Oliver Kagan',
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if13.png',
+                "flag": 'de',
+
             },
             "PersonalDetails": [
                 {
@@ -1443,7 +1449,7 @@ const FacultyProfile = () => {
             "id": "p-0014REI",
             "name": "Dr. Karunakara Marikinti",
             "about": "Infertility Treatments , In Vitro Fertilization (IVF) , Recurrent Miscarriage Management , Advanced Ultrasound Diagnostics , Minimally Invasive Gynecological Procedures",
-            "department":'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Karunakara Marikinti',
                 "courseDuration": '1 week',
@@ -1583,7 +1589,7 @@ const FacultyProfile = () => {
             "id": "p-0015MM",
             "name": "Dr. Komal Chavan",
             "about": "Gynecology and Obstetrics, Infertility Treatment, Gynecological Endoscopy, Preventive Oncology, Postnatal Care",
-            "department":'maternal-medical',
+            "department": 'maternal-medical',
             "cardData": {
                 "facultyName": 'Dr. Komal Chavan',
                 "courseDuration": '1 week',
@@ -1709,7 +1715,7 @@ const FacultyProfile = () => {
             "id": "p-0016GE",
             "name": "Prof. Munna Talak",
             "about": "Obstetrics and Gynecology, Minimally Invasive Surgery, High-Risk Pregnancies",
-            "department":'gynaecology-endoscopy',
+            "department": 'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Prof. Munna Talak',
                 "courseDuration": '1 week',
@@ -1799,7 +1805,7 @@ const FacultyProfile = () => {
             "id": "p-0017REI",
             "name": "Dr. Rajalaxmi Walavalkar",
             "about": "Reproductive Medicine, Infertility Treatment, Gynecological Endoscopy",
-            "department":'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Dr. Rajalaxmi Walavalkar',
                 "courseDuration": '1 week',
@@ -1807,100 +1813,102 @@ const FacultyProfile = () => {
                 "facultyImage": '/if17.png',
             },
             "PersonalDetails": [
-                    {
-                        "title": "Designation",
-                        "items": [
-                            {
-                                "title": "Medical Director and IVF Consultant",
-                                "description": ["Medical Director and IVF Consultant at Cocoon Fertility"],
-                            },
-                        ],
-                    },
-                    {
-                        "title": "Academic Background",
-                        "items": [
-                            {
-                                "title": "MBBS:",
-                                "description": ["University of Mumbai, 1996"]
-                            },
-                            {
-                                "title": "DGO:",
-                                "description": ["College of Physicians and Surgeons Mumbai, 2001"]
-                            },
-                            {
-                                "title": "FCPS in Midwifery & Gynecology: ",
-                                "description": ["College of Physicians and Surgeons Mumbai, 2002"]
-                            },
-                            {
-                                "title": "MRCOG:",
-                                "description": ["Royal College of Obstetricians and Gynaecologists, UK"]
-                            },
-                            {
-                                "title": "DNB in Obstetrics & Gynecology:",
-                                "description": ["National Board of Examinations"]
-                            }
-                        ]
-
-                    },
-                    {
-                        "title": "Why Train Under Dr. Rajalaxmi Walavalkar?",
-                        "items": [
-                            {
-                                "description": [
-                                    "Benefit from her extensive experience in reproductive medicine and infertility treatments",
-                                    "Learn advanced gynecological endoscopy techniques",
-                                    "Gain insights from her international training and practice",
-                                    "Engage with a leader committed to ethical and empathetic patient care",
-                                ],
-                            },
-                        ],
-                    },
-                ],
-                "experience": {
-                    "facultyExperience": [
+                {
+                    "title": "Designation",
+                    "items": [
                         {
-                            "items": [
-                                "Over 28 years in Obstetrics and Gynecology, with 22 years as a specialist",
-                                "Extensive training in India and the UK, including Completion of Consultant Training (CCT)",
-                                "Fellowship in Reproductive Medicine and Surgery at Guy's and St Thomas' Hospital, London",
-                                "Post-CCT Research Fellowship at Homerton University Hospital, London",
-                                "Co-founder of Cocoon Fertility, a leading chain of IVF clinics in India"
-                            ]
+                            "title": "Medical Director and IVF Consultant",
+                            "description": ["Medical Director and IVF Consultant at Cocoon Fertility"],
                         },
                     ],
-                    "achievements": [
-                        {
-                            "items": [
-                                "Authored multiple postgraduate book chapters",
-                                "Delivered over 50 invited talks at regional, national, and international conferences",
-                                "Awarded the Leading IVF Consultant at Times Power Women 2018",
-                                "Featured in media for contributions to fertility treatments"
-                            ]
-                        },
-
-                    ]
                 },
-                "philosophy": [
+                {
+                    "title": "Academic Background",
+                    "items": [
+                        {
+                            "title": "MBBS:",
+                            "description": ["University of Mumbai, 1996"]
+                        },
+                        {
+                            "title": "DGO:",
+                            "description": ["College of Physicians and Surgeons Mumbai, 2001"]
+                        },
+                        {
+                            "title": "FCPS in Midwifery & Gynecology: ",
+                            "description": ["College of Physicians and Surgeons Mumbai, 2002"]
+                        },
+                        {
+                            "title": "MRCOG:",
+                            "description": ["Royal College of Obstetricians and Gynaecologists, UK"]
+                        },
+                        {
+                            "title": "DNB in Obstetrics & Gynecology:",
+                            "description": ["National Board of Examinations"]
+                        }
+                    ]
+
+                },
+                {
+                    "title": "Why Train Under Dr. Rajalaxmi Walavalkar?",
+                    "items": [
+                        {
+                            "description": [
+                                "Benefit from her extensive experience in reproductive medicine and infertility treatments",
+                                "Learn advanced gynecological endoscopy techniques",
+                                "Gain insights from her international training and practice",
+                                "Engage with a leader committed to ethical and empathetic patient care",
+                            ],
+                        },
+                    ],
+                },
+            ],
+            "experience": {
+                "facultyExperience": [
                     {
-                        "title": "Teaching Philosophy",
-                        "content": "Empowering patients through education and compassionate care, while advancing reproductive medicine through continuous learning and innovation."
+                        "items": [
+                            "Over 28 years in Obstetrics and Gynecology, with 22 years as a specialist",
+                            "Extensive training in India and the UK, including Completion of Consultant Training (CCT)",
+                            "Fellowship in Reproductive Medicine and Surgery at Guy's and St Thomas' Hospital, London",
+                            "Post-CCT Research Fellowship at Homerton University Hospital, London",
+                            "Co-founder of Cocoon Fertility, a leading chain of IVF clinics in India"
+                        ]
                     },
-                    {
-                        "title": "Message to Students",
-                        "content": "Dedication to patient-centered care and continuous learning is key to advancing in reproductive medicine. Together, we can help families achieve their dreams."
-                    }
                 ],
+                "achievements": [
+                    {
+                        "items": [
+                            "Authored multiple postgraduate book chapters",
+                            "Delivered over 50 invited talks at regional, national, and international conferences",
+                            "Awarded the Leading IVF Consultant at Times Power Women 2018",
+                            "Featured in media for contributions to fertility treatments"
+                        ]
+                    },
+
+                ]
+            },
+            "philosophy": [
+                {
+                    "title": "Teaching Philosophy",
+                    "content": "Empowering patients through education and compassionate care, while advancing reproductive medicine through continuous learning and innovation."
+                },
+                {
+                    "title": "Message to Students",
+                    "content": "Dedication to patient-centered care and continuous learning is key to advancing in reproductive medicine. Together, we can help families achieve their dreams."
+                }
+            ],
         },
         {
             "id": "p-006FMU",
             "name": "Prof. Samina Dornan",
             "about": "Maternal and Fetal Medicine , Prenatal Diagnosis and Fetal Therapy , High-Risk Pregnancy Management , Fetal Genetic Disorders and Structural Abnormalities",
-            "department":'fetal-medicine-and-ultrasound',
+            "department": 'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Samina Dornan',
                 "courseDuration": '1 week',
                 "totalLearners": '156',
                 "facultyImage": '/if22.png',
+                "flag": 'ae',
+
             },
             "PersonalDetails": [
                 {
@@ -1993,7 +2001,7 @@ const FacultyProfile = () => {
             "id": "p-0021GE",
             "name": "Dr. Sandesh Kade",
             "about": "Advanced Laparoscopic Surgeries , Fertility-Enhancing Surgeries , Treatment of Endometriosis , Pelvic Floor Repair Surgeries , Hysteroscopy",
-            "department":'gynaecology-endoscopy',
+            "department": 'gynaecology-endoscopy',
             "cardData": {
                 "facultyName": 'Dr. Sandesh Kade',
                 "courseDuration": '1 week',
@@ -2092,12 +2100,14 @@ const FacultyProfile = () => {
             "id": "p-0022FMU",
             "name": "Prof. Sebastian Kwiatkowski",
             "about": "Maternal-Fetal Medicine (Perinatology) , Placental Pathology and Obstetric Complications , Prenatal Care and Diagnostics",
-            "department":'fetal-medicine-and-ultrasound',
+            "department": 'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Sebastian Kwiatkowski',
                 "courseDuration": '1 week',
                 "totalLearners": '70',
                 "facultyImage": '/if21.png',
+                "flag": 'pl',
+
             },
             "PersonalDetails": [
                 {
@@ -2186,7 +2196,7 @@ const FacultyProfile = () => {
             "id": "p-0019MM",
             "name": "Prof. Stephen Rulisa",
             "about": "Maternal and Child Health , Infectious Diseases in Reproductive Health, Epidemiology and Health Systems Strengthening",
-            "department":'maternal-medical',
+            "department": 'maternal-medical',
             "cardData": {
                 "facultyName": 'Prof. Stephen Rulisa',
                 "courseDuration": '1 week',
@@ -2296,7 +2306,7 @@ const FacultyProfile = () => {
             "id": "p-0020RFI",
             "name": "Prof. Stratics kolibianakis",
             "about": "Assisted Reproduction , Reproductive Endocrinology , Infertility Treatment , Ovarian Stimulation",
-            "department":'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Prof. Stratics kolibianakis',
                 "courseDuration": '1 week',
@@ -2393,12 +2403,14 @@ const FacultyProfile = () => {
             "id": "p-0007FMU",
             "name": "Prof. Ulrich Honemeyer",
             "about": "Advanced Ultrasonography, Maternal-Fetal Medicine, Fetal Neurological Development",
-            "department":'fetal-medicine-and-ultrasound',
+            "department": 'fetal-medicine-and-ultrasound',
             "cardData": {
                 "facultyName": 'Prof. Ulrich Honemeyer',
                 "courseDuration": '1 week',
                 "totalLearners": '156',
                 "facultyImage": '/if23.png',
+                "flag": 'ru',
+
             },
             "PersonalDetails": [
                 {
