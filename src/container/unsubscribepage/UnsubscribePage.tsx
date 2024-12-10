@@ -9,9 +9,7 @@ const UnsubscribePage = () => {
   return (
 
     <div>
-
-    <Unsubscribe/>
-
+      <Unsubscribe />
     </div>
 
   )
