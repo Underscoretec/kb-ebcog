@@ -3,7 +3,7 @@ import ImageComponent from '../../common/uicomponents/ImageComponent'
 import { MdAccessTimeFilled } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
 import Button from '../../common/uicomponents/Button';
-import { GB, PL, DE, QA, RU, AE } from 'country-flag-icons/react/3x2'
+import { GB, PL, DE, QA, RU, AE, GR, IE, IN, PT, RW, HU } from 'country-flag-icons/react/3x2'
 
 
 
@@ -47,13 +47,19 @@ const InternationalFacultyCard = (props: any) => {
                         <div className='flex gap-1 xl:gap-2 items-center'><RiGraduationCapFill className='text-[#EE7E22]' /> {props?.data?.totalLearners} Learners</div>
                     </div>
 
-                    <div className='flex gap-1 justify-end'>
-                        {props?.data?.flag === 'gb' && <GB title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
-                        {props?.data?.flag === 'pl' && <PL title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
-                        {props?.data?.flag === 'de' && <DE title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
-                        {props?.data?.flag === 'qa' && <QA title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
-                        {props?.data?.flag === 'ru' && <RU title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
-                        {props?.data?.flag === 'ae' && <AE title="United States" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                    <div className='flex gap-1 justify-end shadow-md border border-gray-300 rounded-md'>
+                        {props?.data?.flag === 'gb' && <GB title="UK" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'pl' && <PL title="Poland" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'de' && <DE title="Germany" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'qa' && <QA title="Qatar" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'ru' && <RU title="Russia, UAE" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'ae' && <AE title="UK UAE" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'gr' && <GR title="Greec" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'ie' && <IE title="Ireland" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'in' && <IN title="India" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'pt' && <PT title="Portugal" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'rw' && <RW title="Rwanda" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
+                        {props?.data?.flag === 'hu' && <HU title="Hungary" className="flex gap-1 xl:gap-2 items-center w-10 h-10" />}
                     </div>
 
 
