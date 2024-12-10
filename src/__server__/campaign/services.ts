@@ -61,7 +61,7 @@ const importData = async (req: NextApiRequest, res: NextApiResponse) => {
 
 
     } catch (error) {
-        logger.error(error, "[Campaign importData -001] Error in import data from xlsx! ");
+        logger.error("[Campaign importData -001] Error in import data from xlsx! ",error);
         return res.status(500).json(errorResponse(error));
     }
 
@@ -101,7 +101,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
 
             // console.log(datas, "datas length")
             if (datas?.length > 0) {
-                let sendMailArray: string[] = []
+                const sendMailArray: string[] = []
                 for (const [idx, item] of datas.entries()) {
                     if (item['email']) {
                         const fullName = `${item?.firstName} ${item?.lastName}`
@@ -163,7 +163,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
         }
 
     } catch (error) {
-        logger.error(error, "[Campaign sendEmails -002] Error in send emails!")
+        logger.error("[Campaign sendEmails -002] Error in send emails!",error)
         return res.status(400).json({
             message: messages["INTERNAL_SERVER_ERROR"],
             error: true,
@@ -211,7 +211,7 @@ const unSubscribeEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 
 
     } catch (error) {
-        logger.error(error, "[Campaign upload -001] Error unSubscribe Campaign! ");
+        logger.error("[Campaign upload -001] Error unSubscribe Campaign! ",error);
         return res.status(500).json(errorResponse(error));
     }
 
@@ -250,7 +250,7 @@ const requestForCallback = async (req: NextApiRequest, res: NextApiResponse) => 
             }
         }
     } catch (error) {
-        logger.error(error, "[Campaign upload -001] Error in Campaign callback create! ");
+        logger.error("[Campaign upload -001] Error in Campaign callback create! ",error);
         return res.status(500).json(errorResponse(error));
     }
 

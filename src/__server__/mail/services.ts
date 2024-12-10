@@ -54,7 +54,7 @@ const sendEmailRegistrationAcknowledgement = async (data: any) => {
         }
         sendEmailWithSES(sendMailObj);
     } catch (error) {
-        logger.error(error, `Registration ACK Email send error!`)
+        logger.error(`Registration ACK Email send error!`,error)
     }
 }
 
@@ -95,7 +95,7 @@ const inviteUserForRegister = async (data: any, req: any) => {
         }
 
     } catch (error) {
-        logger.error(error, `Error occurred to invite user for registration!`)
+        logger.error(`Error occurred to invite user for registration!`,error)
     }
 }
 
