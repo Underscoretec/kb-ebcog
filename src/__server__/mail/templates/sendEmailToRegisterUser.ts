@@ -304,7 +304,7 @@ export const sendEmailToRegisterUser = (userName: string, courseName: string, ci
                                   ${courseName}
                                 </div>
                                 <div style="background-color:#FFF4F8;font-family:Cabin;font-size:16px;padding:8px 24px 4px 24px">
-                                  <span><b>Course Dates :</b></span> Course Date
+                                  <span><b>Course Dates :</b></span> February 14th-19th, 2025
                                 </div>
                                 <div style="background-color:#FFF4F8;font-family:Cabin;font-size:16px;padding:8px 24px 4px 24px">
                                   <span><b>City :</b></span> ${city}
@@ -314,7 +314,7 @@ export const sendEmailToRegisterUser = (userName: string, courseName: string, ci
                                   extensive hands-on training and online in-person assessment
                                 </div>
                                 <div style="background-color:#FFF4F8;font-family:Cabin;font-size:16px;padding:8px 24px 8px 24px">
-                                  <span><b>Course Time :</b></span> Course Time
+                                  <span><b>Course Time :</b></span> 8:30hrs to 17:30hrs
                                 </div>
                               </div>
 
