@@ -21,9 +21,9 @@ const CallbackCard: React.FC = () => {
   const id = router.query.email;
   const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
   
-//   const showModal = (title: any, message: any, redirect: boolean) => {
-//     setModalData({ isOpen: true, title, message, redirect: redirect });
-// };
+  const showModal = (title: any, message: any, redirect: boolean) => {
+    setModalData({ isOpen: true, title, message, redirect: redirect });
+};
 
 const hideModal = () => {
     setModalData({ ...modalData, isOpen: false });
@@ -81,7 +81,7 @@ const hideModal = () => {
       if (payload) {
         updatePhoneNumber(payload);
       }
-      router.push('/');
+      // router.push('/');
       
         setTimeout(() => {
             // console.log("Signed in with", { email, password });
@@ -102,50 +102,16 @@ const hideModal = () => {
       // dispatch(postQustionRequest(false))
       console.log(res,'res updatePhoneNumber ##');
       if (res.status === 200) {
-        router.push('/');
-          // alert("Registration successfully done");
-          // action.resetForm();
-          // dispatch(getPostQuestionSuccess(true))
+        showModal("Thank you for sharing you phone number", "Our team will be in touch with you shortly", true);
       } 
       return res;
 
-  } catch (error) {
+    } catch (error) {
+      showModal("Something went wrong!", "Please try after sometime", false);
       return error;
       
   }
   }
-
-    // const router = useRouter();
-
-    // const formik = useFormik({
-    //     initialValues: {
-    //         name: '',
-    //         number: '',
-    //         email: '',
-    //         password: '',
-    //         confirmPassword: '',
-    //         state: '',
-    //         city: '',
-    //         country: '',
-    //     },
-    //     validationSchema: Yup.object({
-    //         name: Yup.string().required('Name is required'),
-    //         number: Yup.string()
-    //             .matches(/^[0-9]{10}$/, 'Mobile number must be 10 digits')
-    //             .required('Mobile number is required'),
-    //         password: Yup.string().required('Password is required'),
-    //         confirmPassword: Yup.string().required('Confirm Password is required'),
-    //         email: Yup.string()
-    //             .email('Invalid email address')
-    //             .required('Email is required'),
-    //         state: Yup.string().required('State is required'),
-    //         city: Yup.string().required('City/District/Town is required'),
-    //         country: Yup.string().required('Country is required'),
-    //     }),
-    //     onSubmit: (values) => {
-    //         console.log('Form Data:', values);
-    //     },
-    // });
 
     return (
         <div className="flex flex-col items-center justify-center bg-[#F9FAFB] pt-20 pb-32">
