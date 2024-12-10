@@ -328,7 +328,7 @@ const FacultyProfile = () => {
         {
             "id": "p-0005RPI",
             "name": 'Prof. Basil C. Tarlatzis',
-            "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
+            "about": "Reproductive Medicine, Assisted Reproduction Technologies, Infertility Treatment",
             "department": 'reproductive-endocrinology',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
@@ -728,7 +728,7 @@ const FacultyProfile = () => {
                         },
                         {
                             "title": "Fellowships",
-                            "description": ["RCOG,ACOG, Germany"],
+                            "description": ["RCPI (Ireland), RCOG, ACOG, EBCOG Germany"],
                         },
                     ],
                 },
