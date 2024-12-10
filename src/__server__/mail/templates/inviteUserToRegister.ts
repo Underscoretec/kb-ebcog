@@ -249,7 +249,7 @@ export const inviteUserToRegister = (userName: string, id:string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:33px 36px 4px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="font-size: 14px; line-height: 150%;"><span style="font-size: 16px; line-height: 24px;"><strong><span style="line-height: 21px;">Dear ${userName}, </span></strong></span></p>
+                                <p style="font-size: 14px; line-height: 150%;"><span style="font-size: 16px; line-height: 24px;"><strong><span style="line-height: 21px;">Dear Dr. ${userName}, </span></strong></span></p>
                               </div>
 
                             </td>
