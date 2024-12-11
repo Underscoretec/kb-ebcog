@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { ClickAwayListener } from '@mui/material'
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
 
 const navigation = {
