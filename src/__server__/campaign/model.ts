@@ -65,6 +65,15 @@ const campaignSchema = new Schema({
             type: Date,
         }
     },
+    mailBounce: {
+        status: {
+            type: Boolean,
+            default: false,
+        },
+        timeStamp: {
+            type: Date,
+        }
+    },
     unsubscribe: {
         status: {
             type: Boolean,

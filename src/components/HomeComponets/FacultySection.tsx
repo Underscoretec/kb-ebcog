@@ -55,7 +55,7 @@ const FacultySection = () => {
                     "id": "REI1",
                     "facultyName": "Prof. Basil C. Tarlatzis",
                     "Role": "Lead",
-                    "about": "Reproductive Medicine, Assisted Reproduction Technologies, Infertility Treatment",
+                    "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
                     "image": "/faculty7.png"
                 },
                 {
