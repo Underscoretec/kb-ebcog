@@ -31,12 +31,12 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <meta property="og:description"
         content="Join us to advance your career through knowledge and skill enhancement. Benefit from comprehensive training and unwavering support from our esteemed EBCOG faculty. You'll be fully equipped to tackle challenges and embrace the opportunities to enhance outcomes in women's health"
       />
-      <meta property="og:image" content="/EBCOG_OGP.jpg" />
-      <meta name="twitter:image" content="/EBCOG_OGP.jpg" />
+      <meta property="og:image" content="/EBCOG_OGP.webp" />
+      <meta name="twitter:image" content="/EBCOG_OGP.webp" />
       <meta name="twitter:site"
         content="Join us to advance your career through knowledge and skill enhancement. Benefit from comprehensive training and unwavering support from our esteemed EBCOG faculty. You'll be fully equipped to tackle challenges and embrace the opportunities to enhance outcomes in women's health"
       />
-        <meta name="twitter:card" content="/EBCOG_OGP.jpg" />
+        <meta name="twitter:card" content="/EBCOG_OGP.webp" />
     </Head>
 
     {getLayout ?
