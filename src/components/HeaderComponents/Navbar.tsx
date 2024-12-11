@@ -90,7 +90,7 @@ const CreateMenu = ({ menuData, index, depth, menuStatus, setMenuStatus }: any) 
                 {menuData.submenu && (
                     <ul
                         className={`${openSubmenus[index] ? 'block' : 'hidden'}
-                            ${depth === 1 ? 'top-[calc(150%)] left-0 w-[calc(200%)] xl:w-[calc(200%)]' : `${depth === 2 ? "w-[calc(100%)] 2xl:w-[calc(70%)]" : "w-[calc(100%)] xl:w-[calc(85%)]"} top-0 ml-[calc(100%)] bg-white`} shadow-2xl absolute`}
+                            ${depth === 1 ? 'top-[calc(100%)] left-0 w-[calc(200%)] xl:w-[calc(200%)]' : `${depth === 2 ? "w-[calc(100%)] 2xl:w-[calc(70%)]" : "w-[calc(100%)] xl:w-[calc(85%)]"} top-0 ml-[calc(100%)] bg-white`} shadow-2xl absolute`}
                     >
                         {openSubmenus[index] &&
                             menuData.submenu.map((subMenu: any, subMenuIndex: any) => (
