@@ -25,10 +25,6 @@ const CallbackCard: React.FC = () => {
     setModalData({ isOpen: true, title, message, redirect: redirect });
 };
 
-  //   const showModal = (title: any, message: any, redirect: boolean) => {
-  //     setModalData({ isOpen: true, title, message, redirect: redirect });
-  // };
-
   const hideModal = () => {
     setModalData({ ...modalData, isOpen: false });
   };

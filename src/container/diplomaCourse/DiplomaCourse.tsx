@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 import { MdAccessTimeFilled, MdFileCopy } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
 import { useRouter } from 'next/navigation';
+import AlertModal from '@/common/uicomponents/AlertModal';
 
 interface DiplomaCourseProps {
     courseId: string;
@@ -15,6 +16,16 @@ interface DiplomaCourseProps {
 const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
     const router = useRouter();
     const [courseData, setcourseData] = useState<any | null>(null);
+    const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
+
+    const showModal = (title: any, message: any, redirect: boolean) => {
+        setModalData({ isOpen: true, title, message, redirect: redirect });
+    };
+
+    const hideModal = () => {
+        setModalData({ ...modalData, isOpen: false });
+    };
+
 
     const data = [
         {
@@ -625,8 +636,8 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             ]
         },
     ]
-    
-    const handleEnroll = () =>{
+
+    const handleEnroll = () => {
         router.push('/registration');
     }
 
@@ -647,8 +658,9 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 <div className='flex flex-col gap-4 w-[100%] xs:w-[47%] md:w-[60%] lg:w-auto'>
                     <h1 className='font-montserrat text-[24px] xs:text-[20px] sm:text-[28px] lg:text-[30px] xl:text-[36px] font-bold leading-[34px] xs:leading-[30px] sm:leading-[38px] lg:leading-[45px] md:w-[90%] xl:w-[84%]'>{courseData?.courseName}</h1>
                     <Button
-                        label="Fees & Scholarships"
+                        label="Fees"
                         className="w-[12rem] sm:w-[16rem] lg:w-[20rem] py-1 lg:py-2 bg-[#E4087F] font-semibold text-white rounded-md hover:bg-[#ac0660]"
+                        onClick={() => {showModal("Kindly complete your enrolment process for us to confirm the fees for respective courses.","",false) }}
                     />
                     <div className='flex flex-col md:flex-row gap-2 md:gap-8 font-montserrat text-base font-medium leading-6 text-[#9D9D9D]'>
                         <div className='flex gap-1 xl:gap-2 items-center'><MdAccessTimeFilled className='text-[#EE7E22]' /> {courseData?.duration}</div>
@@ -665,6 +677,13 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             <div className='px-4 xs:px-8 xs:pr-8 md:pr-0 xl:pl-16 3xl:pl-24 py-4 xs:py-8 sm:py-12 w-[100%] md:w-[64%] lg:w-[68%] xl:w-[70%]'>
                 <CourseTabSection courseData={courseData} />
             </div>
+            <AlertModal
+                isOpen={modalData.isOpen}
+                title={modalData.title}
+                message={modalData.message}
+                redirect={modalData.redirect}
+                onClose={hideModal}
+            />
         </div>
     )
 }
