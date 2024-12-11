@@ -25,23 +25,6 @@ const navigation = {
     { name: 'FAQ', href: '/#faq' },
     { name: 'Privacy', href: '/privacy-policy' },
   ],
-  social: [
-    {
-      name: 'Facebook',
-      href: '#',
-      icon: <FaFacebook />,
-    },
-    {
-      name: 'Instagram',
-      href: '#',
-      icon: <FaInstagram />,
-    },
-    {
-      name: 'X',
-      href: '#',
-      icon: <FaTwitter />,
-    },
-  ],
 };
 
 export default function Footer() {
@@ -225,13 +208,6 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-16 border-t border-gray-500 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
-          <div className="flex gap-x-6 md:order-2">
-            {navigation.social.map((item) => (
-              <Link key={item.name} href={item.href} className="text-[#E4087F] hover:text-[#eb98c4]">
-                {item.icon}
-              </Link>
-            ))}
-          </div>
           <p className="mt-8 text-[16px] font-montserrat text-[#D1D5DB] md:order-1 md:mt-0">
             ©copyright 2024 KnowledgeBridge International Private Limited All rights reserved.
           </p>

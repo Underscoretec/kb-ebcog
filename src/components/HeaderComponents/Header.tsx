@@ -8,6 +8,7 @@ import { ClickAwayListener } from '@mui/material'
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { RiTwitterXFill } from 'react-icons/ri';
 
 const navigation = {
     social: [
@@ -24,7 +25,7 @@ const navigation = {
         {
             name: 'X',
             href: '#',
-            icon: <FaTwitter />,
+            icon: <RiTwitterXFill />,
         },
     ],
 }

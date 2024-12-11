@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaAngleDown, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { RiTwitterXFill } from "react-icons/ri";
 
 const navigation = {
     social: [
@@ -18,7 +19,7 @@ const navigation = {
         {
             name: 'X',
             href: '#',
-            icon: <FaTwitter />,
+            icon: <RiTwitterXFill />,
         },
     ],
 }
