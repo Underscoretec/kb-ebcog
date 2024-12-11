@@ -83,12 +83,6 @@ const CallbackCard: React.FC = () => {
     if (payload) {
       updatePhoneNumber(payload);
     }
-    router.push('/');
-
-    setTimeout(() => {
-      // console.log("Signed in with", { email, password });
-      // setIsSubmitting(false);
-    }, 2000); // Replace with actual sign-in logic
   };
 
   const updatePhoneNumber = async (payload: any) => {
