@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const winston = require('winston');
 require('winston-daily-rotate-file');
 const { combine, timestamp, printf, colorize, align } = winston.format;
