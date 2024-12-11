@@ -2447,7 +2447,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '156',
                 "facultyImage": '/if23.png',
-                "flag": 'ru',
+                "flag": 'ae',
 
             },
             "PersonalDetails": [
