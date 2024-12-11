@@ -41,14 +41,12 @@ const Header = () => {
         setIsSidebarOpen(false);
     };
 
-    // const user_name = 'John'
-
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
             <div className='z-[100] sticky top-0 w-auto h-auto'>
                 <div className='bg-white w-full h-[65px] xs:h-[75px] md:h-[85px] 2xl:h-[100px] flex items-center justify-end px-4 xs:px-8 xl:px-16 3xl:px-24 gap-2 2xl:gap-12 shadow-xl lg:shadow-0 xl:shadow-xl'>
-                    <div className='flex justify-between w-[100%] md:w-[80%] lg:w-[70%] items-center'>
-                        <div className='flex items-center gap-1 xs:gap-2 sm:gap-3'>
+                    <div className='flex justify-between w-[100%] md:w-[80%] lg:w-[75%] items-center'>
+                        <div className='flex items-center gap-1 xs:gap-2 sm:gap-[30px] xl:gap-[50px]'>
                             <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[22px] xs:text-[28px] md:text-[32px] cursor-pointer`}
                                 onClick={handleSidebar} />
                             <Link href="/">
