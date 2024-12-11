@@ -11,24 +11,29 @@ const sendEmailRegistrationAcknowledgement = async (data: any) => {
         const userName = `${"Dear Dr."} ${data?.name}`
         let city = 'Dubai, UAE';
         let courseName = '';
+        let pdf =''
         switch (data?.courseName) {
             case 'maternalMedicine':
                 courseName = 'Maternal Medicine';
+                pdf = 'maternal-medicine.pdf';
                 break;
             case 'reproductiveEndocrinology_Infertility':
                 courseName = 'Diploma in Reproductive Endocrinology & Infertility';
+                pdf = 'Reproductive-endocrinology-infertility.pdf';
                 break;
             case 'fetalMedicine_Ultrasound':
                 courseName = 'Fetal Medicine and Ultrasound';
+                pdf = 'fetal-medicine-and-ultrasound.pdf';
                 break;
             case 'gynaecologyEndoscopy':
                 courseName = 'Gynaecology Endoscopy';
+                pdf = 'gynaecology-endoscopy.pdf';
                 city = 'Sharjah, UAE';
 
             default:
                 break;
         }
-        const text = sendEmailToRegisterUser(userName, courseName, city);
+        const text = sendEmailToRegisterUser(userName, courseName, city, pdf);
         const template = text.replace(/^\s+|\s+$|\s+(?=\s)/g, '')
 
         const Body = {
@@ -58,7 +63,7 @@ const sendEmailRegistrationAcknowledgement = async (data: any) => {
     }
 }
 
-const inviteUserForRegister = async (data: any, req: any) => {
+const inviteUserForRegister = async (data: any, req: any, count: number) => {
     logger.info("inviteUserForRegister function call.")
     try {
 
@@ -83,6 +88,7 @@ const inviteUserForRegister = async (data: any, req: any) => {
                     Charset: "UTF-8",
                     Data: `Introducing European Board Collage of Obstetrics and Gynaecology Diplomas`,
                 },
+                count: count
             }
 
             sendEmailWithSES(sendMailObj);

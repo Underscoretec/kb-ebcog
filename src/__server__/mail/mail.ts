@@ -12,7 +12,7 @@ const SESconfig = {
 
 // Function name- SendEmail
 
-export function sendEmailWithSES({ receiverAddress, body, subject, cc, }: any) {
+export function sendEmailWithSES({ receiverAddress, body, subject, cc, count }: any) {
     const bccEmail = process.env.BCC_EMAIL;
 
     const params = {
@@ -36,7 +36,7 @@ export function sendEmailWithSES({ receiverAddress, body, subject, cc, }: any) {
             // if (userId) {
             //     userUpdate(userId, { emailSend: true })
             // }
-            logger.info(`Email sent to ${receiverAddress} with bcc ${bccEmail} : => ${res?.MessageId}`);
+            logger.info(` ${count} Email sent to ${receiverAddress} with bcc ${bccEmail} : => ${res?.MessageId}`);
             // console.log(`Email send Response ${receiverAddress}:-`, res?.MessageId);
         })
         .catch((err: any) => {
