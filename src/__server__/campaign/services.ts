@@ -70,9 +70,7 @@ function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function sendWelcomeEmail() {
-    throw new Error("Function not implemented.");
-}
+
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -101,7 +99,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
 
             // console.log(datas, "datas length")
             if (datas?.length > 0) {
-                let sendMailArray: string[] = []
+                const sendMailArray: string[] = []
                 for (const [idx, item] of datas.entries()) {
                     if (item['email']) {
                         const fullName = `${item?.firstName} ${item?.lastName}`

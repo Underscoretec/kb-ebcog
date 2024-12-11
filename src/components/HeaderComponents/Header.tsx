@@ -7,6 +7,28 @@ import Link from 'next/link';
 import { ClickAwayListener } from '@mui/material'
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { RiTwitterXFill } from 'react-icons/ri';
+
+const navigation = {
+    social: [
+        {
+            name: 'Facebook',
+            href: '#',
+            icon: <FaFacebook />,
+        },
+        {
+            name: 'Instagram',
+            href: '#',
+            icon: <FaInstagram />,
+        },
+        {
+            name: 'X',
+            href: '#',
+            icon: <RiTwitterXFill />,
+        },
+    ],
+}
 
 const Header = () => {
 
@@ -20,47 +42,56 @@ const Header = () => {
         setIsSidebarOpen(false);
     };
 
-    // const user_name = 'John'
-
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
             <div className='z-[100] sticky top-0 w-auto h-auto'>
-                <div className='bg-white w-full h-[65px] xs:h-[75px] md:h-[85px] 2xl:h-[100px] flex items-center justify-between px-4 xs:px-8 xl:px-16 3xl:px-24 gap-2 2xl:gap-6 shadow-xl lg:shadow-0 xl:shadow-xl'>
-                    <div className='flex items-center gap-1 xs:gap-2 sm:gap-3'>
-                        <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[22px] xs:text-[28px] md:text-[32px] cursor-pointer`}
-                            onClick={handleSidebar} />
-                        <Link href="/">
-                            <div className='w-[75px] xs:w-[110px] xl:w-[150px] h-full cursor-pointer'>
-                                <Image src="/ebcog.png" alt="no img" width={500} height={500} className='w-full h-full' />
-                            </div>
-                        </Link>
-                        <Link href="/">
-                            <div className='w-[90px] xs:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
-                                <Image src="/e_logo.png" alt="no img" width={500} height={500} className='w-full h-full' />
-                            </div>
-                        </Link>
-                        <Link href="/">
-                            <div className='w-[100px] xs:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
-                                <Image src="/kblogo.png" alt="no img" width={500} height={500} className='w-full h-full' />
-                            </div>
-                        </Link>
+                <div className='bg-white w-full h-[65px] xs:h-[75px] md:h-[85px] 2xl:h-[100px] flex items-center justify-end px-4 xs:px-8 xl:px-16 3xl:px-24 gap-2 2xl:gap-12 shadow-xl lg:shadow-0 xl:shadow-xl'>
+                    <div className='flex justify-between w-[100%] md:w-[80%] lg:w-[75%] items-center'>
+                        <div className='flex items-center gap-1 xs:gap-2 sm:gap-[30px] xl:gap-[50px]'>
+                            <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[22px] xs:text-[28px] md:text-[32px] cursor-pointer`}
+                                onClick={handleSidebar} />
+                            <Link href="/">
+                                <div className='w-[75px] xs:w-[110px] xl:w-[150px] h-full cursor-pointer'>
+                                    <Image src="/ebcog.png" alt="no img" width={500} height={500} className='w-full h-full' />
+                                </div>
+                            </Link>
+                            <Link href="/">
+                                <div className='w-[90px] xs:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
+                                    <Image src="/e_logo.png" alt="no img" width={500} height={500} className='w-full h-full' />
+                                </div>
+                            </Link>
+                            <Link href="/">
+                                <div className='w-[100px] xs:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
+                                    <Image src="/kblogo.png" alt="no img" width={500} height={500} className='w-full h-full' />
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className={`hidden w-[47%] h-full`}>
+                            <Navbar menuArray={menuitems} />
+                        </div>
+
+                        <div className="lg:flex gap-x-6 md:order-2 text-[25px] hidden">
+                            {navigation.social.map((item) => (
+                                <Link key={item.name} href={item.href} className="text-[#E4087F] hover:text-[#eb98c4]">
+                                    {item.icon}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
 
-                    <div className={`hidden xl:block w-[47%] h-full`}>
-                        <Navbar menuArray={menuitems} />
-                    </div>
 
-                    <Link href='/registration' >
+                    {/* <Link href='/registration' >
                         <h1 className="text-white font-semibold rounded-[6px] hidden sm:flex justify-center items-center py-2 xl:py-4 px-2 sm:px-4 lg:px-2 xl:px-3 text-[10px] xs:text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] hover:bg-[#ac0660]">
                             Join Now
                         </h1>
-                    </Link>
+                    </Link> */}
                     {/* <Link href="/profile">
                             <div className='flex items-center justify-center rounded-full bg-[#E4087F] text-white h-10 xl:h-12 w-10 xl:w-12 text-[20px] font-semibold cursor-pointer'>{user_name.charAt(0)}</div>
                         </Link> */}
                 </div>
-                <div className='hidden lg:flex xl:hidden items-center justify-center py-[14px] border-t border-[#c9c8c8] bg-white shadow-xl'>
-                    <div className={` w-[70%] h-full`}>
+                <div className='hidden md:flex  items-center justify-center py-[14px] border-t border-[#c9c8c8] bg-white shadow-xl'>
+                    <div className={`md:w-[88%] lg:w-[70%] w-[70%] h-full`}>
                         <Navbar menuArray={menuitems} />
                     </div>
                 </div>
