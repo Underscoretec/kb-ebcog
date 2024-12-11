@@ -24,19 +24,19 @@ const FacultySection = () => {
                 {
                     "id": "MM3",
                     "facultyName": "Prof. Chittaranjan N. Purandare",
-                    "about": "Purandare Hospital served as the President of FIGO and FOGSI and has also been the Dean of the ICOG and the Emeritus Editor for the Journal of Obstetrics and Gynecology of India.",
+                    "about": "Purandare Hospital, served as the President of FIGO and FOGSI and has also been the Dean of the ICOG and the Emeritus Editor for the Journal of Obstetrics and Gynecology of India.",
                     "image": "/faculty3.png"
                 },
                 {
                     "id": "MM4",
                     "facultyName": "Prof. Stephen Rulisa",
-                    "about": "Professor Stephen Rulisa is a Professor in the Department of Obstetrics and Gynecology at the University of Rwanda. Serving as the Chair of the ECSACOG & National Chair of the MPDSR.",
+                    "about": "Professor in the Department of Obstetrics and Gynecology at the University of Rwanda. Serving as the Chair of the ECSACOG & National Chair of the MPDSR.",
                     "image": "/faculty4.png"
                 },
                 {
                     "id": "MM5",
                     "facultyName": "Dr. Amala Nazareth",
-                    "about": "Hon. Secretary General AFCOG obstetrician and Gynecologist Prime Health Group, UAE.",
+                    "about": "Hon. Secretary General AFCOG Obstetrician and Gynecologist Prime Health Group, UAE.",
                     "image": "/faculty5.png"
                 },
                 {
@@ -55,7 +55,7 @@ const FacultySection = () => {
                     "id": "REI1",
                     "facultyName": "Prof. Basil C. Tarlatzis",
                     "Role": "Lead",
-                    "about": "Reproductive Medicine, Assisted Reproduction Technologies, Infertility Treatment",
+                    "about": "Emeritus Professor at the School of Medicine, Aristotle University of Thessaloniki, Greece. Past President of EBCOG, ESHRE, IFFS",
                     "image": "/faculty7.png"
                 },
                 {
