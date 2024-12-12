@@ -56,6 +56,7 @@ const FacultySection = () => {
                     "facultyName": "Prof. Basil C. Tarlatzis",
                     "Role": "Lead",
                     "about": "Emeritus Professor at the School of Medicine, Aristotle University of Thessaloniki, Greece. Past President of EBCOG, ESHRE, IFFS",
+                    // "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
                     "image": "/faculty7.png"
                 },
                 {

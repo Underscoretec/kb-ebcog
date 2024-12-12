@@ -243,7 +243,7 @@ const InternationalFaculty = () => {
       totalLearners: '70',
       facultyImage: '/if23.png',
       AboutLink: '#',
-      flag:'ru'
+      flag:'ae'
     },
   ]
 

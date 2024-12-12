@@ -113,7 +113,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                         //     }, Number(randomTime * 1000))
                         //     // })
                         // }
-                        inviteUserForRegister(sendData, req)
+                        inviteUserForRegister(sendData, req, idx+1)
                         sendMailArray.push(item?.email)
 
                         // Delay the next email by a random or fixed interval
