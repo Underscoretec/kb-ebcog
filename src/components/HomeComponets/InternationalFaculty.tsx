@@ -8,11 +8,12 @@ const InternationalFaculty = () => {
     {
       id: "p-0001GE",
       course: "Diploma in Gynaecology Endoscopy",
-      facultyName: 'Dr. Alan Abdallah',
+      facultyName: 'Dr. Alian Abdallah',
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if1.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ae'
     },
     {
       id: "p-0002MM",
@@ -21,7 +22,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if2.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ae'
     },
     {
       id: "p-0003REI",
@@ -30,7 +32,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if3.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'in'
     },
     {
       id: "p-0004FMU",
@@ -39,7 +42,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if4.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'gb'
     },
     {
       id: "p-0005RPI",
@@ -48,7 +52,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if5.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'gr'
     },
     {
       id: "p-0006MM",
@@ -57,7 +62,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if6.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'in'
     },
     {
       id: "p-0007MM",
@@ -66,7 +72,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if7.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'pt'
     },
     {
       id: "p-0008REI",
@@ -75,7 +82,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if8.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ie'
     },
     {
       id: "p-0009MM",
@@ -84,7 +92,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if9.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'de'
     },
     {
       id: "p-0010GE",
@@ -93,7 +102,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if10.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'pt'
     },
     {
       id: "p-0024GE",
@@ -102,7 +112,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if24.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'pt'
     },
     {
       id: "p-0011GE",
@@ -111,7 +122,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if11.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'hu'
     },
     {
       id: "p-0012FMU",
@@ -120,7 +132,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if12.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'qa'
     },
     {
       id: "p-0013FMU",
@@ -129,7 +142,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if13.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'de'
     },
     {
       id: "p-0014REI",
@@ -138,7 +152,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if15.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ae'
     },
     {
       id: "p-0015MM",
@@ -147,7 +162,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if14.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'in'
     },
     {
       id: "p-0016GE",
@@ -156,25 +172,28 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if16.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ae'
     },
     {
       id: "p-0017REI",
       course: "Diploma in Reproductive Endocrinology & Infertility",
       facultyName: 'Dr. Rajalaxmi Walavalkar',
       courseDuration: '1 week',
-      totalLearners: '154',
+      totalLearners: '70',
       facultyImage: '/if17.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'in'
     },
     {
       id: "p-006FMU",
       course: "Diploma in Fetal Medicine and Ultrasound",
       facultyName: 'Prof. Samina Dornan',
       courseDuration: '1 week',
-      totalLearners: '156',
+      totalLearners: '70',
       facultyImage: '/if22.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ae'
     },
     {
       id: "p-0021GE",
@@ -183,7 +202,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if20.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ae'
     },
     {
       id: "p-0022FMU",
@@ -192,7 +212,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if21.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'pl'
     },
     {
       id: "p-0019MM",
@@ -201,7 +222,8 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if18.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'rw'
     },
     {
       id: "p-0020RFI",
@@ -210,16 +232,18 @@ const InternationalFaculty = () => {
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if19.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'gr'
     },
     {
       id: "p-0007FMU",
       course: "Diploma in Fetal Medicine and Ultrasound",
       facultyName: 'Prof. Ulrich Honemeyer',
       courseDuration: '1 week',
-      totalLearners: '156',
+      totalLearners: '70',
       facultyImage: '/if23.png',
-      AboutLink: '#'
+      AboutLink: '#',
+      flag:'ae'
     },
   ]
 
@@ -234,7 +258,12 @@ const InternationalFaculty = () => {
         {FacultyData.map((item, index) => {
           return (
             <div key={index} className='w-[100%] xs:w-[49%] sm:w-[48.5%] md:w-[32%] lg:w-[24%] xl:w-[23.5%] 3xl:w-[24%]'>
-              <InternationalFacultyCard key={index} data={item} btn_label="Know More" handleClick={() => handleClick(item?.id)} />
+              <InternationalFacultyCard
+                key={index}
+                data={item}
+                btn_label="Know More"
+                handleClick={() => handleClick(item?.id)}
+              />
             </div>
           )
         })}

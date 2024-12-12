@@ -1,4 +1,4 @@
-export const sendEmailToRegisterUser = (userName: string, courseName: string, city: string,) => `
+export const sendEmailToRegisterUser = (userName: string, courseName: string, city: string, pdf: string) => `
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
@@ -304,7 +304,7 @@ export const sendEmailToRegisterUser = (userName: string, courseName: string, ci
                                   ${courseName}
                                 </div>
                                 <div style="background-color:#FFF4F8;font-family:Cabin;font-size:16px;padding:8px 24px 4px 24px">
-                                  <span><b>Course Dates :</b></span> Course Date
+                                  <span><b>Course Dates :</b></span> February 14th-19th, 2025
                                 </div>
                                 <div style="background-color:#FFF4F8;font-family:Cabin;font-size:16px;padding:8px 24px 4px 24px">
                                   <span><b>City :</b></span> ${city}
@@ -314,8 +314,12 @@ export const sendEmailToRegisterUser = (userName: string, courseName: string, ci
                                   extensive hands-on training and online in-person assessment
                                 </div>
                                 <div style="background-color:#FFF4F8;font-family:Cabin;font-size:16px;padding:8px 24px 8px 24px">
-                                  <span><b>Course Time :</b></span> Course Time
+                                  <span><b>Course Time :</b></span> 8:30hrs to 17:30hrs
                                 </div>
+                                <div style="background-color:#FFF4F8;font-family:Cabin;font-size:16px;padding:8px 24px 8px 24px">
+                                    <a href="https://ebcogdiplomas.com/${pdf}" style="font-family:Cabin;font-size:16px;line-height: 180%; text-decoration: none;">Click here to download the course brochure.</a>
+                                  </div>
+                                  
                               </div>
 
                             </td>
@@ -466,29 +470,6 @@ export const sendEmailToRegisterUser = (userName: string, courseName: string, ci
                 <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #fafafa;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #003399;"><![endif]-->
 
                 <!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #fafafa;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
-                <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
-                  <div style="background-color: #fafafa;height: 100%;width: 100% !important;">
-                    <!--[if (!mso)&(!IE)]><!-->
-                    <div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
-
-                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                        <tbody>
-                          <tr>
-                            <td style="overflow-wrap:break-word;word-break:break-word;padding:3px;font-family:'Cabin',sans-serif;" align="left">
-
-                              <div style="font-size: 14px; color: #a9a8a8; line-height: 180%; text-align: center; word-wrap: break-word;">
-                                <a href="https://ebcogdiplomas.com/" style="font-size: 12px; line-height: 180%; text-decoration: none; color: #A9A8A8;"><span style="font-size: 12px; line-height: 21.6px;">Unsubscribe</span></a>
-                              </div>
-
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                      <!--[if (!mso)&(!IE)]><!-->
-                    </div><!--<![endif]-->
-                  </div>
-                </div>
                 <!--[if (mso)|(IE)]></td><![endif]-->
                 <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
               </div>

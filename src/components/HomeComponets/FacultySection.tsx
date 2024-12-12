@@ -55,7 +55,7 @@ const FacultySection = () => {
                     "id": "REI1",
                     "facultyName": "Prof. Basil C. Tarlatzis",
                     "Role": "Lead",
-                    "about": "Emeritus Professor at the School of Medicine, Aristotle University of Thessaloniki, Greece. Past President of EBCOG, ESH RE, IFFS.",
+                    "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
                     "image": "/faculty7.png"
                 },
                 {
@@ -127,7 +127,7 @@ const FacultySection = () => {
                 },
                 {
                     "id": "GE6",
-                    "facultyName": "Dr. Alan Abdallah",
+                    "facultyName": "Dr. Alian Abdallah",
                     "about": "Obstetrician & Gynaecologist Emirates Hospital L.L.C in Jumeirah, Dubai and Emirates Speciality Hospital Fz-Llc in Dubai Healthcare City, Dubai",
                     "image": "/faculty16.png"
                 }
