@@ -1,0 +1,14 @@
+[2024-12-12 03:58:03.402 PM] [31merror[39m: 	[31mMongooseError: Operation `users.findOne()` buffering timed out after 10000ms[39m
+[31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
+[2024-12-12 03:59:08.064 PM] [32minfo[39m: 	[32m[Registration-001] Course Registration create api call[39m
+[2024-12-12 03:59:18.075 PM] [31merror[39m: 	[31mMongooseError: Operation `registrations.findOne()` buffering timed out after 10000ms[39m
+[31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
+[2024-12-12 04:01:51.259 PM] [32minfo[39m: 	[32m[Registration-001] Course Registration create api call[39m
+[2024-12-12 04:02:01.280 PM] [31merror[39m: 	[31mMongooseError: Operation `registrations.findOne()` buffering timed out after 10000ms[39m
+[31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
+[2024-12-12 04:04:59.596 PM] [31merror[39m: 	[31mMongooseError: Operation `users.findOne()` buffering timed out after 10000ms[39m
+[31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
+[2024-12-12 04:09:38.129 PM] [31merror[39m: 	[31mMongooseError: Operation `users.findOne()` buffering timed out after 10000ms[39m
+[31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
+[2024-12-12 04:11:15.825 PM] [31merror[39m: 	[31mMongooseError: Operation `users.findOne()` buffering timed out after 10000ms[39m
+[31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
