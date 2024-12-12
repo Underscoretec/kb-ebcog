@@ -1,3 +1,5 @@
+import { doPostApiCall } from '@/utils/ApiConfig';
+import { setCookie } from '@/utils/cookieUtils';
 import axios from 'axios';
 
 export const useUserHook = () => {
@@ -42,7 +44,32 @@ export const useUserHook = () => {
         }
     }
 
+    async function handleLogin(data:any) {
+        const loginData = {
+            url: "api/auth/login",
+            bodyData: {
+                email: data.email,
+                password: data.password,
+            },
+        };
+        try {
+            const response: any = await doPostApiCall(loginData);
+            if (!response.error) {
+                setCookie("token", response.token, 7);
+                alert("Login Successfully")
+            } else {
+                alert("Invalid credentials")
+            }
+        } catch (err: any) {
+            console.error(err)
+        }
+    }
+
+    async function handleSignUp(data:any) {
+        
+    }
+
     return {
-        createCourseRegistrationApi
+        createCourseRegistrationApi, handleLogin, handleSignUp
     }
 }

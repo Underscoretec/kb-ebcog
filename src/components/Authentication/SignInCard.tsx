@@ -4,22 +4,22 @@ import Button from "@/common/uicomponents/Button";
 import InputField from "@/common/uicomponents/InputField";
 import CheckBox from "@/common/uicomponents/CheckBox";
 import Link from "next/link";
+import { useUserHook } from "@/container/UserModel/useUserHooks";
 
 const SignInCard: React.FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
-
-    // const router = useRouter(); // Initialize useRouter
+    const {  handleLogin } = useUserHook();
 
     const handleSignIn = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
         // Mock API call
-        setTimeout(() => {
-            console.log("Signed in with", { email, password });
+        setTimeout(async () => {
+            await handleLogin({ email, password });
             setIsSubmitting(false);
-        }, 2000); // Replace with actual sign-in logic
+        }, 2000); 
     };
 
     return (
@@ -27,7 +27,7 @@ const SignInCard: React.FC = () => {
             <h2 className="text-[#111827] font-montserrat text-[30px] font-extrabold leading-[36px]">
                 Sign in to your account
             </h2>
-            <div className="text-[#4F46E5] font-montserrat text-sm font-semibold leading-5 pt-2 pb-12">Welcome back</div>
+            <div className="text-[#57556d] font-montserrat text-sm font-semibold leading-5 pt-2 pb-12">Welcome back</div>
             <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-custom">
                 <form className="space-y-6" onSubmit={handleSignIn}>
                     <InputField
