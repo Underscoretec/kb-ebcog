@@ -11,7 +11,7 @@ import * as Yup from 'yup';
 
 const ReachOut = () => {
   const [captcha, setCaptcha] = useState('');
-  const [isCaptchaValid, setIsCaptchaValid] = useState(true);
+  // const [isCaptchaValid, setIsCaptchaValid] = useState(true);
 
   // Generate Captcha
   useEffect(() => {
@@ -182,7 +182,7 @@ const ReachOut = () => {
               <p className="text-[12px] text-[#111827]">
                 Phone: +91-022-45360005
                 <br />
-                Email:
+                Email:diploma@ebcogdiplomas.com
               </p>
             </div>
           </div>
