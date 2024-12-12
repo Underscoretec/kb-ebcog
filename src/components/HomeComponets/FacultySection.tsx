@@ -24,19 +24,19 @@ const FacultySection = () => {
                 {
                     "id": "MM3",
                     "facultyName": "Prof. Chittaranjan N. Purandare",
-                    "about": "Purandare Hospital served as the President of FIGO and FOGSI and has also been the Dean of the ICOG and the Emeritus Editor for the Journal of Obstetrics and Gynecology of India.",
+                    "about": "Purandare Hospital, served as the President of FIGO and FOGSI and has also been the Dean of the ICOG and the Emeritus Editor for the Journal of Obstetrics and Gynecology of India.",
                     "image": "/faculty3.png"
                 },
                 {
                     "id": "MM4",
                     "facultyName": "Prof. Stephen Rulisa",
-                    "about": "Professor Stephen Rulisa is a Professor in the Department of Obstetrics and Gynecology at the University of Rwanda. Serving as the Chair of the ECSACOG & National Chair of the MPDSR.",
+                    "about": "Professor in the Department of Obstetrics and Gynecology at the University of Rwanda. Serving as the Chair of the ECSACOG & National Chair of the MPDSR.",
                     "image": "/faculty4.png"
                 },
                 {
                     "id": "MM5",
                     "facultyName": "Dr. Amala Nazareth",
-                    "about": "Hon. Secretary General AFCOG obstetrician and Gynecologist Prime Health Group, UAE.",
+                    "about": "Hon. Secretary General AFCOG Obstetrician and Gynecologist Prime Health Group, UAE.",
                     "image": "/faculty5.png"
                 },
                 {
@@ -55,7 +55,8 @@ const FacultySection = () => {
                     "id": "REI1",
                     "facultyName": "Prof. Basil C. Tarlatzis",
                     "Role": "Lead",
-                    "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
+                    "about": "Emeritus Professor at the School of Medicine, Aristotle University of Thessaloniki, Greece. Past President of EBCOG, ESHRE, IFFS",
+                    // "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
                     "image": "/faculty7.png"
                 },
                 {
@@ -85,7 +86,7 @@ const FacultySection = () => {
                 {
                     "id": "REI6",
                     "facultyName": "Dr. Anagha Karkhanis",
-                    "about": "Director and Consultant Gynecologist at Cocoon Fertility Pvt Ltd,Certifications from the DRCOG and MRCPI Memberships of FOGSI, MOGS, and ESHRE",
+                    "about": "Director and Consultant Gynecologist at Cocoon Fertility Pvt Ltd, Certifications from the DRCOG and MRCPI Memberships of FOGSI, MOGS, and ESHRE",
                     "image": "/faculty11B.png"
                 }
             ]
@@ -116,13 +117,13 @@ const FacultySection = () => {
                 {
                     "id": "GE4",
                     "facultyName": "Dr. Munna Talaak",
-                    "about": "Dr. Muna Tahlak Chief Executive Officer of Latifa Hospital for Women and Children in Dubai President of the International Hospital Federation (IHF) Chief Medical Officer of the Dubai Academic Health Corporation and Vice Provost of Clinical Practice at the Mohammed Bin Rashid University of Medicine and Health Sciences.",
+                    "about": "Chief Executive Officer of Latifa Hospital for Women and Children in Dubai, President of the International Hospital Federation (IHF), Chief Medical Officer of the Dubai Academic Health Corporation and Vice Provost of Clinical Practice at the Mohammed Bin Rashid University of Medicine and Health Sciences.",
                     "image": "/faculty14.png"
                 },
                 {
                     "id": "GE5",
                     "facultyName": "Dr. Sandesh Kade",
-                    "about": "Gynecologist and laparoscopic surgeon Burjeel Medical City in Abu Dhabi. Member of the American Association of Gynecological Laparoscopists (AAGL), the Federation of Obstetrics and Gynecology Society of India (FOGSI), and the Indian Association of Gynecological Endoscopists (IAGE).",
+                    "about": "Gynecologist and laparoscopic surgeon, Burjeel Medical City in Abu Dhabi. Member of the American Association of Gynecological Laparoscopists (AAGL), the Federation of Obstetrics and Gynecology Society of India (FOGSI), and the Indian Association of Gynecological Endoscopists (IAGE).",
                     "image": "/faculty15.png"
                 },
                 {
@@ -141,37 +142,37 @@ const FacultySection = () => {
                     "id": "FMU1",
                     "facultyName": "Prof. Asma Khalil",
                     "Role": "Lead",
-                    "about": "Consultant Obstetrician and Fetal Medicine Specialist St George's Hospital London, United Kingdom VP Royal College of Obstetricians and Gynecologists",
+                    "about": "Consultant Obstetrician and Fetal Medicine Specialist, St George's Hospital London, United Kingdom VP, Royal College of Obstetricians and Gynecologists",
                     "image": "/faculty17.png"
                 },
                 {
                     "id": "FMU2",
                     "facultyName": "Prof. Sebastian Kwiatkowski",
-                    "about": "Consultant Obstetrician and Specialist Feto Maternal Medicine (Perinatology) Pomeranian Medical University, Szczecin, Poland Polish Delegate, European Board of Obstetrics and Gynaecology",
+                    "about": "Consultant Obstetrician and Specialist, Feto Maternal Medicine (Perinatology), Pomeranian Medical University, Szczecin, Poland, Polish Delegate, European Board of Obstetrics and Gynaecology",
                     "image": "/faculty18.png"
                 },
                 {
                     "id": "FMU3",
                     "facultyName": "Prof. Karl Oliver Kagan",
-                    "about": "Consultant in Fetal Medicine Department of Gynaecology and Obstetrics University ofTuebingen, Germany Prof. Justin Konje Professor of Obstetrics and Gynaecology Weill Cornell Medicine, Qatar Emeritus Professor of Obstetrics and Gynaecology University of Leicester, United Kingdom",
+                    "about": "Consultant in Fetal Medicine, Department of Gynaecology and Obstetrics, University of Tuebingen, Germany",
                     "image": "/faculty19.png"
                 },
                 {
                     "id": "FMU4",
                     "facultyName": "Prof. Justin Konje",
-                    "about": "Professor of Obstetrics and Gynaecology Weill Cornell Medicine, Qatar Emeritus Professor of Obstetrics and Gynaecology University of Leicester, United Kingdom",
+                    "about": "Professor of Obstetrics and Gynaecology Weill Cornell, Medicine, Qatar, Emeritus Professor of Obstetrics and Gynaecology, University of Leicester, United Kingdom",
                     "image": "/faculty20.png"
                 },
                 {
                     "id": "FMU5",
                     "facultyName": "Prof. Ulrich Honemeyer",
-                    "about": "Associate Professor Dubrovnik International University Honorary Professor Pirogov Russian National Research Medical University, Russia",
+                    "about": "Associate Professor, Dubrovnik International University, Honorary Professor, Pirogov Russian National Research Medical University, Russia",
                     "image": "/faculty21.png"
                 },
                 {
                     "id": "FMU6",
                     "facultyName": "Prof. Samina Dornan",
-                    "about": "l Zahra Hospital Dubai Consultant Obstetrician and Gynecologist Sub-specialist Maternal Fetal Medicine, CCT, United Kingdom",
+                    "about": "AL Zahra Hospital Dubai, Consultant Obstetrician and Gynecologist, Sub-specialist Maternal Fetal Medicine, CCT, United Kingdom",
                     "image": "/faculty22.png"
                 }
             ]
