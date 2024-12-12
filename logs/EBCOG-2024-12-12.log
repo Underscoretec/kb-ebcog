@@ -1,0 +1,30 @@
+[2024-12-12 12:37:03.504 PM] [32minfo[39m: 	[32m[Campaign sendEmails -002] sendEmails function called.[39m
+[2024-12-12 12:44:35.358 PM] [32minfo[39m: 	[32m[Campaign sendEmails -002] sendEmails function called.[39m
+[2024-12-12 01:05:39.696 PM] [32minfo[39m: 	[32m[Campaign sendEmails -002] sendEmails function called.[39m
+[2024-12-12 01:05:40.069 PM] [31merror[39m: 	[31mTypeError: Cannot read properties of undefined (reading 'drvanajahn4@gmail.com')[39m
+[31m    at Array.sendEmails (src/__server__/campaign/services.ts:106:35)[39m
+[31m    at Router.exec (node_modules/next-connect/dist/esm/router.js:49:22)[39m
+[31m    at <unknown> (node_modules/next-connect/dist/esm/node.js:54:34)[39m
+[31m    at resolver (webpack://next/dist/src/server/api-utils/node/api-resolver.ts:420:33)[39m
+[31m    at async PagesAPIRouteModule.render (webpack://next/dist/src/server/route-modules/pages-api/module.ts:144:39)[39m
+[31m    at async DevServer.runApi (node_modules/next/src/server/next-server.ts:535:4)[39m
+[31m    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1030:24)[39m
+[31m    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)[39m
+[31m    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)[39m
+[31m    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)[39m
+[31m    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)[39m
+[31m    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)[39m
+[31m    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)[39m
+[31m    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)[39m
+[31m[0m [90m 104 |[31m         [36mif[31m (req[33m.[31mquery[33m.[31msync [33m===[31m [32m'safe'[31m) {[0m[39m
+[31m[0m [90m 105 |[31m             [36mconst[31m resultJson[33m:[31m any [33m=[31m checkAndUpdateList()[33m;[31m[0m[39m
+[31m[0m[31m[1m>[22m[31m[90m 106 |[31m             console[33m.[31mlog(resultJson[[32m'drvanajahn4@gmail.com'[31m][33m,[31m [32m'resultJson ###'[31m)[33m;[31m[0m[39m
+[31m[0m [90m     |[31m                                   [31m[1m^[22m[31m[0m[39m
+[31m[0m [90m 107 |[31m         } [36melse[31m {[0m[39m
+[31m[0m [90m 108 |[31m             [90m// const query: any = {[31m[0m[39m
+[31m[0m [90m 109 |[31m             [90m//     'unsubscribe.status': false,[31m[0m[39m
+[2024-12-12 01:06:11.650 PM] [32minfo[39m: 	[32m[Campaign sendEmails -002] sendEmails function called.[39m
+[2024-12-12 01:06:41.162 PM] [32minfo[39m: 	[32m[Campaign sendEmails -002] sendEmails function called.[39m
+[2024-12-12 01:08:30.727 PM] [32minfo[39m: 	[32m[Campaign sendEmails -002] sendEmails function called.[39m
+[2024-12-12 01:13:24.382 PM] [32minfo[39m: 	[32m[Campaign sendEmails -002] sendEmails function called.[39m
+[2024-12-12 01:14:18.793 PM] [32minfo[39m: 	[32m[Campaign sendEmails -002] sendEmails function called.[39m
