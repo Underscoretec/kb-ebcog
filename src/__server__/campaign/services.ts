@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { NextApiRequest, NextApiResponse } from "next";
 import CampaignsModel from "./model";
 import messages from "@/__server__/utils/message.json";
@@ -6,6 +7,7 @@ import errorResponse from "@/__server__/utils/errorResponse";
 import { inviteUserForRegister } from "../mail/services";
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const XLSX = require('xlsx');
+const fs = require('fs');
 
 
 const importData = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -74,92 +76,129 @@ function getRandomInt(min: number, max: number) {
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+const checkAndUpdateList = async() => {
+
+    const filePath = 'files/results.json';
+
+    return new Promise((resolve, reject) => {
+        fs.readFile(filePath, 'utf8', (err: any, data: any) => {
+            if (err) {
+                console.error('Error reading file:', err);
+                reject(err);
+
+            }
+    
+            try {
+                const jsonData =  JSON.parse(data);
+                console.log(jsonData, 'jsonData #######');
+                resolve(jsonData);
+    
+            } catch (parseError) {
+
+                
+                console.error('Error parsing JSON:', parseError);
+                reject(parseError);
+            }
+        });
+
+        
+        
+    }) 
+}
+
 const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         logger.info("[Campaign sendEmails -002] sendEmails function called.")
-        // const query: any = {
-        //     'unsubscribe.status': false,
-        //     'mailSent.status': false,
-        //     enabled: 1
-        // }
-        // if (req.query.batch) {
-        //     query.batch = req.query.batch
-        // }
-        // const campaignList = await CampaignsModel.find(query);
-        // console.log(campaignList, 'campaignList @@@@@@@');
-        if (req?.query?.mailProvider === "SMTP" || req?.query?.mailProvider === "SES") {
+        if (req.query.sync === 'safe') {
+            // console.log(resultJson['maildrambika@gmail.com'], 'resultJson ###');
+        } else {
+            // const query: any = {
+            //     'unsubscribe.status': false,
+            //     'mailSent.status': false,
+            //     'isEmailSafe.status': true,
+            //     enabled: 1
+            // }
+            // if (req.query.batch) {
+            //     query.batch = req.query.batch
+            // }
+            // const campaignList = await CampaignsModel.find(query);
+            // console.log(campaignList, 'campaignList @@@@@@@');
+            if (req?.query?.mailProvider === "SMTP" || req?.query?.mailProvider === "SES") {
 
+            const resultJson: any = await checkAndUpdateList();
 
-            const path = 'files/FOGSI_MembersList.xlsx'
-            const workbook = XLSX.readFile(path)
-            const sheet_name_list = workbook.SheetNames;
-            // console.log(sheet_name_list, "sheet_name_list")
-            const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-            const datas = excelDatas.filter((xd: any) => xd.batch === req?.query?.batch)
+                const path = 'files/FOGSI_MembersList.xlsx'
+                const workbook = XLSX.readFile(path)
+                const sheet_name_list = workbook.SheetNames;
 
-            // console.log(datas, "datas length")
-            if (datas?.length > 0) {
-                const sendMailArray: string[] = []
-                for (const [idx, item] of datas.entries()) {
-                    if (item['email']) {
-                        const fullName = `${item?.firstName} ${item?.lastName}`
-                        const sendData = { email: item?.email?.toLowerCase(), name: fullName };
-                        // if (idx === 0) {
-                        //     inviteUserForRegister(sendData, req);
-                        // } else {
-                        //     const randomTime = await getRandomInt(1, datas?.length)
-                        //     // return new Promise((resolve) => {
-                        //     setTimeout(() => {
-                        //     }, Number(randomTime * 1000))
-                        //     // })
-                        // }
-                        inviteUserForRegister(sendData, req, idx+1)
-                        sendMailArray.push(item?.email)
+                const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+                const datas = excelDatas.filter((xd: any) => xd.batch === req?.query?.batch)
 
-                        // Delay the next email by a random or fixed interval
-                        const delay = idx === 0 ? 0 : await getRandomInt(2, 5) * 1000; // 2 to 5 seconds delay
-                        await sleep(delay);
+                console.log(datas, "datas length")
+                if (datas?.length > 0) {
+                    // const resultJson: any = checkAndUpdateList();
+                    const sendMailArray: string[] = []
+                    for (const [idx, item] of datas.entries()) {
+                        if (item['email'] &&  resultJson[`${item['email']}`]?.status ==='safe') {
+                            
+                            const fullName = `${item?.firstName} ${item?.lastName}`
+                            const sendData = { email: item?.email?.toLowerCase(), name: fullName };
+                            // if (idx === 0) {
+                            //     inviteUserForRegister(sendData, req);
+                            // } else {
+                            //     const randomTime = await getRandomInt(1, datas?.length)
+                            //     // return new Promise((resolve) => {
+                            //     setTimeout(() => {
+                            //     }, Number(randomTime * 1000))
+                            //     // })
+                            // }
+                            inviteUserForRegister(sendData, req, idx + 1)
+                            sendMailArray.push(item?.email)
+
+                            // Delay the next email by a random or fixed interval
+                            const delay = idx === 0 ? 0 : await getRandomInt(2, 5) * 1000; // 2 to 5 seconds delay
+                            await sleep(delay);
+                        }
                     }
-                }
 
-                if (sendMailArray?.length > 0) {
-                    const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: sendMailArray } },
-                        {
-                            $set: {
-                                mailSent: {
-                                    status: true,
-                                    timeStamp: Date.now()
+                    if (sendMailArray?.length > 0) {
+                        const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: sendMailArray } },
+                            {
+                                $set: {
+                                    mailSent: {
+                                        status: true,
+                                        timeStamp: Date.now()
+                                    }
                                 }
-                            }
-                        },
-                        { new: true }
-                    )
+                            },
+                            { new: true }
+                        )
 
-                    return res.status(200).json({
-                        message: messages["EMAIL_FIRED"],
-                        error: false,
-                        code: "EMAIL_FIRED",
-                        result: campaignUpdate
+                        return res.status(200).json({
+                            message: messages["EMAIL_FIRED"],
+                            error: false,
+                            code: "EMAIL_FIRED",
+                            result: campaignUpdate
+                        });
+                    }
+
+                } else {
+                    return res.status(400).json({
+                        message: messages["EMAIL_SEND_EXCEL_FILE_EMPTY"],
+                        error: true,
+                        code: "EMAIL_SEND_EXCEL_FILE_EMPTY",
+                        result: {}
                     });
                 }
-
             } else {
                 return res.status(400).json({
-                    message: messages["EMAIL_SEND_EXCEL_FILE_EMPTY"],
+                    message: messages["MAIL_PROVIDER_REQUIRED"],
                     error: true,
-                    code: "EMAIL_SEND_EXCEL_FILE_EMPTY",
+                    code: "MAIL_PROVIDER_REQUIRED",
                     result: {}
                 });
             }
-        } else {
-            return res.status(400).json({
-                message: messages["MAIL_PROVIDER_REQUIRED"],
-                error: true,
-                code: "MAIL_PROVIDER_REQUIRED",
-                result: {}
-            });
         }
-
     } catch (error) {
         logger.error(error, "[Campaign sendEmails -002] Error in send emails!")
         return res.status(400).json({
