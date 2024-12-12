@@ -35,8 +35,20 @@ const FacultyProfile = () => {
                             "title": "President",
                             "description": ["European Board and College of Obstetrics and Gynecology (EBCOG)"],
                         },
+                        {
+                            "title": "Expertise Area",
+                            "description": ["Obstetrics and Perinatology, Maternal-Fetal Medicine, Hypertensive Disorders in Pregnancy, Breech Birth Management"],
+                        },
                     ],
                 },
+                // {
+                //     "title": "Expertise Area",
+                //     "items": [
+                //         {
+                //             "description": ["Obstetrics and Perinatology, Maternal-Fetal Medicine, Hypertensive Disorders in Pregnancy, Breech Birth Management"],
+                //         },
+                //     ],
+                // },
                 {
                     "title": "Academic Background",
                     "items": [
@@ -152,6 +164,10 @@ const FacultyProfile = () => {
                         {
                             "title": "Professor of Gynecolog",
                             "description": ["University of Porto"],
+                        },
+                        {
+                            "title": "Expertise Area",
+                            "description": ["Advanced Laparoscopic Surgery, Robotic Gynecological Surgery, Management of Deep Endometriosis, Gynecologic Oncology,Treatment of Genital Prolapse, Correction of Uterovaginal Malformations"],
                         },
                     ],
                 },
@@ -344,6 +360,10 @@ const FacultyProfile = () => {
                         {
                             "title": "Professor",
                             "description": ["Emeritus of Obstetrics-Gynecology and Human Reproduction"],
+                        },
+                        {
+                            "title": "Expertise Area",
+                            "description": ["Reproductive Medicine, Assisted Reproduction Technologies, Infertility Treatment"],
                         },
                     ],
                 },
@@ -728,7 +748,7 @@ const FacultyProfile = () => {
                         },
                         {
                             "title": "Fellowships",
-                            "description": ["RCOG,ACOG, Germany"],
+                            "description": ["RCPI (Ireland), RCOG, ACOG, EBCOG Germany"],
                         },
                     ],
                 },
@@ -1316,16 +1336,16 @@ const FacultyProfile = () => {
                         ]
                     },
                 ],
-                "achievements": [
-                    {
-                        "items": [
-                            "Winner of the ‘SUILI Rudra Prize’ for the best paper on Endoscopy at AICOG 2013",
-                            "Multiple scholarships for academic excellence during her training",
-                            "Invited speaker at national conferences on Robotic Surgery and Advanced Fertility Techniques"
-                        ]
-                    },
+                // "achievements": [
+                //     {
+                //         "items": [
+                //             "Winner of the ‘SUILI Rudra Prize’ for the best paper on Endoscopy at AICOG 2013",
+                //             "Multiple scholarships for academic excellence during her training",
+                //             "Invited speaker at national conferences on Robotic Surgery and Advanced Fertility Techniques"
+                //         ]
+                //     },
 
-                ]
+                // ]
             },
             "philosophy": [
                 {
@@ -2427,7 +2447,7 @@ const FacultyProfile = () => {
                 "courseDuration": '1 week',
                 "totalLearners": '156',
                 "facultyImage": '/if23.png',
-                "flag": 'ru',
+                "flag": 'ae',
 
             },
             "PersonalDetails": [
