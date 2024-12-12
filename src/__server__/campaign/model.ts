@@ -83,6 +83,23 @@ const campaignSchema = new Schema({
             type: Date
         }
     },
+    isEmailSafe:{
+        status: {
+            type: Boolean,
+            default: false,
+        },
+        timeStamp: {
+            type: Date
+        }
+    },
+    errorLog: {
+        text: {
+            type: String,
+        },
+        timeStamp: {
+            type: Date
+        }
+    },
     enabled: {
         type: Number,
         default: 1, //0:delete, 1:user, 2:disable
