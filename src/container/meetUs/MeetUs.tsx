@@ -7,7 +7,7 @@ const MeetUs = () => {
     const cardData = [
         {
             id: '0',
-            image: '/allperson.png',
+            image: '/Frame1.png',
             title: '67th All India Congress of Obstetrics and Gynaecology 2025​',
             location: 'Mumbai',
             time: '8 - 12 January, 2025',
@@ -15,7 +15,7 @@ const MeetUs = () => {
         },
         {
             id: '1',
-            image: '/allperson.png',
+            image: '/Frame2.png',
             title: 'EBCOG’s European Congress of Obstetrics and Gynaecology',
             location: 'Frankfurt',
             time: '5 - 7 June, 2025',
@@ -23,7 +23,7 @@ const MeetUs = () => {
         },
         {
             id: '2',
-            image: '/allperson.png',
+            image: '/Frame3.png',
             title: 'XXV FIGO World Congress of Gynecology and Obstetrics',
             location: 'Cape Town',
             time: '5 - 9 October, 2025',

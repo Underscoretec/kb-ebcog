@@ -76,7 +76,7 @@ function getRandomInt(min: number, max: number) {
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const checkAndUpdateList = async() => {
+const checkAndUpdateList = async () => {
 
     const filePath = 'files/results.json';
 
@@ -87,23 +87,23 @@ const checkAndUpdateList = async() => {
                 reject(err);
 
             }
-    
+
             try {
-                const jsonData =  JSON.parse(data);
+                const jsonData = JSON.parse(data);
                 console.log(jsonData, 'jsonData #######');
                 resolve(jsonData);
-    
+
             } catch (parseError) {
 
-                
+
                 console.error('Error parsing JSON:', parseError);
                 reject(parseError);
             }
         });
 
-        
-        
-    }) 
+
+
+    })
 }
 
 const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -112,46 +112,35 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
         if (req.query.sync === 'safe') {
             // console.log(resultJson['maildrambika@gmail.com'], 'resultJson ###');
         } else {
-            // const query: any = {
-            //     'unsubscribe.status': false,
-            //     'mailSent.status': false,
-            //     'isEmailSafe.status': true,
-            //     enabled: 1
-            // }
+            const query: any = {
+                'mailSent.status': false,
+                enabled: 1
+            }
             // if (req.query.batch) {
             //     query.batch = req.query.batch
             // }
-            // const campaignList = await CampaignsModel.find(query);
-            // console.log(campaignList, 'campaignList @@@@@@@');
+
             if (req?.query?.mailProvider === "SMTP" || req?.query?.mailProvider === "SES") {
+                const campaignList = await CampaignsModel.find(query);
+                console.log(campaignList?.length, 'campaignList count @@@@@@@');
+                const resultJson: any = await checkAndUpdateList();
 
-            const resultJson: any = await checkAndUpdateList();
+                // const path = 'files/FOGSI_MembersList.xlsx'
+                // const workbook = XLSX.readFile(path)
+                // const sheet_name_list = workbook.SheetNames;
 
-                const path = 'files/FOGSI_MembersList.xlsx'
-                const workbook = XLSX.readFile(path)
-                const sheet_name_list = workbook.SheetNames;
+                // const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+                const datas = campaignList
 
-                const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-                const datas = excelDatas.filter((xd: any) => xd.batch === req?.query?.batch)
-
-                console.log(datas, "datas length")
                 if (datas?.length > 0) {
                     // const resultJson: any = checkAndUpdateList();
                     const sendMailArray: string[] = []
                     for (const [idx, item] of datas.entries()) {
-                        if (item['email'] &&  resultJson[`${item['email']}`]?.status ==='safe') {
-                            
+                        if (item['email'] && resultJson[`${item['email']}`]?.status === 'safe') {
+                           
                             const fullName = `${item?.firstName} ${item?.lastName}`
                             const sendData = { email: item?.email?.toLowerCase(), name: fullName };
-                            // if (idx === 0) {
-                            //     inviteUserForRegister(sendData, req);
-                            // } else {
-                            //     const randomTime = await getRandomInt(1, datas?.length)
-                            //     // return new Promise((resolve) => {
-                            //     setTimeout(() => {
-                            //     }, Number(randomTime * 1000))
-                            //     // })
-                            // }
+
                             inviteUserForRegister(sendData, req, idx + 1)
                             sendMailArray.push(item?.email)
 
