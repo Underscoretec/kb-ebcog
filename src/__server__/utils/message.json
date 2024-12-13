@@ -153,5 +153,7 @@
   "EMAIL_UNSUBSCRIBED": "Email unsubscribed!",
   "EMAIL_FIRED": "Email send",
   "EMAIL_SEND_EXCEL_FILE_EMPTY": "Excel file is empty",
-  "MAIL_PROVIDER_REQUIRED": "Mail provider is required"
+  "MAIL_PROVIDER_REQUIRED": "Mail provider is required",
+  "FILE_NOT_FOUND": "File not found",
+  "EMAIL_UPDATED": "Emails updated successfully"
 }
