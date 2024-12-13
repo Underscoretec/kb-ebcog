@@ -157,5 +157,7 @@
   "COURSES_FOUND": "Courses found successfully",
   "COURSES_NOT_FOUND": "Courses not found",
   "COURSE_FOUND":"Course found successfully",
-  "COURSE_NOT_FOUND":"Course not found"
+  "COURSE_NOT_FOUND":"Course not found",
+  "FILE_NOT_FOUND": "File not found",
+  "EMAIL_UPDATED": "Emails updated successfully"
 }
