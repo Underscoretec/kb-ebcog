@@ -9,6 +9,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
+import { LanguageSwitcher } from "./lang-switcher";
 
 const navigation = {
     social: [
@@ -67,6 +68,9 @@ const Header = () => {
                                     </div>
                                 </Link>
                             </div>
+                            <>
+                            <LanguageSwitcher />
+                            </>
 
                             <div className="lg:flex gap-x-6 md:order-2 text-[25px] hidden">
                                 {navigation.social.map((item) => (
