@@ -105,7 +105,8 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         logger.info("[Campaign sendEmails -002] sendEmails function called.")
         if (req.query.sync === 'safe') {
-            // console.log(resultJson['maildrambika@gmail.com'], 'resultJson ###');
+            const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
+            console.log(resultJson?.data?.queue.find((item: any) => item?.email === "pranathiaravind@gmail.com").status, 'resultJson ###');
         } else {
             const query: any = {
                 'mailSent.status': false,
@@ -118,7 +119,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
             if (req?.query?.mailProvider === "SMTP" || req?.query?.mailProvider === "SES") {
                 const campaignList = await CampaignsModel.find(query);
                 console.log(campaignList?.length, 'campaignList count @@@@@@@');
-                const resultJson: any = await checkAndUpdateList(`results.json`);
+                const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
 
                 // const path = 'files/FOGSI_MembersList.xlsx'
                 // const workbook = XLSX.readFile(path)
@@ -128,9 +129,11 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                 const datas = campaignList
 
                 if (datas?.length > 0) {
+                    const checkEmails = resultJson?.data?.queue;
                     let sendMailArray: string[] = []
                     for (const [idx, item] of datas.entries()) {
-                        if (item['email'] && resultJson[`${item['email']}`]?.status === 'safe') {
+                        const emailStatus = checkEmails?.find((item: any) => item?.email === item['email']).status
+                        if (item['email'] && emailStatus === 'safe') {
 
                             const fullName = `${item?.firstName} ${item?.lastName}`
                             const sendData = { email: item?.email?.toLowerCase(), name: fullName };
