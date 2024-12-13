@@ -1,18 +1,18 @@
-import { duration } from '@mui/material'
+// import { duration } from '@mui/material'
 import React from 'react'
 
 const CartInfo = () => {
 
-    const products = [
-        {
-            id:'Course01',
-            image:'',
-            coursename:'Diploma in Fetal Medicine and Ultrasound',
-            by:'Determined-Poitras',
-            duration:'2 Weeks',
-            TotalLearners:'15,674',
-        },
-    ]
+    // const products = [
+    //     {
+    //         id:'Course01',
+    //         image:'',
+    //         coursename:'Diploma in Fetal Medicine and Ultrasound',
+    //         by:'Determined-Poitras',
+    //         duration:'2 Weeks',
+    //         TotalLearners:'15,674',
+    //     },
+    // ]
 
   return (
     <div className='flex gap-4'>

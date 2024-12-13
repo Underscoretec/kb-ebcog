@@ -1,8 +1,8 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 const AlertModal = ({ isOpen, title, message, onClick }: any) => {
-    const router = useRouter();
+    // const router = useRouter();
 
   if (!isOpen) return null;
 
