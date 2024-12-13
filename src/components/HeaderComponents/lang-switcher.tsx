@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { parseCookies, setCookie } from "nookies";
+import { AE, FR, IN } from "country-flag-icons/react/3x2";
 
 // The following cookie name is important because it's Google-predefined for the translation engine purpose
 const COOKIE_NAME = "googtrans";
 
 // We should know a predefined nickname of a language and provide its title (the name for displaying)
 interface LanguageDescriptor {
+  flag: string;
   name: string;
   title: string;
 }
@@ -20,9 +22,11 @@ declare global {
   }
 }
 
-const LanguageSwitcher = () => {
+export default function LanguageSwitcher () {
   const [currentLanguage, setCurrentLanguage] = useState<string>();
   const [languageConfig, setLanguageConfig] = useState<any>();
+  console.log(languageConfig, "languageConfig**")
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
 
   // When the component has initialized, we must activate the translation engine the following way.
   useEffect(() => {
@@ -65,29 +69,66 @@ const LanguageSwitcher = () => {
     window.location.reload();
   };
 
+  // Toggle dropdown visibility
+  const toggleDropdown = () => {
+    setDropdownOpen((prevState) => !prevState);
+  };
+
+  const currentflag = languageConfig.languages.find(
+    (ld: LanguageDescriptor) => ld.name === currentLanguage
+  )?.flag
+
   return (
-    <div className="text-center notranslate">
-      {languageConfig.languages.map((ld: LanguageDescriptor, i: number) => (
-        <>
-          {currentLanguage === ld.name ||
-          (currentLanguage === "auto" &&
-            languageConfig.defaultLanguage === ld) ? (
-            <span key={`l_s_${ld}`} className="mx-3 text-orange-300">
-              {ld.title}
-            </span>
-          ) : (
-            <a
-              key={`l_s_${ld}`}
-              onClick={switchLanguage(ld.name)}
-              className="mx-3 text-blue-300 cursor-pointer hover:underline"
-            >
-              {ld.title}
-            </a>
-          )}
-        </>
-      ))}
+    <div className="relative text-center notranslate mt-5 lg:mt-0 flex justify-center">
+      <button
+        onClick={toggleDropdown}
+        className="text-blue-600 cursor-pointer text-[12px] hover:bg-blue-100 mx-3 border border-[#dfddde] rounded-md px-3 py-1 flex items-center gap-2"
+      >
+         {currentflag === 'in' && <IN title="IN" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+        {currentflag === 'ae' && <AE title="AE" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+        {currentflag === 'fr' && <FR title="FR" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />} {languageConfig.languages.find(
+          (ld: LanguageDescriptor) => ld.name === currentLanguage
+        )?.title}
+      </button>
+      {dropdownOpen && (
+        <div className="absolute bg-white border mt-10 lg:mt- rounded shadow-lg w-40 text-black z-[101] right-[10%] sm:right-[28%] lg:right-0">
+          {languageConfig.languages.map((ld: LanguageDescriptor, i: number) => (
+            <div key={`l_s_${ld}`} className="p-2">
+              {currentLanguage === ld.name ||
+                (currentLanguage === "auto" &&
+                  languageConfig.defaultLanguage === ld) ? (
+                <div className="flex">
+                  <div>
+                    {ld?.flag === 'in' && <IN title="IN" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+                    {ld?.flag === 'ae' && <AE title="AE" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+                    {ld?.flag === 'fr' && <FR title="FR" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+                  </div>
+                  <span key={`l_s_${ld}`} className="mx-3 text-orange-300">
+                    {ld.title}
+                  </span>
+                </div>
+              ) : (
+                <div className="flex">
+                  <div>
+                    {ld?.flag === 'in' && <IN title="IN" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+                    {ld?.flag === 'ae' && <AE title="AE" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+                    {ld?.flag === 'fr' && <FR title="FR" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+                  </div>
+                  <a
+                    key={`l_s_${ld}`}
+                    onClick={switchLanguage(ld.name)}
+                    className="text-blue-300 mx-3 cursor-pointer hover:text-blue-600"
+                  >
+                    {ld.title}
+                  </a>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
-export { LanguageSwitcher, COOKIE_NAME };
+
