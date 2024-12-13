@@ -108,11 +108,11 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
             const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
             const checkEmails = resultJson?.data?.queue;
             // console.log(resultJson?.data?.queue.find((item: any) => item?.email === "pranathiaravind@gmail.com").status, 'resultJson ###');
-            const emailStatus = checkEmails?.find((jsonItem: any) => { return jsonItem?.email === "bhaskar.bonu@utplco.com" })?.status
-            console.log(emailStatus, "emailStatus")
-            if ("bhaskar.bonu@utplco.com" && emailStatus === 'safe') {
-                console.log("call >> for mail send")
-            }
+            // const emailStatus = checkEmails?.find((jsonItem: any) => { return jsonItem?.email === "ankita@gmail.com" })?.status
+            // console.log(emailStatus, "emailStatus")
+            // if ("bhaskar.bonu@utplco.com" && emailStatus === 'safe') {
+            //     console.log("call >> for mail send")
+            // }
         } else {
             const query: any = {
                 'mailSent.status': false,
