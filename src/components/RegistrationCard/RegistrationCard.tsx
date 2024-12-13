@@ -61,7 +61,6 @@ const RegistrationCard = () => {
 
             if (values) {
                 const result: any = await createCourseRegistrationApi(values, action);
-                console.log(result, 'result ##');
                 if (result?.response?.data?.code === 'REGISTRATION_RECORD_FOUND') {
                     // alert("Email already exist!")
                     showModal("Registration Error", "Email already exists!", false);

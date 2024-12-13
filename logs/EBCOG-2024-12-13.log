@@ -1,0 +1,111 @@
+[2024-12-13 11:18:29.676 AM] [31merror[39m: 	[31mSyntaxError: Unexpected token o in JSON at position 1[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at parse (f:\Github\kb-ebcog\src\__server__\users\services.ts:38:38)[39m
+[31m    at async (node_modules\next-connect\dist\esm\node.js:54:21)[39m
+[31m    at async apiResolver (webpack://next/dist/src/server/api-utils/node/api-resolver.ts:420:27)[39m
+[31m    at async PagesAPIRouteModule.render (webpack://next/dist/src/server/route-modules/pages-api/module.ts:144:39)[39m
+[31m    at async DevServer.runApi (node_modules\next\src\server\next-server.ts:535:4)[39m
+[31m    at async NextNodeServer.handleCatchallRenderRequest (node_modules\next\src\server\next-server.ts:1030:24)[39m
+[31m    at async DevServer.handleRequestImpl (node_modules\next\src\server\base-server.ts:1462:8)[39m
+[31m    at async (node_modules\next\src\server\dev\next-dev-server.ts:514:13)[39m
+[31m    at async Span.traceAsyncFn (node_modules\next\src\trace\trace.ts:143:13)[39m
+[31m    at async DevServer.handleRequest (node_modules\next\src\server\dev\next-dev-server.ts:512:19)[39m
+[31m    at async invokeRender (node_modules\next\src\server\lib\router-server.ts:284:10)[39m
+[31m    at async handleRequest (node_modules\next\src\server\lib\router-server.ts:530:15)[39m
+[31m    at async requestHandlerImpl (node_modules\next\src\server\lib\router-server.ts:576:6)[39m
+[31m[0m [90m 36 |[31m         }[0m[39m
+[31m[0m [90m 37 |[31m[0m[39m
+[31m[0m[31m[1m>[22m[31m[90m 38 |[31m         [36mconst[31m phoneObj [33m=[31m phone [33m?[31m [33mJSON[31m[33m.[31mparse(phone) [33m:[31m user[33m?[31m[33m.[31mphone[0m[39m
+[31m[0m [90m    |[31m                                      [31m[1m^[22m[31m[0m[39m
+[31m[0m [90m 39 |[31m[0m[39m
+[31m[0m [90m 40 |[31m         [36mconst[31m phNumber [33m=[31m phoneNo [33m||[31m [32m`${phoneObj?.code}${phoneObj?.number}`[31m[0m[39m
+[31m[0m [90m 41 |[31m[0m[39m
+[2024-12-13 11:21:25.291 AM] [31merror[39m: 	[31mSyntaxError: Unexpected token o in JSON at position 1[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at parse (f:\Github\kb-ebcog\src\__server__\users\services.ts:38:38)[39m
+[31m    at async (node_modules\next-connect\dist\esm\node.js:54:21)[39m
+[31m    at async apiResolver (webpack://next/dist/src/server/api-utils/node/api-resolver.ts:420:27)[39m
+[31m    at async PagesAPIRouteModule.render (webpack://next/dist/src/server/route-modules/pages-api/module.ts:144:39)[39m
+[31m    at async DevServer.runApi (node_modules\next\src\server\next-server.ts:535:4)[39m
+[31m    at async NextNodeServer.handleCatchallRenderRequest (node_modules\next\src\server\next-server.ts:1030:24)[39m
+[31m    at async DevServer.handleRequestImpl (node_modules\next\src\server\base-server.ts:1462:8)[39m
+[31m    at async (node_modules\next\src\server\dev\next-dev-server.ts:514:13)[39m
+[31m    at async Span.traceAsyncFn (node_modules\next\src\trace\trace.ts:143:13)[39m
+[31m    at async DevServer.handleRequest (node_modules\next\src\server\dev\next-dev-server.ts:512:19)[39m
+[31m    at async invokeRender (node_modules\next\src\server\lib\router-server.ts:284:10)[39m
+[31m    at async handleRequest (node_modules\next\src\server\lib\router-server.ts:530:15)[39m
+[31m    at async requestHandlerImpl (node_modules\next\src\server\lib\router-server.ts:576:6)[39m
+[31m[0m [90m 36 |[31m         }[0m[39m
+[31m[0m [90m 37 |[31m[0m[39m
+[31m[0m[31m[1m>[22m[31m[90m 38 |[31m         [36mconst[31m phoneObj [33m=[31m phone [33m?[31m [33mJSON[31m[33m.[31mparse(phone) [33m:[31m user[33m?[31m[33m.[31mphone[0m[39m
+[31m[0m [90m    |[31m                                      [31m[1m^[22m[31m[0m[39m
+[31m[0m [90m 39 |[31m[0m[39m
+[31m[0m [90m 40 |[31m         [36mconst[31m phNumber [33m=[31m phoneNo [33m||[31m [32m`${phoneObj?.code}${phoneObj?.number}`[31m[0m[39m
+[31m[0m [90m 41 |[31m[0m[39m
+[2024-12-13 11:21:51.103 AM] [31merror[39m: 	[31mSyntaxError: Unexpected token o in JSON at position 1[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at parse (f:\Github\kb-ebcog\src\__server__\users\services.ts:38:38)[39m
+[31m    at async (node_modules\next-connect\dist\esm\node.js:54:21)[39m
+[31m    at async apiResolver (webpack://next/dist/src/server/api-utils/node/api-resolver.ts:420:27)[39m
+[31m    at async PagesAPIRouteModule.render (webpack://next/dist/src/server/route-modules/pages-api/module.ts:144:39)[39m
+[31m    at async DevServer.runApi (node_modules\next\src\server\next-server.ts:535:4)[39m
+[31m    at async NextNodeServer.handleCatchallRenderRequest (node_modules\next\src\server\next-server.ts:1030:24)[39m
+[31m    at async DevServer.handleRequestImpl (node_modules\next\src\server\base-server.ts:1462:8)[39m
+[31m    at async (node_modules\next\src\server\dev\next-dev-server.ts:514:13)[39m
+[31m    at async Span.traceAsyncFn (node_modules\next\src\trace\trace.ts:143:13)[39m
+[31m    at async DevServer.handleRequest (node_modules\next\src\server\dev\next-dev-server.ts:512:19)[39m
+[31m    at async invokeRender (node_modules\next\src\server\lib\router-server.ts:284:10)[39m
+[31m    at async handleRequest (node_modules\next\src\server\lib\router-server.ts:530:15)[39m
+[31m    at async requestHandlerImpl (node_modules\next\src\server\lib\router-server.ts:576:6)[39m
+[31m[0m [90m 36 |[31m         }[0m[39m
+[31m[0m [90m 37 |[31m[0m[39m
+[31m[0m[31m[1m>[22m[31m[90m 38 |[31m         [36mconst[31m phoneObj [33m=[31m phone [33m?[31m [33mJSON[31m[33m.[31mparse(phone) [33m:[31m user[33m?[31m[33m.[31mphone[0m[39m
+[31m[0m [90m    |[31m                                      [31m[1m^[22m[31m[0m[39m
+[31m[0m [90m 39 |[31m[0m[39m
+[31m[0m [90m 40 |[31m         [36mconst[31m phNumber [33m=[31m phoneNo [33m||[31m [32m`${phoneObj?.code}${phoneObj?.number}`[31m[0m[39m
+[31m[0m [90m 41 |[31m[0m[39m
+[2024-12-13 11:24:47.919 AM] [31merror[39m: 	[31mSyntaxError: Unexpected token o in JSON at position 1[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at parse (f:\Github\kb-ebcog\src\__server__\users\services.ts:39:38)[39m
+[31m    at async (node_modules\next-connect\dist\esm\node.js:54:21)[39m
+[31m    at async apiResolver (webpack://next/dist/src/server/api-utils/node/api-resolver.ts:420:27)[39m
+[31m    at async PagesAPIRouteModule.render (webpack://next/dist/src/server/route-modules/pages-api/module.ts:144:39)[39m
+[31m    at async DevServer.runApi (node_modules\next\src\server\next-server.ts:535:4)[39m
+[31m    at async NextNodeServer.handleCatchallRenderRequest (node_modules\next\src\server\next-server.ts:1030:24)[39m
+[31m    at async DevServer.handleRequestImpl (node_modules\next\src\server\base-server.ts:1462:8)[39m
+[31m    at async (node_modules\next\src\server\dev\next-dev-server.ts:514:13)[39m
+[31m    at async Span.traceAsyncFn (node_modules\next\src\trace\trace.ts:143:13)[39m
+[31m    at async DevServer.handleRequest (node_modules\next\src\server\dev\next-dev-server.ts:512:19)[39m
+[31m    at async invokeRender (node_modules\next\src\server\lib\router-server.ts:284:10)[39m
+[31m    at async handleRequest (node_modules\next\src\server\lib\router-server.ts:530:15)[39m
+[31m    at async requestHandlerImpl (node_modules\next\src\server\lib\router-server.ts:576:6)[39m
+[31m[0m [90m 37 |[31m         }[0m[39m
+[31m[0m [90m 38 |[31m[0m[39m
+[31m[0m[31m[1m>[22m[31m[90m 39 |[31m         [36mconst[31m phoneObj [33m=[31m phone [33m?[31m [33mJSON[31m[33m.[31mparse(phone) [33m:[31m user[33m?[31m[33m.[31mphone[0m[39m
+[31m[0m [90m    |[31m                                      [31m[1m^[22m[31m[0m[39m
+[31m[0m [90m 40 |[31m[0m[39m
+[31m[0m [90m 41 |[31m         [36mconst[31m phNumber [33m=[31m phoneNo [33m||[31m [32m`${phoneObj?.code}${phoneObj?.number}`[31m[0m[39m
+[31m[0m [90m 42 |[31m[0m[39m
+[2024-12-13 11:30:01.630 AM] [31merror[39m: 	[31mSyntaxError: Unexpected token o in JSON at position 1[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at parse (f:\Github\kb-ebcog\src\__server__\users\services.ts:59:41)[39m
+[31m    at async (node_modules\next-connect\dist\esm\node.js:54:21)[39m
+[31m    at async apiResolver (webpack://next/dist/src/server/api-utils/node/api-resolver.ts:420:27)[39m
+[31m    at async PagesAPIRouteModule.render (webpack://next/dist/src/server/route-modules/pages-api/module.ts:144:39)[39m
+[31m    at async DevServer.runApi (node_modules\next\src\server\next-server.ts:535:4)[39m
+[31m    at async NextNodeServer.handleCatchallRenderRequest (node_modules\next\src\server\next-server.ts:1030:24)[39m
+[31m    at async DevServer.handleRequestImpl (node_modules\next\src\server\base-server.ts:1462:8)[39m
+[31m    at async (node_modules\next\src\server\dev\next-dev-server.ts:514:13)[39m
+[31m    at async Span.traceAsyncFn (node_modules\next\src\trace\trace.ts:143:13)[39m
+[31m    at async DevServer.handleRequest (node_modules\next\src\server\dev\next-dev-server.ts:512:19)[39m
+[31m    at async invokeRender (node_modules\next\src\server\lib\router-server.ts:284:10)[39m
+[31m    at async handleRequest (node_modules\next\src\server\lib\router-server.ts:530:15)[39m
+[31m    at async requestHandlerImpl (node_modules\next\src\server\lib\router-server.ts:576:6)[39m
+[31m    at async Server.requestListener (node_modules\next\src\server\lib\start-server.ts:146:6)[39m
+[31m[0m [90m 57 |[31m                 phone[33m:[31m phoneObj[33m,[31m [0m[39m
+[31m[0m [90m 58 |[31m                 phoneNo[33m:[31m phNumber[33m,[31m [0m[39m
+[31m[0m[31m[1m>[22m[31m[90m 59 |[31m                 address[33m:[31m address [33m&&[31m [33mJSON[31m[33m.[31mparse(address)[33m,[31m[0m[39m
+[31m[0m [90m    |[31m                                         [31m[1m^[22m[31m[0m[39m
+[31m[0m [90m 60 |[31m                 role[33m:[31m [32m"user"[31m[33m,[31m[0m[39m
+[31m[0m [90m 61 |[31m                 password[33m:[31m passwordHash[33m,[31m[0m[39m
+[31m[0m [90m 62 |[31m                 [90m// emailOtp: otpObj,[31m[0m[39m
