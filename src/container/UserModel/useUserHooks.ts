@@ -60,9 +60,11 @@ export const useUserHook = () => {
       const response: any = await doPostApiCall(loginData);
       if (!response.error) {
         setCookie("token", response.token, 7);
-        alert("Login Successfully");
+        return response;
+        // alert("Login Successfully");
       } else {
-        alert("Invalid credentials");
+        // alert("Invalid credentials");
+        return response;
       }
     } catch (err: any) {
       console.error(err);

@@ -12,15 +12,22 @@ import AlertModal from "@/common/uicomponents/AlertModal";
 const SignUpCard: React.FC = () => {
     const router = useRouter();
     const { handleSignUp } = useUserHook();
-     const [modalData, setModalData] = useState({ isOpen: false, message: '', redirect: false });
+     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
     const showModal = (title: any, message: any, redirect: boolean) => {
-        setModalData({ isOpen: true, message, redirect: redirect });
+        setModalData({ isOpen: true, title, message, redirect: redirect });
     };
 
     const hideModal = () => {
         setModalData({ ...modalData, isOpen: false });
     };
+
+    const handlelick = () => {
+        if(modalData.redirect){
+            router.push('/login');
+        }
+        hideModal()
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -59,7 +66,7 @@ const SignUpCard: React.FC = () => {
                 console.log(result, 'result ##');
                 if (result?.code === 'USER_ALREADY_EXISTS') {
                     // alert("Email already exist!")
-                    showModal("signup Error", "Email already exists!", false);
+                    showModal("Signup Error", "Email already exists!", false);
                 }
                 else if (result?.code === 'USER_CREATE_SUCCESS') {
                     action.resetForm();
@@ -177,10 +184,11 @@ const SignUpCard: React.FC = () => {
                 </form>
                 <AlertModal
                 isOpen={modalData.isOpen}
+                title={modalData.title}
                 message={modalData.message}
                 redirect={modalData.redirect}
                 onClose={hideModal}
-                onClick={() => router.push("/login")}
+                onClick={handlelick}   
             />
                 {/* <p className="text-sm text-center text-gray-600">
                     Already have an account?{" "}

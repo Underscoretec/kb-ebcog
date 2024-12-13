@@ -175,3 +175,7 @@
 [31m  keyPattern: [Object],[39m
 [31m  keyValue: [Object][39m
 [31m}[39m
+[2024-12-13 05:40:53.821 PM] [32minfo[39m: 	[32m[Registration-001] Course Registration create api call[39m
+[2024-12-13 05:40:53.827 PM] [32minfo[39m: 	[32m[Registration-001] Course Registration create api call[39m
+[2024-12-13 05:41:01.976 PM] [32minfo[39m: 	[32m[Registration-001] Course Registration create api call[39m
+[2024-12-13 05:41:02.506 PM] [32minfo[39m: 	[32m undefined Email sent to arptita@gmail.com with bcc undefined : => 01090193bfed31b0-8d281614-13ff-47db-ae14-f2df0e35c0d0-000000[39m
