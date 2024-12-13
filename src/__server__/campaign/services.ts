@@ -106,7 +106,13 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
         logger.info("[Campaign sendEmails -002] sendEmails function called.")
         if (req.query.sync === 'safe') {
             const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
-            console.log(resultJson?.data?.queue.find((item: any) => item?.email === "pranathiaravind@gmail.com").status, 'resultJson ###');
+            const checkEmails = resultJson?.data?.queue;
+            // console.log(resultJson?.data?.queue.find((item: any) => item?.email === "pranathiaravind@gmail.com").status, 'resultJson ###');
+            const emailStatus = checkEmails?.find((jsonItem: any) => { return jsonItem?.email === "bhaskar.bonu@utplco.com" })?.status
+            console.log(emailStatus, "emailStatus")
+            if ("bhaskar.bonu@utplco.com" && emailStatus === 'safe') {
+                console.log("call >> for mail send")
+            }
         } else {
             const query: any = {
                 'mailSent.status': false,
@@ -132,7 +138,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                     const checkEmails = resultJson?.data?.queue;
                     let sendMailArray: string[] = []
                     for (const [idx, item] of datas.entries()) {
-                        const emailStatus = checkEmails?.find((item: any) => item?.email === item['email']).status
+                        const emailStatus = checkEmails?.find((jsonItem: any) => jsonItem?.email === item['email'])?.status
                         if (item['email'] && emailStatus === 'safe') {
 
                             const fullName = `${item?.firstName} ${item?.lastName}`
