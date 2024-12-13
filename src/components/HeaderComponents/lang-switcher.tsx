@@ -92,7 +92,7 @@ export default function LanguageSwitcher () {
       </button>
       {dropdownOpen && (
         <div className="absolute bg-white border mt-10 lg:mt- rounded shadow-lg w-40 text-black z-[101] right-[10%] sm:right-[28%] lg:right-0">
-          {languageConfig.languages.map((ld: LanguageDescriptor, i: number) => (
+          {languageConfig.languages.map((ld: LanguageDescriptor) => (
             <div key={`l_s_${ld}`} className="p-2">
               {currentLanguage === ld.name ||
                 (currentLanguage === "auto" &&
