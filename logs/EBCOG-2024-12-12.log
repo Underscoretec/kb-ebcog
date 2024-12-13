@@ -12,3 +12,5 @@
 [31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
 [2024-12-12 04:11:15.825 PM] [31merror[39m: 	[31mMongooseError: Operation `users.findOne()` buffering timed out after 10000ms[39m
 [31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
+[2024-12-12 06:44:45.590 PM] [32minfo[39m: 	[32m[Registration-001] Course Registration create api call[39m
+[2024-12-12 06:44:46.425 PM] [32minfo[39m: 	[32m undefined Email sent to test@gmail.com with bcc undefined : => 01090193bb01ef15-5b8cd927-f3ae-4bdf-bc28-0cae5473ba1e-000000[39m

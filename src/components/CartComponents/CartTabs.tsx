@@ -34,7 +34,7 @@ export default function CartTabs({steps}:any) {
                                             )}
                                         >
                                             <span className="shrink-0">
-                                                <span className="flex size-10 items-center justify-center rounded-full bg-indigo-600">
+                                                <span className="flex size-10 items-center justify-center rounded-full bg-[#312E81]">
                                                     <CheckIcon aria-hidden="true" className="size-6 text-white" />
                                                 </span>
                                             </span>
@@ -48,7 +48,7 @@ export default function CartTabs({steps}:any) {
                                     <a href={step.href} aria-current="step">
                                         <span
                                             aria-hidden="true"
-                                            className="absolute left-0 top-0 h-full w-1 bg-indigo-600 lg:bottom-0 lg:top-auto lg:h-1 lg:w-full"
+                                            className="absolute left-0 top-0 h-full w-1 bg-[#312E81] lg:bottom-0 lg:top-auto lg:h-1 lg:w-full"
                                         />
                                         <span
                                             className={classNames(
@@ -57,12 +57,12 @@ export default function CartTabs({steps}:any) {
                                             )}
                                         >
                                             <span className="shrink-0">
-                                                <span className="flex size-10 items-center justify-center rounded-full border-2 border-indigo-600">
-                                                    <span className="text-indigo-600">{step.id}</span>
+                                                <span className="flex size-10 items-center justify-center rounded-full border-2 border-[#312E81]">
+                                                    <span className="text-[#312E81]">{step.id}</span>
                                                 </span>
                                             </span>
                                             <span className="ml-4 mt-0.5 flex min-w-0 flex-col">
-                                                <span className="text-sm font-medium text-indigo-600">{step.name}</span>
+                                                <span className="text-sm font-medium text-[#312E81]">{step.name}</span>
                                                 <span className="text-sm font-medium text-gray-500">{step.description}</span>
                                             </span>
                                         </span>
