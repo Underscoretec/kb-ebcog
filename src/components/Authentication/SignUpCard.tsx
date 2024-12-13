@@ -61,7 +61,7 @@ const SignUpCard: React.FC = () => {
                     // alert("Email already exist!")
                     showModal("signup Error", "Email already exists!", false);
                 }
-                else if (result?.code === 'USER_ALREADY_EXISTS') {
+                else if (result?.code === 'USER_CREATE_SUCCESS') {
                     action.resetForm();
                     showModal("Signup Successfully", "Please login.", true);
 

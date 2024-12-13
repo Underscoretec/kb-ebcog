@@ -109,3 +109,36 @@
 [31m[0m [90m 60 |[31m                 role[33m:[31m [32m"user"[31m[33m,[31m[0m[39m
 [31m[0m [90m 61 |[31m                 password[33m:[31m passwordHash[33m,[31m[0m[39m
 [31m[0m [90m 62 |[31m                 [90m// emailOtp: otpObj,[31m[0m[39m
+[2024-12-13 04:18:33.678 PM] [31merror[39m: 	[31mMongoServerError: E11000 duplicate key error collection: ebcog-dev.users index: phoneNo_1 dup key: { phoneNo: "916543214354" }[39m
+[31m    at InsertOneOperation.execute (node_modules\mongodb\src\operations\insert.ts:82:12)[39m
+[31m    at async tryOperation (node_modules\mongodb\src\operations\execute_operation.ts:271:13)[39m
+[31m    at async executeOperation (node_modules\mongodb\src\operations\execute_operation.ts:109:11)[39m
+[31m    at async Collection.insertOne (node_modules\mongodb\src\collection.ts:277:11) {[39m
+[31m  errorResponse: [Object],[39m
+[31m  index: 0,[39m
+[31m  code: 11000,[39m
+[31m  keyPattern: [Object],[39m
+[31m  keyValue: [Object][39m
+[31m}[39m
+[2024-12-13 04:18:48.013 PM] [31merror[39m: 	[31mMongoServerError: E11000 duplicate key error collection: ebcog-dev.users index: phoneNo_1 dup key: { phoneNo: "916543214354" }[39m
+[31m    at InsertOneOperation.execute (node_modules\mongodb\src\operations\insert.ts:82:12)[39m
+[31m    at async tryOperation (node_modules\mongodb\src\operations\execute_operation.ts:271:13)[39m
+[31m    at async executeOperation (node_modules\mongodb\src\operations\execute_operation.ts:109:11)[39m
+[31m    at async Collection.insertOne (node_modules\mongodb\src\collection.ts:277:11) {[39m
+[31m  errorResponse: [Object],[39m
+[31m  index: 0,[39m
+[31m  code: 11000,[39m
+[31m  keyPattern: [Object],[39m
+[31m  keyValue: [Object][39m
+[31m}[39m
+[2024-12-13 04:19:15.435 PM] [31merror[39m: 	[31mMongoServerError: E11000 duplicate key error collection: ebcog-dev.users index: phoneNo_1 dup key: { phoneNo: "916543214354" }[39m
+[31m    at InsertOneOperation.execute (node_modules\mongodb\src\operations\insert.ts:82:12)[39m
+[31m    at async tryOperation (node_modules\mongodb\src\operations\execute_operation.ts:271:13)[39m
+[31m    at async executeOperation (node_modules\mongodb\src\operations\execute_operation.ts:109:11)[39m
+[31m    at async Collection.insertOne (node_modules\mongodb\src\collection.ts:277:11) {[39m
+[31m  errorResponse: [Object],[39m
+[31m  index: 0,[39m
+[31m  code: 11000,[39m
+[31m  keyPattern: [Object],[39m
+[31m  keyValue: [Object][39m
+[31m}[39m
