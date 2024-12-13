@@ -105,8 +105,8 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         logger.info("[Campaign sendEmails -002] sendEmails function called.")
         if (req.query.sync === 'safe') {
-            const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
-            const checkEmails = resultJson?.data?.queue;
+            // const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
+            // const checkEmails = resultJson?.data?.queue;
             // console.log(resultJson?.data?.queue.find((item: any) => item?.email === "pranathiaravind@gmail.com").status, 'resultJson ###');
             // const emailStatus = checkEmails?.find((jsonItem: any) => { return jsonItem?.email === "ankita@gmail.com" })?.status
             // console.log(emailStatus, "emailStatus")
