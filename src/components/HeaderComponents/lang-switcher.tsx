@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable no-var */
 import { useEffect, useState } from "react";
 import { parseCookies, setCookie } from "nookies";
 import { AE, FR, IN } from "country-flag-icons/react/3x2";
