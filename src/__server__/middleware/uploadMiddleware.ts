@@ -28,7 +28,7 @@ const uploadMiddleware = multer({
   }),
 
   fileFilter: (req, file, cb) => {
-    const imgType = ["image/jpeg", "image/png", "image/jpg", "image/svg+xml", "video/mp4", "application/pdf", "binary/octet-stream"].includes(
+    const imgType = ["image/jpeg", "image/png", "image/jpg", "application/pdf",].includes(
       file.mimetype
     );
 

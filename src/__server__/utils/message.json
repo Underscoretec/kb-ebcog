@@ -155,5 +155,9 @@
   "EMAIL_SEND_EXCEL_FILE_EMPTY": "Excel file is empty",
   "MAIL_PROVIDER_REQUIRED": "Mail provider is required",
   "FILE_NOT_FOUND": "File not found",
-  "EMAIL_UPDATED": "Emails updated successfully"
+  "EMAIL_UPDATED": "Emails updated successfully",
+  "SESSION_NOT_FOUND":"Session not found",
+  "SESSION_UPDATED": "Session updated successfully",
+  "SESSION_CREATED":"New session created",
+  "SESSION_CREATE_FAILED":"Session creation failed"
 }

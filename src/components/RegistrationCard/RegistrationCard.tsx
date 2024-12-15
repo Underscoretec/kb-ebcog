@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Button from '@/common/uicomponents/Button';
@@ -9,10 +9,19 @@ import { useUserHook } from '@/container/UserModel/useUserHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
 // import { useRouter } from 'next/router';
 
+interface SessionResponse {
+    sessionId: string;
+    timeStamp: string;
+    fullName: string;
+    email: string;
+    whatsAppNumber: string;
+
+}
+
 const RegistrationCard = () => {
     const { createCourseRegistrationApi } = useUserHook();
-    // const router = useRouter();
     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
+    const [sessionData, setSessionData] = useState<SessionResponse | null | any>(null);
 
     const showModal = (title: any, message: any, redirect: boolean) => {
         setModalData({ isOpen: true, title, message, redirect: redirect });
@@ -28,6 +37,33 @@ const RegistrationCard = () => {
         { name: 'Gynaecology Endoscopy', value: 'gynaecologyEndoscopy' },
         { name: 'Fetal Medicine and Ultrasound', value: 'fetalMedicine_Ultrasound' },
     ];
+
+    useEffect(() => {
+        const initializeSession = async () => {
+            try {
+
+                const res = await fetch('/api/sessions/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ timeStamp: new Date().toISOString() }),
+                });
+
+                if (!res.ok) {
+                    throw new Error(`Error: ${res.status}`);
+                }
+
+                const responseData = await res.json();
+                setSessionData(responseData);
+            } catch (error) {
+                console.log(error, 'error ##');
+                // setError(error);
+            }
+        };
+
+        initializeSession();
+    }, []);
 
     const formik = useFormik({
         initialValues: {
@@ -87,6 +123,33 @@ const RegistrationCard = () => {
         formik.setFieldValue('basicDegreeDocument', file);
     };
 
+    const sendDataOnBlur = async (fieldName: string, value: string) => {
+        try {
+            if (sessionData?.result?.sessionId) {
+                
+                const res = await fetch('/api/sessions/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(
+                        {
+                            sessionId: sessionData?.result?.sessionId,
+                            [fieldName]: value
+                        }
+                    ),
+                });
+                if (!res.ok) {
+                    throw new Error(`Error: ${res.status}`);
+                }
+                const response = await res.json();
+                console.log(`Field updated successfully: ${fieldName}`, response);
+            }
+        } catch (error) {
+            console.error(`Error updating field ${fieldName}:`, error);
+        }
+    };
+
     return (
         <>
             <form onSubmit={formik.handleSubmit}>
@@ -105,7 +168,11 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.fullName}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                // onBlur={formik.handleBlur}
+                                onBlur={(e: any) => {
+                                    formik.handleBlur(e);
+                                    sendDataOnBlur('fullName', e.target.value);
+                                }}
                                 error={formik.touched.fullName && formik.errors.fullName}
                                 requiredDesign
                             />
@@ -116,7 +183,10 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.email}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={(e: any) => {
+                                    formik.handleBlur(e);
+                                    sendDataOnBlur('email', e.target.value);
+                                }}
                                 error={formik.touched.email && formik.errors.email}
                                 requiredDesign
                             />
@@ -128,7 +198,10 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.whatsAppNumber}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={(e: any) => {
+                                    formik.handleBlur(e);
+                                    sendDataOnBlur('whatsAppNumber', e.target.value);
+                                }}
                                 error={formik.touched.whatsAppNumber && formik.errors.whatsAppNumber}
                                 requiredDesign
                             />
@@ -172,7 +245,7 @@ const RegistrationCard = () => {
                             label="Please choose Diploma course for which you want to Register"
                             settings={settings}
                             selectedCourse={formik.values.diplomaCourse}
-                            onChange={(value: any) => formik.setFieldValue('diplomaCourse', value)}
+                            onChange={(value: any) => { formik.setFieldValue('diplomaCourse', value); sendDataOnBlur('courseName', value);}}
                             required
                         />
 
