@@ -19,6 +19,11 @@
             "date": 1734068903841,
             "name": "logs\\EBCOG-2024-12-13.log",
             "hash": "700066ec7272f0774335a1950d7ab04ef465bfed19c490a6f133803c2bdb057c"
+        },
+        {
+            "date": 1734326964462,
+            "name": "logs\\EBCOG-2024-12-16.log",
+            "hash": "0e0bcdb5da41915501d8bc10b8c22fbc6b1f0b056a96e3f757e157a4ba06fa39"
         }
     ],
     "hashType": "sha256"

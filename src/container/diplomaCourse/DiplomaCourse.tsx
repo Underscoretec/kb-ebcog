@@ -8,6 +8,7 @@ import { MdAccessTimeFilled, MdFileCopy } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
 import { useRouter } from 'next/navigation';
 import AlertModal from '@/common/uicomponents/AlertModal';
+import { getCookie } from '@/utils/cookieUtils';
 
 interface DiplomaCourseProps {
     courseId: string;
@@ -641,6 +642,17 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
         router.push('/registration');
     }
 
+    const handleFees = () => {
+        const getToken = getCookie ("token")
+
+        if (getToken){
+            router.push('/cart')
+        }
+        else{
+            router.push('/login')
+        }
+    }
+
 
     useEffect(() => {
         if (courseId) {
@@ -660,7 +672,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                     <Button
                         label="Fees"
                         className="w-[12rem] sm:w-[16rem] lg:w-[20rem] py-1 lg:py-2 bg-[#E4087F] font-semibold text-white rounded-md hover:bg-[#ac0660]"
-                        onClick={() => {}}
+                        onClick={handleFees}
                     />
                     <div className='flex flex-col md:flex-row gap-2 md:gap-8 font-montserrat text-base font-medium leading-6 text-[#9D9D9D]'>
                         <div className='flex gap-1 xl:gap-2 items-center'><MdAccessTimeFilled className='text-[#EE7E22]' /> {courseData?.duration}</div>

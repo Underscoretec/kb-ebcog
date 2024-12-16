@@ -12,7 +12,7 @@ import AlertModal from "@/common/uicomponents/AlertModal";
 const SignUpCard: React.FC = () => {
     const router = useRouter();
     const { handleSignUp } = useUserHook();
-     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
+    const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
     const showModal = (title: any, message: any, redirect: boolean) => {
         setModalData({ isOpen: true, title, message, redirect: redirect });
@@ -23,7 +23,7 @@ const SignUpCard: React.FC = () => {
     };
 
     const handlelick = () => {
-        if(modalData.redirect){
+        if (modalData.redirect) {
             router.push('/login');
         }
         hideModal()
@@ -40,7 +40,7 @@ const SignUpCard: React.FC = () => {
             state: '',
             city: '',
             country: '',
-            phoneCode:'',
+            phoneCode: '',
         },
         validationSchema: Yup.object({
             firstname: Yup.string().required('Name is required'),
@@ -73,7 +73,7 @@ const SignUpCard: React.FC = () => {
                     showModal("Signup Successfully", "Please login.", true);
 
                 }
-            }else {
+            } else {
                 console.log('error');
             }
         },
@@ -127,6 +127,15 @@ const SignUpCard: React.FC = () => {
                                 formik.setFieldValue("number", number);
                                 formik.setFieldValue("phoneCode", country?.dialCode || "91");
                             }}
+                            inputStyle={{
+                                height: '45px',
+                                width: '100%', 
+                                padding: '10px',
+                                borderRadius: '6px', 
+                            }}
+                            containerStyle={{
+                                width: '100%',      
+                            }}
                         />
                         {formik.touched.number && formik.errors.number && (
                             <div className="text-red-500 text-sm mt-1">
@@ -134,6 +143,7 @@ const SignUpCard: React.FC = () => {
                             </div>
                         )}
                     </div>
+
                     <InputField
                         label="Password"
                         type="password"
@@ -183,13 +193,13 @@ const SignUpCard: React.FC = () => {
                     />
                 </form>
                 <AlertModal
-                isOpen={modalData.isOpen}
-                title={modalData.title}
-                message={modalData.message}
-                redirect={modalData.redirect}
-                onClose={hideModal}
-                onClick={handlelick}   
-            />
+                    isOpen={modalData.isOpen}
+                    title={modalData.title}
+                    message={modalData.message}
+                    redirect={modalData.redirect}
+                    onClose={hideModal}
+                    onClick={handlelick}
+                />
                 {/* <p className="text-sm text-center text-gray-600">
                     Already have an account?{" "}
                     <button
