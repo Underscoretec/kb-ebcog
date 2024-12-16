@@ -7,11 +7,11 @@ import InputField from '@/common/uicomponents/InputField';
 import RadioListTable from '@/common/uicomponents/RadioListTable';
 import { useUserHook } from '@/container/UserModel/useUserHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 const RegistrationCard = () => {
     const { createCourseRegistrationApi } = useUserHook();
-    // const router = useRouter();
+    const router = useRouter();
     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
     const showModal = (title: any, message: any, redirect: boolean) => {
@@ -21,6 +21,13 @@ const RegistrationCard = () => {
     const hideModal = () => {
         setModalData({ ...modalData, isOpen: false });
     };
+
+    const handlelick = () => {
+        if(modalData.redirect){
+            router.push('/');
+        }
+        hideModal()
+    }
 
     const settings = [
         { name: 'Maternal Medicine', value: 'maternalMedicine' },
@@ -61,7 +68,6 @@ const RegistrationCard = () => {
 
             if (values) {
                 const result: any = await createCourseRegistrationApi(values, action);
-                console.log(result, 'result ##');
                 if (result?.response?.data?.code === 'REGISTRATION_RECORD_FOUND') {
                     // alert("Email already exist!")
                     showModal("Registration Error", "Email already exists!", false);
@@ -216,8 +222,7 @@ const RegistrationCard = () => {
                 isOpen={modalData.isOpen}
                 title={modalData.title}
                 message={modalData.message}
-                redirect={modalData.redirect}
-                onClose={hideModal}
+                onClick={handlelick}
             />
         </>
     );

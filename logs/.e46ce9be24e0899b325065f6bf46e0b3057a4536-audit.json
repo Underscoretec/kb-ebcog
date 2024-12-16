@@ -6,9 +6,19 @@
     "auditLog": "logs/.e46ce9be24e0899b325065f6bf46e0b3057a4536-audit.json",
     "files": [
         {
-            "date": 1733999013214,
+            "date": 1733987220395,
             "name": "logs/EBCOG-2024-12-12.log",
-            "hash": "e9656f4b86d132ddd9f31ff6b261f24cb2ae5920e1eab09d7d7a1d7f3f24c2d8"
+            "hash": "ad3e2f08349dc65e3fa12709542583126c02dd956ea2d39ae44e318c94055c1d"
+        },
+        {
+            "date": 1734004602338,
+            "name": "logs\\EBCOG-2024-12-12.log",
+            "hash": "31e8b589a9bc57b86673bc029cb31b1b82abc820bc00bc067e85848d32799e9a"
+        },
+        {
+            "date": 1734068903841,
+            "name": "logs\\EBCOG-2024-12-13.log",
+            "hash": "700066ec7272f0774335a1950d7ab04ef465bfed19c490a6f133803c2bdb057c"
         }
     ],
     "hashType": "sha256"

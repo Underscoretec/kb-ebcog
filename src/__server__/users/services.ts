@@ -17,6 +17,7 @@ import config from "../config";
 
 const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
     const { first_name,last_name, email, password, phone, phoneNo, address } = req.body;
+
     
     try {
         const query: any = { enabled: 1 }
@@ -35,8 +36,7 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
             });
         }
 
-        const phoneObj = phone ? JSON.parse(phone) : user?.phone
-
+        const phoneObj = phone;
         const phNumber = phoneNo || `${phoneObj?.code}${phoneObj?.number}`
 
         // const otpObj = await otpGenerate("signup", "email", req.headers?.origin || req.headers?.referer)
@@ -52,7 +52,7 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
                 email: email, 
                 phone: phoneObj, 
                 phoneNo: phNumber, 
-                address: address && JSON.parse(address),
+                address: address,
                 role: "user",
                 password: passwordHash,
                 // emailOtp: otpObj,

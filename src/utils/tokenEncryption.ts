@@ -1,7 +1,7 @@
 const xorEncription = (input: string): string => {
     try {
         let output = "";
-        const secKey = process.env.NEXT_PUBLIC_SEC_KEY;
+        const secKey = process.env.NEXT_PUBLIC_COOKIE_SEC_KEY;
         if (!secKey) {
             throw new Error("Security key is undefined or not set.");
         }

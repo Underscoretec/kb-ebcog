@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { menuitems } from "../../../menuitems"
 import { FiMenu } from "react-icons/fi";
@@ -10,6 +10,7 @@ import Sidebar from './Sidebar';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
 import LanguageSwitcher from './lang-switcher';
+import { getCookie } from '@/utils/cookieUtils';
 
 const navigation = {
     social: [
@@ -34,6 +35,8 @@ const navigation = {
 const Header = () => {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [token, setToken] = useState<string | null>(null);
+    const tokenFromCookie = getCookie('token');
 
     const handleSidebar = () => {
         setIsSidebarOpen((prev) => !prev);
@@ -43,7 +46,9 @@ const Header = () => {
         setIsSidebarOpen(false);
     };
 
-    console.log(LanguageSwitcher, "LanguageSwitcher")
+    useEffect(() => {
+        setToken(tokenFromCookie);
+    }, [tokenFromCookie]);
 
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
@@ -55,17 +60,17 @@ const Header = () => {
                                 <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[22px] xs:text-[28px] md:text-[32px] cursor-pointer`}
                                     onClick={handleSidebar} />
                                 <Link href="/">
-                                    <div className='w-[75px] xs:w-[110px] xl:w-[150px] h-full cursor-pointer'>
+                                    <div className='w-[65px] xs:w-[90px] xl:w-[150px] h-full cursor-pointer'>
                                         <Image src="/ebcog.png" alt="no img" width={500} height={500} className='w-full h-full' />
                                     </div>
                                 </Link>
                                 <Link href="/">
-                                    <div className='w-[90px] xs:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
+                                    <div className='w-[90px] xs:w-[120px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
                                         <Image src="/e_logo.png" alt="no img" width={500} height={500} className='w-full h-full' />
                                     </div>
                                 </Link>
                                 <Link href="/">
-                                    <div className='w-[100px] xs:w-[140px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
+                                    <div className='w-[90px] xs:w-[120px] lg:w-[200px] xl:w-[150px] 2xl:w-[200px] h-full cursor-pointer'>
                                         <Image src="/kblogo.png" alt="no img" width={500} height={500} className='w-full h-full' />
                                     </div>
                                 </Link>
@@ -82,18 +87,18 @@ const Header = () => {
                         <div className='lg:block hidden'>
                             <LanguageSwitcher />
                         </div>
-
+                        {
+                            token && <Link href="/">
+                                <div className='flex items-center justify-center rounded-full bg-[#E4087F] text-white h-6 xs:h-8 sm:h-10 xl:h-12 w-6 xs:w-8 sm:w-10 xl:w-12 text-[12px] xs:text-[14px] sm:text-[20px] font-semibold cursor-pointer'>{getCookie('UserEmail')?.charAt(0).toUpperCase()}
+                                </div>
+                            </Link>
+                        }
                     </div>
 
                     <div className={`shadow-2xl  z-[2000] absolute top-0 left-0  min-h-screen flex justify-end lg:hidden overflow-hidden ${isSidebarOpen ? "right-0 w-[60%] md:w-[40%] xl::w-[35%]" : "w-0"} transition-all duration-500`}>
                         <IoCloseSharp className={`${isSidebarOpen ? "block" : "hidden"} absolute z-[300] top-6 right-8 text-[28px] md:text-[40px] cursor-pointer`} onClick={() => { handleSidebar() }} />
                         <Sidebar menuItems={menuitems} isSidebarOpen={isSidebarOpen} />
                     </div>
-                    {/* <div className='lg:hidden md:flex  items-center justify-center py-[14px] border-t border-[#c9c8c8] bg-white shadow-xl'>
-                        <div className={`md:w-[88%] lg:w-[70%] w-[70%] h-full`}>
-                            <Navbar menuArray={menuitems} />
-                        </div>
-                    </div> */}
                 </div>
                 <div className='hidden lg:flex z-[100] lg:sticky top-0  items-center justify-center py-[14px] border-t border-[#c9c8c8] bg-white shadow-xl'>
                     <div className={`md:w-[88%] lg:w-[70%] w-[70%] h-full`}>
