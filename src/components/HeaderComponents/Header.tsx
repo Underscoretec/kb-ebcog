@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { menuitems } from "../../../menuitems"
 import { FiMenu } from "react-icons/fi";
@@ -10,6 +10,7 @@ import Sidebar from './Sidebar';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
 import LanguageSwitcher from './lang-switcher';
+import { usePathname } from 'next/navigation';
 
 const navigation = {
     social: [
@@ -34,6 +35,11 @@ const navigation = {
 const Header = () => {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const pathname = usePathname();
+
+    useEffect(()=>{
+        setIsSidebarOpen(false)
+    },[pathname])
 
     const handleSidebar = () => {
         setIsSidebarOpen((prev) => !prev);
@@ -43,7 +49,7 @@ const Header = () => {
         setIsSidebarOpen(false);
     };
 
-    console.log(LanguageSwitcher, "LanguageSwitcher")
+    console.log("isSidebarOpen", isSidebarOpen)
 
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
@@ -85,7 +91,7 @@ const Header = () => {
 
                     </div>
 
-                    <div className={`shadow-2xl  z-[2000] absolute top-0 left-0  min-h-screen flex justify-end lg:hidden overflow-hidden ${isSidebarOpen ? "right-0 w-[60%] md:w-[40%] xl::w-[35%]" : "w-0"} transition-all duration-500`}>
+                    <div className={`shadow-2xl  z-[2000] absolute top-0 left-0  min-h-screen flex justify-end lg:hidden overflow-hidden ${isSidebarOpen ? "right-0 w-[60%] md:w-[40%] xl:w-[35%]" : "w-0"} transition-all duration-500`}>
                         <IoCloseSharp className={`${isSidebarOpen ? "block" : "hidden"} absolute z-[300] top-6 right-8 text-[28px] md:text-[40px] cursor-pointer`} onClick={() => { handleSidebar() }} />
                         <Sidebar menuItems={menuitems} isSidebarOpen={isSidebarOpen} />
                     </div>
