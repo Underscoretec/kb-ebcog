@@ -7,6 +7,7 @@ import InputField from '@/common/uicomponents/InputField';
 import RadioListTable from '@/common/uicomponents/RadioListTable';
 import { useUserHook } from '@/container/UserModel/useUserHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
+import { trackGAEvent } from '@/common/utils/gAnalytics';
 // import { useRouter } from 'next/router';
 
 const RegistrationCard = () => {
@@ -58,20 +59,19 @@ const RegistrationCard = () => {
         }),
         onSubmit: async (values, action) => {
             console.log('Form Data: ##', values);
-
+            trackGAEvent('registration_submit_clicked', values)
             if (values) {
                 const result: any = await createCourseRegistrationApi(values, action);
                 console.log(result, 'result ##');
                 if (result?.response?.data?.code === 'REGISTRATION_RECORD_FOUND') {
-                    // alert("Email already exist!")
+                    trackGAEvent('registration_exists', values)
                     showModal("Registration Error", "Email already exists!", false);
                 }
                 else if (result?.data?.code === 'REGISTRATION_CREATED') {
+                    trackGAEvent('registration_completed', values)
                     action.resetForm();
                     showModal("Thank You For Your Registration", "Please check your inbox for further instructions.", true);
-
                 }
-
             } else {
                 console.log('error');
             }
@@ -81,10 +81,12 @@ const RegistrationCard = () => {
 
     const handleDegreeCertificateUpload = (file: File | null) => {
         formik.setFieldValue('degreeCertificate', file);
+        trackGAEvent('registration_form_modified', formik.values)
     };
 
     const handleBasicDegreeDocumentUpload = (file: File | null) => {
         formik.setFieldValue('basicDegreeDocument', file);
+        trackGAEvent('registration_form_modified', formik.values)
     };
 
     return (
@@ -105,7 +107,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.fullName}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
                                 error={formik.touched.fullName && formik.errors.fullName}
                                 requiredDesign
                             />
@@ -116,7 +118,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.email}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
                                 error={formik.touched.email && formik.errors.email}
                                 requiredDesign
                             />
@@ -128,7 +130,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.whatsAppNumber}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
                                 error={formik.touched.whatsAppNumber && formik.errors.whatsAppNumber}
                                 requiredDesign
                             />
@@ -138,7 +140,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.city}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
                                 error={formik.touched.city && formik.errors.city}
                                 requiredDesign
                             />
@@ -151,7 +153,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.state}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
                                 error={formik.touched.state && formik.errors.state}
                                 requiredDesign
                             />
@@ -161,7 +163,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.country}
                                 onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
                                 error={formik.touched.country && formik.errors.country}
                                 requiredDesign
                             />
@@ -172,7 +174,7 @@ const RegistrationCard = () => {
                             label="Please choose Diploma course for which you want to Register"
                             settings={settings}
                             selectedCourse={formik.values.diplomaCourse}
-                            onChange={(value: any) => formik.setFieldValue('diplomaCourse', value)}
+                            onChange={(value: any) => {formik.setFieldValue('diplomaCourse', value); trackGAEvent('registration_form_modified', formik.values)}}
                             required
                         />
 
