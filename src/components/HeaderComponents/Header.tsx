@@ -9,6 +9,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
+import LanguageSwitcher from './lang-switcher';
 
 const navigation = {
     social: [
@@ -41,6 +42,8 @@ const Header = () => {
     const handleClickAway = () => {
         setIsSidebarOpen(false);
     };
+
+    console.log(LanguageSwitcher, "LanguageSwitcher")
 
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
@@ -75,6 +78,9 @@ const Header = () => {
                                     </Link>
                                 ))}
                             </div>
+                        </div>
+                        <div className='lg:block hidden'>
+                            <LanguageSwitcher />
                         </div>
 
                     </div>

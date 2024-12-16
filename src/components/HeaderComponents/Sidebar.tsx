@@ -3,6 +3,7 @@ import { FaAngleDown, FaFacebook, FaInstagram } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { RiTwitterXFill } from "react-icons/ri";
+import LanguageSwitcher from './lang-switcher';
 
 const navigation = {
     social: [
@@ -114,6 +115,11 @@ const Sidebar = ({ menuItems, isSidebarOpen }: any) => {
                     </Link>
                 ))}
             </div>
+
+            <div className='block lg:hidden'>
+                <LanguageSwitcher />
+            </div>
+
         </div>
     );
 };
