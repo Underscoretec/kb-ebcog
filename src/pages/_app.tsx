@@ -2,6 +2,9 @@ import '@/styles/globals.css'
 import { NextPageWithLayout } from '@/types/types';
 import type { AppProps } from 'next/app'
 import Head from "next/head";
+import {trackGAPageView} from "@/common/utils/gAnalytics";
+import { useEffect } from 'react';
+import { useRouter } from "next/router";
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
@@ -11,6 +14,12 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   const getLayout = Component.getLayout ?? ((page: any) => page);
+  const router = useRouter();
+
+
+  useEffect(() => {
+    trackGAPageView(router.asPath)
+  },[router.asPath])
 
   return (<>
     <Head>
