@@ -11,7 +11,7 @@ export const trackGAPageView = (url: string): void => {
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const trackGAEvent = (action:string, value: any ): void => {
   const lead = `${value?.fullName} | ${value?.whatsAppNumber}`
-  let data = {...value, lead}
+  const data = {...value, lead}
   if(data?.email?.indexOf('@')>0 && data?.email?.indexOf(' @')<0 ){
     data.email = data.email.replace('@', ' @')
   }
