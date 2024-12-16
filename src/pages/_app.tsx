@@ -2,6 +2,9 @@ import '@/styles/globals.css'
 import { NextPageWithLayout } from '@/types/types';
 import type { AppProps } from 'next/app'
 import Head from "next/head";
+import {trackGAPageView} from "@/common/utils/gAnalytics";
+import { useEffect } from 'react';
+import { useRouter } from "next/router";
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
@@ -11,6 +14,12 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   const getLayout = Component.getLayout ?? ((page: any) => page);
+  const router = useRouter();
+
+
+  useEffect(() => {
+    trackGAPageView(router.asPath)
+  },[router.asPath])
 
   return (<>
     <Head>
@@ -31,8 +40,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <meta property="og:description"
         content="Join us to advance your career through knowledge and skill enhancement. Benefit from comprehensive training and unwavering support from our esteemed EBCOG faculty. You'll be fully equipped to tackle challenges and embrace the opportunities to enhance outcomes in women's health"
       />
-      <meta property="og:image" content="/EBCOG_OGP.webp" />
-      <meta name="twitter:image" content="/EBCOG_OGP.webp" />
+      {/* <meta property="og:image" content="/EBCOG_OGP.png" /> */}
+      <meta property="og:image" content="public/EBCOG_OGP.webp" />
+      <meta name="twitter:image" content="/EBCOG_OGP.png" />
       <meta name="twitter:site"
         content="Join us to advance your career through knowledge and skill enhancement. Benefit from comprehensive training and unwavering support from our esteemed EBCOG faculty. You'll be fully equipped to tackle challenges and embrace the opportunities to enhance outcomes in women's health"
       />
