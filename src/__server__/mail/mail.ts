@@ -40,7 +40,8 @@ export function sendEmailWithSES({ receiverAddress, body, subject, cc, count }: 
             // console.log(`Email send Response ${receiverAddress}:-`, res?.MessageId);
         })
         .catch((err: any) => {
-            console.log("Error when send email:-", err);
+            logger.error(`Error when send email:- ${receiverAddress}`, err)
+            // console.log("Error when send email:-",);
         })
 
 }
@@ -73,6 +74,6 @@ export async function sendEmailWithNodemeler(data: any) {
         const info = await transporter.sendMail(mailOptions);
         logger.info(`Email sent to ${data?.email} with bcc ${bccEmail} : => ${info.response}`);
     } catch (error) {
-        logger.error(error, "Error in Fun: sendEmailWithNodemeler")
+        logger.error(`Error when send email:- ${data?.email}`, error)
     }
 }

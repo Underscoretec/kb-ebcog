@@ -181,7 +181,7 @@ const FacultySection = () => {
 
     return (
         <div className='bg-[#290849] text-white px-4 xs:px-8 py-10 md:py-16 xl:p-16 3xl:p-24' id='diplomas'>
-            <h1 className='font-oswald text-[35px] xs:text-[40px] md:text-[48px] xl:text-[55px] font-normal leading-[40px] xs:leading-[54px] text-center mb-10 xl:mb-14'>Diploma leads and Faculty</h1>
+            <h1 className='font-oswald text-[35px] xs:text-[40px] md:text-[48px] xl:text-[55px] font-normal leading-[40px] xs:leading-[54px] text-center mb-10 xl:mb-14'>Diploma Leads and Faculty</h1>
             <div className='flex justify-between gap-12 sm:gap-3 2xl:gap-4 flex-wrap'>
                 {CoursesFaculty.map((item, index) => {
                     return (<div key={index} className='w-[100%] sm:w-[48%] md:w-[49%] lg:w-[24%] flex flex-col gap-3 xs:gap-5 sm:gap-4 lg:gap-3 2xl:gap-5'>

@@ -76,26 +76,21 @@ function getRandomInt(min: number, max: number) {
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const checkAndUpdateList = async () => {
+const checkAndUpdateList = async (fileName: string) => {
 
-    const filePath = 'files/results.json';
+    const filePath = `files/${fileName}`;
 
     return new Promise((resolve, reject) => {
         fs.readFile(filePath, 'utf8', (err: any, data: any) => {
             if (err) {
                 console.error('Error reading file:', err);
                 reject(err);
-
             }
 
             try {
                 const jsonData = JSON.parse(data);
-                console.log(jsonData, 'jsonData #######');
                 resolve(jsonData);
-
             } catch (parseError) {
-
-
                 console.error('Error parsing JSON:', parseError);
                 reject(parseError);
             }
@@ -110,7 +105,14 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         logger.info("[Campaign sendEmails -002] sendEmails function called.")
         if (req.query.sync === 'safe') {
-            // console.log(resultJson['maildrambika@gmail.com'], 'resultJson ###');
+            // const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
+            // const checkEmails = resultJson?.data?.queue;
+            // console.log(resultJson?.data?.queue.find((item: any) => item?.email === "pranathiaravind@gmail.com").status, 'resultJson ###');
+            // const emailStatus = checkEmails?.find((jsonItem: any) => { return jsonItem?.email === "ankita@gmail.com" })?.status
+            // console.log(emailStatus, "emailStatus")
+            // if ("bhaskar.bonu@utplco.com" && emailStatus === 'safe') {
+            //     console.log("call >> for mail send")
+            // }
         } else {
             const query: any = {
                 'mailSent.status': false,
@@ -123,7 +125,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
             if (req?.query?.mailProvider === "SMTP" || req?.query?.mailProvider === "SES") {
                 const campaignList = await CampaignsModel.find(query);
                 console.log(campaignList?.length, 'campaignList count @@@@@@@');
-                const resultJson: any = await checkAndUpdateList();
+                const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
 
                 // const path = 'files/FOGSI_MembersList.xlsx'
                 // const workbook = XLSX.readFile(path)
@@ -133,11 +135,12 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                 const datas = campaignList
 
                 if (datas?.length > 0) {
-                    // const resultJson: any = checkAndUpdateList();
-                    const sendMailArray: string[] = []
+                    const checkEmails = resultJson?.data?.queue;
+                    let sendMailArray: string[] = []
                     for (const [idx, item] of datas.entries()) {
-                        if (item['email'] && resultJson[`${item['email']}`]?.status === 'safe') {
-                           
+                        const emailStatus = checkEmails?.find((jsonItem: any) => jsonItem?.email === item['email'])?.status
+                        if (item['email'] && emailStatus === 'safe') {
+
                             const fullName = `${item?.firstName} ${item?.lastName}`
                             const sendData = { email: item?.email?.toLowerCase(), name: fullName };
 
@@ -147,10 +150,31 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                             // Delay the next email by a random or fixed interval
                             const delay = idx === 0 ? 0 : await getRandomInt(2, 5) * 1000; // 2 to 5 seconds delay
                             await sleep(delay);
+
+                            if (sendMailArray?.length === 1000) {
+                                logger.info(`Updateing ${sendMailArray?.length} success emails`)
+
+                                const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: sendMailArray } },
+                                    {
+                                        $set: {
+                                            mailSent: {
+                                                status: true,
+                                                timeStamp: Date.now()
+                                            }
+                                        }
+                                    },
+                                    { new: true }
+                                )
+                                logger.info(`${campaignUpdate?.modifiedCount} emails updated in database`)
+
+                                sendMailArray = []
+                            }
                         }
                     }
 
                     if (sendMailArray?.length > 0) {
+                        logger.info(`Updateing ${sendMailArray?.length} success emails`)
+
                         const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: sendMailArray } },
                             {
                                 $set: {
@@ -162,6 +186,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                             },
                             { new: true }
                         )
+                        logger.info(`${campaignUpdate?.modifiedCount} emails updated in database`)
 
                         return res.status(200).json({
                             message: messages["EMAIL_FIRED"],
@@ -281,11 +306,54 @@ const requestForCallback = async (req: NextApiRequest, res: NextApiResponse) => 
     }
 
 }
+
+const successEmailUpdate = async (req: NextApiRequest, res: NextApiResponse) => {
+    try {
+        const resultJson: any = await checkAndUpdateList(`success_emails.json`);
+        console.log(resultJson, "resultJson")
+        if (resultJson?.successSendEmail?.length > 0) {
+            logger.info(`Updateing ${resultJson?.successSendEmail.length} success emails`)
+            const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: resultJson?.successSendEmail } },
+                {
+                    $set: {
+                        mailSent: {
+                            status: true,
+                            timeStamp: Date.now()
+                        }
+                    }
+                },
+                { new: true }
+            )
+            if (campaignUpdate) {
+                logger.info(`Emails updated in database -> `, campaignUpdate.modifiedCount)
+                return res.status(200).json({
+                    message: messages["EMAIL_UPDATED"],
+                    error: false,
+                    code: "EMAIL_UPDATED",
+                    result: campaignUpdate
+                });
+            }
+
+        } else {
+            return res.status(404).json({
+                message: messages["FILE_NOT_FOUND"],
+                error: true,
+                code: "FILE_NOT_FOUND",
+                result: null
+            })
+        }
+
+    } catch (error) {
+        logger.error(error, "[SuccessEmailUpdate -01] Error in success email update ");
+        return res.status(500).json(errorResponse(error));
+    }
+}
 export default {
     importData,
     sendEmails,
     unSubscribeEmail,
-    requestForCallback
+    requestForCallback,
+    successEmailUpdate
 }
 
 

@@ -27,7 +27,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "public/scripts/translation.js", "public/scripts/lang-config.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -71,7 +71,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
                             </label>
                             <p className="pl-1">or drag and drop</p>
                         </div>
-                        <p className="text-xs text-gray-600">PNG, JPG, JPEG, PDF up to 10MB</p>
+                        <p className="text-xs text-gray-600">PNG, JPG, JPEG, PDF up to 2MB</p>
                     </div>
                 </div>
             ) : (
