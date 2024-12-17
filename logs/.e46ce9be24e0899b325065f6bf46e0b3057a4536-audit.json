@@ -9,6 +9,11 @@
             "date": 1733987220395,
             "name": "logs/EBCOG-2024-12-12.log",
             "hash": "ad3e2f08349dc65e3fa12709542583126c02dd956ea2d39ae44e318c94055c1d"
+        },
+        {
+            "date": 1734416809448,
+            "name": "logs/EBCOG-2024-12-17.log",
+            "hash": "5d3e3b5d1aa38b229fe4e6b24d8e33e1224b74587081793bc5c8f05b763a133c"
         }
     ],
     "hashType": "sha256"
