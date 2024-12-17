@@ -12,7 +12,7 @@ const SignInCard: React.FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const {  handleLogin } = useUserHook();
+    const { handleLogin } = useUserHook();
     const router = useRouter();
 
     const handleSignIn = async (e: React.FormEvent) => {
@@ -20,35 +20,39 @@ const SignInCard: React.FC = () => {
         setIsSubmitting(true);
         // Mock API call
         setTimeout(async () => {
-            const result:any = await handleLogin({ email, password });
-            console.log("result===>",result)
+            const result: any = await handleLogin({ email, password });
+            console.log("result===>", result)
             setIsSubmitting(false);
             if (result?.code === 'LOGIN_SUCCESS') {
                 showModal("Login Successfully", "", true);
-            }else if (result?.code === 'INVALID_CREDENTIALS') {
+            } else if (result?.code === 'INVALID_CREDENTIALS') {
                 showModal("Invalid Credentials", "Please enter correct email or password.", false);
-            }else{
+            } else {
                 showModal("Something Went wrong!", "Please try again.", false);
             }
 
-        }, 2000); 
+        }, 2000);
     };
 
     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
-    
-        const showModal = (title: any, message: any, redirect: boolean) => {
-            setModalData({ isOpen: true, title, message, redirect: redirect });
-        };
-    
-        const hideModal = () => {
-            setModalData({ ...modalData, isOpen: false });
-        };
 
-    const handlelick = () => {
-        if(modalData.redirect){
+    const showModal = (title: any, message: any, redirect: boolean) => {
+        setModalData({ isOpen: true, title, message, redirect: redirect });
+    };
+
+    const hideModal = () => {
+        setModalData({ ...modalData, isOpen: false });
+    };
+
+    const handleclick = () => {
+        if (modalData.redirect) {
             router.push('/');
         }
         hideModal()
+    }
+
+    const handleSignup = () => {
+        router.push('/signup');
     }
 
     return (
@@ -85,15 +89,17 @@ const SignInCard: React.FC = () => {
                         isLoading={isSubmitting}
                         className="w-full py-2 bg-[#E4087F] font-semibold text-white ${bgColor} rounded-md hover:bg-[#ac0660] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
+
+                    <div className="flex items-center justify-center text-[#4f4f4f]" onClick={handleSignup}>Don't have any account ?<span className="text-[#4F46E5] pl-2 cursor-pointer">Sign Up</span></div>
                 </form>
                 <AlertModal
-                isOpen={modalData.isOpen}
-                title={modalData.title}
-                message={modalData.message}
-                redirect={modalData.redirect}
-                onClose={hideModal}
-                onClick={handlelick}   
-            />
+                    isOpen={modalData.isOpen}
+                    title={modalData.title}
+                    message={modalData.message}
+                    redirect={modalData.redirect}
+                    onClose={hideModal}
+                    onClick={handleclick}
+                />
             </div>
         </div>
     );
