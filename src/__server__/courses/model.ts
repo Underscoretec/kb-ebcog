@@ -43,10 +43,15 @@ const courseSchema: any = new Schema(
             ref: Users
         }],
         price: {
-            type: Number, // Price in your desired currency
-            // required: true,
-            min: 0,
-            default: 0
+            base: {
+                type: Number,
+                required: true,
+                
+            },
+            currency: {
+                type: String,
+                default: "AED"
+            },
         },
         leadInstructor: {
             type: Schema.Types.ObjectId, // Reference to the Faculties model
