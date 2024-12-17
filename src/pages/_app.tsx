@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         content="Join us to advance your career through knowledge and skill enhancement. Benefit from comprehensive training and unwavering support from our esteemed EBCOG faculty. You'll be fully equipped to tackle challenges and embrace the opportunities to enhance outcomes in women's health"
       />
       {/* <meta property="og:image" content="/EBCOG_OGP.png" /> */}
-      <meta property="og:image" content={`${baseUrl}/OGP_EBCOG.png`} />
+      <meta property="og:image" content='https://test.ebcog.sudors.in/OGP_EBCOG.png' />
       <meta name="twitter:image" content="/EBCOG_OGP.png" />
       <meta name="twitter:site"
         content="Join us to advance your career through knowledge and skill enhancement. Benefit from comprehensive training and unwavering support from our esteemed EBCOG faculty. You'll be fully equipped to tackle challenges and embrace the opportunities to enhance outcomes in women's health"
