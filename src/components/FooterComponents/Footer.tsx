@@ -26,7 +26,7 @@ const navigation = {
     { name: 'FAQ', href: '/#faq' },
     { name: 'Privacy', href: '/privacy-policy' },
     { name: 'Refund and Return Policy', href: '/refund-policy' },
-    { name: 'Shipping Policy', href: '/shipping-policy' },
+    // { name: 'Shipping Policy', href: '/shipping-policy' },
     { name: 'Terms and Condition', href: '/terms-and-condition'}
   ],
     social: [
