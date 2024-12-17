@@ -24,11 +24,11 @@ declare global {
   }
 }
 
-export default function LanguageSwitcher () {
+export default function LanguageSwitcher() {
   const [currentLanguage, setCurrentLanguage] = useState<string>();
   const [languageConfig, setLanguageConfig] = useState<any>();
   console.log(languageConfig, "languageConfig**")
-  const [dropdownOpen, setDropdownOpen] = useState(false); 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // When the component has initialized, we must activate the translation engine the following way.
   useEffect(() => {
@@ -63,30 +63,30 @@ export default function LanguageSwitcher () {
     return null;
   }
 
-  const getDomain = (url:any, subdomain?:boolean) => {
+  const getDomain = (url: any, subdomain?: boolean) => {
     subdomain = subdomain || false;
 
     url = url.replace(/(https?:\/\/)?(www.)?/i, '');
 
     if (!subdomain) {
-        url = url.split('.');
+      url = url.split('.');
 
-        url = url.slice(url.length - 2).join('.');
+      url = url.slice(url.length - 2).join('.');
     }
 
     if (url.indexOf('/') !== -1) {
-        return url.split('/')[0];
+      return url.split('/')[0];
     }
 
     return url;
-}
+  }
 
   // The following function switches the current language
   const switchLanguage = (lang: string) => () => {
     // We just need to set the related cookie and reload the page
     // "/auto/" prefix is Google's definition as far as a cookie name
     setCookie(null, COOKIE_NAME, "/auto/" + lang)
-    setCookie(null, COOKIE_NAME, "/auto/" + lang,  { domain:`.${getDomain(window.location.hostname)}`, path: '/' })
+    setCookie(null, COOKIE_NAME, "/auto/" + lang, { domain: `.${getDomain(window.location.hostname)}`, path: '/' })
     window.location.reload();
   };
 
@@ -103,9 +103,9 @@ export default function LanguageSwitcher () {
     <div className="relative text-center notranslate mt-5 lg:mt-0 flex justify-center">
       <button
         onClick={toggleDropdown}
-        className="text-blue-600 cursor-pointer text-[12px] hover:bg-blue-100 mx-3 border border-[#dfddde] rounded-md px-3 py-1 flex items-center gap-2"
+        className="text-blue-600 cursor-pointer text-[12px] hover:bg-blue-100 ml-3 border border-[#dfddde] rounded-md px-3 py-1 flex items-center gap-2"
       >
-         {currentflag === 'in' && <IN title="IN" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
+        {currentflag === 'in' && <IN title="IN" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
         {currentflag === 'ae' && <AE title="AE" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />}
         {currentflag === 'fr' && <FR title="FR" className="flex gap-1 xl:gap-2 items-center w-6 h-6" />} {languageConfig.languages.find(
           (ld: LanguageDescriptor) => ld.name === currentLanguage

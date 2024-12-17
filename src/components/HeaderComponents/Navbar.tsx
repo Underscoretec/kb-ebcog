@@ -3,6 +3,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { ClickAwayListener } from '@mui/material';
 import { FaAngleDown } from 'react-icons/fa';
+import LoginAvatar from './LoginAvatar';
 
 const Navbar = (props: any) => {
 
@@ -10,23 +11,32 @@ const Navbar = (props: any) => {
 
     return (
         <>
-            <div className="h-full w-full justify-around items-center hidden md:flex">
-                {props.menuArray.map((menuItem: any, index: any) => (
-                    <CreateMenu
-                        key={index}
-                        menuData={menuItem}
-                        index={index}
-                        depth={1}
-                        menuStatus={menuStatus}
-                        setMenuStatus={setMenuStatus}
-                    />
-                ))}
+            <div className="h-full w-full justify-between items-center hidden md:flex">
+                <div></div>
+                <div className='flex items-center gap-12'>
+                    {props.menuArray.map((menuItem: any, index: any) => (
+                        <CreateMenu
+                            key={index}
+                            menuData={menuItem}
+                            index={index}
+                            depth={1}
+                            menuStatus={menuStatus}
+                            setMenuStatus={setMenuStatus}
+                        />
+                    ))}
+                </div>
+                <div className='flex gap-8 items-center'>
 
-                <Link href='/registration' >
-                    <h1 className="text-white font-semibold rounded-[6px] hidden lg:flex justify-center items-center py-2 xl:py-4 px-2 sm:px-4 lg:px-2 xl:px-3 text-[10px] xs:text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] hover:bg-[#ac0660]">
-                        Join Now
-                    </h1>
-                </Link>
+                    <Link href='/registration' >
+                        <h1 className="text-white font-semibold rounded-[6px] hidden lg:flex justify-center items-center py-2 xl:py-4 px-2 sm:px-4 lg:px-2 xl:px-3 text-[10px] xs:text-[13px] xl:text-[18px] leading-[15px] bg-[#E4087F] hover:bg-[#ac0660]">
+                            Join Now
+                        </h1>
+                    </Link>
+
+                    {/* signin /signup avatar and options */}
+                    <div className='hidden lg:block'><LoginAvatar /></div>
+                </div>
+
             </div>
         </>
     );

@@ -10,7 +10,8 @@ import Sidebar from './Sidebar';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
 import LanguageSwitcher from './lang-switcher';
-import { getCookie } from '@/utils/cookieUtils';
+import LoginAvatar from './LoginAvatar';
+
 
 const navigation = {
     social: [
@@ -35,8 +36,7 @@ const navigation = {
 const Header = () => {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [token, setToken] = useState<string | null>(null);
-    const tokenFromCookie = getCookie('token');
+    
 
     const handleSidebar = () => {
         setIsSidebarOpen((prev) => !prev);
@@ -45,20 +45,17 @@ const Header = () => {
     const handleClickAway = () => {
         setIsSidebarOpen(false);
     };
-
-    useEffect(() => {
-        setToken(tokenFromCookie);
-    }, [tokenFromCookie]);
+    
 
     return (
         <ClickAwayListener onClickAway={handleClickAway}>
             <>
                 <div className='w-auto h-auto z-[100] max-lg:sticky top-0'>
-                    <div className='bg-white w-full h-[65px] xs:h-[75px] md:h-[85px] 2xl:h-[100px] flex items-center justify-end px-4 xs:px-8 xl:px-16 3xl:px-24 gap-2 2xl:gap-12 shadow-xl lg:shadow-0 xl:shadow-xl'>
-                        <div className='flex justify-between w-[100%] md:w-[80%] lg:w-[75%] items-center'>
-                            <div className='flex items-center gap-1 xs:gap-2 sm:gap-[30px] xl:gap-[50px]'>
-                                <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[22px] xs:text-[28px] md:text-[32px] cursor-pointer`}
+                    <div className='bg-white w-full h-[65px] xs:h-[75px] md:h-[85px] 2xl:h-[100px] flex items-center justify-between lg:justify-end px-4 xs:px-8 xl:px-16 3xl:px-24 gap-0xs:gap-2 shadow-xl lg:shadow-0 xl:shadow-xl'>
+                    <FiMenu className={` ${isSidebarOpen ? "hidden" : "flex"} lg:hidden text-[22px] xs:text-[28px] md:text-[32px] cursor-pointer`}
                                     onClick={handleSidebar} />
+                        <div className='flex justify-between w-auto lg:w-[70%] xl:w-[65%] items-center'>
+                            <div className='flex items-center gap-1 xs:gap-2 sm:gap-[30px] xl:gap-[50px]'>
                                 <Link href="/">
                                     <div className='w-[65px] xs:w-[90px] xl:w-[150px] h-full cursor-pointer'>
                                         <Image src="/ebcog.png" alt="no img" width={500} height={500} className='w-full h-full' />
@@ -84,25 +81,25 @@ const Header = () => {
                                 ))}
                             </div>
                         </div>
+
+                        {/* Language Switcher */}
                         <div className='lg:block hidden'>
                             <LanguageSwitcher />
                         </div>
-                        {
-                            token && <Link href="/">
-                                <div className='flex items-center justify-center rounded-full bg-[#E4087F] text-white h-6 xs:h-8 sm:h-10 xl:h-12 w-6 xs:w-8 sm:w-10 xl:w-12 text-[12px] xs:text-[14px] sm:text-[20px] font-semibold cursor-pointer'>{getCookie('UserEmail')?.charAt(0).toUpperCase()}
-                                </div>
-                            </Link>
-                        }
+
+                        {/* signin /signup avatar and options */}
+                        <div className='block lg:hidden'><LoginAvatar/></div>
+
                     </div>
 
-                    <div className={`shadow-2xl  z-[2000] absolute top-0 left-0  min-h-screen flex justify-end lg:hidden overflow-hidden ${isSidebarOpen ? "right-0 w-[60%] md:w-[40%] xl::w-[35%]" : "w-0"} transition-all duration-500`}>
+                    <div className={`shadow-2xl z-[2000] absolute top-0 left-0  min-h-screen flex justify-end lg:hidden overflow-hidden ${isSidebarOpen ? "right-0 w-[60%] md:w-[40%] xl:w-[35%]" : "w-0"} transition-all duration-500`}>
                         <IoCloseSharp className={`${isSidebarOpen ? "block" : "hidden"} absolute z-[300] top-6 right-8 text-[28px] md:text-[40px] cursor-pointer`} onClick={() => { handleSidebar() }} />
                         <Sidebar menuItems={menuitems} isSidebarOpen={isSidebarOpen} />
                     </div>
                 </div>
                 <div className='hidden lg:flex z-[100] lg:sticky top-0  items-center justify-center py-[14px] border-t border-[#c9c8c8] bg-white shadow-xl'>
-                    <div className={`md:w-[88%] lg:w-[70%] w-[70%] h-full`}>
-                        <Navbar menuArray={menuitems} />
+                    <div className={`w-[100%] h-full px-4 xs:px-8 xl:px-16 3xl:px-24`}>
+                        <Navbar menuArray={menuitems}/>
                     </div>
                 </div>
             </>
