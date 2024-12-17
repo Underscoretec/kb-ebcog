@@ -14,32 +14,32 @@ const RefundPolicy = () => {
             <main className="container mx-auto p-6">
                 {/* Introduction */}
                 <section className="mb-8">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4">Cancellation Policy</h2>
-                    <p className="text-lg leading-relaxed">
-                        No Cancellation policy
-                    </p>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4">No cancellation or return policy</h2>
+                    {/* <p className="text-lg leading-relaxed">
+                    No cancellation or return policy
+                    </p> */}
                 </section>
 
                 {/* Refund and Return Policy Section */}
-                <section className="mb-8">
+                {/* <section className="mb-8">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">
                         Refund and Return Policy
                     </h2>
                     <p className="text-lg leading-relaxed">
                         Thank you for your purchase. We hope you are happy with your purchase. However, please note that all sales are final. No refunds or returns will be provided unless the product or service you received is damaged or incorrect.
                     </p>
-                </section>
+                </section> */}
 
                 {/* No Refunds or Returns Section */}
-                <section className="mb-8">
+                {/* <section className="mb-8">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">No Refunds or Returns</h2>
                     <p className="text-lg leading-relaxed">
                         Once an order is placed and payment is processed, the sale is considered final. We do not offer refunds or returns on any of our products or services under normal circumstances.
                     </p>
-                </section>
+                </section> */}
 
                 {/* Exceptions Section */}
-                <section className="mb-8">
+                {/* <section className="mb-8">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">Exceptions</h2>
                     <p className="text-lg leading-relaxed">
                         We will only consider a refund or exchange in the following situations:
@@ -51,10 +51,10 @@ const RefundPolicy = () => {
                     <p className="text-lg leading-relaxed">
                         To qualify for an exception, you must contact us within one week of receiving the product or service, providing a detailed description of the issue along with supporting evidence (e.g., photos of the damaged item).
                     </p>
-                </section>
+                </section> */}
 
                 {/* Process for Exceptions Section */}
-                <section>
+                {/* <section>
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">Process for Exceptions</h2>
                     <p className="text-lg leading-relaxed">
                         If you believe you qualify for an exception, please follow these steps:
@@ -64,24 +64,24 @@ const RefundPolicy = () => {
                         <li>Our team will review your request and determine if you qualify for an exception</li>
                         <li>If approved, you will receive further instructions on how to proceed with your refund or exchange</li>
                     </ol>
-                </section>
+                </section> */}
 
                 {/* Changes to This Policy Section */}
-                <section>
+                {/* <section>
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">Changes to This Policy</h2>
                     <p className="text-lg leading-relaxed mb-4">
                         We reserve the right to modify this No Refund and Return Policy at any time. Any changes will be reflected on this page with an updated effective date.
                     </p>
-                </section>
+                </section> */}
 
                 {/* Contact Us Section */}
-                <section>
+                {/* <section>
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">Contact Us</h2>
                     <p className="text-lg leading-relaxed mb-4">
                         If you have any questions about our No Refund and Return Policy, please contact us at:
                         skills@knowledgebridgeint.com
                     </p>
-                </section>
+                </section> */}
             </main>
         </div>
     );
