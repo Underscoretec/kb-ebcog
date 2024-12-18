@@ -3,9 +3,12 @@ import CartTabs from './CartTabs';
 import CartInfo from './CartInfo';
 import CartCheckout from './CartCheckout';
 import Confirmation from './Confirmation';
+import { useRouter } from 'next/router';
 
 const Cart = () => {
     const [currentStep, setCurrentStep] = useState(1);
+    const router = useRouter();
+    const { fee } = router.query;
 
     const steps = [
         {
@@ -33,7 +36,7 @@ const Cart = () => {
             case 1:
                 return <CartInfo setCurrentStep={setCurrentStep} />;
             case 2:
-                return <CartCheckout setCurrentStep={setCurrentStep} />;
+                return <CartCheckout />;
             case 3:
                 return <Confirmation />;
             default:
@@ -41,12 +44,14 @@ const Cart = () => {
         }
     };
 
+    if(!fee) return <div className='py-10 px-4 xs:px-8 xl:px-16 3xl:px-24 min-h-[30rem] font-montserrat text-[28px]'>Your cart is empty!</div>
+
     return (
         <div className="py-2">
             <h1 className="font-montserrat text-[35px] font-bold leading-[42.67px] py-6 px-4 xs:px-8 xl:px-16 3xl:px-24">
                 Cart
             </h1>
-            <CartTabs steps={steps} setCurrentStep={setCurrentStep} />
+            <CartTabs steps={steps} />
             <div className="py-10 px-4 xs:px-8 xl:px-16 3xl:px-24">
                 {renderStepContent()}
             </div>

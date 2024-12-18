@@ -4,7 +4,7 @@ import React from 'react'
 
 const CartContainer = () => {
   return (
-    <div className='min-h-[70rem]'>
+    <div className='min-h-[60rem]'>
         <BreadCrumbs routes={[{ name: 'Cart', href:'/cart', current: true }]} />
         <Cart />
     </div>

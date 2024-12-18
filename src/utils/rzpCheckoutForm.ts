@@ -29,8 +29,8 @@ export async function rzpCheckoutFrom(data: any) {
 
             },
             "prefill": {
-                "name": "abcde", //data?.user?.name,
-                "email": "abcd@gmail.com", //data?.user?.email,
+                "name": "John", //data?.user?.name,
+                "email": "john@gmail.com", //data?.user?.email,
                 "contact":"8787878787", // data?.user?.phoneNo
             },
             "theme": {
