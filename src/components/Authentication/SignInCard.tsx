@@ -90,7 +90,7 @@ const SignInCard: React.FC = () => {
                         className="w-full py-2 bg-[#E4087F] font-semibold text-white ${bgColor} rounded-md hover:bg-[#ac0660] focus:outline-none focus:ring-2 focus:ring-[#E4087F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
 
-                    <div className="flex items-center justify-center text-[#4f4f4f]" onClick={handleSignup}>Don't have any account ?<span className="text-[#4F46E5] pl-2 cursor-pointer">Sign Up</span></div>
+                    <div className="flex items-center justify-center text-[#4f4f4f]" onClick={handleSignup}>{`Don't have any account ?`}<span className="text-[#4F46E5] pl-2 cursor-pointer">Sign Up</span></div>
                 </form>
                 <AlertModal
                     isOpen={modalData.isOpen}
