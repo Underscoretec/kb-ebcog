@@ -1,6 +1,6 @@
 import CartTabs from '@/components/CartComponents/CartTabs';
 import Confirmation from '@/components/CartComponents/Confirmation';
-import React, { useState } from 'react';
+import React from 'react';
 
 const PaymentConfirmation = () => {
 

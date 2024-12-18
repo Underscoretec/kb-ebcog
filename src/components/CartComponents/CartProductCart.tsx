@@ -1,5 +1,4 @@
 import React from 'react'
-import product from "../../../public/p1.png"
 import ImageComponent from '@/common/uicomponents/ImageComponent'
 import { MdAccessTimeFilled } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
