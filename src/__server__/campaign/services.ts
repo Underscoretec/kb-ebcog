@@ -125,7 +125,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
             if (req?.query?.mailProvider === "SMTP" || req?.query?.mailProvider === "SES") {
                 const campaignList = await CampaignsModel.find(query);
                 console.log(campaignList?.length, 'campaignList count @@@@@@@');
-                const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
+                // const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
 
                 const path = 'files/Book 13.xlsx'
                 const workbook = XLSX.readFile(path)
@@ -136,7 +136,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                 const datas = campaignList
 
                 if (datas?.length > 0) {
-                    const checkEmails = resultJson?.data?.queue;
+                    // const checkEmails = resultJson?.data?.queue;
                     let sendMailArray: string[] = []
                     for (const [idx, item] of datas.entries()) {
                         const mailEx = excelDatas.find((data: any) => data?.email?.toLowerCase().trim() === item['email'])
