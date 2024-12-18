@@ -646,7 +646,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
         const getToken = getCookie ("token")
 
         if (getToken){
-            router.push('/cart')
+            router.push(`/diploma/fee-options?Course=${courseData?.id}`)
         }
         else{
             router.push('/login')
