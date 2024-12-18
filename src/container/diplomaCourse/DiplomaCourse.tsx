@@ -35,6 +35,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "duration": '1 week',
             "learners": "70",
             "lessons": '40',
+            "category": 'High-Risk Pregnancy Care',
             "cardData": {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
@@ -196,6 +197,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "duration": '1 week',
             "learners": "70",
             "lessons": '40',
+            "category": 'Fertility and Hormonal Disorders',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
@@ -330,6 +332,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "duration": '1 week',
             "learners": "156",
             "lessons": '40',
+            "category": 'Minimally Invasive Gynecological Surgery',
             "cardData": {
                 // "course": 'Gynaecology Endoscopy By Dr Helder Ferreira',
                 "facultyName": 'Dr. Helder Ferreira',
@@ -489,6 +492,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "duration": '1 week',
             "learners": "70",
             "lessons": '40',
+            "category": 'Prenatal Diagnosis and Imaging',
             "cardData": {
                 "facultyName": 'Prof. Asma Khalil',
                 "courseDuration": '1 Week',

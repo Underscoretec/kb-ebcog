@@ -92,15 +92,15 @@ const SignInCard: React.FC = () => {
 
                     <div className="flex items-center justify-center text-[#4f4f4f]" onClick={handleSignup}>{`Don't have any account ?`}<span className="text-[#4F46E5] pl-2 cursor-pointer">Sign Up</span></div>
                 </form>
-                <AlertModal
-                    isOpen={modalData.isOpen}
-                    title={modalData.title}
-                    message={modalData.message}
-                    redirect={modalData.redirect}
-                    onClose={hideModal}
-                    onClick={handleclick}
-                />
             </div>
+            <AlertModal
+                isOpen={modalData.isOpen}
+                title={modalData.title}
+                message={modalData.message}
+                redirect={modalData.redirect}
+                onClose={hideModal}
+                onClick={handleclick}
+            />
         </div>
     );
 };
