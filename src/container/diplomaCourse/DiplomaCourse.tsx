@@ -19,9 +19,9 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
     const [courseData, setcourseData] = useState<any | null>(null);
     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
-    const showModal = (title: any, message: any, redirect: boolean) => {
-        setModalData({ isOpen: true, title, message, redirect: redirect });
-    };
+    // const showModal = (title: any, message: any, redirect: boolean) => {
+    //     setModalData({ isOpen: true, title, message, redirect: redirect });
+    // };
 
     const hideModal = () => {
         setModalData({ ...modalData, isOpen: false });
