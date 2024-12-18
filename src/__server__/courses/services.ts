@@ -13,18 +13,23 @@ interface ExtendApiRequest extends NextApiRequest {
 
 const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[COURSES-001] Course create api call`);
-    const { name, overView, duration, price, leadInstructor,faculties,date, } = req.body
+    const { name, overView, category, duration, price, currency, leadInstructor,faculties,date, } = req.body
     try {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        const cImage = req.files?.["coverImage"]?.[0];
+        const cImage = req.files?.["courseThumbnail"]?.[0];
+        const priceObj = {
+            base: price && Number(price) || 0 ,
+            currency: currency|| "AED",
+          }
 
         const createObj = {
             name: name,
             overView: overView && JSON.parse(overView),
+            category:category,
             duration: duration,
-            coverImage: cImage,
-            price: price,
+            courseThumbnail: cImage,
+            price: priceObj,
             leadInstructor: leadInstructor,
             faculties: faculties,
             date: date && JSON.parse(date),
@@ -50,8 +55,81 @@ const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
     }
 }
 
+const list = async (req: ExtendApiRequest, res: NextApiResponse) => {
+    logger.info(`[COURSES-002] Get course api call`);
+    try {
+        const dataPerPage = Number(req.query?.dataPerPage) || 25;
+        const page = Number(req.query?.page) || 1;
+        const searchString = req.query?.string
+        const category = req.query?.category;
+        const query: any = {
+            enabled: 1
+        }
+        if (searchString) {
+            query["$or"] = [
+                { name: { $regex: searchString, $options: "i" } },
+            ];
+        }
+        if (category) {
+            query['category'] = {$regex: category, $options: "i"};
+        }
+
+        const courseList = await Courses.find(query).select(["-enabled", "-createdBy", "-__v", "-updatedBy"])
+            .sort({ createdAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
+        if (courseList?.length > 0) {
+            return res.status(200).json({
+                message: messages["COURSES_FOUND"],
+                error: false,
+                code: "COURSES_FOUND",
+                result: courseList
+            });
+        }else {
+            return res.status(404).json({
+                message: messages["COURSES_NOT_FOUND"],
+                error: false,
+                code: "COURSES_NOT_FOUND",
+            });
+        }
+        
+    } catch (error) {
+        logger.error(error, "[COURSES-002] Error in get Courses list")
+        return res.status(500).json(errorResponse(error));
+    }
+}
+
+const courseDetails = async (req: ExtendApiRequest, res: NextApiResponse) => {
+    logger.info(`[COURSES-003] Single Course Details api call`);
+    try {
+        const course = await Courses.findOne({
+            _id: req.query.id, enabled: 1
+        })
+        if (course) {
+
+            return res.status(200).json({
+                message: messages["COURSE_FOUND"],
+                error: false,
+                code: "COURSE_FOUND",
+                result: course
+            })
+
+        } else {
+            return res.status(404).json({
+                message: messages["COURSE_NOT_FOUND"],
+                error: false,
+                code: "COURSE_NOT_FOUND",
+            })
+        }
+
+    } catch (error) {
+        logger.error("[COURSES-003] Error when single course details api called")
+        return res.status(500).json(errorResponse(error));
+    }
+}
+
 
 
 export default {
-    create
+    create,
+    list,
+    courseDetails
 }
