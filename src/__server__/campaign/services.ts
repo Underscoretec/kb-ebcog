@@ -127,19 +127,21 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                 console.log(campaignList?.length, 'campaignList count @@@@@@@');
                 const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
 
-                // const path = 'files/FOGSI_MembersList.xlsx'
-                // const workbook = XLSX.readFile(path)
-                // const sheet_name_list = workbook.SheetNames;
+                const path = 'files/Book 13.xlsx'
+                const workbook = XLSX.readFile(path)
+                const sheet_name_list = workbook.SheetNames;
 
-                // const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+                const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+
                 const datas = campaignList
 
                 if (datas?.length > 0) {
                     const checkEmails = resultJson?.data?.queue;
                     let sendMailArray: string[] = []
                     for (const [idx, item] of datas.entries()) {
-                        const emailStatus = checkEmails?.find((jsonItem: any) => jsonItem?.email === item['email'])?.status
-                        if (item['email'] && emailStatus === 'safe') {
+                        const mailEx = excelDatas.find((data: any) => data?.email?.toLowerCase().trim() === item['email'])
+
+                        if (item['email'] && mailEx) {
 
                             const fullName = `${item?.firstName} ${item?.lastName}`
                             const sendData = { email: item?.email?.toLowerCase(), name: fullName };
@@ -151,7 +153,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                             const delay = idx === 0 ? 0 : await getRandomInt(2, 5) * 1000; // 2 to 5 seconds delay
                             await sleep(delay);
 
-                            if (sendMailArray?.length === 1000) {
+                            if (sendMailArray?.length === 100) {
                                 logger.info(`Updateing ${sendMailArray?.length} success emails`)
 
                                 const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: sendMailArray } },
