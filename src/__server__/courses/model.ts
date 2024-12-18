@@ -17,7 +17,11 @@ const courseSchema: any = new Schema(
                 careerAdvancement: String
             },
         },
-        coverImage: {
+        category: {
+            type: String,
+            trim: true
+        },
+        courseThumbnail: {
             key: {
                 type: String,
             },
@@ -46,7 +50,7 @@ const courseSchema: any = new Schema(
             base: {
                 type: Number,
                 required: true,
-                
+
             },
             currency: {
                 type: String,

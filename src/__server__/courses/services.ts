@@ -13,11 +13,11 @@ interface ExtendApiRequest extends NextApiRequest {
 
 const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[COURSES-001] Course create api call`);
-    const { name, overView, duration, price, currency, leadInstructor,faculties,date, } = req.body
+    const { name, overView, category, duration, price, currency, leadInstructor,faculties,date, } = req.body
     try {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        const cImage = req.files?.["coverImage"]?.[0];
+        const cImage = req.files?.["courseThumbnail"]?.[0];
         const priceObj = {
             base: price && Number(price) || 0 ,
             currency: currency|| "AED",
@@ -26,8 +26,9 @@ const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
         const createObj = {
             name: name,
             overView: overView && JSON.parse(overView),
+            category:category,
             duration: duration,
-            coverImage: cImage,
+            courseThumbnail: cImage,
             price: priceObj,
             leadInstructor: leadInstructor,
             faculties: faculties,
@@ -60,13 +61,17 @@ const list = async (req: ExtendApiRequest, res: NextApiResponse) => {
         const dataPerPage = Number(req.query?.dataPerPage) || 25;
         const page = Number(req.query?.page) || 1;
         const searchString = req.query?.string
+        const category = req.query?.category;
         const query: any = {
             enabled: 1
         }
         if (searchString) {
             query["$or"] = [
-                { name: { $regex: req.query.string, $options: "i" } },
+                { name: { $regex: searchString, $options: "i" } },
             ];
+        }
+        if (category) {
+            query['category'] = {$regex: category, $options: "i"};
         }
 
         const courseList = await Courses.find(query).select(["-enabled", "-createdBy", "-__v", "-updatedBy"])
