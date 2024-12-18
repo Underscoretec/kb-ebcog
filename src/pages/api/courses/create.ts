@@ -17,7 +17,7 @@ const router = createRouter<ExtendNextApiRequest, NextApiResponse>();
 connectDB();
 
 const uploadFields = [
-    { name: "coverImage", maxCount: 1 },
+    { name: "courseThumbnail", maxCount: 1 },
 ];
 
 // @ts-ignore
