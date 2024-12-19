@@ -42,9 +42,9 @@ export const menuitems = [
                 url: '/diploma/maternal-medical'
             },
             {
-                id: 'reproductive-endocrinology',
+                id: 'reproductive-endocrinology-and-infertility',
                 title: 'Reproductive Endocrinology & Infertility',
-                url: '/diploma/reproductive-endocrinology'
+                url: '/diploma/reproductive-endocrinology-and-infertility'
             },
         ],
     },

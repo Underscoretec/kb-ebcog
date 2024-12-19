@@ -1,0 +1,4 @@
+[2024-12-17 10:34:33.239 AM] [31merror[39m: 	[31mMongooseError: Operation `users.findOne()` buffering timed out after 10000ms[39m
+[31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
+[2024-12-17 10:34:56.949 AM] [31merror[39m: 	[31mMongooseError: Operation `users.findOne()` buffering timed out after 10000ms[39m
+[31m    at Timeout.<anonymous> (/home/upltaniya/Documents/github_project/kb-ebcog/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)[39m
