@@ -35,7 +35,7 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
             });
         }
 
-        const phoneObj = phone ? JSON.parse(phone) : user?.phone
+        const phoneObj = phone;
 
         const phNumber = phoneNo || `${phoneObj?.code}${phoneObj?.number}`
 
@@ -51,8 +51,8 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
                 last_name: last_name,
                 email: email, 
                 phone: phoneObj, 
-                phoneNo: phNumber, 
-                address: address && JSON.parse(address),
+                phoneNo: phNumber,
+                address: address,
                 role: "user",
                 password: passwordHash,
                 // emailOtp: otpObj,
@@ -180,9 +180,6 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
                                     email: user?.email,
                                     phoneNo: user?.phoneNo,
                                     type: user?.role,
-                                    customerId: user?.customerId,
-                                    defaultPasswordChanged: user?.defaultPasswordChanged || false,
-                                    firstTimeLogin: user?.firstTimeLogin || false
                                 },
                                 token: token,
                                 refreshToken: refreshToken
