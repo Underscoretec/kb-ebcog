@@ -51,7 +51,7 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
                 last_name: last_name,
                 email: email, 
                 phone: phoneObj, 
-                phoneNo: phNumber, 
+                phoneNo: phNumber,
                 address: address,
                 role: "user",
                 password: passwordHash,
@@ -180,9 +180,6 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
                                     email: user?.email,
                                     phoneNo: user?.phoneNo,
                                     type: user?.role,
-                                    customerId: user?.customerId,
-                                    defaultPasswordChanged: user?.defaultPasswordChanged || false,
-                                    firstTimeLogin: user?.firstTimeLogin || false
                                 },
                                 token: token,
                                 refreshToken: refreshToken
