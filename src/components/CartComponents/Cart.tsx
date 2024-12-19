@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CartTabs from './CartTabs';
 import CartInfo from './CartInfo';
 import CartCheckout from './CartCheckout';
 import Confirmation from './Confirmation';
-import { useRouter } from 'next/router';
+import useCartHooks from '@/hooks/useCartHooks';
+import { CircularProgress } from '@mui/material';
 
 const Cart = () => {
     const [currentStep, setCurrentStep] = useState(1);
-    const router = useRouter();
-    const { fee } = router.query;
+    const {loading, getCartItems, removeToCart} = useCartHooks();
+    const [cartItems, setCartItems] = useState<any[]>([]);
 
     const steps = [
         {
@@ -31,12 +32,26 @@ const Cart = () => {
         },
     ];
 
+    useEffect(()=>{
+        fetchCart()
+    },[])
+
+    const fetchCart = async () =>{
+        const result = await getCartItems()
+        setCartItems(result)
+    }
+
+    const handleRemoveItem = async (id:any) =>{
+        await removeToCart(id);
+        fetchCart();
+    }
+
     const renderStepContent = () => {
         switch (currentStep) {
             case 1:
-                return <CartInfo setCurrentStep={setCurrentStep} />;
+                return <CartInfo setCurrentStep={setCurrentStep} cartItems={cartItems} handleRemoveItem={handleRemoveItem}/>;
             case 2:
-                return <CartCheckout />;
+                return <CartCheckout cartItems={cartItems}/>;
             case 3:
                 return <Confirmation />;
             default:
@@ -44,7 +59,9 @@ const Cart = () => {
         }
     };
 
-    if(!fee) return <div className='py-10 px-4 xs:px-8 xl:px-16 3xl:px-24 min-h-[30rem] font-montserrat text-[28px]'>Your cart is empty!</div>
+    if(loading) return <div className='min-h-[50rem] flex justify-center items-center'><CircularProgress style={{ color: '#E4087F' }} /></div>
+
+    if(cartItems.length === 0 && !loading) return <div className='py-10 px-4 xs:px-8 xl:px-16 3xl:px-24 min-h-[30rem] font-montserrat text-[28px]'>Your cart is empty!</div>
 
     return (
         <div className="py-2">

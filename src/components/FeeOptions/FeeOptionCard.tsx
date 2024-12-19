@@ -1,7 +1,13 @@
 import React from 'react'
-import { CheckIcon } from '@heroicons/react/20/solid'
+// import { CheckIcon } from '@heroicons/react/20/solid'
 
 const FeeOptionCard = ({ item, classNames, isSelected, onSelect, handleProceed }:any) => {
+
+    const formattedPrice = new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    }).format(item?.price?.base || 0);
+    
     return (
         <div
             onClick={() => onSelect(item)}
@@ -22,9 +28,13 @@ const FeeOptionCard = ({ item, classNames, isSelected, onSelect, handleProceed }
             <p className="mt-4 text-sm/6 text-gray-600">The essentials to provide your best course for learning.</p>
             <p className="mt-6 flex items-baseline gap-x-1">
                 <span className="text-4xl font-semibold tracking-tight text-gray-900">
-                 {item?.price?.base} {item?.price?.currency}
+                 {/* {item?.price?.base}  */}
+                <span className="inline-flex items-end">
+                    <span>{item?.price?.currency}</span>
+                        <span className="font-bold ml-3">{formattedPrice.split('.')[0]}</span>
+                        <span className="text-[18px] leading-[27px] font-semibold text-gray-400">.{formattedPrice.split('.')[1]}</span>
+                    </span>
                 </span>
-                <span className="text-sm/6 font-semibold text-gray-600"> / per year</span>
             </p>
             <div
                 className={classNames(

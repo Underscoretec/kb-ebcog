@@ -8,7 +8,7 @@ export async function rzpCheckoutFrom(data: any) {
         const options: any = {
             "key": process.env.NEXT_PUBLIC_RZP_PAYMENT_KEY, // Enter the Key ID generated from the Dashboard
             "amount": data?.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-            // "currency": data?.currency,
+            "currency": data?.currency,
             // "name": "Ecommerce payment",
             "description": "Test Transaction",
             // "image": data?.logo,

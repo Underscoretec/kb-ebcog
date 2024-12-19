@@ -1,8 +1,9 @@
-import { doDeleteApiCall, doPostApiCall } from '@/utils/ApiConfig';
+import { doDeleteApiCall, doGetApiCall, doPostApiCall } from '@/utils/ApiConfig';
 import { getCookie } from '@/utils/cookieUtils';
-import React from 'react'
+import { useState } from 'react'
 
 const useCartHooks = () => {
+    const [loading, setLoading] = useState(false);
     const UserId = getCookie("userId")
 
     const addToCart = async (id: any) => {
@@ -16,11 +17,8 @@ const useCartHooks = () => {
         };
         try {
             const response: any = await doPostApiCall(data);
-            console.log("response ##", response)
             if (!response.error) {
-
-                console.log("response ##", response)
-                // alert("Login Successfully");
+                return response
             } else {
                 alert("Something went wrong");
             }
@@ -47,7 +45,28 @@ const useCartHooks = () => {
         }
     }
 
-    return { addToCart, removeToCart }
+    const getCartItems = async () =>{
+        setLoading(true)
+        const data = {
+            url:`/api/carts/details?userId=${UserId}`
+        }
+        try {
+            const res: any = await doGetApiCall(data);
+            console.log("res###",res)
+            if (!res.error) {
+                return res.result?.items;
+            } else {
+                return [];
+            }
+        } catch (err) {
+            console.error('API Error:', err);
+            return [];
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    return { loading, addToCart, removeToCart, getCartItems }
 }
 
 export default useCartHooks

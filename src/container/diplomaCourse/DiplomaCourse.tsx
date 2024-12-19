@@ -192,7 +192,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             ]
         },
         {
-            "id": "reproductive-endocrinology",
+            "id": "reproductive-endocrinology-and-infertility",
             "courseName": 'Diploma in Reproductive Endocrinology & Infertility',
             "duration": '1 week',
             "learners": "70",

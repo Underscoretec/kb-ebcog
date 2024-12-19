@@ -21,7 +21,6 @@ const SignInCard: React.FC = () => {
         // Mock API call
         setTimeout(async () => {
             const result: any = await handleLogin({ email, password });
-            console.log("result===>", result)
             setIsSubmitting(false);
             if (result?.code === 'LOGIN_SUCCESS') {
                 showModal("Login Successfully", "", true);

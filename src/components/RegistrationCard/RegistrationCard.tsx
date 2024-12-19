@@ -66,7 +66,6 @@ const RegistrationCard = () => {
             // basicDegreeDocument: Yup.mixed().required('Basic degree document is required'),
         }),
         onSubmit: async (values, action) => {
-            console.log('Form Data: ##', values);
             trackGAEvent('registration_submit_clicked', values)
             if (values) {
                 const result: any = await createCourseRegistrationApi(values, action);

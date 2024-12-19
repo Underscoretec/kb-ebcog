@@ -1,21 +1,10 @@
 import React from 'react'
 import CartProductCart from './CartProductCart'
+import { formatBasePrice } from '@/utils/formatBasePrice'
 
-const CartCheckout = () => {
+const CartCheckout = ({cartItems}:any) => {
 
-    const products = [
-        {
-            id:'Course01',
-            image:'/p1.png',
-            coursename:'Diploma in Fetal Medicine and Ultrasound',
-            by:'Determined-Poitras',
-            duration:'2 Weeks',
-            TotalLearners:'15,674',
-            totalAmount:'$399.00',
-            subAmount:'$399.00'
-        },
-    ]
-
+    
 
   return (
     <div className='flex flex-col lg:flex-row  gap-12 lg:gap-4 justify-between'>
@@ -26,7 +15,7 @@ const CartCheckout = () => {
                 <div className='w-[13%] hidden md:block'>SUBTOTAL</div>
             </div>
             {
-                products.map((item: any,index: any)=>{
+                cartItems.map((item: any,index: any)=>{
                     return( <CartProductCart key={index} data={item} edit={false}/>)
                 })
             }
@@ -36,12 +25,12 @@ const CartCheckout = () => {
             <div className='border border-[#EAEAEA] rounded-[20px] my-4 p-8'>
                 <div className='flex justify-between items-center border-b py-2'>
                     <div className='font-montserrat text-[14px] font-semibold leading-[24px]'>SUBTOTAL</div>
-                    <div className='font-montserrat text-[16px] font-semibold leading-[19.5px]'>$399.00</div>
+                    <div className='font-montserrat text-[16px] font-semibold leading-[19.5px]'> {cartItems[0]?.course?.price?.currency} {formatBasePrice(cartItems[0]?.course?.price?.base)}</div>
                 </div>
 
                 <div className='flex justify-between items-center border-t py-2 mt-24'>
                     <div className='font-montserrat text-[14px] font-semibold leading-[24px]'>TOTAL</div>
-                    <div className='font-montserrat text-[16px] font-semibold leading-[19.5px]'>$399.00</div>
+                    <div className='font-montserrat text-[16px] font-semibold leading-[19.5px]'>{cartItems[0]?.course?.price?.currency} {formatBasePrice(cartItems[0]?.course?.price?.base)}</div>
                 </div>
             </div>
         </div>
