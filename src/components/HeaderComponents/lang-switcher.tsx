@@ -27,7 +27,7 @@ declare global {
 export default function LanguageSwitcher() {
   const [currentLanguage, setCurrentLanguage] = useState<string>();
   const [languageConfig, setLanguageConfig] = useState<any>();
-  console.log(languageConfig, "languageConfig**")
+  // console.log(languageConfig, "languageConfig**")
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // When the component has initialized, we must activate the translation engine the following way.

@@ -61,6 +61,7 @@ export const useUserHook = () => {
       if (!response.error) {
         setCookie("token", response.token, 7);
         setCookie("UserEmail", response.result.email, 7);
+        setCookie("userId", response.result._id, 7);
         return response;
         // alert("Login Successfully");
       } else {

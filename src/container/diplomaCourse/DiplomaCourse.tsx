@@ -650,7 +650,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
         const getToken = getCookie ("token")
 
         if (getToken){
-            router.push(`/diploma/fee-options?Course=${courseData?.id}`)
+            router.push(`/diploma/fee-options?Course=${courseData?.id}&category=${courseData?.category}`)
         }
         else{
             router.push('/login')
