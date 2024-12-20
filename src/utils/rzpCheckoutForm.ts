@@ -1,8 +1,11 @@
 // import toast from "react-hot-toast";
 import axios from "axios";
+import { getCookie } from "./cookieUtils";
 // import Razorpay from 'razorpay';
 
 export async function rzpCheckoutFrom(data: any) {
+    const userDetails = getCookie("userDetails")
+    
     try {
 
         const options: any = {
@@ -29,9 +32,9 @@ export async function rzpCheckoutFrom(data: any) {
 
             },
             "prefill": {
-                "name": "John", //data?.user?.name,
-                "email": "john@gmail.com", //data?.user?.email,
-                "contact":"8787878787", // data?.user?.phoneNo
+                "name":userDetails?.first_name,
+                "email": userDetails?.email, 
+                "contact": userDetails?.phone?.number,            
             },
             "theme": {
                 "color": "#E4087F"
