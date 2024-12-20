@@ -345,7 +345,7 @@ const FacultyProfile = () => {
             "id": "p-0005RPI",
             "name": 'Prof. Basil C. Tarlatzis',
             "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
-            "department": 'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology-and-infertility',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
@@ -616,7 +616,7 @@ const FacultyProfile = () => {
             "id": "p-0003REI",
             "name": "Dr. Anagha Karkhanis",
             "about": 'Reproductive Medicine, Infertility Management, Minimal Access Surgery, and Advanced Gynecological Endoscopy',
-            "department": 'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology-and-infertility',
             "cardData": {
                 "facultyName": 'Dr. Anagha Karkhanis',
                 "courseDuration": '1 week',
@@ -939,7 +939,7 @@ const FacultyProfile = () => {
             "id": "p-0008REI",
             "name": "Dr. Edgar Mocanu",
             "about": "Reproductive Medicine and Surgery, Infertility Treatment, Reproductive Endocrinology",
-            "department": 'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology-and-infertility',
             "cardData": {
                 "facultyName": 'Dr. Edgar Mocanu',
                 "courseDuration": '1 week',
@@ -1480,7 +1480,7 @@ const FacultyProfile = () => {
             "id": "p-0014REI",
             "name": "Dr. Karunakara Marikinti",
             "about": "Infertility Treatments , In Vitro Fertilization (IVF) , Recurrent Miscarriage Management , Advanced Ultrasound Diagnostics , Minimally Invasive Gynecological Procedures",
-            "department": 'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology-and-infertility',
             "cardData": {
                 "facultyName": 'Dr. Karunakara Marikinti',
                 "courseDuration": '1 week',
@@ -1839,7 +1839,7 @@ const FacultyProfile = () => {
             "id": "p-0017REI",
             "name": "Dr. Rajalaxmi Walavalkar",
             "about": "Reproductive Medicine, Infertility Treatment, Gynecological Endoscopy",
-            "department": 'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology-and-infertility',
             "cardData": {
                 "facultyName": 'Dr. Rajalaxmi Walavalkar',
                 "courseDuration": '1 week',
@@ -2343,7 +2343,7 @@ const FacultyProfile = () => {
             "id": "p-0020RFI",
             "name": "Prof. Stratics kolibianakis",
             "about": "Assisted Reproduction , Reproductive Endocrinology , Infertility Treatment , Ovarian Stimulation",
-            "department": 'reproductive-endocrinology',
+            "department": 'reproductive-endocrinology-and-infertility',
             "cardData": {
                 "facultyName": 'Prof. Stratics kolibianakis',
                 "courseDuration": '1 week',
