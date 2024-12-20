@@ -163,5 +163,8 @@
   "CART_CREATED":"Cart created successfully",
   "CART_UPDATED":"Cart updated successfully",
   "CART_FOUND":"Cart items found successfully",
-  "CART_NOT_FOUND":"Cart not found"
+  "CART_NOT_FOUND":"Cart not found",
+  "BAD_REQUEST": "Request not valid",
+  "ORDER_CREATED": "Order created successfully",
+  "ORDER_FAILED":"Order failed to create"
 }

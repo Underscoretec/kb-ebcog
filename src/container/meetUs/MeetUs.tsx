@@ -30,6 +30,7 @@ const MeetUs = () => {
             link:'https://figo2025.org/  '
         },
     ]
+    
     return (
         <>
             <BreadCrumbs routes={[{ name: 'Meet Us in Person', href: '/meet-us-in-person', current: true }]} />
