@@ -59,7 +59,8 @@ const createNewOrder = async (req: NextApiRequest, res: NextApiResponse) => {
             console.log(razPaymentOrder,'>>>>>> razPaymentOrderCreate');
 
             return res.status(201).json({
-                message: "Order created Successfully",
+                message: messages["ORDER_CREATED"],
+                code:"ORDER_CREATED",
                 result: {
                     _id: createOrder?._id,
                     paymentOrderId: razPaymentOrder?.id,

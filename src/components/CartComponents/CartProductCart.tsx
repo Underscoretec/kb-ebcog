@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageComponent from '@/common/uicomponents/ImageComponent'
 import { MdAccessTimeFilled } from "react-icons/md";
-import { RiGraduationCapFill } from "react-icons/ri";
+// import { RiGraduationCapFill } from "react-icons/ri";
 import Button from '@/common/uicomponents/Button';
 import { formatBasePrice } from '@/utils/formatBasePrice';
 
@@ -24,11 +24,11 @@ const CartProductCart = ({ handleRemoveItem, data, edit = true }: any) => {
                     <div className='font-poppins text-[20px] font-semibold leading-[24px] py-2'>{data?.course?.name}</div>
                     <div className='flex gap-8 items-center font-montserrat text-[13px] font-semibold leading-[19.5px] text-[#555555] pb-2 md:pb-0 pt-2 lg:pt-4'>
                         <div className='flex items-center gap-2'>
-                            <MdAccessTimeFilled className='text-[#EE7E22] h-[14px] w-[14px]' /> {data?.course?.duration} months
+                            <MdAccessTimeFilled className='text-[#EE7E22] h-[14px] w-[14px]' /> {data?.course?.duration} Week
                         </div>
-                        <div className='flex items-center gap-2'>
+                        {/* <div className='flex items-center gap-2'>
                             <RiGraduationCapFill className='text-[#EE7E22] h-[14px] w-[14px]' /> 15,756 learners
-                        </div>
+                        </div> */}
                     </div>
                     <div className='py-1 text-[15px] font-semibold leading-[19.5px] text-[#555555] block md:hidden '>Price : {data?.course?.price?.currency} {formatBasePrice(data?.course?.price?.base)}</div>
                     <div className='py-1 text-[15px] font-semibold leading-[19.5px] text-[#555555] block md:hidden '>Subtotal: {data?.course?.price?.currency} {formatBasePrice(data?.course?.price?.base)}</div>
