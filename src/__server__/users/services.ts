@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import User from "./model";
+import UserModel from "./model";
 import messages from "@/__server__/utils/message.json";
 import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
@@ -16,16 +16,15 @@ import config from "../config";
 
 
 const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
+    logger.info("[User 001] Signup api call");
     const { first_name,last_name, email, password, phone, phoneNo, address } = req.body;
-
-    
     try {
         const query: any = { enabled: 1 }
 
         if (email) {
             query.email = email
         }
-        const user = await User.findOne(query)
+        const user = await UserModel.findOne(query)
 
         if (user) {
             return res.status(400).json({
@@ -63,7 +62,7 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
 
         
 
-           const createUser = await new User(createObj).save();
+           const createUser = await new UserModel(createObj).save();
 
         
 
@@ -110,12 +109,13 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
         }
 
     } catch (error) {
-        logger.error(error, "[User 001] Error sign up");
+        logger.error(error, "[User 001] Error in Sign up");
         return res.status(500).json(errorResponse(error));
     }
 }
 
 const login = async (req: NextApiRequest, res: NextApiResponse) => {
+    logger.info("[User 002] Login api call");
     const { email, password, phone, loggedInDetails, rememberMe } = req.body;
     try {
         const query: any = { enabled: 1 }
@@ -128,7 +128,7 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
             // actionType = "phone"
         }
 
-        const user = await User.findOne(query)
+        const user = await UserModel.findOne(query)
 
         if (!user) {
             return res.status(400).json({
@@ -197,15 +197,49 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
         }
     } catch (error) {
         
-        logger.error(error, "[User 002] Error login");
+        logger.error(error, "[User 002] Error in login");
         return res.status(500).json(errorResponse(error));
 
     }
 }
 
+const getUserDetails = async (req: NextApiRequest, res: NextApiResponse) => {
+    logger.info("[User 003] GetUserDetails api call");
+    const userId = req.query?.userId;
+    try {
+        if (!userId) {
+            return res.status(400).json({
+                message: messages["BAD_REQUEST"],
+                error: true,
+                code: "BAD_REQUEST",
+            })
+        }
+        const findUser = await UserModel.findById(userId).select(["-__v","-whatsApp",'-emailSend',"-excelDownload"]);
+        if (!findUser) {
+            return res.status(404).json({
+                message: messages["USER_NOT_FOUND"],
+                error: true,
+                code: "USER_NOT_FOUND",
+            })
+        }
+
+        return res.status(200).json({
+            message: messages["USER_FOUND"],
+                error: false,
+            code: "USER_FOUND",
+                result:findUser
+        })
+        
+    } catch (error) {
+        logger.error(error, "[User 003] Error in GetUserDetails");
+        return res.status(500).json(errorResponse(error));
+    }
+
+}
 
 
 export default {
     signUp,
     login,
+    getUserDetails
 }
