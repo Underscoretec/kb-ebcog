@@ -106,9 +106,6 @@ const userSchema: any = new Schema(
                 enum: ["phone", "email", "NA"]
             }
         },
-        // degree: [{ type: Schema.Types.ObjectId, ref: MasterData, required: true, }],
-        // areaOfInterest: [{ type: Schema.Types.ObjectId, ref: MasterData, required: true, }],
-        // fellowship: [{ type: Schema.Types.ObjectId, ref: MasterData, required: true, }],
         degreeCreds: [{
             key: {
                 type: String,
