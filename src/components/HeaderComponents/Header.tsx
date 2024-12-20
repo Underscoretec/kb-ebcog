@@ -8,27 +8,27 @@ import { ClickAwayListener } from '@mui/material'
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
-import { RiTwitterXFill } from 'react-icons/ri';
 import LanguageSwitcher from './lang-switcher';
 import LoginAvatar from './LoginAvatar';
 import { usePathname } from 'next/navigation';
+import { FaLinkedin } from "react-icons/fa";
 
 const navigation = {
     social: [
         {
             name: 'Facebook',
-            href: '#',
+            href: 'https://facebook.com/ebcog.diploma.courses',
             icon: <FaFacebook />,
         },
         {
             name: 'Instagram',
-            href: '#',
+            href: 'https://www.instagram.com/ebcog_diploma_courses',
             icon: <FaInstagram />,
         },
         {
-            name: 'X',
-            href: '#',
-            icon: <RiTwitterXFill />,
+            name: 'LinkedIn',
+            href: 'https://www.linkedin.com/company/ebcog-diploma-courses',
+            icon: <FaLinkedin />,
         },
     ],
 }
@@ -80,7 +80,7 @@ const Header = () => {
 
                             <div className="lg:flex gap-x-6 md:order-2 text-[25px] hidden">
                                 {navigation.social.map((item) => (
-                                    <Link key={item.name} href={item.href} className="text-[#E4087F] hover:text-[#eb98c4]">
+                                    <Link target='_blank' key={item.name} href={item.href} className="text-[#E4087F] hover:text-[#ac0660]">
                                         {item.icon}
                                     </Link>
                                 ))}
