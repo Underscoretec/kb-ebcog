@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { RiTwitterXFill } from "react-icons/ri";
 import { TbReload } from "react-icons/tb";
+import { FaLinkedin } from "react-icons/fa";
+
 
 const navigation = {
   solutions: [
@@ -27,25 +28,25 @@ const navigation = {
     { name: 'Privacy', href: '/privacy-policy' },
     { name: 'Refund and Return Policy', href: '/refund-policy' },
     // { name: 'Shipping Policy', href: '/shipping-policy' },
-    { name: 'Terms and Condition', href: '/terms-and-condition'}
+    { name: 'Terms and Condition', href: '/terms-and-condition' }
   ],
-    social: [
-        {
-            name: 'Facebook',
-            href: '#',
-            icon: <FaFacebook />,
-        },
-        {
-            name: 'Instagram',
-            href: '#',
-            icon: <FaInstagram />,
-        },
-        {
-            name: 'X',
-            href: '#',
-            icon: <RiTwitterXFill />,
-        },
-    ],
+  social: [
+    {
+      name: 'Facebook',
+      href: 'https://facebook.com/ebcog.diploma.courses',
+      icon: <FaFacebook />,
+    },
+    {
+      name: 'Instagram',
+      href: 'https://www.instagram.com/ebcog_diploma_courses',
+      icon: <FaInstagram />,
+    },
+    {
+      name: 'X',
+      href: 'https://www.linkedin.com/company/ebcog-diploma-courses',
+      icon: <FaLinkedin />,
+    },
+  ],
 };
 
 export default function Footer() {
@@ -76,13 +77,13 @@ export default function Footer() {
     setCaptchaInput(""); // Clear input field
   }
 
-  function validateEmail(value:any) {
+  function validateEmail(value: any) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setIsValidEmail(emailRegex.test(value) || value.length === 0);
     checkButtonState(value, captchaInput);
   }
 
-  function checkButtonState(emailValue:any, captchaValue:any) {
+  function checkButtonState(emailValue: any, captchaValue: any) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isEmailValid = emailRegex.test(emailValue);
     const isCaptchaFilled = captchaValue.length > 0;
@@ -93,7 +94,7 @@ export default function Footer() {
     return captchaInput === captcha;
   }
 
-  function handleSubmit(e:any) {
+  function handleSubmit(e: any) {
     e.preventDefault();
     if (!isButtonActive) return;
 
@@ -178,9 +179,8 @@ export default function Footer() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`w-full min-w-0 appearance-none rounded-md border-0 px-3 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ${
-                  isValidEmail ? "ring-gray-300" : "ring-red-500"
-                } placeholder:text-[#6B7280] focus:ring-2 focus:ring-indigo-600 sm:text-[16px]`}
+                className={`w-full min-w-0 appearance-none rounded-md border-0 px-3 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ${isValidEmail ? "ring-gray-300" : "ring-red-500"
+                  } placeholder:text-[#6B7280] focus:ring-2 focus:ring-indigo-600 sm:text-[16px]`}
               />
               {!isValidEmail && (
                 <p className="mt-2 text-sm text-red-500">Please enter a valid email address.</p>
@@ -216,11 +216,10 @@ export default function Footer() {
                 <button
                   type="submit"
                   disabled={!isButtonActive}
-                  className={`flex w-full items-center justify-center rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm ${
-                    isButtonActive
+                  className={`flex w-full items-center justify-center rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm ${isButtonActive
                       ? "bg-[#E4087F] hover:bg-[#9e0659] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       : "bg-[#e498c1] cursor-not-allowed"
-                  }`}
+                    }`}
                 >
                   Subscribe
                 </button>
@@ -229,9 +228,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-16 border-t border-gray-500 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
-        <div className="flex gap-x-6 md:order-2">
+          <div className="flex gap-x-6 md:order-2">
             {navigation.social.map((item) => (
-              <Link key={item.name} href={item.href} className="text-[#E4087F] hover:text-[#eb98c4]">
+              <Link target='_blank' key={item.name} href={item.href} className="text-[#E4087F] hover:text-[#eb98c4]">
                 {item.icon}
               </Link>
             ))}

@@ -23,7 +23,7 @@ const LoginAvatar = () => {
             <div>
                 <MenuButton className="">
                     <div className='flex items-center justify-center rounded-full bg-[#E4087F] text-white h-6 xs:h-8 sm:h-10 w-6 xs:w-8 sm:w-10  text-[12px] xs:text-[14px] sm:text-[20px] font-semibold cursor-pointer'>
-                        {token ? getCookie('UserEmail')?.charAt(0).toUpperCase() : <RiLoginCircleLine onClick={() => router.push('/login')} />}
+                        {token ? getCookie('userDetails')?.first_name?.charAt(0).toUpperCase() : <RiLoginCircleLine onClick={() => router.push('/login')} />}
                     </div>
                 </MenuButton>
             </div>
