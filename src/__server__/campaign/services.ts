@@ -125,23 +125,24 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
             if (req?.query?.mailProvider === "SMTP" || req?.query?.mailProvider === "SES") {
                 const campaignList = await CampaignsModel.find(query);
                 console.log(campaignList?.length, 'campaignList count @@@@@@@');
-                // const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
+                const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
 
-                const path = 'files/Book 13.xlsx'
-                const workbook = XLSX.readFile(path)
-                const sheet_name_list = workbook.SheetNames;
+                // const path = 'files/Book 13.xlsx'
+                // const workbook = XLSX.readFile(path)
+                // const sheet_name_list = workbook.SheetNames;
 
-                const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+                // const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
 
                 const datas = campaignList
 
                 if (datas?.length > 0) {
-                    // const checkEmails = resultJson?.data?.queue;
+                    const checkEmails = resultJson?.data?.queue;
                     let sendMailArray: string[] = []
+                    let batchNo: number = 1
                     for (const [idx, item] of datas.entries()) {
-                        const mailEx = excelDatas.find((data: any) => data?.email?.toLowerCase().trim() === item['email'])
+                        const emailStatus = checkEmails?.find((jsonItem: any) => jsonItem?.email === item['email'])?.status
 
-                        if (item['email'] && mailEx) {
+                        if (item['email'] && emailStatus === 'safe') {
 
                             const fullName = `${item?.firstName} ${item?.lastName}`
                             const sendData = { email: item?.email?.toLowerCase(), name: fullName };
@@ -153,7 +154,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                             const delay = idx === 0 ? 0 : await getRandomInt(2, 5) * 1000; // 2 to 5 seconds delay
                             await sleep(delay);
 
-                            if (sendMailArray?.length === 100) {
+                            if (sendMailArray?.length === 300) {
                                 logger.info(`Updateing ${sendMailArray?.length} success emails`)
 
                                 const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: sendMailArray } },
@@ -167,8 +168,8 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                                     },
                                     { new: true }
                                 )
-                                logger.info(`${campaignUpdate?.modifiedCount} emails updated in database`)
-
+                                logger.info(`Batch no: ${batchNo} -> ${campaignUpdate?.modifiedCount} emails updated in database`)
+                                batchNo += 1
                                 sendMailArray = []
                             }
                         }
@@ -188,7 +189,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                             },
                             { new: true }
                         )
-                        logger.info(`${campaignUpdate?.modifiedCount} emails updated in database`)
+                        logger.info(`Proccess end [Last batch update]-> ${campaignUpdate?.modifiedCount} emails updated in database`)
 
                         return res.status(200).json({
                             message: messages["EMAIL_FIRED"],
