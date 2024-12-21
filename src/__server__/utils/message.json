@@ -159,5 +159,13 @@
   "COURSE_FOUND":"Course found successfully",
   "COURSE_NOT_FOUND":"Course not found",
   "FILE_NOT_FOUND": "File not found",
-  "EMAIL_UPDATED": "Emails updated successfully"
+  "EMAIL_UPDATED": "Emails updated successfully",
+  "CART_CREATED":"Cart created successfully",
+  "CART_UPDATED":"Cart updated successfully",
+  "CART_FOUND":"Cart items found successfully",
+  "CART_NOT_FOUND":"Cart not found",
+  "BAD_REQUEST": "Request not valid",
+  "ORDER_CREATED": "Order created successfully",
+  "ORDER_FAILED":"Order failed to create",
+  "USER_FOUND":"User found successfully"
 }

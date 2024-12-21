@@ -88,6 +88,7 @@ const list = async (req: ExtendApiRequest, res: NextApiResponse) => {
                 message: messages["COURSES_NOT_FOUND"],
                 error: false,
                 code: "COURSES_NOT_FOUND",
+                result: []
             });
         }
         
