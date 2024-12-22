@@ -28,11 +28,6 @@ const userSchema: any = new Schema(
             enum: ["user", "admin"],
             default: "user",
         },
-        // type: {
-        //     type: String,
-        //     enum: ["doctor", "patient", "admin", "universal", "subAdmin"],
-        //     default: "doctor",
-        // },
         phoneNo: {
             type: String,
             unique: true
@@ -48,16 +43,6 @@ const userSchema: any = new Schema(
             type: Boolean,
             default: false, //true:verified  false:not verified
         },
-        // approveStatus: {
-        //     type: String,
-        //     default: "pending",
-        //     enum: ["approved", "rejected", "pending"],
-        // },
-        // rejectionReason: {
-        //     type: String,
-        //     default: "",
-
-        // },
         emailOtp: {
             code: {
                 type: String,
@@ -106,9 +91,6 @@ const userSchema: any = new Schema(
                 enum: ["phone", "email", "NA"]
             }
         },
-        // degree: [{ type: Schema.Types.ObjectId, ref: MasterData, required: true, }],
-        // areaOfInterest: [{ type: Schema.Types.ObjectId, ref: MasterData, required: true, }],
-        // fellowship: [{ type: Schema.Types.ObjectId, ref: MasterData, required: true, }],
         degreeCreds: [{
             key: {
                 type: String,
