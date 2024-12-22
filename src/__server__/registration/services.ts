@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { NextApiRequest, NextApiResponse } from "next";
 import Registration from "./model";
-// import User from "./model";
 import messages from "@/__server__/utils/message.json";
 import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
@@ -88,7 +87,55 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
     
 }
 
+const list = async (req: any, res: any) => {
+    logger.info(`[Registration-002] Course Registration list api call`);
+    try {
+        if (req.user?.role === "admin") {
+            const query: any = {
+                enabled: 1,
+            }
+
+            if (req.query.string) {
+                query["$or"] = [
+                    { fullName: { $regex: req.query.string, $options: "i" } },
+                    { email: { $regex: req.query.string, $options: "i" } },
+                    { whatsAppNumber: { $regex: req.query.string, $options: "i" } },
+                    { courseName: {$regex: req.query.string, $options: "i"}}
+                ];
+            }
+
+            const registeredUsers = await Registration.find(query).select(["-enabled", "-__v",]).sort({ createAt: -1 });
+
+            if (registeredUsers?.length > 0) {
+                return res.status(200).json({
+                    message: messages["USERS_FOUND"],
+                    error: false,
+                    code: "USERS_FOUND",
+                    result: registeredUsers
+                });
+            } else {
+                return res.status(404).json({
+                    message: messages["USER_NOT_FOUND"],
+                    error: false,
+                    code: "USER_NOT_FOUND",
+                    result: []
+                });
+            }
+        } else {
+            return res.status(401).send({
+                error: true,
+                code: "UNAUTHORIZED",
+                message: messages["UNAUTHORIZED"]
+            })
+        }
+    } catch (error) {
+        logger.error(error, "[Registration-002] Error when get registerd user list");
+        return res.status(500).json(errorResponse(error));
+    }
+}
+
 
 export default {
-    courseRegistration
+    courseRegistration,
+    list
 }
