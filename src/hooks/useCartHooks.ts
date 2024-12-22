@@ -45,25 +45,29 @@ const useCartHooks = () => {
         }
     }
 
-    const getCartItems = async () =>{
-        setLoading(true)
-        const data = {
-            url:`/api/carts/details?userId=${UserId}`
-        }
-        try {
-            const res: any = await doGetApiCall(data);
-            console.log("res###",res)
-            if (!res.error) {
-                return res.result?.items;
-            } else {
-                return [];
+    const getCartItems = async () => {
+        if (UserId) {
+            setLoading(true)
+            const data = {
+                url: `/api/carts/details?userId=${UserId}`
             }
-        } catch (err) {
-            console.error('API Error:', err);
+            try {
+                const res: any = await doGetApiCall(data);
+                if (!res.error) {
+                    return res.result?.items;
+                } else {
+                    return [];
+                }
+            } catch (err) {
+                console.error('API Error:', err);
+                return [];
+            } finally {
+                setLoading(false);
+            }
+        } else {
             return [];
-        } finally {
-            setLoading(false);
         }
+
     }
 
     return { loading, addToCart, removeToCart, getCartItems }
