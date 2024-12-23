@@ -1,9 +1,10 @@
 import AdminLayout from '@/common/layouts/AdminLayout'
+import ComingSoon from '@/components/ComingSoon/ComingSoon'
 import React, { ReactElement } from 'react'
 
 const OrderList = () => {
     return (
-        <div>OrderList</div>
+        <div><ComingSoon /></div>
     )
 }
 

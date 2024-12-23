@@ -1,16 +1,16 @@
 import AdminLayout from '@/common/layouts/AdminLayout'
-import MeetUs from '@/container/meetUs/MeetUs'
+import UserList from '@/container/UserList/UserList'
 import React, { ReactElement } from 'react'
 
-const UserList = () => {
+const UserListPage = () => {
     return (
-        <div>UserList</div>
+        <div><UserList /></div>
     )
 }
 
-export default UserList
+export default UserListPage
 
-UserList.getLayout = function getLayout(page: ReactElement) {
+UserListPage.getLayout = function getLayout(page: ReactElement) {
     return (
         <AdminLayout>
             {page}
