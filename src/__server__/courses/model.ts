@@ -57,6 +57,27 @@ const courseSchema: any = new Schema(
                 default: "AED"
             },
         },
+        discount: {
+            value: {
+                type: Number,
+                default: 0,
+            },
+            startDate: {
+                type: Date,
+            },
+            endDate: {
+                type: Date,
+            },
+            currency: {
+                type: String,
+                default: "AED"
+            },
+
+        },
+        type: {
+            type: String,
+            enum: ["withHotel", "withoutHotel"]
+        },
         leadInstructor: {
             type: Schema.Types.ObjectId, // Reference to the Faculties model
             ref: 'Faculties',
