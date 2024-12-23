@@ -48,12 +48,10 @@ const FeeOptionCardPage = () => {
         hideModal()
     }
 
-    const formatText = (text:any) => {
+    const formatText = (text: any) => {
         if (!text) return '';
         return text.replace(/-/g, ' ').replace(/\b\w/g, (char: string) => char.toUpperCase());
     };
-
-
 
     useEffect(() => {
         fetchPlan();
@@ -63,7 +61,7 @@ const FeeOptionCardPage = () => {
         if (category) {
             const planList = await fetchCoursePlan(category);
             setPricing(planList || []);
-            setSelectedTier(planList&& planList[0]);
+            setSelectedTier(planList && planList[0]);
         }
     };
 
@@ -99,11 +97,11 @@ const FeeOptionCardPage = () => {
                                 <CircularProgress style={{ color: '#E4087F' }} />
                             </div>
                         ) : (
-                            <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
-                                {pricing?.length ===0 ? (
-                                    <div>No data found, please try again after some time.</div>
+                            <>
+                                {pricing?.length === 0 ? (
+                                    <div className='text-center m-8 sm:m-20 p-4 bg-[#FFF4F8] rounded-md text-[#E4087F] text-[20px] shadow-md font-montserrat font-semibold tracking-[0.5px]'>No data found, please try again after some time.</div>
                                 ) : (
-                                    pricing?.map((item, index) => (
+                                    <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">{pricing?.map((item, index) => (
                                         <FeeOptionCard
                                             key={index}
                                             item={item}
@@ -112,9 +110,9 @@ const FeeOptionCardPage = () => {
                                             onSelect={setSelectedTier}
                                             handleProceed={handleProceed}
                                         />
-                                    ))
+                                    ))}</div>
                                 )}
-                            </div>
+                            </>
                         )}
                     </div>
                 </main>

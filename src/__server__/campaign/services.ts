@@ -151,7 +151,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                             sendMailArray.push(item?.email)
 
                             // Delay the next email by a random or fixed interval
-                            const delay = idx === 0 ? 0 : await getRandomInt(2, 5) * 1000; // 2 to 5 seconds delay
+                            const delay = idx === 0 ? 0 : await getRandomInt(1, 2) * 1000; // 2 to 5 seconds delay
                             await sleep(delay);
 
                             if (sendMailArray?.length === 300) {
