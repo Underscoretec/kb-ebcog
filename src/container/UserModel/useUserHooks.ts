@@ -1,8 +1,11 @@
-import { doPostApiCall } from "@/utils/ApiConfig";
-import { setCookie } from "@/utils/cookieUtils";
+import { doGetApiCall, doPostApiCall } from "@/utils/ApiConfig";
+import { getCookie, setCookie } from "@/utils/cookieUtils";
 import axios from "axios";
 
 export const useUserHook = () => {
+    const UserId = getCookie("userId")
+
+    
     async function createCourseRegistrationApi(data: any, action: any) {
         const formData = new FormData();
         formData.append("fullName", data?.fullName as string);
@@ -60,8 +63,9 @@ export const useUserHook = () => {
             const response: any = await doPostApiCall(loginData);
             if (!response.error) {
                 setCookie("token", response.token, 7);
-                setCookie("UserEmail", response.result.email, 7);
+                // setCookie("UserEmail", response.result.email, 7);
                 setCookie("userId", response.result._id, 7);
+                await getUserDetails(response.result._id);
                 return response;
                 // alert("Login Successfully");
             } else {
@@ -103,9 +107,30 @@ export const useUserHook = () => {
         }
     }
 
+    const getUserDetails = async (id:any) =>{
+        const user_id = id || UserId;
+        const data = {
+            url:`/api/users/details?userId=${user_id}`
+        }
+        try {
+            const res: any = await doGetApiCall(data);
+            if (!res.error) {
+                setCookie("userDetails", res.result, 7);
+                // return res.result?.items;
+            } else {
+                console.error('Error fetching user details:', res.message);
+                // return [];
+            }
+        } catch (err) {
+            console.error('API Error:', err);
+            // return [];
+        }
+    }
+
     return {
         createCourseRegistrationApi,
         handleLogin,
         handleSignUp,
+        getUserDetails
     };
 };

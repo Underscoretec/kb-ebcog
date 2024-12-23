@@ -67,7 +67,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
     logger.info("inviteUserForRegister function call.")
     try {
 
-        const text = inviteUserToRegister(data?.name, data?.email);
+        const text = inviteUserToRegister(data?.name);
         const template = text.replace(/^\s+|\s+$|\s+(?=\s)/g, '')
 
         if (req?.query?.mailProvider === "SES") {

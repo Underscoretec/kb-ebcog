@@ -63,12 +63,10 @@ const FeeOptionCardPage = () => {
         hideModal()
     }
 
-    const formatText = (text:any) => {
+    const formatText = (text: any) => {
         if (!text) return '';
         return text.replace(/-/g, ' ').replace(/\b\w/g, (char: string) => char.toUpperCase());
     };
-
-
 
     useEffect(() => {
         fetchPlan();
