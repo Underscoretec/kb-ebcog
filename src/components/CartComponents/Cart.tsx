@@ -51,9 +51,9 @@ const Cart = () => {
             case 1:
                 return <CartInfo setCurrentStep={setCurrentStep} cartItems={cartItems} handleRemoveItem={handleRemoveItem}/>;
             case 2:
-                return <CartCheckout cartItems={cartItems}/>;
+                return <CartCheckout cartItems={cartItems}  handleRemoveItem={handleRemoveItem}/>;
             case 3:
-                return <Confirmation />;
+                return <Confirmation/>;
             default:
                 return null;
         }

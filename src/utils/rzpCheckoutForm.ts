@@ -5,6 +5,8 @@ import { getCookie } from "./cookieUtils";
 
 export async function rzpCheckoutFrom(data: any) {
     const userDetails = getCookie("userDetails")
+
+    console.log("data===>",data, userDetails)
     
     try {
 
@@ -15,13 +17,15 @@ export async function rzpCheckoutFrom(data: any) {
             // "name": "Ecommerce payment",
             "description": "Test Transaction",
             // "image": data?.logo,
-            // "order_id": data?.rzpOrderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "order_id": data?.rzpOrderId,
+             //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
             "handler": 
             async function (response: any) {
                 console.log("response", response)
-                // response.customerId = data?.user?._id
-                // response.amount = (data?.amount / 100)
-                // const verified = await verifyPayment(response)
+                response.customerId = userDetails?._id
+                response.amount = (data?.amount / 100)
+                const verified = await verifyPayment(response)
+                console.log("verified===>",verified)
                 // if (verified?.result.id) {
                     data.router.push({
                         pathname: data?.redirectUrl,
@@ -55,6 +59,21 @@ export async function rzpCheckoutFrom(data: any) {
             })
             // data.cartEmpty();
         });
+
+        rzpCheckout.on("modal.close", async function () {
+            console.log("called")
+            console.warn("Payment popup closed by the user.");
+
+            // Send a request to log this event to your server
+            // await axios.post("/api/payment/cancel", {
+            //     orderId: data?.orderId,
+            //     userId: userDetails?.id,
+            //     reason: "User closed the payment popup",
+            // });
+
+            // Optional: Provide feedback to the user
+            alert("You exited the payment process. Please try again.");
+        });
         rzpCheckout.open();
 
 
@@ -64,6 +83,7 @@ export async function rzpCheckoutFrom(data: any) {
 }
 
 export async function verifyPayment(data: any) {
+    console.log("data====>v", data)
     try {
         const verify = await axios.post("/api/payment/verify", {
             order_id: data?.razorpay_order_id,
@@ -72,8 +92,9 @@ export async function verifyPayment(data: any) {
             customerId: data?.customerId,
             amount: data?.amount,
         });
+        console.log(verify, "verify payment signature call")
         return verify.data
-        // console.log(verify, "verify payment signature call")
+        
     } catch (error) {
         console.log(error, "Error in payment verify");
     }

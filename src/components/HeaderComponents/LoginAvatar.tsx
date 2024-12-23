@@ -14,6 +14,7 @@ const LoginAvatar = () => {
         removeAllCookies();
         toast.success("Logout succesfully");
         setToken(null)
+        router.push('/')
     }
 
     useEffect(() => {

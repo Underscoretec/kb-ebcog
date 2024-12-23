@@ -4,8 +4,12 @@ import { MdAccessTimeFilled } from "react-icons/md";
 // import { RiGraduationCapFill } from "react-icons/ri";
 import Button from '@/common/uicomponents/Button';
 import { formatBasePrice } from '@/utils/formatBasePrice';
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+dayjs.extend(localizedFormat);
 
 const CartProductCart = ({ handleRemoveItem, data, edit = true }: any) => {
+    console.log(data,'data ##');
 
     return (
         <div className='flex flex-col md:flex-row p-2 xs:p-4 border border-[#EAEAEA] rounded-[20px] gap-4 my-4'>
@@ -20,7 +24,7 @@ const CartProductCart = ({ handleRemoveItem, data, edit = true }: any) => {
                     />
                 </div>
                 <div>
-                    <div className='font-poppins text-[16px] font-normal leading-[24px] text-[#555555]'>by <span className='text-[#000]'>Determined-Poitras</span></div>
+                    {/* <div className='font-poppins text-[16px] font-normal leading-[24px] text-[#555555]'>by <span className='text-[#000]'>Determined-Poitras</span></div> */}
                     <div className='font-poppins text-[20px] font-semibold leading-[24px] py-2'>{data?.course?.name}</div>
                     <div className='flex gap-8 items-center font-montserrat text-[13px] font-semibold leading-[19.5px] text-[#555555] pb-2 md:pb-0 pt-2 lg:pt-4'>
                         <div className='flex items-center gap-2'>
@@ -31,11 +35,11 @@ const CartProductCart = ({ handleRemoveItem, data, edit = true }: any) => {
                         </div> */}
                     </div>
                     <div className='py-1 text-[15px] font-semibold leading-[19.5px] text-[#555555] block md:hidden '>Price : {data?.course?.price?.currency} {formatBasePrice(data?.course?.price?.base)}</div>
-                    <div className='py-1 text-[15px] font-semibold leading-[19.5px] text-[#555555] block md:hidden '>Subtotal: {data?.course?.price?.currency} {formatBasePrice(data?.course?.price?.base)}</div>
+                    <div className='py-1 text-[15px] font-semibold leading-[19.5px] text-[#555555] block md:hidden '>Subtotal: {data?.course?.price?.currency} {dayjs().isBefore(dayjs(data?.course?.discount?.endDate))? formatBasePrice(Number(data?.course?.price?.base)- Number(data?.course?.discount?.value)):formatBasePrice(data?.course?.price?.base)}</div>
                 </div>
             </div>
             <div className='w-[100%] md:w-[12%] flex md:flex-col justify-between gap-3'>
-                <div className='hidden md:block'>{data?.course?.price?.currency} {formatBasePrice(data?.course?.price?.base)}</div>
+                <div className='hidden md:block'>{data?.course?.price?.currency} { formatBasePrice(data?.course?.price?.base)}</div>
                 {/* {edit && <Button
                     type="submit"
                     label="Delete"
@@ -43,7 +47,7 @@ const CartProductCart = ({ handleRemoveItem, data, edit = true }: any) => {
                 />} */}
             </div>
             <div className='flex w-full md:w-[13%]  flex-col justify-between'>
-                <div className='hidden md:block'>{data?.course?.price?.currency} {formatBasePrice(data?.course?.price?.base)}</div>
+                <div className='hidden md:block'>{data?.course?.price?.currency} {dayjs().isBefore(dayjs(data?.course?.discount?.endDate))? formatBasePrice(Number(data?.course?.price?.base)- Number(data?.course?.discount?.value)): formatBasePrice(data?.course?.price?.base)}</div>
                 {edit && <Button
                     type="submit"
                     label="Delete"
