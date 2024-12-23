@@ -1,35 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import BreadCrumbs from '@/common/uicomponents/BreadCrumbs';
 import { useRouter } from 'next/router';
-import FeeOptionCard from './FeeOptionCard';
+// import FeeOptionCard from './FeeOptionCard';
 import useCourseHooks from '@/hooks/useCourseHooks';
 import { CircularProgress } from '@mui/material';
 import useCartHooks from '@/hooks/useCartHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
+import CourseCard from './CourseCard';
 
-function classNames(...classes: any[]) {
-    return classes.filter(Boolean).join(' ');
-}
+// function classNames(...classes: any[]) {
+//     return classes.filter(Boolean).join(' ');
+// }
 
 const FeeOptionCardPage = () => {
     const router = useRouter();
-    const [pricing, setPricing] = useState<any[]>([]);
-    const [selectedTier, setSelectedTier] = useState<any>(null);
+    // const [plansObj, setPlanObj] = useState({});
+    // const [courses, setCourses] = useState<any[]>([]);
+    const [selectedTier, setSelectedTier] = useState([]);
+    const [withHotelData, setWithHotelData] = useState();
+    const [withoutHotelData, setWithoutHotelData] = useState();
     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
     const { Course, category } = router.query;
-    const { loading, fetchCoursePlan } = useCourseHooks();
-    const { addToCart, getCartItems } = useCartHooks();
+    const { loading,
+            fetchCoursePlan
+        } = useCourseHooks();
+    const { addToCart, getCartItems,removeToCart } = useCartHooks(); 
 
-    const handleProceed = async (id: any) => {
+    const handleProceed = async (selectedPlan: any) => {
+        console.log(selectedPlan,'selectedPlan ##');
         const cart = await getCartItems();
-        if (cart.length == 0) {
-            const result = await addToCart(id)
+        console.log(cart, 'cart ##');
+        if (cart?.length === 0) {
+            const result = await addToCart(selectedPlan?._id)
             if (!result.error) {
                 router.push("/cart");
             }
+        } else if (cart?.length === 1 && cart[0]?.course?.category === selectedPlan?.category) {
+            await removeToCart(cart[0]?.course?._id);
+            const result = await addToCart(selectedPlan?._id)
+            if (!result.error) {
+                router.push("/cart");
+            }
+
         } else {
-            showModal("You already have a course in your cart. You can only take one course at a time.", "", false);
+            showModal("You already have a course in your cart. You can only take one course at a time.", "", true);
         }
     };
 
@@ -41,9 +56,9 @@ const FeeOptionCardPage = () => {
         setModalData({ ...modalData, isOpen: false });
     };
 
-    const handleclick = () => {
+    const handleClick = () => {
         if (modalData.redirect) {
-            router.push('/');
+            router.push('/cart');
         }
         hideModal()
     }
@@ -62,10 +77,22 @@ const FeeOptionCardPage = () => {
     const fetchPlan = async () => {
         if (category) {
             const planList = await fetchCoursePlan(category);
-            setPricing(planList || []);
-            setSelectedTier(planList&& planList[0]);
+            setSelectedTier(planList);
+            console.log(planList,'planList ##');
+            const withoutHotel = planFilter(planList, 'withoutHotel');
+            console.log(withoutHotel, 'withoutHotel ##');
+            setWithoutHotelData(withoutHotel);
+
+            const withHotel = planFilter(planList, 'withHotel');
+            setWithHotelData(withHotel);
         }
     };
+
+    const planFilter = (sourceData: [], matchString: string) => {
+        if(sourceData && sourceData?.length> 0)
+            return sourceData.filter((item: any) => item?.type === matchString)[0];
+        
+    }
 
     if (!category)
         return (
@@ -99,22 +126,34 @@ const FeeOptionCardPage = () => {
                                 <CircularProgress style={{ color: '#E4087F' }} />
                             </div>
                         ) : (
-                            <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
-                                {pricing?.length ===0 ? (
-                                    <div>No data found, please try again after some time.</div>
-                                ) : (
-                                    pricing?.map((item, index) => (
-                                        <FeeOptionCard
-                                            key={index}
-                                            item={item}
-                                            classNames={classNames}
-                                            isSelected={selectedTier?._id === item?._id}
-                                            onSelect={setSelectedTier}
-                                            handleProceed={handleProceed}
-                                        />
-                                    ))
-                                )}
-                            </div>
+                            selectedTier && selectedTier?.length === 0 ? (
+                                    <div className='text-center'>No data found, please try again after some time.</div>
+                                ) :
+                                    <>
+                                    < CourseCard
+                                    withHotelData={withHotelData}
+                                    withoutHotelData={withoutHotelData}
+                                    handleProceed={handleProceed}
+                                />
+                                    </>
+                                
+                            
+                            //     <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
+                            //     {courses?.length ===0 ? (
+                            //         <div>No data found, please try again after some time.</div>
+                            //     ) : (
+                            //         courses?.map((item, index) => (
+                            //             <FeeOptionCard
+                            //                 key={index}
+                            //                 item={item}
+                            //                 classNames={classNames}
+                            //                 isSelected={selectedTier?._id === item?._id}
+                            //                 onSelect={setSelectedTier}
+                            //                 handleProceed={handleProceed}
+                            //             />
+                            //         ))
+                            //     )}
+                            // </div>
                         )}
                     </div>
                 </main>
@@ -125,7 +164,7 @@ const FeeOptionCardPage = () => {
                 message={modalData.message}
                 redirect={modalData.redirect}
                 onClose={hideModal}
-                onClick={handleclick}
+                onClick={handleClick}
             />
         </div>
     );
