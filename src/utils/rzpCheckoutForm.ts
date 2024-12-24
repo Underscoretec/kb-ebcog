@@ -42,7 +42,15 @@ export async function rzpCheckoutFrom(data: any) {
             },
             "theme": {
                 "color": "#E4087F"
-            }
+            },
+            modal: {
+                escape: false, // Disable closing on pressing the `Esc` key
+                ondismiss: function () {
+                    console.log("User closed the Razorpay modal.");
+                    // Handle the case where the user exits the payment modal
+                    data.setCurrentStep(1)
+                },
+            },
         };
         // const windowS: any = typeof window === 'undefined' && window
         const rzpCheckout: any = new (window as any).Razorpay(options);
@@ -59,21 +67,6 @@ export async function rzpCheckoutFrom(data: any) {
             })
             // data.cartEmpty();
         });
-
-        rzpCheckout.on("modal.close", async function () {
-            console.log("called")
-            console.warn("Payment popup closed by the user.");
-
-            // Send a request to log this event to your server
-            // await axios.post("/api/payment/cancel", {
-            //     orderId: data?.orderId,
-            //     userId: userDetails?.id,
-            //     reason: "User closed the payment popup",
-            // });
-
-            // Optional: Provide feedback to the user
-            alert("You exited the payment process. Please try again.");
-        });
         rzpCheckout.open();
 
 
@@ -83,7 +76,7 @@ export async function rzpCheckoutFrom(data: any) {
 }
 
 export async function verifyPayment(data: any) {
-    console.log("data====>v", data)
+
     try {
         const verify = await axios.post("/api/payment/verify", {
             order_id: data?.razorpay_order_id,

@@ -63,7 +63,8 @@ const CartInfo = ({
               redirectUrl: "/confirmation",
               router: Router,
               currency: values.currency,
-              rzpOrderId:razOrderCreate.paymentOrderId
+              rzpOrderId:razOrderCreate.paymentOrderId,
+              setCurrentStep:setCurrentStep
 
             })
             console.log(paymentData, "paymentData 001")
