@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import seedData from "@/utils/seedData";
+import seedData from "@/__server__/utils/seedData";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const { SEED_DATA } = process.env

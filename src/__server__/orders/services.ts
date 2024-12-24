@@ -6,6 +6,7 @@ import errorResponse from "@/__server__/utils/errorResponse";
 import OrderModel from "@/__server__/orders/model";
 import { razPaymentOrderCreate } from '@/__server__/payments/services';
 import CartModel from "@/__server__/cart/model";
+import { isValidPeriod } from "@/__server__/utils/dateUtils";
 
 
 const createNewOrder = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -22,7 +23,7 @@ const createNewOrder = async (req: NextApiRequest, res: NextApiResponse) => {
                     code: "COURSE_NOT_FOUND",
                 })
             }
-            const payableAmount = courseData?.price?.base;
+            const payableAmount = isValidPeriod(courseData?.discount?.startDate, courseData?.discount?.endDate)? (courseData?.price?.base - courseData?.discount?.value) : courseData?.price?.base;
             const orderId = `#EB-Dip-${Date.now()}`;
             const itemsArray = [];
             itemsArray.push(item);
