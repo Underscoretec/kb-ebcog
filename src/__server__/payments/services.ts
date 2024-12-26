@@ -11,12 +11,12 @@ export async function razPaymentOrderCreate(data: any) {
       const options = {
         amount: (data?.amount * 100),  // amount in the smallest currency unit
         currency: data?.currency,
-        receipt: data?.orderId  // Order id save in payment records
+        receipt: data?.orderId  // orderId save in order model
       };
       const rzpOrder = await instance.orders.create(options)
       if (rzpOrder) {
         const orderupdate = await OrderModel.findOneAndUpdate(
-          { _id: data?.orderId.toString() },
+          { orderId: data?.orderId.toString() },
           { $set: { razOrderId: rzpOrder.id } },
           { new: true },
         )

@@ -13,6 +13,7 @@ const orderSchema = new Schema(
         orderId: {
             type: String,
             required: true,
+            unique: true
         },
         paymentId: {
             type: Schema.Types.ObjectId,
@@ -55,12 +56,26 @@ const orderSchema = new Schema(
                 name: { type: String },
             },
         ],
-        discount: { type: Number, default: 0 },
+        basePrice:{type: Number},
+        discountAmount: { type: Number ,default: 0}, // discount amount
         payableAmount: { type: Number, required: true }, //payableAmount 
-        totalWithDiscount: { type: Number }, // preTaxTotal-discount
-        discountAmount: { type: Number }, //Total discounted amount
         razOrderId: { type: String },
-        stripeOrderId:{type: String}
+        stripeOrderId: { type: String },
+        createdBy: {
+            type: Schema.Types.ObjectId,
+            ref: User
+        },
+        createdAt: {
+            type: Date,
+        },
+        updatedAt: {
+            type: Date,
+        },
+        updatedBy: {
+            type: Schema.Types.ObjectId,
+            ref: User
+        }
+        
     },
     { timestamps: true }
 );

@@ -167,5 +167,7 @@
   "BAD_REQUEST": "Request not valid",
   "ORDER_CREATED": "Order created successfully",
   "ORDER_FAILED":"Order failed to create",
-  "USER_FOUND":"User found successfully"
+  "USER_FOUND":"User found successfully",
+  "ORDERS_FOUND":"Orders found",
+  "ORDERS_NOT_FOUND":"Orders not found"
 }
