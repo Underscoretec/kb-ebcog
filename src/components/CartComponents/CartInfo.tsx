@@ -54,7 +54,7 @@ const CartInfo = ({
     const handleProceedToCheckout = async (values:any) => {
         setCurrentStep(2);
         if (process.env.NEXT_PUBLIC_PAYMENT_GATEWAY === 'razorpay') {
-            console.log(values);
+            console.log("values ##",values);
             const razOrderCreate = await createOrder();
             console.log(razOrderCreate,'razOrderCreate ##');
 
@@ -62,7 +62,10 @@ const CartInfo = ({
               amount: values.amount*100,
               redirectUrl: "/confirmation",
               router: Router,
-              currency: values.currency
+              currency: values.currency,
+              rzpOrderId:razOrderCreate.paymentOrderId,
+              setCurrentStep:setCurrentStep
+
             })
             console.log(paymentData, "paymentData 001")
           }
@@ -107,7 +110,7 @@ const CartInfo = ({
                     label="Proceed To Checkout"
                     className='bg-[#E4087F] hover:bg-[#ac0660] p-3 flex items-center justify-center font-montserrat text-[16px] font-semibold leading-[24px] text-[#fff] rounded-md'
                     onClick={() => handleProceedToCheckout({
-                        amount: dayjs().isBefore(dayjs(cartItems[0]?.course?.discount?.endDate))? formatBasePrice(Number(cartItems[0]?.course?.price?.base)- Number(cartItems[0]?.course?.discount?.value)) : cartItems[0]?.course?.price?.base,
+                        amount: dayjs().isBefore(dayjs(cartItems[0]?.course?.discount?.endDate))? Number(cartItems[0]?.course?.price?.base)- Number(cartItems[0]?.course?.discount?.value) : cartItems[0]?.course?.price?.base,
                         currency: cartItems[0]?.course?.price?.currency
                     })}
                 />

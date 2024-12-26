@@ -5,6 +5,8 @@ import { getCookie } from "./cookieUtils";
 
 export async function rzpCheckoutFrom(data: any) {
     const userDetails = getCookie("userDetails")
+
+    console.log("data===>",data, userDetails)
     
     try {
 
@@ -15,13 +17,15 @@ export async function rzpCheckoutFrom(data: any) {
             // "name": "Ecommerce payment",
             "description": "Test Transaction",
             // "image": data?.logo,
-            // "order_id": data?.rzpOrderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "order_id": data?.rzpOrderId,
+             //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
             "handler": 
             async function (response: any) {
                 console.log("response", response)
-                // response.customerId = data?.user?._id
-                // response.amount = (data?.amount / 100)
-                // const verified = await verifyPayment(response)
+                response.customerId = userDetails?._id
+                response.amount = (data?.amount / 100)
+                const verified = await verifyPayment(response)
+                console.log("verified===>",verified)
                 // if (verified?.result.id) {
                     data.router.push({
                         pathname: data?.redirectUrl,
@@ -38,7 +42,15 @@ export async function rzpCheckoutFrom(data: any) {
             },
             "theme": {
                 "color": "#E4087F"
-            }
+            },
+            modal: {
+                escape: false, // Disable closing on pressing the `Esc` key
+                ondismiss: function () {
+                    console.log("User closed the Razorpay modal.");
+                    // Handle the case where the user exits the payment modal
+                    data.setCurrentStep(1)
+                },
+            },
         };
         // const windowS: any = typeof window === 'undefined' && window
         const rzpCheckout: any = new (window as any).Razorpay(options);
@@ -64,6 +76,7 @@ export async function rzpCheckoutFrom(data: any) {
 }
 
 export async function verifyPayment(data: any) {
+
     try {
         const verify = await axios.post("/api/payment/verify", {
             order_id: data?.razorpay_order_id,
@@ -72,8 +85,9 @@ export async function verifyPayment(data: any) {
             customerId: data?.customerId,
             amount: data?.amount,
         });
+        console.log(verify, "verify payment signature call")
         return verify.data
-        // console.log(verify, "verify payment signature call")
+        
     } catch (error) {
         console.log(error, "Error in payment verify");
     }
