@@ -8,7 +8,6 @@ import { MdAccessTimeFilled, MdFileCopy } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
 import { useRouter } from 'next/navigation';
 import AlertModal from '@/common/uicomponents/AlertModal';
-import { getCookie } from '@/utils/cookieUtils';
 
 interface DiplomaCourseProps {
     courseId: string;
@@ -647,14 +646,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
     }
 
     const handleFees = () => {
-        const getToken = getCookie ("token")
-
-        if (getToken){
-            router.push(`/diploma/fee-options?Course=${courseData?.id}&category=${courseData?.category}`)
-        }
-        else{
-            router.push('/login')
-        }
+        router.push(`/diploma/fee-options?Course=${courseData?.id}&category=${courseData?.category}`);
     }
 
 
