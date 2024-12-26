@@ -2,9 +2,10 @@ import '@/styles/globals.css'
 import { NextPageWithLayout } from '@/types/types';
 import type { AppProps } from 'next/app'
 import Head from "next/head";
-import {trackGAPageView} from "@/common/utils/gAnalytics";
+import { trackGAPageView } from "@/common/utils/gAnalytics";
 import { useEffect } from 'react';
 import { useRouter } from "next/router";
+import { Bounce, ToastContainer } from 'react-toastify';
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
@@ -19,7 +20,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   useEffect(() => {
     trackGAPageView(router.asPath)
-  },[router.asPath])
+  }, [router.asPath])
 
   const baseUrl = typeof window !== "undefined" ? window.location.origin : 'https://ebcogdiplomas.com/';
   console.log(baseUrl, "baseUrl**")
@@ -49,11 +50,24 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <meta name="twitter:site"
         content="Join us to advance your career through knowledge and skill enhancement. Benefit from comprehensive training and unwavering support from our esteemed EBCOG faculty. You'll be fully equipped to tackle challenges and embrace the opportunities to enhance outcomes in women's health"
       />
-        <meta name="twitter:card" content="/EBCOG_OGP.webp" />
+      <meta name="twitter:card" content="/EBCOG_OGP.webp" />
     </Head>
 
     {getLayout ?
       getLayout(<Component {...pageProps} />) : <Component {...pageProps} />}
+    <ToastContainer
+      position="bottom-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick={false}
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      transition={Bounce}
+    />
 
   </>)
     ;

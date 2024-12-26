@@ -62,8 +62,6 @@ const RegistrationCard = () => {
             city: Yup.string().required('City/District/Town is required'),
             country: Yup.string().required('Country is required'),
             diplomaCourse: Yup.string().required('Please select a diploma course'),
-            // degreeCertificate: Yup.mixed().required('Degree certificate is required'),
-            // basicDegreeDocument: Yup.mixed().required('Basic degree document is required'),
         }),
         onSubmit: async (values, action) => {
             trackGAEvent('registration_submit_clicked', values)

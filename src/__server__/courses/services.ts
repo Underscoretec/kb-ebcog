@@ -4,7 +4,7 @@ import Courses from "./model";
 import messages from "@/__server__/utils/message.json";
 import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
-import { createUTCDate } from "@/utils/dateUtils";
+import { createUTCDate } from "@/__server__/utils/dateUtils";
 
 
 interface ExtendApiRequest extends NextApiRequest {
