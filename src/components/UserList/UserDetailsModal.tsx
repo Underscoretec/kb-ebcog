@@ -76,7 +76,7 @@ const UserDetailsModal = ({ closeModal, modalData }: any) => {
                                             </div>
                                         ) : (
                                             <div className="flex flex-col items-center justify-center text-gray-600 p-6">
-                                                <ImFilePdf className="w-[100px] h-[100px] text-[#c91e14]" />
+                                                <ImFilePdf className="w-[100px] h-[150px] text-[#c91e14]" />
                                                 <div className='text-[16px] text-center pt-4'> {modalData?.basicDegreeDocument?.name}</div>
                                             </div>
                                         )}</div> : 'N/A'}
@@ -91,7 +91,7 @@ const UserDetailsModal = ({ closeModal, modalData }: any) => {
                                             </div>
                                         ) : (
                                             <div className="flex flex-col items-center justify-center text-gray-600 p-6">
-                                                <ImFilePdf className="w-[100px] h-[100px] text-[#c91e14]" />
+                                                <ImFilePdf className="w-[100px] h-[150px] text-[#c91e14]" />
                                                 <div className='text-[16px] text-center pt-4'> {modalData?.latestDegreeCertificate?.name}</div>
                                             </div>
                                         )}</div> : 'N/A'}

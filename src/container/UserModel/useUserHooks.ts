@@ -129,7 +129,7 @@ export const useUserHook = () => {
 
     const getRegisterUserList = async () =>{
         const data = {
-            url:`/api/registration/list`
+            url:`/api/registration/list?dataPerPage=10`
         }
         try {
             const res: any = await doGetApiCall(data);
