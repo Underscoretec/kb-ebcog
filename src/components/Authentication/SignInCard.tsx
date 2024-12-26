@@ -8,6 +8,7 @@ import { useUserHook } from "@/container/UserModel/useUserHooks";
 import { useRouter } from "next/router";
 import AlertModal from "@/common/uicomponents/AlertModal";
 import { toast } from "react-toastify";
+import Cookies from "js-cookie";
 
 const SignInCard: React.FC = () => {
     const [email, setEmail] = useState("");
@@ -28,10 +29,14 @@ const SignInCard: React.FC = () => {
                 toast.success("Login succesfully");
                 if(result?.result?.type=== "admin"){
                     router.push('/admin/userlist');
-                }else{
-                    router.push('/');
+                } else if(result?.result?.type === 'user') {
+                    const previousPath = Cookies.get("previousPath")
+                    if (previousPath) {
+                        router.push(`/${previousPath}`);
+                    } else {
+                        router.push('/');
+                    }
                 }
-                // showModal("Login Successfully", "", true);
             } else if (result?.code === 'INVALID_CREDENTIALS') {
                 showModal("Invalid Credentials", "Please enter correct email or password.");
             } else {
