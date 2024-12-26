@@ -3,6 +3,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { getCookie, removeAllCookies } from '@/utils/cookieUtils';
 import { RiLoginCircleLine } from "react-icons/ri";
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 const LoginAvatar = () => {
     const [token, setToken] = useState<string | null>(null);
@@ -11,7 +12,9 @@ const LoginAvatar = () => {
 
     const handleLogout = () => {
         removeAllCookies();
+        toast.success("Logout succesfully");
         setToken(null)
+        router.push('/')
     }
 
     useEffect(() => {
