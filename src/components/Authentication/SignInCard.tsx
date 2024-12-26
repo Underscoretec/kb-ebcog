@@ -29,7 +29,8 @@ const SignInCard: React.FC = () => {
                 if(result?.result?.type=== "admin"){
                     router.push('/admin/userlist');
                 }else{
-                    router.push('/');
+                    router.back();
+                    // router.push('/');
                 }
                 // showModal("Login Successfully", "", true);
             } else if (result?.code === 'INVALID_CREDENTIALS') {
