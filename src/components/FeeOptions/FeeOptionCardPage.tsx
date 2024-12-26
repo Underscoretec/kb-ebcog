@@ -1,35 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import BreadCrumbs from '@/common/uicomponents/BreadCrumbs';
 import { useRouter } from 'next/router';
-import FeeOptionCard from './FeeOptionCard';
 import useCourseHooks from '@/hooks/useCourseHooks';
 import { CircularProgress } from '@mui/material';
 import useCartHooks from '@/hooks/useCartHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
+import CourseFeeCard from './CourseFeeCard';
 
-function classNames(...classes: any[]) {
-    return classes.filter(Boolean).join(' ');
-}
 
 const FeeOptionCardPage = () => {
     const router = useRouter();
-    const [pricing, setPricing] = useState<any[]>([]);
-    const [selectedTier, setSelectedTier] = useState<any>(null);
+    const [selectedTier, setSelectedTier] = useState([]);
+    const [withHotelData, setWithHotelData] = useState();
+    const [withoutHotelData, setWithoutHotelData] = useState();
     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
     const { Course, category } = router.query;
-    const { loading, fetchCoursePlan } = useCourseHooks();
-    const { addToCart, getCartItems } = useCartHooks();
+    const { loading, fetchCoursePlan} = useCourseHooks();
+    const { addToCart, getCartItems, removeToCart } = useCartHooks();
 
-    const handleProceed = async (id: any) => {
+
+    const handleProceed = async (selectedPlan: any) => {
         const cart = await getCartItems();
-        if (cart.length == 0) {
-            const result = await addToCart(id)
+        if (cart?.length === 0) {
+            const result = await addToCart(selectedPlan?._id)
             if (!result.error) {
                 router.push("/cart");
             }
+        } else if (cart?.length === 1 && cart[0]?.course?.category === selectedPlan?.category) {
+            await removeToCart(cart[0]?.course?._id);
+            const result = await addToCart(selectedPlan?._id)
+            if (!result.error) {
+                router.push("/cart");
+            }
+
         } else {
-            showModal("You already have a course in your cart. You can only take one course at a time.", "", false);
+            showModal("You already have a course in your cart. You can only take one course at a time.", "", true);
         }
     };
 
@@ -41,9 +47,9 @@ const FeeOptionCardPage = () => {
         setModalData({ ...modalData, isOpen: false });
     };
 
-    const handleclick = () => {
+    const handleClick = () => {
         if (modalData.redirect) {
-            router.push('/');
+            router.push('/cart');
         }
         hideModal()
     }
@@ -60,10 +66,22 @@ const FeeOptionCardPage = () => {
     const fetchPlan = async () => {
         if (category) {
             const planList = await fetchCoursePlan(category);
-            setPricing(planList || []);
-            setSelectedTier(planList && planList[0]);
+            setSelectedTier(planList);
+            console.log(planList, 'planList ##');
+            const withoutHotel = planFilter(planList, 'withoutHotel');
+            console.log(withoutHotel, 'withoutHotel ##');
+            setWithoutHotelData(withoutHotel);
+
+            const withHotel = planFilter(planList, 'withHotel');
+            setWithHotelData(withHotel);
         }
     };
+
+    const planFilter = (sourceData: [], matchString: string) => {
+        if (sourceData && sourceData?.length > 0)
+            return sourceData.filter((item: any) => item?.type === matchString)[0];
+
+    }
 
     if (!category)
         return (
@@ -73,7 +91,7 @@ const FeeOptionCardPage = () => {
         );
 
     return (
-        <div className='min-h-[30rem]'>
+        <div className='min-h-[40rem]'>
             <BreadCrumbs
                 routes={[
                     { name: 'Diploma Courses', href: '/', current: false },
@@ -83,36 +101,30 @@ const FeeOptionCardPage = () => {
             />
             <div className="bg-white">
                 <main>
-                    <div className="mx-auto my-16 max-w-4xl px-6 lg:px-8">
-                        <div className="mx-auto max-w-4xl text-center">
-                            <p className="mt-2 text-balance text-5xl font-semibold text-gray-900 sm:text-4xl font-montserrat tracking-[0.5px]">
+                    <div className="mx-auto">
+                        <div className="text-center p-20 bg-[#290849]">
+                            <p className="mt-2 text-balance text-white font-montserrat text-[36px] font-bold leading-[43.2px] text-center">
                                 {formatText(Course)}
                             </p>
+                            <p className="mx-auto mt-6 text-pretty text-[#D1D5DB] font-montserrat text-[16px] font-medium leading-[24px] text-center">
+                                {`Choose an affordable plan that’s packed with the best features.`}
+                            </p>
                         </div>
-                        <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
-                            {`Choose an affordable plan that’s packed with the best features.`}
-                        </p>
                         {loading ? (
-                            <div className='min-h-[50rem] flex justify-center items-center'>
+                            <div className='min-h-[30rem] flex justify-center items-center'>
                                 <CircularProgress style={{ color: '#E4087F' }} />
                             </div>
                         ) : (
-                            <>
-                                {pricing?.length === 0 ? (
-                                    <div className='text-center m-8 sm:m-20 p-4 bg-[#FFF4F8] rounded-md text-[#E4087F] text-[20px] shadow-md font-montserrat font-semibold tracking-[0.5px]'>No data found, please try again after some time.</div>
-                                ) : (
-                                    <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">{pricing?.map((item, index) => (
-                                        <FeeOptionCard
-                                            key={index}
-                                            item={item}
-                                            classNames={classNames}
-                                            isSelected={selectedTier?._id === item?._id}
-                                            onSelect={setSelectedTier}
-                                            handleProceed={handleProceed}
-                                        />
-                                    ))}</div>
-                                )}
-                            </>
+                            selectedTier && selectedTier?.length === 0 ? (
+                                <div className='text-center my-12 p-4 rounded-md bg-[#fff0f6] text-[#E4087F] max-w-4xl mx-auto font-semibold text-[22px]'>No data found, please try again after some time.</div>
+                            ) :
+                                <>
+                                    < CourseFeeCard
+                                        withHotelData={withHotelData}
+                                        withoutHotelData={withoutHotelData}
+                                        handleProceed={handleProceed}
+                                    />
+                                </>
                         )}
                     </div>
                 </main>
@@ -123,7 +135,7 @@ const FeeOptionCardPage = () => {
                 message={modalData.message}
                 redirect={modalData.redirect}
                 onClose={hideModal}
-                onClick={handleclick}
+                onClick={handleClick}
             />
         </div>
     );

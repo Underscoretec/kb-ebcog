@@ -127,10 +127,29 @@ export const useUserHook = () => {
         }
     }
 
+    const getRegisterUserList = async () =>{
+        const data = {
+            url:`/api/registration/list`
+        }
+        try {
+            const res: any = await doGetApiCall(data);
+            if (!res.error) {
+                return res.result;
+            } else {
+                console.error('Error fetching user list:', res.message);
+                return [];
+            }
+        } catch (err) {
+            console.error('API Error:', err);
+            // return [];
+        }
+    }
+
     return {
         createCourseRegistrationApi,
         handleLogin,
         handleSignUp,
-        getUserDetails
+        getUserDetails,
+        getRegisterUserList
     };
 };
