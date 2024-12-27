@@ -2,16 +2,18 @@ import { useUserHook } from "@/container/UserModel/useUserHooks";
 import { useEffect, useState } from "react";
 import UserDetailsModal from "./UserDetailsModal";
 import Pagination from "@/common/uicomponents/Pagination";
+import { CircularProgress } from "@mui/material";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
 export default function RegisteredUserList() {
-    const { getRegisterUserList } = useUserHook();
+    const { loading, getRegisterUserList } = useUserHook();
     const [users, setUsers] = useState<any[]>([]);
     const [modalData, setModalData] = useState<any>(null);
     const [page, setPage] = useState(1)
+    const [userCount, setUserCount] = useState(null)
     // const [showModal, setShowModal] = useState(false)
 
     useEffect(() => {
@@ -20,13 +22,23 @@ export default function RegisteredUserList() {
 
     const fetchUserList = async (pageNumber: any) => {
         const list = await getRegisterUserList(pageNumber);
-        setUsers(list)
+        setUsers(list.result)
+        setUserCount(list?.dataCount)
     }
 
     const handleDetailsModal = (id: any) => {
         const user = users.find((user) => user._id === id);
         setModalData(user)
-        // setShowModal(true)
+    }
+
+    const handleNext = () =>{
+        fetchUserList(page + 1)
+        setPage(page + 1)
+    }
+
+    const handlePrevious = () =>{
+        fetchUserList(page - 1)
+        setPage(page - 1)
     }
 
     return (
@@ -36,6 +48,7 @@ export default function RegisteredUserList() {
                     <div className="flow-root">
                         <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                             <div className="inline-block min-w-full py-2 align-middle">
+                                {loading ? <div className="flex items-center justify-center min-h-[30rem]"> <CircularProgress /></div>:
                                 <table className="min-w-full border-separate border-spacing-0">
                                     <thead>
                                         <tr>
@@ -100,13 +113,14 @@ export default function RegisteredUserList() {
                                             </tr>
                                         }
                                     </tbody>
-                                </table>
+                                </table>  }
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {users.length > 0 && <Pagination />}
+            {users.length > 0 && <Pagination handlePreviousClick={handlePrevious} handleNextClick={handleNext} totalCount={userCount} page={page}/>}
             {
                 modalData !== null && <UserDetailsModal modalData={modalData} closeModal={() => setModalData(null)} />
             }

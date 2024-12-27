@@ -6,22 +6,11 @@ import { MdOutlineContentCopy } from "react-icons/md";
 import dayjs from 'dayjs';
 import { ImFilePdf } from 'react-icons/im';
 // import { FaImage } from "react-icons/fa";
-import { toast } from 'react-toastify';
 import ImageComponent from '@/common/uicomponents/ImageComponent';
 import defaultImage from "../../../public/default.png"
+import { handleCopy } from '@/utils/formatBasePrice';
 
 const UserDetailsModal = ({ closeModal, modalData }: any) => {
-
-    const handleCopy = (copiedText: any, msg: any) => {
-        if (copiedText) {
-          navigator.clipboard
-            .writeText(copiedText)
-            .then(() => {
-                toast.success(msg);
-            })
-            .catch((error) => console.error("Unable to copy", error));
-        }
-      };
       
 
     return (
@@ -48,7 +37,9 @@ const UserDetailsModal = ({ closeModal, modalData }: any) => {
                                     </div>
                                     <div className='w-[95%] lg:w-[45%] 2xl:w-[30%] py-2'>
                                         <div className='font-semibold'>Whatsapp Number</div>
-                                        <div className='flex items-center gap-3 pt-2'>{modalData?.whatsAppNumber} <MdOutlineContentCopy className='cursor-pointer' onClick={() => handleCopy(modalData?.whatsAppNumber, "Whatsapp No. copied successfully !")}/></div>
+                                        <div className='flex items-center gap-3 pt-2'>{modalData?.whatsAppNumber} 
+                                            <MdOutlineContentCopy className='cursor-pointer' onClick={() => handleCopy(modalData?.whatsAppNumber, "Whatsapp No. copied successfully !")}/>
+                                        </div>
                                     </div>
                                     <div className='w-[95%] lg:w-[45%] 2xl:w-[30%] py-2'>
                                         <div className='font-semibold'>Address</div>
