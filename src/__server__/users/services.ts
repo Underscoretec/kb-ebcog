@@ -237,9 +237,64 @@ const getUserDetails = async (req: NextApiRequest, res: NextApiResponse) => {
 
 }
 
+const list = async (req: any, res: any) => {
+    logger.info(`[User 004] Users list api call`);
+    try {
+        const dataPerPage = Number(req.query?.dataPerPage) || 25;
+        const page = Number(req.query?.page) || 1;
+        if (req.user?.role === "admin") {
+            const query: any = {
+                enabled: 1,
+            }
+
+            if (req.query.string) {
+                query["$or"] = [
+                    { first_name: { $regex: req.query.string, $options: "i" } },
+                    { last_name: { $regex: req.query.string, $options: "i" } },
+                    { email: { $regex: req.query.string, $options: "i" } },
+                    { 'phone.number': { $regex: req.query.string, $options: "i" } },
+                    { enrolledCourseId: {$regex: req.query.string, $options: "i"}}
+                ];
+            }
+
+            const users = await UserModel.find(query)
+                .select(["-enabled", "-__v",]).sort({ createAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
+                const usersCount = await UserModel.countDocuments(query)
+            
+
+            if (users?.length > 0) {
+                return res.status(200).json({
+                    message: messages["USERS_FOUND"],
+                    error: false,
+                    code: "USERS_FOUND",
+                    result: users,
+                    dataCount:usersCount
+                });
+            } else {
+                return res.status(404).json({
+                    message: messages["USER_NOT_FOUND"],
+                    error: false,
+                    code: "USER_NOT_FOUND",
+                    result: []
+                });
+            }
+        } else {
+            return res.status(401).send({
+                error: true,
+                code: "UNAUTHORIZED",
+                message: messages["UNAUTHORIZED"]
+            })
+        }
+    } catch (error) {
+        logger.error(error, "[User 004] Error when get users list");
+        return res.status(500).json(errorResponse(error));
+    }
+}
+
 
 export default {
     signUp,
     login,
-    getUserDetails
+    getUserDetails,
+    list
 }
