@@ -127,9 +127,10 @@ export const useUserHook = () => {
         }
     }
 
-    const getRegisterUserList = async () =>{
+    const getRegisterUserList = async (page:any) =>{
+        console.log("page no. ##",page)
         const data = {
-            url:`/api/registration/list?dataPerPage=10`
+            url:`/api/registration/list?page=${page}&dataPerPage=20`
         }
         try {
             const res: any = await doGetApiCall(data);
@@ -145,11 +146,30 @@ export const useUserHook = () => {
         }
     }
 
+    const getSignupUserList = async (page:any) =>{
+        const data = {
+            url:`/api/registration/list?page=${page}&dataPerPage=20`
+        }
+        try {
+            const res: any = await doGetApiCall(data);
+            if (!res.error) {
+                return res.result;
+            } else {
+                console.error('Error fetching signup user list:', res.message);
+                return [];
+            }
+        } catch (err) {
+            console.error('API Error:', err);
+            // return [];
+        }
+    }
+
     return {
         createCourseRegistrationApi,
         handleLogin,
         handleSignUp,
         getUserDetails,
-        getRegisterUserList
+        getRegisterUserList,
+        getSignupUserList
     };
 };

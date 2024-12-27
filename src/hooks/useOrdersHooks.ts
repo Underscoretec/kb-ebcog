@@ -2,9 +2,9 @@ import { doGetApiCall } from '@/utils/ApiConfig';
 
 const useOrdersHooks = () => {
 
-    const getOrderList = async () =>{
+    const getOrderList = async (page:any) =>{
         const data = {
-            url:`/api/orders/list`
+            url:`/api/orders/list?page=${page}&dataPerPage=10`
         }
         try {
             const res: any = await doGetApiCall(data);

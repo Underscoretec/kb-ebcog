@@ -10,7 +10,7 @@ const OrderList = () => {
                     Orders list
                 </div>
             </div>
-            <div className='h-[60vh] overflow-auto border border-gray-300 border-t-0 mt-8'><OrderListTable /></div>
+           <OrderListTable />
         </div>
     )
 }
