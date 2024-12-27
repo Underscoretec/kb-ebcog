@@ -15,7 +15,6 @@ interface ExtendApiRequest extends NextApiRequest {
 const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[COURSES-001] Course create api call`);
     const { name, overView, category, duration, type, discountStartDate, discountEndDate, discountValue, price, currency, leadInstructor, faculties, date, } = req.body
-    console.log(discountStartDate, discountValue, ">>>>>>>> payload ");
     try {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
