@@ -68,7 +68,6 @@ const CartInfo = ({
                 setCurrentStep: setCurrentStep
 
             })
-            console.log(paymentData, "paymentData 001")
         }
     };
 

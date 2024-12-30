@@ -78,10 +78,10 @@ const SignInCard: React.FC = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <div className="flex justify-between">
+                    {/* <div className="flex justify-between">
                         <CheckBox label='Remember me' />
                         <Link href='#'><div className="text-[#4F46E5] font-montserrat text-sm font-medium leading-5">Forgot your password?</div></Link>
-                    </div>
+                    </div> */}
                     <Button
                         type="submit"
                         label="Sign In"

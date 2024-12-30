@@ -1,5 +1,5 @@
 import AdminLayout from '@/common/layouts/AdminLayout'
-import OrderListPage from '@/container/OrderList/OrderListPage'
+import OrderListPage from '@/container/orderList/OrderListPage'
 import { useRouteProtection } from '@/utils/pathChecker';
 import React, { ReactElement } from 'react'
 

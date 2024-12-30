@@ -22,34 +22,26 @@ export default function OrderListTable() {
         if (orderList) {
             setOrderCount(orderList?.dataCount || 0)
             setOrders(orderList?.result)
-        }else{
+        } else {
             console.error("Failed to fetch user list");
-            setOrders([]); 
+            setOrders([]);
         }
     }
 
-    const getStatusStyles = (status: 'success' | 'pending' | 'cancelled' | string) => {
+    const getStatusStyles = (status: 'success' | 'pending' | 'cancelled' | 'failed' | 'created' | string) => {
         switch (status) {
             case 'success':
-                return {
-                    bgColor: 'bg-green-100 border border-green-300',
-                    textColor: 'text-green-700',
-                };
+                return 'bg-green-100 border border-green-300 text-green-700';
             case 'pending':
-                return {
-                    bgColor: 'bg-[#FDE8E8] border border-[#f7bcbc]',
-                    textColor: 'text-[#fa3c3c]',
-                };
+                return 'bg-[#FDE8E8] border border-[#f7bcbc] text-[#fa3c3c]';
             case 'cancelled':
-                return {
-                    bgColor: 'bg-[#EDEBFE]',
-                    textColor: 'text-[#5521B5]',
-                };
+                return 'bg-[#EDEBFE] text-[#5521B5]';
+            case 'failed':
+                return 'bg-[#f2f0f0] border border-[#ebe8e8] text-[#d6d6d6]';
+            case 'created':
+                return 'bg-green-50 text-green-700 ring-green-600/20';
             default:
-                return {
-                    bgColor: 'bg-gray-100',
-                    textColor: 'text-gray-700',
-                };
+                return 'bg-gray-100 text-gray-700 bg-green-50';
         }
     };
 
@@ -70,7 +62,7 @@ export default function OrderListTable() {
                     <div className="flow-root">
                         <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                             <div className="inline-block min-w-full py-2 align-middle">
-                                {loading ? <div className="flex items-center justify-center min-h-[30rem]"> <CircularProgress /></div> :
+                                {loading ? <div className="flex items-center justify-center min-h-[30rem] border-t border-gray-300"> <CircularProgress style={{ color: '#E4087F' }} /></div> :
                                     <table className="min-w-full border-separate border-spacing-0">
                                         <thead>
                                             <tr>
@@ -106,18 +98,9 @@ export default function OrderListTable() {
                                                 </th>
                                             </tr>
                                         </thead>
-                                        {/* <InfiniteScroll
-                                    dataLength={orders.length}
-                                    next={() => fetchOrderList(page + 1)}
-                                    inverse={true}
-                                    hasMore={hasMore}
-                                    loader={<h4>Loading...</h4>}
-                                    scrollableTarget="scrollableDiv"
-                                ></InfiniteScroll> */}
                                         <tbody>
                                             {orders?.length > 0 ?
                                                 (orders?.map((order, orderIdx) => {
-                                                    const { bgColor, textColor } = getStatusStyles(order?.paymentStatus?.status);
                                                     return (
                                                         <tr key={orderIdx}>
                                                             <td className={classNames(
@@ -174,13 +157,13 @@ export default function OrderListTable() {
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                <span className="inline-flex items-center bg-green-50 px-4 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 rounded-full">{order?.orderStatus ? `${order?.orderStatus?.status}` : "N/A"}</span>
+                                                                <span className={`inline-flex items-center px-4 py-1 text-xs font-medium ${getStatusStyles(order?.orderStatus?.status)} ring-1 ring-inset  rounded-md`}>{order?.orderStatus ? `${order?.orderStatus?.status}` : "N/A"}</span>
                                                             </td>
                                                             <td className={classNames(
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                <span className={`inline-flex items-center rounded-full ${bgColor} px-4 py-1 text-xs font-medium ${textColor}`}>{order?.paymentStatus ? `${order?.paymentStatus?.status}` : "N/A"}</span>
+                                                                <span className={`inline-flex items-center rounded-full ${getStatusStyles(order?.paymentStatus?.status)} px-4 py-1 text-xs font-medium`}>{order?.paymentStatus ? `${order?.paymentStatus?.status}` : "N/A"}</span>
                                                             </td>
                                                         </tr>
                                                     )

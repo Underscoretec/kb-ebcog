@@ -36,7 +36,7 @@ const useCartHooks = () => {
             const response: any = await doDeleteApiCall(data)
             if (!response.error) {
                 console.log("response ##", response)
-                toast.success("Item remove successfully.");
+                // toast.success("Item remove successfully.");
             } else {
                 alert("Something went wrong");
             }
