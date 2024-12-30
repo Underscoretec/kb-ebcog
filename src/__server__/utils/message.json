@@ -171,7 +171,10 @@
   "ORDERS_FOUND":"Orders found",
   "ORDERS_NOT_FOUND":"Orders not found",
   "ORDER_NOT_FOUND":"Order not found",
+  "ORDER_FOUND":"Order found successfully",
   "PAYMENT_SUCCESS":"Payment successfully done",
   "PAYMENT_FAILED":"Payment failed",
-  "PAYMENT_VERIFY_FAIL":"Payment not verified"
+  "PAYMENT_VERIFY_FAIL":"Payment not verified",
+  "PAYMENTS_FOUND":"Payments found successfully",
+  "PAYMENTS_NOT_FOUND":"Payments not found"
 }

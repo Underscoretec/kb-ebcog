@@ -6,7 +6,7 @@ import paymentService from "@/__server__/payments/services";
 import errorHandler from "@/__server__/utils/errorHandler";
 import noMatchHandler from "@/__server__/utils/noMatchHandler";
 
-//endpoint: api/payment/verify
+//endpoint: api/payments/verify
 
 // create api router with next-connect
 const router = createRouter<NextApiRequest, NextApiResponse>();
