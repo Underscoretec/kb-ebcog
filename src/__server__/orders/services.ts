@@ -91,6 +91,8 @@ const createNewOrder = async (req: NextApiRequest, res: NextApiResponse) => {
 const list = async (req: any, res: any) => {
     logger.info(`[Orders 002] Orders list api call`);
     try {
+        const dataPerPage = Number(req.query?.dataPerPage) || 25;
+        const page = Number(req.query?.page) || 1;
         if (req.user?.role === "admin") {
             const query: any = {
                 // enabled: 1,
@@ -113,21 +115,23 @@ const list = async (req: any, res: any) => {
                     path: 'items', select: "-enabled -createdBy -createAt -updateAt -__v",
                     populate: [
                         {
-                            path:'courseId', select: "-enabled -createdBy -createAt -updateAt -__v"
+                            path: 'courseId', select: "-enabled -createdBy -createAt -updateAt -__v"
                         }
                     ]
                 },
                 {
                     path: 'createdBy', select: "first_name last_name email role phoneNo"
                 },
-            ]).select(["-__v",]).sort({ createdAt: -1 });
+            ]).select(["-__v",]).sort({ createdAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
+            const ordersCount = await OrderModel.countDocuments(query);
 
             if (orders?.length > 0) {
                 return res.status(200).json({
                     message: messages["ORDERS_FOUND"],
                     error: false,
                     code: "ORDERS_FOUND",
-                    result: orders
+                    result: orders,
+                    dataCount: ordersCount
                 });
             } else {
                 return res.status(404).json({

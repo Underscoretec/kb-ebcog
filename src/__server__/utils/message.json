@@ -169,5 +169,9 @@
   "ORDER_FAILED":"Order failed to create",
   "USER_FOUND":"User found successfully",
   "ORDERS_FOUND":"Orders found",
-  "ORDERS_NOT_FOUND":"Orders not found"
+  "ORDERS_NOT_FOUND":"Orders not found",
+  "ORDER_NOT_FOUND":"Order not found",
+  "PAYMENT_SUCCESS":"Payment successfully done",
+  "PAYMENT_FAILED":"Payment failed",
+  "PAYMENT_VERIFY_FAIL":"Payment not verified"
 }
