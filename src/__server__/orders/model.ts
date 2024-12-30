@@ -49,7 +49,11 @@ const orderSchema = new Schema(
         },
         items: [
             {
-                courseId: { type: Schema.Types.ObjectId, ref: Course, required: true },
+                courseId: {
+                    type: Schema.Types.ObjectId,
+                    ref: Course,
+                    required: true
+                },
                 quantity: { type: Number, },
                 price: { type: Number, },
                 img: { type: String },

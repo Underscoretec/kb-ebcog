@@ -1,5 +1,4 @@
 import mongoose, { model, Schema } from "mongoose";
-import Users from "../users/model";
 
 // Define the Course schema
 const courseSchema: any = new Schema(
@@ -42,10 +41,6 @@ const courseSchema: any = new Schema(
             type: Number, // Duration in Weeks
             default: 1
         },
-        learners: [{
-            type: Schema.Types.ObjectId, // enrolled student
-            ref: Users
-        }],
         price: {
             base: {
                 type: Number,
