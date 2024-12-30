@@ -15,7 +15,6 @@ interface ExtendApiRequest extends NextApiRequest {
 const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[COURSES-001] Course create api call`);
     const { name, overView, category, duration, type, discountStartDate, discountEndDate, discountValue, price, currency, leadInstructor, faculties, date, } = req.body
-    console.log(discountStartDate,discountValue ,">>>>>>>> payload ");
     try {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
@@ -86,12 +85,14 @@ const list = async (req: ExtendApiRequest, res: NextApiResponse) => {
 
         const courseList = await Courses.find(query).select(["-enabled", "-createdBy", "-__v", "-updatedBy"])
             .sort({ createdAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
+        const courseCount = await Courses.countDocuments(query);
         if (courseList?.length > 0) {
             return res.status(200).json({
                 message: messages["COURSES_FOUND"],
                 error: false,
                 code: "COURSES_FOUND",
-                result: courseList
+                result: courseList,
+                dataCount: courseCount
             });
         } else {
             return res.status(404).json({

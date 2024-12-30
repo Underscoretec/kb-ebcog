@@ -1,4 +1,5 @@
 import mongoose, { model, Schema } from "mongoose";
+import Course from "@/__server__/courses/model"
 
 const userSchema: any = new Schema(
     {
@@ -42,6 +43,10 @@ const userSchema: any = new Schema(
         isVerified: {
             type: Boolean,
             default: false, //true:verified  false:not verified
+        },
+        enrolledCourse: {
+            type: Schema.Types.ObjectId,
+            ref: Course
         },
         emailOtp: {
             code: {

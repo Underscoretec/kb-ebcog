@@ -12,7 +12,7 @@ export async function rzpCheckoutFrom(data: any) {
 
         const options: any = {
             "key": process.env.NEXT_PUBLIC_RZP_PAYMENT_KEY, // Enter the Key ID generated from the Dashboard
-            "amount": data?.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "amount": data?.amount, // Amount is in currency subunits. Default currency is AED. Hence, 50000 refers to 50000 paise
             "currency": data?.currency,
             // "name": "Ecommerce payment",
             "description": "Test Transaction",
@@ -24,15 +24,17 @@ export async function rzpCheckoutFrom(data: any) {
                 console.log("response", response)
                 response.customerId = userDetails?._id
                 response.amount = (data?.amount / 100)
-                const verified = await verifyPayment(response)
-                console.log("verified===>",verified)
-                // if (verified?.result.id) {
+                const verified = await verifyPayment(response,data?._id)
+                console.log("verified ##",verified)
+                if (verified?.code ==='PAYMENT_SUCCESS') {
                     data.router.push({
                         pathname: data?.redirectUrl,
                         query: { orderId: data?.orderId }
                     })
                     // data.cartEmpty();
-               // }
+                } else {
+                    data.setCurrentStep(1)
+               }
 
             },
             "prefill": {
@@ -75,13 +77,14 @@ export async function rzpCheckoutFrom(data: any) {
     }
 }
 
-export async function verifyPayment(data: any) {
+export async function verifyPayment(data: any,id: string) {
 
     try {
         const verify = await axios.post("/api/payment/verify", {
-            order_id: data?.razorpay_order_id,
+            razorpay_order_id: data?.razorpay_order_id,
             razorpay_payment_id: data?.razorpay_payment_id,
             razorpay_signature: data?.razorpay_signature,
+            id: id,   // _id of order data
             customerId: data?.customerId,
             amount: data?.amount,
         });
