@@ -11,15 +11,15 @@ const useOrdersHooks = () => {
         }
         try {
             const res: any = await doGetApiCall(data);
-            if (!res.error) {
+            if (!res?.error) {
                 return res;
             } else {
-                console.error('Error fetching user list:', res.message);
+                console.error('Error fetching user list:', res?.message);
                 return [];
             }
         } catch (err) {
             console.error('API Error:', err);
-            // return [];
+            return [];
         }finally {
             setLoading(false);
         }

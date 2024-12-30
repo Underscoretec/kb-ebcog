@@ -20,8 +20,13 @@ export default function SignupUserList() {
 
     const fetchUserList = async (pageNumber: any) => {
         const list = await getSignupUserList(pageNumber)
-        setUserCount(list?.dataCount)
-        setUsers(list?.result)
+        if (list) {
+            setUserCount(list?.dataCount || 0);
+            setUsers(list?.result || []);
+        } else {
+            console.error("Failed to fetch user list");
+            setUsers([]); 
+        }
     }
 
     const handleNext = () => {
@@ -69,28 +74,28 @@ export default function SignupUserList() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {users.length > 0 ? (users.map((user: any, userIdx: any) => {
+                                        {users?.length > 0 ? (users?.map((user: any, userIdx: any) => {
                                             return (
                                                 <tr key={user.email}>
                                                     <td
                                                         className={classNames(
-                                                            userIdx !== users.length - 1 ? 'border-b border-gray-200' : '',
+                                                            userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
                                                             'whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8',
                                                         )}
                                                     >
-                                                        {user?.first_name ? `${user.first_name} ${user.last_name}` : "N/A"}
+                                                        {user?.first_name ? `${user?.first_name} ${user?.last_name}` : "N/A"}
                                                     </td>
                                                     <td
                                                         className={classNames(
-                                                            userIdx !== users.length - 1 ? 'border-b border-gray-200' : '',
+                                                            userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
                                                             'hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell',
                                                         )}
                                                     >
-                                                        {user?.email ? user.email : "N/A"}
+                                                        {user?.email ? user?.email : "N/A"}
                                                     </td>
                                                     <td
                                                         className={classNames(
-                                                            userIdx !== users.length - 1 ? 'border-b border-gray-200' : '',
+                                                            userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
                                                             'hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:table-cell',
                                                         )}
                                                     >
@@ -98,7 +103,7 @@ export default function SignupUserList() {
                                                     </td>
                                                     <td
                                                         className={classNames(
-                                                            userIdx !== users.length - 1 ? 'border-b border-gray-200' : '',
+                                                            userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
                                                             'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                         )}
                                                     >
@@ -106,11 +111,19 @@ export default function SignupUserList() {
                                                     </td>
                                                     <td
                                                         className={classNames(
-                                                            userIdx !== users.length - 1 ? 'border-b border-gray-200' : '',
+                                                            userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
                                                             'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                         )}
                                                     >
-                                                        {user.role}
+                                                        {user?.role}
+                                                    </td>
+                                                    <td
+                                                        className={classNames(
+                                                            userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
+                                                            'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
+                                                        )}
+                                                    >
+                                                        {user?.loginCount}
                                                     </td>
                                                     <td
                                                         className={classNames(
@@ -118,15 +131,7 @@ export default function SignupUserList() {
                                                             'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                         )}
                                                     >
-                                                        {user.loginCount}
-                                                    </td>
-                                                    <td
-                                                        className={classNames(
-                                                            userIdx !== users.length - 1 ? 'border-b border-gray-200' : '',
-                                                            'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
-                                                        )}
-                                                    >
-                                                        {dayjs(user.createdAt).format('DD MMMM YYYY, h:mm A')}
+                                                        {dayjs(user?.createdAt).format('DD MMMM YYYY, h:mm A')}
                                                     </td>
                                                 </tr>
                                             )
@@ -145,7 +150,7 @@ export default function SignupUserList() {
                     </div>
                 </div>
             </div>
-            {users.length > 0 && <Pagination handlePreviousClick={handlePrevious} handleNextClick={handleNext} totalCount={userCount} page={page} />}
+            {users?.length > 0 && <Pagination handlePreviousClick={handlePrevious} handleNextClick={handleNext} totalCount={userCount} page={page} />}
         </>
     )
 }
