@@ -1,8 +1,10 @@
 import AdminLayout from '@/common/layouts/AdminLayout'
 import OrderListPage from '@/container/OrderList/OrderListPage'
+import { useRouteProtection } from '@/utils/pathChecker';
 import React, { ReactElement } from 'react'
 
 const OrderList = () => {
+    useRouteProtection();
     return (
         <div><OrderListPage /></div>
     )
