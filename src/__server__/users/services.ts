@@ -214,7 +214,13 @@ const getUserDetails = async (req: NextApiRequest, res: NextApiResponse) => {
                 code: "BAD_REQUEST",
             })
         }
-        const findUser = await UserModel.findById(userId).select(["-enabled", "-__v", "-password", "-isVerified", "-consent", "-termsAndCondition", "-whatsApp", '-emailSend', "-excelDownload"]);
+        const findUser = await UserModel.findById(userId)
+            .populate([
+                {
+                    path: 'enrolledCourse', select: "-enabled -createdBy -createAt -updateAt -__v"
+                }
+            ])
+            .select(["-enabled", "-__v", "-password", "-isVerified", "-consent", "-termsAndCondition", "-whatsApp", '-emailSend', "-excelDownload"]);
         if (!findUser) {
             return res.status(404).json({
                 message: messages["USER_NOT_FOUND"],
@@ -258,6 +264,11 @@ const list = async (req: any, res: any) => {
             }
 
             const users = await UserModel.find(query)
+                .populate([
+                    {
+                        path: 'enrolledCourse', select: "-enabled -createdBy -createAt -updateAt -__v"
+                    }
+                ])
                 .select(["-enabled", "-__v", "-password", "-isVerified", "-consent", "-termsAndCondition", "-whatsApp", '-emailSend', "-excelDownload"]).sort({ createAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
             const usersCount = await UserModel.countDocuments(query)
 
