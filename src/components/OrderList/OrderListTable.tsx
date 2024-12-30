@@ -19,8 +19,13 @@ export default function OrderListTable() {
 
     const fetchOrderList = async (pageNumber: number) => {
         const orderList = await getOrderList(pageNumber);
-        setOrderCount(orderList.dataCount)
-        setOrders(orderList.result)
+        if (orderList) {
+            setOrderCount(orderList?.dataCount || 0)
+            setOrders(orderList?.result)
+        }else{
+            console.error("Failed to fetch user list");
+            setOrders([]); 
+        }
     }
 
     const getStatusStyles = (status: 'success' | 'pending' | 'cancelled' | string) => {
@@ -110,69 +115,69 @@ export default function OrderListTable() {
                                     scrollableTarget="scrollableDiv"
                                 ></InfiniteScroll> */}
                                         <tbody>
-                                            {orders.length > 0 ?
-                                                (orders.map((order, orderIdx) => {
+                                            {orders?.length > 0 ?
+                                                (orders?.map((order, orderIdx) => {
                                                     const { bgColor, textColor } = getStatusStyles(order?.paymentStatus?.status);
                                                     return (
                                                         <tr key={orderIdx}>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8',
                                                             )}>
                                                                 {order?.orderId}
                                                             </td>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell',
                                                             )}>
                                                                 {order?.createdBy ? `${order?.createdBy?.first_name} ${order?.createdBy?.last_name}` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:table-cell',
                                                             )}>
                                                                 {order?.createdBy ? `${order?.createdBy?.email}` : "N/A"}
 
                                                             </td>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
                                                                 {order?.createdBy ? `${order?.createdBy?.phoneNo}` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
                                                                 {order?.items ? `${order?.items[0]?.courseId?.name}` : "N/A"}
                                                             </td>
 
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
                                                                 {order?.items ? `${order?.items[0]?.courseId?.discount?.value} ${order?.items[0]?.courseId?.discount?.currency}` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
                                                                 {order?.items ? `${order?.items[0]?.courseId?.price?.base} ${order?.items[0]?.courseId?.price?.currency}` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
                                                                 {order?.payableAmount ? `${order?.payableAmount} AED` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
                                                                 <span className="inline-flex items-center bg-green-50 px-4 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 rounded-full">{order?.orderStatus ? `${order?.orderStatus?.status}` : "N/A"}</span>
                                                             </td>
                                                             <td className={classNames(
-                                                                orderIdx !== orders.length - 1 ? 'border-b border-gray-200' : '',
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
                                                                 <span className={`inline-flex items-center rounded-full ${bgColor} px-4 py-1 text-xs font-medium ${textColor}`}>{order?.paymentStatus ? `${order?.paymentStatus?.status}` : "N/A"}</span>
@@ -194,7 +199,7 @@ export default function OrderListTable() {
                     </div>
                 </div>
             </div>
-            {orders.length > 0 && <Pagination handlePreviousClick={handlePrevious} handleNextClick={handleNext} totalCount={orderCount} page={page} />}
+            {orders?.length > 0 && <Pagination handlePreviousClick={handlePrevious} handleNextClick={handleNext} totalCount={orderCount} page={page} />}
         </>
     )
 }

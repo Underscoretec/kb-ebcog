@@ -9,6 +9,7 @@ import { useUserHook } from '@/container/UserModel/useUserHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
 import { useRouter } from 'next/router';
 import { trackGAEvent } from '@/common/utils/gAnalytics';
+import { toast } from 'react-toastify';
 // import { useRouter } from 'next/router';
 
 const RegistrationCard = () => {
@@ -74,7 +75,9 @@ const RegistrationCard = () => {
                 else if (result?.data?.code === 'REGISTRATION_CREATED') {
                     trackGAEvent('registration_completed', values)
                     action.resetForm();
-                    showModal("Thank You For Your Registration", "Please check your inbox for further instructions.", true);
+                    toast.success("Thank You For Your Registration, Please check your inbox for further instructions.");
+                    router.push('/');
+                    // showModal("Thank You For Your Registration", "Please check your inbox for further instructions.", true);
                 }
             } else {
                 console.log('error');
