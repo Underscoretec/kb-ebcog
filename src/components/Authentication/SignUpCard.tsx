@@ -65,7 +65,7 @@ const SignUpCard: React.FC = () => {
                 const result: any = await handleSignUp({ ...values, number: rawPhone }, action);
                 if (result?.code === 'USER_ALREADY_EXISTS') {
                     // alert("Email already exist!")
-                    showModal("Signup Error", "Email already exists!", false);
+                    showModal("Signup Error", "Email or Phone number already exists!", false);
                 }
                 else if (result?.code === 'USER_CREATE_SUCCESS') {
                     action.resetForm();
