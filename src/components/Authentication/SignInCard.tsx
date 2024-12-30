@@ -1,9 +1,6 @@
-// components/SignInCard.tsx
 import React, { useState } from "react";
 import Button from "@/common/uicomponents/Button";
 import InputField from "@/common/uicomponents/InputField";
-import CheckBox from "@/common/uicomponents/CheckBox";
-import Link from "next/link";
 import { useUserHook } from "@/container/UserModel/useUserHooks";
 import { useRouter } from "next/router";
 import AlertModal from "@/common/uicomponents/AlertModal";

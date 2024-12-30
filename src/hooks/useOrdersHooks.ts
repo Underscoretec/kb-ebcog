@@ -25,7 +25,29 @@ const useOrdersHooks = () => {
         }
     }
 
-  return {getOrderList, loading}
+    const getTransactionList = async (page:any) =>{
+        setLoading(true)
+        const data = {
+            url:`/api/payments/list?page=${page}&dataPerPage=10`
+        }
+        try {
+            const res: any = await doGetApiCall(data);
+            console.log("res====##",res)
+            if (!res?.error) {
+                return res;
+            } else {
+                console.error('Error fetching transaction list:', res?.message);
+                return [];
+            }
+        } catch (err) {
+            console.error('API Error:', err);
+            return [];
+        }finally {
+            setLoading(false);
+        }
+    }
+
+  return {getOrderList, getTransactionList, loading}
 }
 
 export default useOrdersHooks

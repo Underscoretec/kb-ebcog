@@ -151,7 +151,7 @@ export default function OrderListTable() {
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                {order?.payableAmount ? `${order?.payableAmount} AED` : "N/A"}
+                                                                {order?.payableAmount ? `${order?.payableAmount} ${order?.currency}` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
@@ -163,7 +163,7 @@ export default function OrderListTable() {
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                <span className={`inline-flex items-center rounded-full ${getStatusStyles(order?.paymentStatus?.status)} px-4 py-1 text-xs font-medium`}>{order?.paymentStatus ? `${order?.paymentStatus?.status}` : "N/A"}</span>
+                                                                <span className={`inline-flex items-center rounded-full ${getStatusStyles(order?.paymentStatus?.status)} px-4 py-1 text-xs font-semibold`}>{order?.paymentStatus ? `${order?.paymentStatus?.status}` : "N/A"}</span>
                                                             </td>
                                                         </tr>
                                                     )

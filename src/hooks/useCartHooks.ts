@@ -1,7 +1,6 @@
 import { doDeleteApiCall, doGetApiCall, doPostApiCall } from '@/utils/ApiConfig';
 import { getCookie } from '@/utils/cookieUtils';
 import { useState } from 'react'
-import { toast } from 'react-toastify';
 
 const useCartHooks = () => {
     const [loading, setLoading] = useState(false);
