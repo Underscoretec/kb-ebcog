@@ -53,6 +53,8 @@ export const useUserHook = () => {
         }
     }
 
+
+
     async function handleLogin(data: any) {
         const loginData = {
             url: "api/auth/login",
@@ -78,6 +80,8 @@ export const useUserHook = () => {
             console.error(err);
         }
     }
+
+
 
     async function handleSignUp(data: any, action: any) {
         const signupData = {
@@ -109,6 +113,8 @@ export const useUserHook = () => {
         }
     }
 
+
+
     const getUserDetails = async (id:any) =>{
         const user_id = id || UserId;
         const data = {
@@ -128,6 +134,8 @@ export const useUserHook = () => {
             // return [];
         }
     }
+
+
 
     const getRegisterUserList = async (page:any) =>{
         setLoading(true)
@@ -149,6 +157,8 @@ export const useUserHook = () => {
             setLoading(false);
         }
     }
+
+
 
     const getSignupUserList = async (page:any) =>{
         setLoading(true)
@@ -172,6 +182,42 @@ export const useUserHook = () => {
         }
     }
 
+    async function downloadExcelFile(type?: string, fileName?: string) {
+
+        let token: any;
+        if (typeof window !== 'undefined') {
+            token = getCookie('token')
+        }
+
+        const url = `/api/users?type=${type}&action=download`
+        // let url = search ? `/api/users?type=${type}&string=${search}&action=download` : `/api/users?type=${type}&action=download`
+        // let url = dashBoardURL ? `${dashBoardURL}&action=download` : (type ? `${search ? `${apiUrl}?type=${type}&string=${search}&action=download` : `${apiUrl}?type=${type}&action=download`}` :
+        //     `${search ? `${apiUrl}?&string=${search}&action=download` : `${apiUrl}?&action=download`}`)
+
+
+        await fetch(url, {
+            headers: {
+                Authorization: token || "",
+            },
+        }).then((res: any) => {
+            return res.arrayBuffer()
+        }).then((arrayBuffer: any) => {
+            const blob = new Blob([arrayBuffer], { type: "application/vnd.ms-excel" });
+            const url = window.URL.createObjectURL(blob);
+            // setDownloadCount(90)
+            const a: any = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            // typeof window !== undefined && window.URL.revokeObjectURL(url);
+            if (typeof window !== 'undefined') {
+                window.URL.revokeObjectURL(url);
+            }
+            document.body.removeChild(a);
+        })
+    }
+
     return {
         createCourseRegistrationApi,
         handleLogin,
@@ -179,6 +225,7 @@ export const useUserHook = () => {
         getUserDetails,
         getRegisterUserList,
         getSignupUserList,
+        downloadExcelFile,
         loading
     };
 };

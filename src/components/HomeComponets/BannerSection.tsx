@@ -1,6 +1,6 @@
 import ImageComponent from '@/common/uicomponents/ImageComponent'
 import React from 'react'
-import Banner from "../../../public/banner.jpg"
+import Banner from "../../../public/banner1.jpg"
 import Link from 'next/link'
 
 const BannerSection = () => {

@@ -6,8 +6,8 @@ import { FaCheck } from "react-icons/fa";
 
 const Confirmation = () => {
     const router = useRouter();
-    const { orderId } = router.query;
-    console.log("orderId ###",orderId)
+    const { orderId, Id} = router.query;
+    console.log("Id",orderId, Id)
 
 
     const handleClick = () => {
