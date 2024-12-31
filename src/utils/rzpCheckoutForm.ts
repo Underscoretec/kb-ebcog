@@ -80,7 +80,7 @@ export async function rzpCheckoutFrom(data: any) {
 export async function verifyPayment(data: any,id: string) {
 
     try {
-        const verify = await axios.post("/api/payment/verify", {
+        const verify = await axios.post("/api/payments/verify", {
             razorpay_order_id: data?.razorpay_order_id,
             razorpay_payment_id: data?.razorpay_payment_id,
             razorpay_signature: data?.razorpay_signature,

@@ -1,9 +1,11 @@
 import { doGetApiCall, doPostApiCall } from "@/utils/ApiConfig";
 import { getCookie, setCookie } from "@/utils/cookieUtils";
 import axios from "axios";
+import { useState } from "react";
 
 export const useUserHook = () => {
     const UserId = getCookie("userId")
+    const [loading, setLoading] = useState(false)
 
     
     async function createCourseRegistrationApi(data: any, action: any) {
@@ -127,21 +129,46 @@ export const useUserHook = () => {
         }
     }
 
-    const getRegisterUserList = async () =>{
+    const getRegisterUserList = async (page:any) =>{
+        setLoading(true)
         const data = {
-            url:`/api/registration/list`
+            url:`/api/registration/list?page=${page}&dataPerPage=10`
         }
         try {
             const res: any = await doGetApiCall(data);
-            if (!res.error) {
-                return res.result;
+            if (!res?.error) {
+                return res;
             } else {
-                console.error('Error fetching user list:', res.message);
+                console.error('Error fetching user list:', res?.message);
                 return [];
             }
         } catch (err) {
             console.error('API Error:', err);
-            // return [];
+            return [];
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    const getSignupUserList = async (page:any) =>{
+        setLoading(true)
+        const data = {
+            url:`/api/users/list?page=${page}&dataPerPage=10`
+        }
+        try {
+            const res: any = await doGetApiCall(data);
+            if (!res?.error) {
+                return res;
+            } else {
+                console.error('Error fetching signup user list:', res.message);
+                return [];
+            }
+        } catch (err) {
+            console.error('API Error:', err);
+            return [];
+        }
+        finally {
+            setLoading(false);
         }
     }
 
@@ -150,6 +177,8 @@ export const useUserHook = () => {
         handleLogin,
         handleSignUp,
         getUserDetails,
-        getRegisterUserList
+        getRegisterUserList,
+        getSignupUserList,
+        loading
     };
 };
