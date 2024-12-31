@@ -1,5 +1,6 @@
 import Pagination from "@/common/uicomponents/Pagination";
 import useOrdersHooks from "@/hooks/useOrdersHooks";
+import { formatBasePrice } from "@/utils/formatBasePrice";
 import { CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -139,19 +140,19 @@ export default function OrderListTable() {
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                {order?.items ? `${order?.items[0]?.courseId?.discount?.value} ${order?.items[0]?.courseId?.discount?.currency}` : "N/A"}
+                                                                {order?.items ? `${order?.items[0]?.courseId?.discount?.currency} ${formatBasePrice(order?.items[0]?.courseId?.discount?.value)} ` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                {order?.items ? `${order?.items[0]?.courseId?.price?.base} ${order?.items[0]?.courseId?.price?.currency}` : "N/A"}
+                                                                {order?.items ? `${order?.items[0]?.courseId?.price?.currency} ${formatBasePrice(order?.items[0]?.courseId?.price?.base)} ` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                {order?.payableAmount ? `${order?.payableAmount} ${order?.currency}` : "N/A"}
+                                                                {order?.payableAmount ? `${order?.currency} ${formatBasePrice(order?.payableAmount )}` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',

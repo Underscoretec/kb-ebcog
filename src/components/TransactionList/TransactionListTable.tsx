@@ -1,5 +1,6 @@
 import Pagination from '@/common/uicomponents/Pagination';
 import useOrdersHooks from '@/hooks/useOrdersHooks';
+import { formatBasePrice } from '@/utils/formatBasePrice';
 import { CircularProgress } from '@mui/material';
 import dayjs from 'dayjs';
 import React, { useEffect, useState } from 'react'
@@ -129,7 +130,7 @@ const TransactionListTable = () => {
                                                                 index !== transaction?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                {transaction?.amount ? `${transaction?.amount} AED` : "N/A"}
+                                                                {transaction?.amount ? `AED ${formatBasePrice(transaction?.amount)}` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
                                                                 index !== transaction?.length - 1 ? 'border-b border-gray-200' : '',
