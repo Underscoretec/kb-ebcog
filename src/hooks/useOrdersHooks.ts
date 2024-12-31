@@ -32,7 +32,7 @@ const useOrdersHooks = () => {
         }
         try {
             const res: any = await doGetApiCall(data);
-            console.log("res====##",res)
+            // console.log("res====##",res)
             if (!res?.error) {
                 return res;
             } else {

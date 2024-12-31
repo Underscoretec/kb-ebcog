@@ -20,7 +20,7 @@ const TransactionListTable = () => {
 
     const fetchTransactionList = async (pageNumber: number) => {
         const transactionList = await getTransactionList(pageNumber);
-        console.log("transactionList====>", transactionList)
+        // console.log("transactionList====>", transactionList)
         if (transactionList) {
             setCount(transactionList?.dataCount || 0)
             setTransaction(transactionList?.result)
@@ -30,7 +30,7 @@ const TransactionListTable = () => {
         }
     }
 
-    const getStatusStyles = (status: 'success' | 'pending' | 'cancelled' | 'failed' | 'created' | string) => {
+    const getStatusStyles = (status: 'success' | 'pending' | 'cancelled' | 'failed' | string) => {
         switch (status) {
             case 'success':
                 return 'bg-green-100 border border-green-300 text-green-700';
@@ -40,8 +40,6 @@ const TransactionListTable = () => {
                 return 'bg-[#EDEBFE] text-[#5521B5]';
             case 'failed':
                 return 'bg-[#f2f0f0] border border-[#ebe8e8] text-[#d6d6d6]';
-            case 'created':
-                return 'bg-green-50 text-green-700 ring-green-600/20';
             default:
                 return 'bg-gray-100 text-gray-700 bg-green-50';
         }
