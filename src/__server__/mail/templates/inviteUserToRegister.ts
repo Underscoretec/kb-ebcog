@@ -186,7 +186,7 @@ export const inviteUserToRegister = (userName: string) => `
                                 <tr>
                                   <td style="padding-right: 0px;padding-left: 0px;" align="center">
 
-                                    <img align="center" border="0" src="https://raw.githubusercontent.com/Underscoretec/images/refs/heads/main/Maternal_medicine_course_individual_banner6.jpg" alt="EBCOG-Banner" title="EBCOG-Banner" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 600px;" width="600" />
+                                    <img align="center" border="0" src="https://raw.githubusercontent.com/Underscoretec/images/refs/heads/main/Gynaecology_banner1.jpg" alt="EBCOG-Banner" title="EBCOG-Banner" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 600px;" width="600" />
 
                                   </td>
                                 </tr>
@@ -242,7 +242,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:4px 36px 12px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="line-height: 21px;" data-contrast="auto">We are reaching out to present an exciting opportunity for the prestigious <strong>EBCOG </strong></span><strong><span style="line-height: 21px;" data-contrast="auto">Maternal Medicine Diploma</span></strong><span style="line-height: 21px;" data-contrast="auto"><strong> program</strong>, which will be held in Dubai from 14</span><span style="line-height: 21px;" data-contrast="auto">th</span><span style="line-height: 21px;" data-contrast="auto"> to 19</span><span style="line-height: 21px;" data-contrast="auto">th</span><span style="line-height: 21px;" data-contrast="auto"> February 2025. This initiative offers a unique platform to enhance expertise in maternal and fetal education and improving patient outcomes.</span> &nbsp; </span><span style="font-size: 16px; line-height: 24px;">&nbsp;</span></p>
+                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;">We are reaching out to present an exceptional opportunity for the prestigious <strong>EBCOG Diploma in Gynaecology Endoscopy</strong>, taking place from February 14th to 19th, 2025, in Sharjah, UAE. &nbsp;</span><span style="font-size: 16px; line-height: 24px;">&nbsp;</span></p>
                               </div>
 
                             </td>
@@ -256,7 +256,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:8px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; color: #e4087f; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="font-size: 18px; line-height: 27px;"><strong><span data-contrast="auto" style="line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">About the EBCOG Maternal Medicine Diploma</span> </span></strong></span><span data-ccp-props="{}" style="line-height: 21px;">&nbsp;</span> &nbsp;</span><span style="font-size: 16px; line-height: 24px;">&nbsp;</span></p>
+                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="font-size: 18px; line-height: 27px;"><strong><span data-contrast="auto" style="line-height: 21px;">Why Join This Course?</span></strong></span><span data-ccp-props="{}" style="line-height: 21px;">&nbsp;</span> &nbsp;</span><span style="font-size: 16px; line-height: 24px;">&nbsp;</span></p>
                               </div>
 
                             </td>
@@ -270,7 +270,41 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">The European Board and College of Obstetrics and Gynaecology (EBCOG, a leading authority representing 37 European national societies, has designed this diploma to address critical skill gaps in maternal medicine. The program provides a comprehensive curriculum focused on managing both normal and high-risk pregnancies, equipping participants with advanced clinical and surgical skills. </span><strong>&nbsp;</strong></span></p>
+                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><strong>✔ Cutting-Edge Education : </strong><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">This comprehensive 5-day program, led by distinguished experts, combines theoretical learning with hands-on training in laparoscopic and hysteroscopic procedures.</span><strong>&nbsp;</strong></span></p>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 36px 4px;font-family:'Cabin',sans-serif;" align="left">
+
+                              <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
+                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><strong>✔ <span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Exclusive Content</span> : </strong><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">The curriculum covers</span><strong> -</strong></span></p>
+                                <ul>
+                                  <li style="font-size: 14px; line-height: 24px;"><span style="font-size: 16px; line-height: 24px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Core skills and techniques in gynaecological laparoscopy.</span></span></li>
+                                  <li style="font-size: 14px; line-height: 24px;"><span style="font-size: 16px; line-height: 24px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Operative laparoscopy for benign conditions.</span></span></span></li>
+                                  <li style="font-size: 14px; line-height: 24px;"><span style="font-size: 16px; line-height: 24px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Advanced operative techniques.</span></span></span></span></li>
+                                  <li style="font-size: 14px; line-height: 24px;"><span style="font-size: 16px; line-height: 24px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Management of complications in laparoscopic surgery.</span></span></span></span></span></li>
+                                </ul>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 36px 16px;font-family:'Cabin',sans-serif;" align="left">
+
+                              <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
+                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><strong>✔ <span style="list-style-type: disc; line-height: 21px;" data-contrast="auto">Practical Experience</span> : </strong>Participants will benefit from state-of-the-art facilities and simulated environments, ensuring they are well-prepared for real-world scenarios.<strong> </strong><strong>&nbsp;</strong></span></p>
                               </div>
 
                             </td>
@@ -320,52 +354,14 @@ export const inviteUserToRegister = (userName: string) => `
                       <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                         <tbody>
                           <tr>
-                            <td style="overflow-wrap:break-word;word-break:break-word;padding:8px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><strong>✔ <span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Comprehensive Curriculum </span></span>: </strong>Covers labor and delivery techniques, management of medical disorders during pregnancy, critical care in obstetrics, and high-risk conditions. &nbsp;</span></p>
-                              </div>
-
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                        <tbody>
-                          <tr>
-                            <td style="overflow-wrap:break-word;word-break:break-word;padding:8px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
-
-                              <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><strong>✔ <span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Hands-on Training</span> </span>: </strong><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Practical sessions on advanced tools like outlet forceps, vacuum cups, Odon devices, IUCDs, and more. </span>&nbsp;</span></p>
-                              </div>
-
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                        <tbody>
-                          <tr>
-                            <td style="overflow-wrap:break-word;word-break:break-word;padding:8px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
-
-                              <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><strong>✔ <span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Expert Faculty</span></span>&nbsp;: </strong><span data-contrast="auto" style="line-height: 21px;">Led by globally renowned specialists such as </span><span data-contrast="auto" style="line-height: 21px;">Prof. Frank Louwen (President of EBCOG)</span><span data-contrast="auto" style="line-height: 21px;">, </span><span data-contrast="auto" style="line-height: 21px;">Prof. Diogo Ayres de Campos</span><span data-contrast="auto" style="line-height: 21px;">, and </span><span data-contrast="auto" style="line-height: 21px;">Prof. Chittaranjan N. Purandare</span><span data-contrast="auto" style="line-height: 21px;">, among others.</span>&nbsp;</span></p>
-                              </div>
-
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                        <tbody>
-                          <tr>
-                            <td style="overflow-wrap:break-word;word-break:break-word;padding:8px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
-
-                              <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><strong>✔ <span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Certification</span></span></span> : </strong><span style="line-height: 21px;" data-contrast="auto"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Participants will receive an internationally recognized EBCOG certification and DHA accreditation upon successful completion.</span> </span>&nbsp;</span></p>
+                                <ul>
+                                  <li style="font-size: 14px; line-height: 24px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto">40 high-impact lectures with intensive hands-on training.</span></span></li>
+                                  <li style="font-size: 14px; line-height: 24px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="line-height: 21px;" data-contrast="auto">International and local faculty, including renowned experts like </span><strong><span style="line-height: 21px;" data-contrast="auto">Prof. Hélder Ferreira</span><span style="line-height: 21px;" data-contrast="auto"> and </span><span style="line-height: 21px;" data-contrast="auto">Dr. István Argay.</span></strong></span></span></li>
+                                  <li style="font-size: 14px; line-height: 24px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="line-height: 21px;" data-ccp-props="{}"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">EBCOG certification and DHA accreditation upon completion.</span>&nbsp;</span> </span></span></li>
+                                </ul>
                               </div>
 
                             </td>
@@ -457,7 +453,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:4px 36px 0px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; color: #e4087f; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="font-size: 14px; line-height: 150%;"><span style="font-size: 16px; line-height: 24px;"><span style="font-size: 18px; line-height: 27px;"><strong><span style="line-height: 21px;" data-contrast="auto"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Target Audience</span> </span>&nbsp;</span></span></strong></span><span style="line-height: 21px;" data-ccp-props="{}">&nbsp;</span> &nbsp;</span><span style="font-size: 16px; line-height: 24px;">&nbsp;</span></p>
+                                <p style="font-size: 14px; line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="font-size: 18px; line-height: 27px;"><strong><span style="line-height: 21px;" data-contrast="auto"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Target Audience</span> </span>&nbsp;</span></span></strong></span><span style="line-height: 21px;" data-ccp-props="{}">&nbsp;</span> &nbsp;</span><span style="font-size: 16px; line-height: 24px;">&nbsp;</span></p>
                               </div>
 
                             </td>
@@ -471,7 +467,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="line-height: 21px;" data-ccp-props="{}"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Obstetricians and Gynecologist</span></span></span></span></span></p>
+                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="line-height: 21px;" data-ccp-props="{}"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Obstetricians and Gynecologist, 7-10 yrs into practice.</span></span></span></span></span></p>
                               </div>
 
                             </td>
@@ -510,7 +506,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:4px 36px 0px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; color: #e4087f; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 18px; line-height: 27px;"><strong><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Months of Execution</span>&nbsp;</strong></span></p>
+                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 18px; line-height: 27px;"><strong>Date</strong></span></p>
                               </div>
 
                             </td>
@@ -524,7 +520,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="line-height: 21px;" data-ccp-props="{}"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="line-height: 21px;">February </span><span data-contrast="auto" style="line-height: 21px;">2025</span>&nbsp;</span></span></span></span></span></p>
+                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="line-height: 21px;" data-ccp-props="{}"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="line-height: 21px;">February 14</span><sup><span data-contrast="auto" style="line-height: 21px;">th</span></sup><span data-contrast="auto" style="line-height: 21px;"> to 19</span><sup><span data-contrast="auto" style="line-height: 21px;">th</span></sup><span data-contrast="auto" style="line-height: 21px;"> 2025</span>&nbsp;</span></span></span></span></span></p>
                               </div>
 
                             </td>
@@ -577,7 +573,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 36px 9px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="line-height: 21px;" data-ccp-props="{}"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Dubai, UAE</span>&nbsp;</span></span></span></span></span></span></p>
+                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="list-style-type: disc; line-height: 21px;" data-contrast="auto"><span style="line-height: 21px;" data-ccp-props="{}"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;"><span data-contrast="auto" style="line-height: 21px;"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Sharjah, UAE</span>&nbsp;</span></span></span></span></span></span></p>
                               </div>
 
                             </td>
@@ -702,7 +698,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:8px 36px 12px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><a target="_blank" href="https://rzp.io/rzp/uVRIloFw" rel="noopener" style="color: rgb(0, 0, 238); text-decoration: underline; line-height: inherit;"><strong><span style="font-size: 16px; line-height: 24px;">Payment Link with Hotel</span></strong></a> &nbsp; &nbsp; <a target="_blank" href="https://rzp.io/rzp/4pLFNaF" rel="noopener" style="color: rgb(0, 0, 238); text-decoration: underline; line-height: inherit;"><strong><span style="font-size: 16px; line-height: 24px;">Payment Link without Hote</span>l</strong></a></p>
+                                <p style="line-height: 150%; margin: 0px;"><a target="_blank" href="https://rzp.io/rzp/yXsbtre0" rel="noopener" style="color: rgb(0, 0, 238); text-decoration: underline; line-height: inherit;"><strong><span style="font-size: 16px; line-height: 24px;">Payment Link with Hotel</span></strong></a> &nbsp; &nbsp; <a target="_blank" href="https://rzp.io/rzp/E52TZLE" rel="noopener" style="color: rgb(0, 0, 238); text-decoration: underline; line-height: inherit;"><strong><span style="font-size: 16px; line-height: 24px;">Payment Link without Hote</span>l</strong></a></p>
                               </div>
 
                             </td>
@@ -771,8 +767,8 @@ export const inviteUserToRegister = (userName: string) => `
 
                               <!--[if mso]><![endif]-->
                               <div align="center">
-                                <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://ebcogdiplomas.com/maternal-medicine.pdf" style="height:43px; v-text-anchor:middle; width:226px;" arcsize="83.5%"  strokecolor="#e4087f" strokeweight="1px" fillcolor="#ffffff"><w:anchorlock/><center style="color:#e4087f;font-family: 'Cabin',sans-serif; "><![endif]-->
-                                <a href="https://ebcogdiplomas.com/maternal-medicine.pdf" target="_blank" class="v-button" style="box-sizing: border-box; display: inline-block; text-decoration: none; text-size-adjust: none; text-align: center; color: rgb(228, 8, 127); background: rgb(255, 255, 255); border-radius: 36px; width: 100%; max-width: 100%; word-break: break-word; overflow-wrap: break-word; border-color: rgb(228, 8, 127); border-style: solid; border-width: 1px; font-family: Cabin, sans-serif; font-size: 16px; line-height: inherit;"><span style="display:block;padding:12px 36px;line-height:120%;"><strong><span style="line-height: 19.2px;">Diploma Brochure</span></strong></span>
+                                <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://ebcogdiplomas.com/gynaecology-endoscopy.pdf" style="height:43px; v-text-anchor:middle; width:226px;" arcsize="83.5%"  strokecolor="#e4087f" strokeweight="1px" fillcolor="#ffffff"><w:anchorlock/><center style="color:#e4087f;font-family: 'Cabin',sans-serif; "><![endif]-->
+                                <a href="https://ebcogdiplomas.com/gynaecology-endoscopy.pdf" target="_blank" class="v-button" style="box-sizing: border-box; display: inline-block; text-decoration: none; text-size-adjust: none; text-align: center; color: rgb(228, 8, 127); background: rgb(255, 255, 255); border-radius: 36px; width: 100%; max-width: 100%; word-break: break-word; overflow-wrap: break-word; border-color: rgb(228, 8, 127); border-style: solid; border-width: 1px; font-family: Cabin, sans-serif; font-size: 16px; line-height: inherit;"><span style="display:block;padding:12px 36px;line-height:120%;"><strong><span style="line-height: 19.2px;">Diploma Brochure</span></strong></span>
                                 </a>
                                 <!--[if mso]></center></v:roundrect><![endif]-->
                               </div>
@@ -858,7 +854,7 @@ export const inviteUserToRegister = (userName: string) => `
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:6px 36px 10px;font-family:'Cabin',sans-serif;" align="left">
 
                               <div style="font-size: 14px; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="line-height: 21px;" data-contrast="auto"><span data-contrast="auto" style="list-style-type: disc; line-height: 21px;">Thank you for considering this impactful opportunity to support your professional growth also championing advancements in maternal healthcare.</span> </span><span style="line-height: 21px;" data-ccp-props="{}">&nbsp;</span></span></p>
+                                <p style="line-height: 150%; margin: 0px;"><span style="font-size: 16px; line-height: 24px;"><span style="line-height: 21px;" data-contrast="auto">Thank you for considering this opportunity in advancing Gynaecology Endoscopy and your career.</span><span style="line-height: 21px;" data-ccp-props="{}">&nbsp;</span></span></p>
                               </div>
 
                             </td>
