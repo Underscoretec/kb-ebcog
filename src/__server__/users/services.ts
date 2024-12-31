@@ -21,9 +21,11 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         const query: any = { enabled: 1 }
 
-        if (email) {
-            query.email = email
-        }
+        query["$or"] = [
+            { email:  email },
+            { 'phone.number': phone?.number },
+        ];
+
         const user = await UserModel.findOne(query)
 
         if (user) {

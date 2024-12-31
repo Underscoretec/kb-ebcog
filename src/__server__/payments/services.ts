@@ -45,7 +45,7 @@ export async function razPaymentOrderCreate(data: any) {
 
 }
 
-export async function paymentVerify(req: NextApiRequest, res: NextApiResponse) {
+async function paymentVerify(req: NextApiRequest, res: NextApiResponse) {
   logger.info("[Payment 002] Verify payment api called");
   try {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature, id, customerId, amount } = req.body;
@@ -124,11 +124,65 @@ export async function paymentVerify(req: NextApiRequest, res: NextApiResponse) {
     }
 
   } catch (error) {
+    logger.error(error, "[Payment 002] Error when verify payment");
     errorResponse(error);
   }
 
 }
 
+const list = async (req: any, res: any) => {
+  logger.info(`[Payment 003] Payment list api call`);
+  try {
+      const dataPerPage = Number(req.query?.dataPerPage) || 25;
+      const page = Number(req.query?.page) || 1;
+      if (req.user?.role === "admin") {
+          const query: any = {}
+
+          if (req.query.string) {
+              query["$or"] = [
+            { 'customerId.first_name': { $regex: req.query.string, $options: "i" } },
+            { 'customerId.last_name': { $regex: req.query.string, $options: "i" } },
+            { 'customerId.email': { $regex: req.query.string, $options: "i" } },
+              ];
+          }
+
+          const payments = await PaymentModel.find(query).populate([
+              {
+                  path: 'customerId', select: "first_name last_name email role phoneNo"
+              },
+          ]).select(["-__v",]).sort({ createdAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
+          const paymentsCount = await PaymentModel.countDocuments(query);
+
+          if (payments?.length > 0) {
+              return res.status(200).json({
+                  message: messages["PAYMENTS_FOUND"],
+                  error: false,
+                  code: "PAYMENTS_FOUND",
+                  result: payments,
+                  dataCount: paymentsCount
+              });
+          } else {
+              return res.status(404).json({
+                  message: messages["PAYMENTS_NOT_FOUND"],
+                  error: false,
+                  code: "PAYMENTS_NOT_FOUND",
+                  result: []
+              });
+          }
+      } else {
+          return res.status(401).send({
+              error: true,
+              code: "UNAUTHORIZED",
+              message: messages["UNAUTHORIZED"]
+          })
+      }
+  } catch (error) {
+      logger.error(error, "[Payment 003] Error when get payment list");
+      return res.status(500).json(errorResponse(error));
+  }
+}
+
 export default {
-  paymentVerify
+  paymentVerify,
+  list
 }
