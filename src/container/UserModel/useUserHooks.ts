@@ -182,19 +182,15 @@ export const useUserHook = () => {
         }
     }
 
-    async function downloadExcelFile(type?: string, fileName?: string) {
+    
 
+    async function downloadExcelFile(fileName?: string) {
         let token: any;
         if (typeof window !== 'undefined') {
             token = getCookie('token')
         }
 
-        const url = `/api/users?type=${type}&action=download`
-        // let url = search ? `/api/users?type=${type}&string=${search}&action=download` : `/api/users?type=${type}&action=download`
-        // let url = dashBoardURL ? `${dashBoardURL}&action=download` : (type ? `${search ? `${apiUrl}?type=${type}&string=${search}&action=download` : `${apiUrl}?type=${type}&action=download`}` :
-        //     `${search ? `${apiUrl}?&string=${search}&action=download` : `${apiUrl}?&action=download`}`)
-
-
+        const url = `/api/registration/list?action=download`
         await fetch(url, {
             headers: {
                 Authorization: token || "",
@@ -204,7 +200,6 @@ export const useUserHook = () => {
         }).then((arrayBuffer: any) => {
             const blob = new Blob([arrayBuffer], { type: "application/vnd.ms-excel" });
             const url = window.URL.createObjectURL(blob);
-            // setDownloadCount(90)
             const a: any = document.createElement('a');
             a.href = url;
             a.download = fileName;

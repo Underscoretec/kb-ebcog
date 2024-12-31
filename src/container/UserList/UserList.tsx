@@ -2,12 +2,14 @@ import RegisteredUserList from '@/components/UserList/RegisteredUserList'
 import SignupUserList from '@/components/UserList/SignupUserList';
 import React, { useState } from 'react'
 import { FaFileDownload } from "react-icons/fa";
+import { useUserHook } from '../UserModel/useUserHooks';
 
 const UserList = () => {
     const [activeTab, setActiveTab] = useState('registered')
+    const {downloadExcelFile} = useUserHook();
 
-    const handleExcelDownload = () => {
-        console.log("cooming soon")
+    const handleExcelDownload = async () => {
+        await downloadExcelFile('RegisterUserList.xlsx')
     }
 
     return (
@@ -26,11 +28,11 @@ const UserList = () => {
                 </div>
             </div>
 
-            {/* {activeTab === 'registered' && */}
+            {activeTab === 'registered' &&
                 <div className='flex justify-end py-2'>
                     <div className='flex items-center gap-4 font-semibold text-[#E4087F] hover:bg-[#ffdae8] py-2 px-6 rounded-full font-montserrat cursor-pointer active:scale-[0.8] duration-500' onClick={handleExcelDownload}><FaFileDownload /> Download Excel</div>
                 </div>
-           
+            }
 
 
             {activeTab === 'registered' ? (
