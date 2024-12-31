@@ -22,7 +22,7 @@ const Confirmation = () => {
                 <h1 className='font-montserrat text-[28px] sm:text-[35px] font-medium leading-[42.67px] text-center'>Your payment is completed!</h1>
                 <p className='text-[#767676] font-montserrat text-base font-normal leading-6 text-center'>Thank you. Your order has been received.</p>
             </div>
-            <div className='w-full xs:w-auto border-2 border-dashed border-[#22222233] p-4 lg:p-6 flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-20'>
+            {/* <div className='w-full xs:w-auto border-2 border-dashed border-[#22222233] p-4 lg:p-6 flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-20'>
                 <div className='block xs:flex items-center gap-4 md:block'>
                     <div className='text-[#767676] font-montserrat text-sm font-normal leading-6'>Order ID</div>
                     <div className='text-[#222222] font-montserrat text-base font-semibold leading-[19.5px] pt-2 xs:pt-0 sm:pt-2'>{orderId}</div>
@@ -39,11 +39,7 @@ const Confirmation = () => {
                     <div className='text-[#767676] font-montserrat text-sm font-normal leading-6'>Amonut</div>
                     <div className='text-[#222222] font-montserrat text-base font-semibold leading-[19.5px] pt-2 xs:pt-0 sm:pt-2'>$399.00</div>
                 </div>
-                {/* <div className='block xs:flex items-center gap-4 md:block'>
-                    <div className='text-[#767676] font-montserrat text-sm font-normal leading-6'>Payment Method</div>
-                    <div className='text-[#222222] font-montserrat text-base font-semibold leading-[19.5px] pt-2 xs:pt-0 sm:pt-2'>Direct Bank Transfer</div>
-                </div> */}
-            </div>
+            </div> */}
             <div>
                 <Button
                     type="submit"
