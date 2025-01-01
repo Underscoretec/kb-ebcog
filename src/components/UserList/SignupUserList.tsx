@@ -41,12 +41,12 @@ export default function SignupUserList() {
 
     return (
         <>
-            <div className='h-[60vh] overflow-auto border border-gray-300 border-t-0 mt-8'>
+            <div className='h-[60vh] overflow-auto border border-gray-300 border-t-0'>
                 <div className="px-4 sm:px-6 lg:px-8">
                     <div className="flow-root">
                         <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                             <div className="inline-block min-w-full py-2 align-middle">
-                            {loading ? <div className="flex items-center justify-center min-h-[30rem]"> <CircularProgress /></div>:
+                            {loading ? <div className="flex items-center justify-center min-h-[30rem] border-t border-gray-300"> <CircularProgress style={{ color: '#E4087F' }}/></div>:
                                 <table className="min-w-full border-separate border-spacing-0">
                                     <thead>
                                         <tr>

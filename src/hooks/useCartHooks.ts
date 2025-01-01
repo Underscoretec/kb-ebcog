@@ -1,7 +1,6 @@
 import { doDeleteApiCall, doGetApiCall, doPostApiCall } from '@/utils/ApiConfig';
 import { getCookie } from '@/utils/cookieUtils';
 import { useState } from 'react'
-import { toast } from 'react-toastify';
 
 const useCartHooks = () => {
     const [loading, setLoading] = useState(false);
@@ -36,7 +35,7 @@ const useCartHooks = () => {
             const response: any = await doDeleteApiCall(data)
             if (!response.error) {
                 console.log("response ##", response)
-                toast.success("Item remove successfully.");
+                // toast.success("Item remove successfully.");
             } else {
                 alert("Something went wrong");
             }

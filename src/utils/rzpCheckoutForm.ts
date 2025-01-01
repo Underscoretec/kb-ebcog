@@ -5,8 +5,6 @@ import { getCookie } from "./cookieUtils";
 
 export async function rzpCheckoutFrom(data: any) {
     const userDetails = getCookie("userDetails")
-
-    console.log("data===>",data, userDetails)
     
     try {
 
@@ -22,14 +20,19 @@ export async function rzpCheckoutFrom(data: any) {
             "handler": 
             async function (response: any) {
                 console.log("response", response)
+                data.setCurrentStep(3)
                 response.customerId = userDetails?._id
                 response.amount = (data?.amount / 100)
                 const verified = await verifyPayment(response,data?._id)
                 console.log("verified ##",verified)
-                if (verified?.code ==='PAYMENT_SUCCESS') {
+                if (verified?.code ==='PAYMENT_SUCCESS') { 
                     data.router.push({
                         pathname: data?.redirectUrl,
-                        query: { orderId: data?.orderId }
+                        // query: {orderId: verified?.result?.orderId}
+                        query: {
+                            orderId: verified?.result?.orderId,
+                            Id: verified?.result?._id
+                        }
                     })
                     // data.cartEmpty();
                 } else {
@@ -58,7 +61,7 @@ export async function rzpCheckoutFrom(data: any) {
         const rzpCheckout: any = new (window as any).Razorpay(options);
 
         rzpCheckout.on('payment.failed', function (response: any) {
-            alert(`Payment error id:- ${response.error.metadata.payment_id} error code: ${response.error.code}`);
+            console.error(`Payment error id:- ${response.error.metadata.payment_id} error code: ${response.error.code}`);
         });
         rzpCheckout.on('qr_code.credited', () => {
             console.log('qr_code.credited event fired');
