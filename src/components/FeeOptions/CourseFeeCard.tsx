@@ -47,9 +47,9 @@ const CourseFeeCard: React.FC<PlanCardProps> = ({ withoutHotelData, withHotelDat
                 }
 
 
-                <div className='bg-[#E4087F] text-[#FFFFFF] p-3 flex justify-between items-center rounded-md cursor-pointer mt-6 gap-16' onClick={()=>handleProceed(plan)}>
+                <div className='bg-[#E4087F] text-[#FFFFFF] p-3 flex justify-between items-center rounded-md cursor-pointer mt-6 gap-16' onClick={() => handleProceed(plan)}>
                     <div className='font-montserrat text-[14px] font-medium leading-[20px]'>Final Payable Amount</div>
-                    <div className='font-oswald text-[14px] font-normal leading-[20px]'>{plan?.price?.currency} <span className='text-[18px]'>{Number(plan?.price?.base) - Number(plan?.discount?.value)}</span>.{formatBasePrice(plan?.price?.base).split('.')[1]}</div>
+                    <div className='font-oswald text-[14px] font-normal leading-[20px]'>{plan?.price?.currency} <span className='text-[18px]'>{dayjs().isBefore(dayjs(plan?.discount?.endDate)) ? Number(plan?.price?.base) - Number(plan?.discount?.value) : plan?.price?.base}</span>.{formatBasePrice(plan?.price?.base).split('.')[1]}</div>
                 </div>
             </div>
         </div>

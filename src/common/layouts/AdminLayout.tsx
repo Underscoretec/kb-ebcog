@@ -23,7 +23,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
         }
     }, [])
 
-    if (authChecking) return <div className='flex items-center justify-center h-[90vh]'><CircularProgress /></div>
+    if (authChecking) return <div className='flex items-center justify-center h-[90vh]'><CircularProgress style={{ color: '#E4087F' }}/></div>
 
     return (
         <>
