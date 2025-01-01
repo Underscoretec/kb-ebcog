@@ -6,8 +6,9 @@ import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
 import { inviteUserForRegister } from "../mail/services";
 // eslint-disable-next-line @typescript-eslint/no-require-imports
+import fs from 'fs/promises';
 const XLSX = require('xlsx');
-const fs = require('fs');
+
 
 
 const importData = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -77,29 +78,76 @@ function getRandomInt(min: number, max: number) {
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const checkAndUpdateList = async (fileName: string) => {
-
     const filePath = `files/${fileName}`;
 
-    return new Promise((resolve, reject) => {
-        fs.readFile(filePath, 'utf8', (err: any, data: any) => {
-            if (err) {
-                console.error('Error reading file:', err);
-                reject(err);
+    try {
+        // Check if the file exists
+        try {
+            await fs.access(filePath); // Throws if the file doesn't exist
+        } catch (err: any) {
+            if (err.code === 'ENOENT') {
+                console.error('File not found:', filePath);
+                return null; // Return null to indicate missing file
             }
+            throw err; // Re-throw unexpected errors
+        }
 
-            try {
-                const jsonData = JSON.parse(data);
-                resolve(jsonData);
-            } catch (parseError) {
-                console.error('Error parsing JSON:', parseError);
-                reject(parseError);
+        // Read and parse the file if it exists
+        const data = await fs.readFile(filePath, 'utf8');
+        return JSON.parse(data); // Return parsed JSON if successful
+    } catch (err) {
+        console.error('Error reading or parsing file:', err);
+        throw err; // Re-throw the error for the caller to handle
+    }
+};
+
+
+
+const createBatch = async (newEmail: string, type: string): Promise<void> => {
+    const path = `files/batch-data.json`;
+
+    try {
+        console.log(newEmail, type, "Check type 001");
+
+        let jsonData: { batchEmail: string[] } = { batchEmail: [] }; // Default structure
+
+        // Try to read the file
+        try {
+            const data = await fs.readFile(path, 'utf8');
+            logger.info("Data before parsing", data);
+
+            // Parse data or initialize to default
+            jsonData = data.trim() ? JSON.parse(data) : { batchEmail: [] };
+        } catch (err: any) {
+            if (err.code === 'ENOENT') {
+                logger.info('File does not exist. Initializing with default structure...');
+            } else {
+                logger.error('Error reading file:', err);
+                throw err; // Propagate unexpected errors
             }
-        });
+        }
+
+        // console.log(jsonData, "Initial jsonData.batchEmail");
+
+        // Update JSON based on the type
+        if (type === "empty") {
+            jsonData = { batchEmail: [] };
+        } else if (!jsonData.batchEmail.includes(newEmail)) {
+            // Ensure the email doesn't already exist
+            jsonData.batchEmail.push(newEmail);
+        }
+
+        // console.log(jsonData, "Updated jsonData.batchEmail");
+
+        // Write the updated JSON back to the file
+        await fs.writeFile(path, JSON.stringify(jsonData, null, 2));
+        logger.info('File created/updated successfully.');
+    } catch (error) {
+        logger.error('Error in createBatch function:', error);
+    }
+};
 
 
-
-    })
-}
 
 const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
@@ -118,20 +166,32 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                 'mailSent.status': false,
                 enabled: 1
             }
-            // if (req.query.batch) {
-            //     query.batch = req.query.batch
-            // }
 
             if (req?.query?.mailProvider === "SMTP" || req?.query?.mailProvider === "SES") {
+                const batchemails: any = await checkAndUpdateList(`batch-data.json`);
+
+                if (batchemails?.batchEmail?.length > 0) {
+                    logger.info(`Updateing exist batch ${batchemails?.batchEmail?.length} success emails`)
+
+                    const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: batchemails?.batchEmail } },
+                        {
+                            $set: {
+                                mailSent: {
+                                    status: true,
+                                    timeStamp: Date.now()
+                                }
+                            }
+                        },
+                        { new: true }
+                    )
+
+                    logger.info(`Exist Batch Data: -> ${campaignUpdate?.modifiedCount} emails updated in database`)
+                    createBatch('', "empty")  //Create batch file
+                }
+
                 const campaignList = await CampaignsModel.find(query);
                 console.log(campaignList?.length, 'campaignList count @@@@@@@');
                 const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
-
-                // const path = 'files/Book 13.xlsx'
-                // const workbook = XLSX.readFile(path)
-                // const sheet_name_list = workbook.SheetNames;
-
-                // const excelDatas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
 
                 const datas = campaignList
 
@@ -149,12 +209,12 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
 
                             inviteUserForRegister(sendData, req, idx + 1)
                             sendMailArray.push(item?.email)
-
                             // Delay the next email by a random or fixed interval
-                            const delay = idx === 0 ? 0 : await getRandomInt(1, 2) * 1000; // 2 to 5 seconds delay
+                            const delay = idx === 0 ? 0 : await getRandomInt(2, 5) * 1000; // 2 to 5 seconds delay
                             await sleep(delay);
+                            createBatch(item?.email, "create")  //Create batch file
 
-                            if (sendMailArray?.length === 300) {
+                            if (sendMailArray?.length === 100) {
                                 logger.info(`Updateing ${sendMailArray?.length} success emails`)
 
                                 const campaignUpdate = await CampaignsModel.updateMany({ email: { $in: sendMailArray } },
@@ -171,6 +231,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                                 logger.info(`Batch no: ${batchNo} -> ${campaignUpdate?.modifiedCount} emails updated in database`)
                                 batchNo += 1
                                 sendMailArray = []
+                                createBatch('', "empty")  //Create batch file
                             }
                         }
                     }
