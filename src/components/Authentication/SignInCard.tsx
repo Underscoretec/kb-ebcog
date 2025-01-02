@@ -18,7 +18,6 @@ const SignInCard: React.FC = () => {
     const handleSignIn = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Mock API call
         setTimeout(async () => {
             const result: any = await handleLogin({ email, password });
             setIsSubmitting(false);
