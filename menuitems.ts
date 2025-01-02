@@ -71,7 +71,7 @@ export const menuitems = [
             {
                 id: '12',
                 title: 'Reproductive Endocrinology & Infertility',
-                url: '/Reproductive-endocrinology-infertility.pdf'
+                url: '/reproductive-endocrinology-infertility.pdf'
             },
             {
                 id: '13',
