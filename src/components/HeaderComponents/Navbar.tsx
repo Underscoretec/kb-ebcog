@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { ClickAwayListener } from '@mui/material';
 import { FaAngleDown } from 'react-icons/fa';
-import LoginAvatar from './LoginAvatar';
+// import LoginAvatar from './LoginAvatar';
 
 const Navbar = (props: any) => {
 
@@ -34,7 +34,7 @@ const Navbar = (props: any) => {
                     </Link>
 
                     {/* signin /signup avatar and options */}
-                    <div className='hidden lg:block'><LoginAvatar /></div>
+                    {/* <div className='hidden lg:block'><LoginAvatar /></div> */}
                 </div>
 
             </div>
