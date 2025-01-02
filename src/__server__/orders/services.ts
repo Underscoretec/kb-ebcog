@@ -88,19 +88,19 @@ const createNewOrder = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 };
 
-const list = async (req: any, res: any) => {
+const list = async (req: any, res: NextApiResponse) => {
     logger.info(`[Orders 002] Orders list api call`);
     try {
         const dataPerPage = Number(req.query?.dataPerPage) || 25;
         const page = Number(req.query?.page) || 1;
-        if (req.user?.role === "admin") {
+        if (req?.user?.role === "admin") {
             const query: any = {
                 // enabled: 1,
             }
 
             if (req.query.string) {
                 query["$or"] = [
-                    // { fullName: { $regex: req.query.string, $options: "i" } },
+                    { orderId: { $regex: req.query.string, $options: "i" } },
                     // { email: { $regex: req.query.string, $options: "i" } },
                     // { whatsAppNumber: { $regex: req.query.string, $options: "i" } },
                     // { courseName: {$regex: req.query.string, $options: "i"}}
@@ -149,12 +149,69 @@ const list = async (req: any, res: any) => {
             })
         }
     } catch (error) {
-        logger.error(error, "[Registration-002] Error when get registerd user list");
-        return res.status(500).json(errorResponse(error));
+        logger.error(error, "[Orders 002] Error when get all orders list");
+        return errorResponse(error);
     }
+}
+
+const getOrdersDetails = async (req: NextApiRequest, res: NextApiResponse) => {
+    logger.info('[Orders 003] Orders details api call');
+    // const orderId = req.query?.orderId;
+    const orderId = '#EB-Dip-1734610976974';
+
+    try {
+        if (!orderId) {
+            return res.status(400).json({
+                message: messages["BAD_REQUEST"],
+                error: true,
+                code: "BAD_REQUEST",
+            })
+        }
+
+        const findOrder = OrderModel.findOne({ "orderId": orderId }).exec();
+        //     .populate([
+        //     {
+        //         path: 'userId', select: "first_name last_name email role phoneNo"
+        //     },
+        //     {
+        //         path: 'items', select: "-enabled -createdBy -createAt -updateAt -__v",
+        //         populate: [
+        //             {
+        //                 path: 'courseId', select: "-enabled -createdBy -createAt -updateAt -__v"
+        //             }
+        //         ]
+        //     },
+        //     {
+        //         path: 'createdBy', select: "first_name last_name email role phoneNo"
+        //     },
+        // ]).exec();
+        console.log(findOrder,' findOrder >>>>>>>>>');
+
+        if (!findOrder) {
+            return res.status(404).json({
+                message: messages["ORDER_NOT_FOUND"],
+                error: false,
+                code: "ORDER_NOT_FOUND",
+                result:{}
+            });
+        }
+
+        return res.status(200).json({
+            message: messages["ORDER_FOUND"],
+            error: false,
+            code: "ORDER_FOUND",
+            result: findOrder,
+        })
+
+    } catch (error) {
+        logger.error(error, "[Orders 003] Error when order details get");
+        return errorResponse(error);
+    }
+
 }
 
 export default {
     createNewOrder,
-    list
+    list,
+    getOrdersDetails
 }
