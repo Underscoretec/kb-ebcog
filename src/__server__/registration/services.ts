@@ -5,6 +5,9 @@ import messages from "@/__server__/utils/message.json";
 import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
 import { sendEmailRegistrationAcknowledgement } from '@/__server__/mail/services';
+import json2xls from 'json2xls';
+import * as fs from 'fs';
+
 
 
 const nodeEnv = process.env.NODE_ENV!;
@@ -112,6 +115,33 @@ const list = async (req: any, res: any) => {
             
 
             if (registeredUsers?.length > 0) {
+
+                if (req?.query?.action === "download") {
+
+                    // eslint-disable-next-line prefer-const
+                    let userArr: any = []
+                    
+
+                    await Promise.all(registeredUsers?.map((user: any) => {
+                        userArr.push({
+                            'FullName': user?.fullName,
+                            'Email Id': user?.email,
+                            'WhatsApp Number': user?.whatsAppNumber,
+                            'City': user?.address?.city,
+                            'State': user?.address?.state,
+                            'Country': user?.address?.country,
+                            'Course Name': user?.courseName,
+                            'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.hasOwnProperty('key') ? 'Yes' : 'No',
+                            'Basic Degree Document Uploaded': user?.basicDegreeDocument?.hasOwnProperty('key') ? 'Yes' : 'No',
+                        })
+                    }))
+                    const xls = json2xls(userArr);
+                    fs.writeFileSync('files/RegisteredUserList.xlsx', xls, 'binary');
+                    const filePath = 'files/RegisteredUserList.xlsx';
+                    // eslint-disable-next-line prefer-const
+                    let stream = fs.createReadStream(filePath);
+                    return stream.pipe(res);
+                }
                 return res.status(200).json({
                     message: messages["USERS_FOUND"],
                     error: false,
