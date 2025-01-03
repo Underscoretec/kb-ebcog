@@ -131,8 +131,8 @@ const list = async (req: any, res: any) => {
                             'State': user?.address?.state,
                             'Country': user?.address?.country,
                             'Course Name': user?.courseName,
-                            'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.hasOwnProperty('key') ? 'Yes' : 'No',
-                            'Basic Degree Document Uploaded': user?.basicDegreeDocument?.hasOwnProperty('key') ? 'Yes' : 'No',
+                            'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.key ? 'Yes' : 'No',
+                            'Basic Degree Document Uploaded': user?.basicDegreeDocument?.key ? 'Yes' : 'No',
                         })
                     }))
                     const xls = json2xls(userArr);
