@@ -22,7 +22,7 @@ const SignUpCard: React.FC = () => {
         setModalData({ ...modalData, isOpen: false });
     };
 
-    const handlelick = () => {
+    const handleClick = () => {
         if (modalData.redirect) {
             router.push('/login');
         }
@@ -197,7 +197,7 @@ const SignUpCard: React.FC = () => {
                     message={modalData.message}
                     redirect={modalData.redirect}
                     onClose={hideModal}
-                    onClick={handlelick}
+                    onClick={handleClick}
                 />
                 {/* <p className="text-sm text-center text-gray-600">
                     Already have an account?{" "}

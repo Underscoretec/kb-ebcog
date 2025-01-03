@@ -14,7 +14,7 @@ const useCourseHooks = () => {
             if (!res.error) {
                 return res.result; // Return the result directly
             } else {
-                console.error('Error fetching paricing list:', res.message);
+                console.error('Error fetching pricing list:', res.message);
                 return [];
             }
         } catch (err) {

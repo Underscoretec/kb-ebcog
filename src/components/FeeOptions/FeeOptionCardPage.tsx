@@ -33,7 +33,6 @@ const FeeOptionCardPage = () => {
             if (!result.error) {
                 router.push("/cart");
             }
-
         } else {
             showModal("You already have a course in your cart. You can only take one course at a time.", "", true);
         }
@@ -102,11 +101,11 @@ const FeeOptionCardPage = () => {
             <div className="bg-white">
                 <main>
                     <div className="mx-auto">
-                        <div className="text-center p-20 bg-[#290849]">
-                            <p className="mt-2 text-balance text-white font-montserrat text-[36px] font-bold leading-[43.2px] text-center">
+                        <div className="text-center px-4 py-12 sm:p-12 md:p-20 bg-[#290849]">
+                            <p className="mt-2 text-balance text-white font-montserrat text-[20px] xs:text-[26px] sm:text-[30px] md:text-[36px] font-bold leading-[30px] xs:leading-[36px] sm:leading-[43.2px] text-center">
                                 {formatText(Course)}
                             </p>
-                            <p className="mx-auto mt-6 text-pretty text-[#D1D5DB] font-montserrat text-[16px] font-medium leading-[24px] text-center">
+                            <p className="mx-auto mt-3 md:mt-6 text-pretty text-[#D1D5DB] font-montserrat text-[14px] sm:text-[16px] font-medium leading-[24px] text-center">
                                 {`Choose an affordable plan that’s packed with the best features.`}
                             </p>
                         </div>
