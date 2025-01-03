@@ -4,6 +4,7 @@ import Courses from "./model";
 import messages from "@/__server__/utils/message.json";
 import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
+import { createUTCDate } from "@/__server__/utils/dateUtils";
 
 
 interface ExtendApiRequest extends NextApiRequest {
@@ -13,23 +14,31 @@ interface ExtendApiRequest extends NextApiRequest {
 
 const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[COURSES-001] Course create api call`);
-    const { name, overView, category, duration, price, currency, leadInstructor,faculties,date, } = req.body
+    const { name, overView, category, duration, type, discountStartDate, discountEndDate, discountValue, price, currency, leadInstructor, faculties, date, } = req.body
     try {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         const cImage = req.files?.["courseThumbnail"]?.[0];
         const priceObj = {
-            base: price && Number(price) || 0 ,
-            currency: currency|| "AED",
-          }
+            base: price && Number(price) || 0,
+            currency: currency || "AED",
+        }
+
+        const discountObj = {
+            value: discountValue && Number(discountValue) || 0,
+            startDate: discountStartDate && createUTCDate(discountStartDate),
+            endDate: discountEndDate && createUTCDate(discountEndDate),
+        }
 
         const createObj = {
             name: name,
             overView: overView && JSON.parse(overView),
-            category:category,
+            category: category,
             duration: duration,
+            type: type,
             courseThumbnail: cImage,
             price: priceObj,
+            discount: discountObj,
             leadInstructor: leadInstructor,
             faculties: faculties,
             date: date && JSON.parse(date),
@@ -38,7 +47,7 @@ const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
         }
 
         const saveCourses = await new Courses(createObj).save();
-        
+
 
 
         return res.status(201).json({
@@ -49,7 +58,7 @@ const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
         });
 
     } catch (error) {
-        
+
         logger.error(error, "[COURSES-001] Error in adding Courses")
         return res.status(500).json(errorResponse(error));
     }
@@ -71,26 +80,29 @@ const list = async (req: ExtendApiRequest, res: NextApiResponse) => {
             ];
         }
         if (category) {
-            query['category'] = {$regex: category, $options: "i"};
+            query['category'] = { $regex: category, $options: "i" };
         }
 
         const courseList = await Courses.find(query).select(["-enabled", "-createdBy", "-__v", "-updatedBy"])
             .sort({ createdAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
+        const courseCount = await Courses.countDocuments(query);
         if (courseList?.length > 0) {
             return res.status(200).json({
                 message: messages["COURSES_FOUND"],
                 error: false,
                 code: "COURSES_FOUND",
-                result: courseList
+                result: courseList,
+                dataCount: courseCount
             });
-        }else {
+        } else {
             return res.status(404).json({
                 message: messages["COURSES_NOT_FOUND"],
                 error: false,
                 code: "COURSES_NOT_FOUND",
+                result: []
             });
         }
-        
+
     } catch (error) {
         logger.error(error, "[COURSES-002] Error in get Courses list")
         return res.status(500).json(errorResponse(error));

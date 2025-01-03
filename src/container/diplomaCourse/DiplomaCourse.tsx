@@ -18,9 +18,9 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
     const [courseData, setcourseData] = useState<any | null>(null);
     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
-    const showModal = (title: any, message: any, redirect: boolean) => {
-        setModalData({ isOpen: true, title, message, redirect: redirect });
-    };
+    // const showModal = (title: any, message: any, redirect: boolean) => {
+    //     setModalData({ isOpen: true, title, message, redirect: redirect });
+    // };
 
     const hideModal = () => {
         setModalData({ ...modalData, isOpen: false });
@@ -34,6 +34,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "duration": '1 week',
             "learners": "70",
             "lessons": '40',
+            "category": 'High-Risk Pregnancy Care',
             "cardData": {
                 "facultyName": 'Prof. Frank Louwen (Lead)',
                 "courseDuration": '1 Week',
@@ -190,11 +191,12 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             ]
         },
         {
-            "id": "reproductive-endocrinology",
+            "id": "reproductive-endocrinology-and-infertility",
             "courseName": 'Diploma in Reproductive Endocrinology & Infertility',
             "duration": '1 week',
             "learners": "70",
             "lessons": '40',
+            "category": 'Fertility and Hormonal Disorders',
             "cardData": {
                 "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
                 "courseDuration": '1 Week',
@@ -329,6 +331,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "duration": '1 week',
             "learners": "156",
             "lessons": '40',
+            "category": 'Minimally Invasive Gynecological Surgery',
             "cardData": {
                 // "course": 'Gynaecology Endoscopy By Dr Helder Ferreira',
                 "facultyName": 'Dr. Helder Ferreira',
@@ -488,6 +491,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "duration": '1 week',
             "learners": "70",
             "lessons": '40',
+            "category": 'Prenatal Diagnosis and Imaging',
             "cardData": {
                 "facultyName": 'Prof. Asma Khalil',
                 "courseDuration": '1 Week',
@@ -641,6 +645,10 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
         router.push('/registration');
     }
 
+    const handleFees = () => {
+        router.push(`/diploma/fee-options?Course=${courseData?.id}&category=${courseData?.category}`);
+    }
+
 
     useEffect(() => {
         if (courseId) {
@@ -660,7 +668,8 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                     <Button
                         label="Fees"
                         className="w-[12rem] sm:w-[16rem] lg:w-[20rem] py-1 lg:py-2 bg-[#E4087F] font-semibold text-white rounded-md hover:bg-[#ac0660]"
-                        onClick={() => {showModal("Please complete the Join Now process to confirm the fees for the respective courses.","",false) }}
+                        onClick={handleFees}
+                        // onClick={() => {showModal("Please complete the Join Now process to confirm the fees for the respective courses.","",false) }}
                     />
                     <div className='flex flex-col md:flex-row gap-2 md:gap-8 font-montserrat text-base font-medium leading-6 text-[#9D9D9D]'>
                         <div className='flex gap-1 xl:gap-2 items-center'><MdAccessTimeFilled className='text-[#EE7E22]' /> {courseData?.duration}</div>

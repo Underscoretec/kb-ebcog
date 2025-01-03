@@ -1,5 +1,4 @@
 import mongoose, { model, Schema } from "mongoose";
-import Users from "../users/model";
 
 // Define the Course schema
 const courseSchema: any = new Schema(
@@ -42,10 +41,6 @@ const courseSchema: any = new Schema(
             type: Number, // Duration in Weeks
             default: 1
         },
-        learners: [{
-            type: Schema.Types.ObjectId, // enrolled student
-            ref: Users
-        }],
         price: {
             base: {
                 type: Number,
@@ -56,6 +51,27 @@ const courseSchema: any = new Schema(
                 type: String,
                 default: "AED"
             },
+        },
+        discount: {
+            value: {
+                type: Number,
+                default: 0,
+            },
+            startDate: {
+                type: Date,
+            },
+            endDate: {
+                type: Date,
+            },
+            currency: {
+                type: String,
+                default: "AED"
+            },
+
+        },
+        type: {
+            type: String,
+            enum: ["withHotel", "withoutHotel"]
         },
         leadInstructor: {
             type: Schema.Types.ObjectId, // Reference to the Faculties model

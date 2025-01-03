@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import User from "./model";
+import UserModel from "./model";
 import messages from "@/__server__/utils/message.json";
 import { logger } from "@/__server__/utils/logger";
 import errorResponse from "@/__server__/utils/errorResponse";
@@ -16,15 +16,17 @@ import config from "../config";
 
 
 const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
-    const { first_name,last_name, email, password, phone, phoneNo, address } = req.body;
-    
+    logger.info("[User 001] Signup api call");
+    const { first_name, last_name, email, password, phone, phoneNo, address } = req.body;
     try {
         const query: any = { enabled: 1 }
 
-        if (email) {
-            query.email = email
-        }
-        const user = await User.findOne(query)
+        query["$or"] = [
+            { email:  email },
+            { 'phone.number': phone?.number },
+        ];
+
+        const user = await UserModel.findOne(query)
 
         if (user) {
             return res.status(400).json({
@@ -35,8 +37,7 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
             });
         }
 
-        const phoneObj = phone ? JSON.parse(phone) : user?.phone
-
+        const phoneObj = phone;
         const phNumber = phoneNo || `${phoneObj?.code}${phoneObj?.number}`
 
         // const otpObj = await otpGenerate("signup", "email", req.headers?.origin || req.headers?.referer)
@@ -46,26 +47,26 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
         const salt = await bcrypt.genSalt(12);
         const passwordHash = await bcrypt.hash(password, salt);
 
-           const createObj = {
-                first_name: first_name,
-                last_name: last_name,
-                email: email, 
-                phone: phoneObj, 
-                phoneNo: phNumber, 
-                address: address && JSON.parse(address),
-                role: "user",
-                password: passwordHash,
-                // emailOtp: otpObj,
-                // phoneOtp: otpObjPhone,
-                // defaultPasswordChanged: false,
-            }
-        
+        const createObj = {
+            first_name: first_name,
+            last_name: last_name,
+            email: email,
+            phone: phoneObj,
+            phoneNo: phNumber,
+            address: address,
+            role: "user",
+            password: passwordHash,
+            // emailOtp: otpObj,
+            // phoneOtp: otpObjPhone,
+            // defaultPasswordChanged: false,
+        }
 
-        
 
-           const createUser = await new User(createObj).save();
 
-        
+
+        const createUser = await new UserModel(createObj).save();
+
+
 
 
 
@@ -110,12 +111,13 @@ const signUp = async (req: NextApiRequest, res: NextApiResponse) => {
         }
 
     } catch (error) {
-        logger.error(error, "[User 001] Error sign up");
+        logger.error(error, "[User 001] Error in Sign up");
         return res.status(500).json(errorResponse(error));
     }
 }
 
 const login = async (req: NextApiRequest, res: NextApiResponse) => {
+    logger.info("[User 002] Login api call");
     const { email, password, phone, loggedInDetails, rememberMe } = req.body;
     try {
         const query: any = { enabled: 1 }
@@ -128,68 +130,65 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
             // actionType = "phone"
         }
 
-        const user = await User.findOne(query)
+        const user = await UserModel.findOne(query)
 
         if (!user) {
             return res.status(400).json({
                 message: messages["INVALID_CREDENTIALS"],
                 error: true, code: "INVALID_CREDENTIALS",
             });
-        }else {
+        } else {
             if (user?.role === "user" || user?.role === "admin" || user?.role === "subAdmin") {
-                
-                    const validPass = await bcrypt.compare(password, user?.password);
-                    if (!validPass) {
-                        return res.status(400).json({
-                            message: messages["INVALID_CREDENTIALS"],
-                            error: true,
-                            code: "INVALID_CREDENTIALS",
-                        });
-                    } else {
-                        let refreshToken: any
-                        const token = await tokenGenerate({
+
+                const validPass = await bcrypt.compare(password, user?.password);
+                if (!validPass) {
+                    return res.status(400).json({
+                        message: messages["INVALID_CREDENTIALS"],
+                        error: true,
+                        code: "INVALID_CREDENTIALS",
+                    });
+                } else {
+                    let refreshToken: any
+                    const token = await tokenGenerate({
+                        id: user?._id,
+                        email: user?.email,
+                    });
+                    if (rememberMe === true && loggedInDetails) {
+                        refreshToken = await tokenGenerate({
                             id: user?._id,
                             email: user?.email,
-                        });
-                        if (rememberMe === true && loggedInDetails) {
-                            refreshToken = await tokenGenerate({
-                                id: user?._id,
-                                email: user?.email,
-                                deviceDetails: loggedInDetails,
+                            deviceDetails: loggedInDetails,
 
-                            }, config?.RFexpires);
-                        }
-                        if (token) {
-                            if (user?.role !== "admin") {
-                               
-                                user.loggedInDetails = loggedInDetails || user.loggedInDetails
-
-                            }
-                            user.loginCount = Number(user.loginCount + 1)
-                            if (user?.defaultPasswordChanged === false) {
-                                user.firstTimeLogin = true;
-                            }
-                            await user.save();
-
-                            return res.status(200).json({
-                                message: messages["LOGIN_SUCCESS"],
-                                error: false,
-                                code: "LOGIN_SUCCESS",
-                                result: {
-                                    _id: user?._id,
-                                    email: user?.email,
-                                    phoneNo: user?.phoneNo,
-                                    type: user?.role,
-                                    customerId: user?.customerId,
-                                    defaultPasswordChanged: user?.defaultPasswordChanged || false,
-                                    firstTimeLogin: user?.firstTimeLogin || false
-                                },
-                                token: token,
-                                refreshToken: refreshToken
-                            });
-                        }
+                        }, config?.RFexpires);
                     }
-                
+                    if (token) {
+                        if (user?.role !== "admin") {
+
+                            user.loggedInDetails = loggedInDetails || user.loggedInDetails
+
+                        }
+                        user.loginCount = Number(user.loginCount + 1)
+                        if (user?.defaultPasswordChanged === false) {
+                            user.firstTimeLogin = true;
+                        }
+                        await user.save();
+
+                        return res.status(200).json({
+                            message: messages["LOGIN_SUCCESS"],
+                            error: false,
+                            code: "LOGIN_SUCCESS",
+                            result: {
+                                _id: user?._id,
+                                email: user?.email,
+                                phoneNo: user?.phoneNo,
+                                type: user?.role,
+                            },
+                            token: token,
+                            refreshToken: refreshToken
+                        });
+                    }
+                }
+
             } else {
                 return res.status(400).json({
                     message: messages["INVALID_CREDENTIAL"],
@@ -199,16 +198,116 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
             }
         }
     } catch (error) {
-        
-        logger.error(error, "[User 002] Error login");
+
+        logger.error(error, "[User 002] Error in login");
         return res.status(500).json(errorResponse(error));
 
     }
 }
 
+const getUserDetails = async (req: NextApiRequest, res: NextApiResponse) => {
+    logger.info("[User 003] GetUserDetails api call");
+    const userId = req.query?.userId;
+    try {
+        if (!userId) {
+            return res.status(400).json({
+                message: messages["BAD_REQUEST"],
+                error: true,
+                code: "BAD_REQUEST",
+            })
+        }
+        const findUser = await UserModel.findById(userId)
+            .populate([
+                {
+                    path: 'enrolledCourse', select: "-enabled -createdBy -createAt -updateAt -__v"
+                }
+            ])
+            .select(["-enabled", "-__v", "-password", "-isVerified", "-consent", "-termsAndCondition", "-whatsApp", '-emailSend', "-excelDownload"]);
+        if (!findUser) {
+            return res.status(404).json({
+                message: messages["USER_NOT_FOUND"],
+                error: true,
+                code: "USER_NOT_FOUND",
+            })
+        }
+
+        return res.status(200).json({
+            message: messages["USER_FOUND"],
+            error: false,
+            code: "USER_FOUND",
+            result: findUser
+        })
+
+    } catch (error) {
+        logger.error(error, "[User 003] Error in GetUserDetails");
+        return res.status(500).json(errorResponse(error));
+    }
+
+}
+
+const list = async (req: any, res: any) => {
+    logger.info(`[User 004] Users list api call`);
+    try {
+        const dataPerPage = Number(req.query?.dataPerPage) || 25;
+        const page = Number(req.query?.page) || 1;
+        if (req.user?.role === "admin") {
+            const query: any = {
+                enabled: 1,
+                role: "user"
+            }
+
+            if (req.query.string) {
+                query["$or"] = [
+                    { first_name: { $regex: req.query.string, $options: "i" } },
+                    { last_name: { $regex: req.query.string, $options: "i" } },
+                    { email: { $regex: req.query.string, $options: "i" } },
+                    { 'phone.number': { $regex: req.query.string, $options: "i" } },
+                ];
+            }
+
+            const users = await UserModel.find(query)
+                .populate([
+                    {
+                        path: 'enrolledCourse', select: "-enabled -createdBy -createAt -updateAt -__v"
+                    }
+                ])
+                .select(["-enabled", "-__v", "-password", "-isVerified", "-consent", "-termsAndCondition", "-whatsApp", '-emailSend', "-excelDownload"]).sort({ createAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
+            const usersCount = await UserModel.countDocuments(query)
+
+
+            if (users?.length > 0) {
+                return res.status(200).json({
+                    message: messages["USERS_FOUND"],
+                    error: false,
+                    code: "USERS_FOUND",
+                    result: users,
+                    dataCount: usersCount
+                });
+            } else {
+                return res.status(404).json({
+                    message: messages["USER_NOT_FOUND"],
+                    error: false,
+                    code: "USER_NOT_FOUND",
+                    result: []
+                });
+            }
+        } else {
+            return res.status(401).send({
+                error: true,
+                code: "UNAUTHORIZED",
+                message: messages["UNAUTHORIZED"]
+            })
+        }
+    } catch (error) {
+        logger.error(error, "[User 004] Error when get users list");
+        return res.status(500).json(errorResponse(error));
+    }
+}
 
 
 export default {
     signUp,
     login,
+    getUserDetails,
+    list
 }

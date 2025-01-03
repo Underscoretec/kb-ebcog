@@ -159,5 +159,22 @@
   "COURSE_FOUND":"Course found successfully",
   "COURSE_NOT_FOUND":"Course not found",
   "FILE_NOT_FOUND": "File not found",
-  "EMAIL_UPDATED": "Emails updated successfully"
+  "EMAIL_UPDATED": "Emails updated successfully",
+  "CART_CREATED":"Cart created successfully",
+  "CART_UPDATED":"Cart updated successfully",
+  "CART_FOUND":"Cart items found successfully",
+  "CART_NOT_FOUND":"Cart not found",
+  "BAD_REQUEST": "Request not valid",
+  "ORDER_CREATED": "Order created successfully",
+  "ORDER_FAILED":"Order failed to create",
+  "USER_FOUND":"User found successfully",
+  "ORDERS_FOUND":"Orders found",
+  "ORDERS_NOT_FOUND":"Orders not found",
+  "ORDER_NOT_FOUND":"Order not found",
+  "ORDER_FOUND":"Order found successfully",
+  "PAYMENT_SUCCESS":"Payment successfully done",
+  "PAYMENT_FAILED":"Payment failed",
+  "PAYMENT_VERIFY_FAIL":"Payment not verified",
+  "PAYMENTS_FOUND":"Payments found successfully",
+  "PAYMENTS_NOT_FOUND":"Payments not found"
 }

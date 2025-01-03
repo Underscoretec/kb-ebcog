@@ -7,12 +7,14 @@ import InputField from '@/common/uicomponents/InputField';
 import RadioListTable from '@/common/uicomponents/RadioListTable';
 import { useUserHook } from '@/container/UserModel/useUserHooks';
 import AlertModal from '@/common/uicomponents/AlertModal';
+import { useRouter } from 'next/router';
 import { trackGAEvent } from '@/common/utils/gAnalytics';
+import { toast } from 'react-toastify';
 // import { useRouter } from 'next/router';
 
 const RegistrationCard = () => {
     const { createCourseRegistrationApi } = useUserHook();
-    // const router = useRouter();
+    const router = useRouter();
     const [modalData, setModalData] = useState({ isOpen: false, title: '', message: '', redirect: false });
 
     const showModal = (title: any, message: any, redirect: boolean) => {
@@ -22,6 +24,13 @@ const RegistrationCard = () => {
     const hideModal = () => {
         setModalData({ ...modalData, isOpen: false });
     };
+
+    const handlelick = () => {
+        if(modalData.redirect){
+            router.push('/');
+        }
+        hideModal()
+    }
 
     const settings = [
         { name: 'Maternal Medicine', value: 'maternalMedicine' },
@@ -54,15 +63,11 @@ const RegistrationCard = () => {
             city: Yup.string().required('City/District/Town is required'),
             country: Yup.string().required('Country is required'),
             diplomaCourse: Yup.string().required('Please select a diploma course'),
-            // degreeCertificate: Yup.mixed().required('Degree certificate is required'),
-            // basicDegreeDocument: Yup.mixed().required('Basic degree document is required'),
         }),
         onSubmit: async (values, action) => {
-            console.log('Form Data: ##', values);
             trackGAEvent('registration_submit_clicked', values)
             if (values) {
                 const result: any = await createCourseRegistrationApi(values, action);
-                console.log(result, 'result ##');
                 if (result?.response?.data?.code === 'REGISTRATION_RECORD_FOUND') {
                     trackGAEvent('registration_exists', values)
                     showModal("Registration Error", "Email already exists!", false);
@@ -70,7 +75,9 @@ const RegistrationCard = () => {
                 else if (result?.data?.code === 'REGISTRATION_CREATED') {
                     trackGAEvent('registration_completed', values)
                     action.resetForm();
-                    showModal("Thank You For Your Registration", "Please check your inbox for further instructions.", true);
+                    toast.success("Thank You For Your Registration, Please check your inbox for further instructions.");
+                    router.push('/');
+                    // showModal("Thank You For Your Registration", "Please check your inbox for further instructions.", true);
                 }
             } else {
                 console.log('error');
@@ -218,8 +225,7 @@ const RegistrationCard = () => {
                 isOpen={modalData.isOpen}
                 title={modalData.title}
                 message={modalData.message}
-                redirect={modalData.redirect}
-                onClose={hideModal}
+                onClick={handlelick}
             />
         </>
     );

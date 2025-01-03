@@ -11,7 +11,7 @@ const sendEmailRegistrationAcknowledgement = async (data: any) => {
         const userName = `${"Dear Dr."} ${data?.name}`
         let city = 'Dubai, UAE';
         let courseName = '';
-        let pdf =''
+        let pdf = ''
         switch (data?.courseName) {
             case 'maternalMedicine':
                 courseName = 'Maternal Medicine';
@@ -67,7 +67,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
     logger.info("inviteUserForRegister function call.")
     try {
 
-        const text = inviteUserToRegister(data?.name, data?.email);
+        const text = inviteUserToRegister(data?.name);
         const template = text.replace(/^\s+|\s+$|\s+(?=\s)/g, '')
 
         if (req?.query?.mailProvider === "SES") {
@@ -78,7 +78,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
                 },
                 Text: {
                     Charset: "UTF-8",
-                    Data: `Introducing European Board Collage of Obstetrics and Gynaecology Diplomas`
+                    Data: `AICOG Invitation`
                 },
             }
             const sendMailObj: any = {
@@ -86,7 +86,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
                 body: Body,
                 subject: {
                     Charset: "UTF-8",
-                    Data: `Introducing European Board Collage of Obstetrics and Gynaecology Diplomas`,
+                    Data: `AICOG Invitation`,
                 },
                 count: count
             }
@@ -96,7 +96,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
             sendEmailWithNodemeler({
                 toEmail: data.email,
                 htmlBody: template,
-                subject: `Introducing European Board Collage of Obstetrics and Gynaecology Diplomas`
+                subject: `AICOG Invitation`
             })
         }
 

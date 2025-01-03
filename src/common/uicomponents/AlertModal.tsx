@@ -1,8 +1,8 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
-const AlertModal = ({ isOpen, title, message, redirect, onClose, }: any) => {
-    const router = useRouter();
+const AlertModal = ({ isOpen, title, message, onClick }: any) => {
+    // const router = useRouter();
 
   if (!isOpen) return null;
 
@@ -13,13 +13,7 @@ const AlertModal = ({ isOpen, title, message, redirect, onClose, }: any) => {
         <p className="text-sm text-gray-700 mb-6">{message}</p>
         <button
           className="w-full py-2 bg-[#E4087F] text-white rounded-md hover:bg-[#ac0660] cursor-pointer"
-          onClick={() => {
-            if (redirect) {
-              router.push('/');
-            }
-            onClose();
-            
-          }}
+          onClick={onClick}
         >
           OK
         </button>
