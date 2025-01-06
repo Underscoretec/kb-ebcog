@@ -42,14 +42,15 @@ const LoginAvatar = () => {
                     <div className="py-1">
                         <MenuItem>
                             <div
-                                className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
+                                className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none cursor-pointer"
                             >
-                                <div onClick={() => router.push('/cart')}>Cart </div>
+                                {getCookie('userDetails')?.role === 'admin' ? <div onClick={() => router.push('/admin/userlist')}>Go to Dashboard </div>
+                                 : <div onClick={() => router.push('/cart')}>Cart </div>}
                             </div>
                         </MenuItem>
                         <MenuItem>
                             <div
-                                className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
+                                className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none cursor-pointer"
                             >
                                 <div onClick={handleLogout}>Sign out </div>
                             </div>
