@@ -19,17 +19,18 @@ export const handleCopy = (copiedText: any, msg: any) => {
     }
 };
 
-export const formatCourseName = (courseName: string) => {
-    switch (courseName) {
-        case "maternalMedicine":
-            return "Maternal Medicine";
-        case "reproductiveEndocrinology_Infertility":
-            return "Reproductive Endocrinology & Infertility";
-        case "gynaecologyEndoscopy":
-            return "Gynaecology Endoscopy";
-        case "fetalMedicine_Ultrasound":
-            return "Fetal Medicine and Ultrasound";
+export const formatCourseName = (key:string) => {
+    switch (key) {
+        case 'maternalMedicine':
+            return 'Maternal Medicine';
+        case 'fetalMedicine_Ultrasound':
+            return 'Fetal Medicine and Ultrasound';
+        case 'reproductiveEndocrinology_Infertility':
+            return 'Reproductive Endocrinology & Infertility';
+        case 'gynaecologyEndoscopy':
+            return 'Gynaecology Endoscopy';
+    
         default:
-            return courseName; 
+            return key;
     }
-};
+}
