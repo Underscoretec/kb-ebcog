@@ -18,3 +18,18 @@ export const handleCopy = (copiedText: any, msg: any) => {
         .catch((error) => console.error("Unable to copy", error));
     }
 };
+
+export const formatCourseName = (courseName: string) => {
+    switch (courseName) {
+        case "maternalMedicine":
+            return "Maternal Medicine";
+        case "reproductiveEndocrinology_Infertility":
+            return "Reproductive Endocrinology & Infertility";
+        case "gynaecologyEndoscopy":
+            return "Gynaecology Endoscopy";
+        case "fetalMedicine_Ultrasound":
+            return "Fetal Medicine and Ultrasound";
+        default:
+            return courseName; 
+    }
+};
