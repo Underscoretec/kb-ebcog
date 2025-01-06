@@ -72,7 +72,7 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
             // gender: gender,
             latestDegreeCertificate: latestDegreeCertificateObj,
             basicDegreeDocument: basicDegreeDocumentObj,
-            createdAt: Date.now(),
+            createAt: Date.now(),
         }
 
         const saveRegistration = await new Registration(createObj).save();
@@ -117,11 +117,11 @@ const list = async (req: any, res: any) => {
             
 
             registeredUsers = await Registration.find(query).select(["-enabled", "-__v",])
-                .sort({ createAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
+                .sort('-createdAt').skip(dataPerPage * (page - 1)).limit(dataPerPage);
             const registeredUserCount = await Registration.countDocuments(query)
             
             if (req?.query?.action === "download") {
-                registeredUsers = await Registration.find({ enabled: 1 }).select(["-enabled", "-__v",]).sort({ createAt: -1 });
+                registeredUsers = await Registration.find({ enabled: 1 }).select(["-enabled", "-__v",]).sort('-createdAt');
             }
             
 
@@ -142,7 +142,7 @@ const list = async (req: any, res: any) => {
                             'State': user?.address?.state,
                             'Country': user?.address?.country,
                             'Course Name': user?.courseName && formatCourseName(user?.courseName),
-                            'Registered At': user?.createAt && dayjs(user?.createAt).format('D MMMM, YYYY h:mm A'),
+                            'Registered At': user?.createdAt && dayjs(user?.createdAt).format('DD MMMM YYYY, h:mm A'),
                             'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.key ? 'Yes' : 'No',
                             'Basic Degree Document Uploaded': user?.basicDegreeDocument?.key ? 'Yes' : 'No',
                         })

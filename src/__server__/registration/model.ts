@@ -77,11 +77,9 @@ const registrationSchema: any = new Schema(
         },
         createAt: {
             type: Date,
-            default: new Date(),
         },
         updateAt: {
             type: Date,
-            default: new Date(),
         },
     },
     {
