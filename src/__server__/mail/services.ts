@@ -78,7 +78,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
                 },
                 Text: {
                     Charset: "UTF-8",
-                    Data: `AICOG Invitation`
+                    Data: `Exclusive Invitation || EBCOG Diploma Courses || EBCOG officials on 9th Jan`
                 },
             }
             const sendMailObj: any = {
@@ -86,7 +86,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
                 body: Body,
                 subject: {
                     Charset: "UTF-8",
-                    Data: `AICOG Invitation`,
+                    Data: `Exclusive Invitation || EBCOG Diploma Courses || EBCOG officials on 9th Jan`,
                 },
                 count: count
             }
@@ -96,7 +96,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
             sendEmailWithNodemeler({
                 toEmail: data.email,
                 htmlBody: template,
-                subject: `AICOG Invitation`
+                subject: `Exclusive Invitation || EBCOG Diploma Courses || EBCOG officials on 9th Jan`
             })
         }
 
