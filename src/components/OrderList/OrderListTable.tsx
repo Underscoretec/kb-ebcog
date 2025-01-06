@@ -1,8 +1,9 @@
 import Pagination from "@/common/uicomponents/Pagination";
 import useOrdersHooks from "@/hooks/useOrdersHooks";
-import { formatBasePrice } from "@/utils/formatBasePrice";
+import { formatBasePrice } from "@/utils/formatText";
 import { CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
+import dayjs from 'dayjs';
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -92,6 +93,9 @@ export default function OrderListTable() {
                                                     Total
                                                 </th>
                                                 <th scope="col" className="sticky top-0 z-10 border-y border-gray-300 bg-white/75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter">
+                                                    Order Date
+                                                </th>
+                                                <th scope="col" className="sticky top-0 z-10 border-y border-gray-300 bg-white/75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter">
                                                     Order Status
                                                 </th>
                                                 <th scope="col" className="sticky top-0 z-10 border-y border-gray-300 bg-white/75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter">
@@ -152,7 +156,13 @@ export default function OrderListTable() {
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
                                                                 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                             )}>
-                                                                {order?.payableAmount ? `${order?.currency} ${formatBasePrice(order?.payableAmount )}` : "N/A"}
+                                                                {order?.payableAmount ? `${order?.currency} ${formatBasePrice(order?.payableAmount)}` : "N/A"}
+                                                            </td>
+                                                            <td className={classNames(
+                                                                orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
+                                                                'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
+                                                            )}>
+                                                                {order?.orderStatus?.timeStamp ? `${dayjs(order?.orderStatus?.timeStamp).format('DD MMMM YYYY, h:mm A')}` : "N/A"}
                                                             </td>
                                                             <td className={classNames(
                                                                 orderIdx !== orders?.length - 1 ? 'border-b border-gray-200' : '',
