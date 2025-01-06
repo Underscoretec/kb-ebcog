@@ -96,6 +96,7 @@ const list = async (req: any, res: any) => {
         const dataPerPage = Number(req.query?.dataPerPage) || 25;
         const page = Number(req.query?.page) || 1;
         if (req.user?.role === "admin") {
+            let registeredUsers:any =[];
             const query: any = {
                 enabled: 1,
             }
@@ -109,9 +110,15 @@ const list = async (req: any, res: any) => {
                 ];
             }
 
-            const registeredUsers = await Registration.find(query).select(["-enabled", "-__v",])
+            
+
+            registeredUsers = await Registration.find(query).select(["-enabled", "-__v",])
                 .sort({ createAt: -1 }).skip(dataPerPage * (page - 1)).limit(dataPerPage);
-                const registeredUserCount = await Registration.countDocuments(query)
+            const registeredUserCount = await Registration.countDocuments(query)
+            
+            if (req?.query?.action === "download") {
+                registeredUsers = await Registration.find({ enabled: 1 }).select(["-enabled", "-__v",]).sort({ createAt: -1 });
+            }
             
 
             if (registeredUsers?.length > 0) {
