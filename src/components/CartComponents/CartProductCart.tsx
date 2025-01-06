@@ -3,7 +3,7 @@ import ImageComponent from '@/common/uicomponents/ImageComponent'
 import { MdAccessTimeFilled } from "react-icons/md";
 // import { RiGraduationCapFill } from "react-icons/ri";
 import Button from '@/common/uicomponents/Button';
-import { formatBasePrice } from '@/utils/formatBasePrice';
+import { formatBasePrice } from '@/utils/formatText';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 dayjs.extend(localizedFormat);

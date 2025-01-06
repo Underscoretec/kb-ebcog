@@ -6,7 +6,7 @@ import {
     rzpCheckoutFrom
 } from '@/utils/rzpCheckoutForm'
 import Router from "next/router";
-import { formatBasePrice } from '@/utils/formatBasePrice';
+import { formatBasePrice } from '@/utils/formatText';
 import { doPostApiCall } from '@/utils/ApiConfig';
 import { getCookie } from '@/utils/cookieUtils';
 import dayjs from 'dayjs';
