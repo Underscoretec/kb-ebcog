@@ -8,7 +8,7 @@ import { ImFilePdf } from 'react-icons/im';
 // import { FaImage } from "react-icons/fa";
 import ImageComponent from '@/common/uicomponents/ImageComponent';
 import defaultImage from "../../../public/default.png"
-import { handleCopy } from '@/utils/formatBasePrice';
+import { formatCourseName, handleCopy } from '@/utils/formatText';
 
 const UserDetailsModal = ({ closeModal, modalData }: any) => {
       
@@ -47,7 +47,7 @@ const UserDetailsModal = ({ closeModal, modalData }: any) => {
                                     </div>
                                     <div className='w-[95%] lg:w-[45%] 2xl:w-[30%] py-2'>
                                         <div className='font-semibold'>Course Name</div>
-                                        <div className='flex items-center gap-3 pt-2'>{modalData?.courseName}</div>
+                                        <div className='flex items-center gap-3 pt-2'>{modalData?.courseName ? formatCourseName(modalData?.courseName) : "N/A"} </div>
                                     </div>
                                     <div className='w-[95%] lg:w-[45%] 2xl:w-[30%] py-2'>
                                         <div className='font-semibold'>Registration Date</div>
