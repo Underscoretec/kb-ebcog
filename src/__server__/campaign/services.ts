@@ -210,7 +210,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                             inviteUserForRegister(sendData, req, idx + 1)
                             sendMailArray.push(item?.email)
                             // Delay the next email by a random or fixed interval
-                            const delay = idx === 0 ? 0 : await getRandomInt(2, 5) * 1000; // 2 to 5 seconds delay
+                            const delay = idx === 0 ? 0 : await getRandomInt(1, 3) * 1000; // 2 to 5 seconds delay
                             await sleep(delay);
                             createBatch(item?.email, "create")  //Create batch file
 
@@ -251,6 +251,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
                             { new: true }
                         )
                         logger.info(`Proccess end [Last batch update]-> ${campaignUpdate?.modifiedCount} emails updated in database`)
+                        createBatch('', "empty")  //Create batch file
 
                         return res.status(200).json({
                             message: messages["EMAIL_FIRED"],
