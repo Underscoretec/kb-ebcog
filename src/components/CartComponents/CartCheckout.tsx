@@ -1,6 +1,6 @@
 import React from 'react'
 import CartProductCart from './CartProductCart'
-import { formatBasePrice } from '@/utils/formatBasePrice'
+import { formatBasePrice } from '@/utils/formatText'
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 dayjs.extend(localizedFormat);
