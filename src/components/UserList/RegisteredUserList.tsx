@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import UserDetailsModal from "./UserDetailsModal";
 import Pagination from "@/common/uicomponents/Pagination";
 import { CircularProgress } from "@mui/material";
+import dayjs from 'dayjs';
+import { formatCourseName } from "@/utils/formatText";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -25,7 +27,7 @@ export default function RegisteredUserList() {
         if (list) {
             setUsers(list?.result)
             setUserCount(list?.dataCount)
-        }else{
+        } else {
             setUsers([]);
         }
     }
@@ -52,7 +54,7 @@ export default function RegisteredUserList() {
                     <div className="flow-root">
                         <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                             <div className="inline-block min-w-full py-2 align-middle">
-                                {loading ? <div className="flex items-center justify-center min-h-[30rem] border-t border-gray-300"> <CircularProgress style={{ color: '#E4087F' }}/></div> :
+                                {loading ? <div className="flex items-center justify-center min-h-[30rem] border-t border-gray-300"> <CircularProgress style={{ color: '#E4087F' }} /></div> :
                                     <table className="min-w-full border-separate border-spacing-0">
                                         <thead>
                                             <tr>
@@ -71,6 +73,9 @@ export default function RegisteredUserList() {
                                                 <th scope="col" className="sticky top-0 z-10 border-y border-gray-300 bg-white/75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter">
                                                     WhatsApp Number
                                                 </th>
+                                                <th scope="col" className="sticky top-0 z-10 border-y border-gray-300 bg-white/75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter">
+                                                    Registration Date 
+                                                </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -87,7 +92,7 @@ export default function RegisteredUserList() {
                                                             userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
                                                             'hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell',
                                                         )}>
-                                                            {user?.courseName}
+                                                            {user?.courseName ? formatCourseName(user.courseName) : "N/A"}
                                                         </td>
                                                         <td className={classNames(
                                                             userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
@@ -107,6 +112,12 @@ export default function RegisteredUserList() {
                                                             'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                         )}>
                                                             {user?.whatsAppNumber || "N/A"}
+                                                        </td>
+                                                        <td className={classNames(
+                                                            userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
+                                                            'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
+                                                        )}>
+                                                           {dayjs(user?.createdAt).format('DD MMMM YYYY, h:mm A')}
                                                         </td>
                                                     </tr>
                                                 ))) :

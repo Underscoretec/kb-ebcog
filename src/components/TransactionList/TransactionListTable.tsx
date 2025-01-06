@@ -1,6 +1,6 @@
 import Pagination from '@/common/uicomponents/Pagination';
 import useOrdersHooks from '@/hooks/useOrdersHooks';
-import { formatBasePrice } from '@/utils/formatBasePrice';
+import { formatBasePrice } from '@/utils/formatText';
 import { CircularProgress } from '@mui/material';
 import dayjs from 'dayjs';
 import React, { useEffect, useState } from 'react'
