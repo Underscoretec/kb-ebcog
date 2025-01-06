@@ -7,6 +7,10 @@ import errorResponse from "@/__server__/utils/errorResponse";
 import { sendEmailRegistrationAcknowledgement } from '@/__server__/mail/services';
 import json2xls from 'json2xls';
 import * as fs from 'fs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import dayjs from "dayjs";
+import { formatCourseName } from "@/utils/formatText";
+dayjs.extend(localizedFormat);
 
 
 
@@ -137,7 +141,8 @@ const list = async (req: any, res: any) => {
                             'City': user?.address?.city,
                             'State': user?.address?.state,
                             'Country': user?.address?.country,
-                            'Course Name': user?.courseName,
+                            'Course Name': user?.courseName && formatCourseName(user?.courseName),
+                            'Registered At': user?.createAt && dayjs(user?.createAt).format('D MMMM, YYYY h:mm A'),
                             'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.key ? 'Yes' : 'No',
                             'Basic Degree Document Uploaded': user?.basicDegreeDocument?.key ? 'Yes' : 'No',
                         })
