@@ -142,7 +142,7 @@ const list = async (req: any, res: any) => {
                             'State': user?.address?.state,
                             'Country': user?.address?.country,
                             'Course Name': user?.courseName && formatCourseName(user?.courseName),
-                            'Registered At': user?.createdAt && dayjs(user?.createdAt).format('DD MMMM YYYY, h:mm A'),
+                            'Registered At': user?.createdAt && dayjs(user?.createdAt).format('DD MMMM YYYY'),
                             'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.key ? 'Yes' : 'No',
                             'Basic Degree Document Uploaded': user?.basicDegreeDocument?.key ? 'Yes' : 'No',
                         })
