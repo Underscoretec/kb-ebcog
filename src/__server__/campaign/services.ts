@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /* eslint-disable @typescript-eslint/no-require-imports */
 import { NextApiRequest, NextApiResponse } from "next";
 import CampaignsModel from "./model";
