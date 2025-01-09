@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { NextApiRequest, NextApiResponse } from "next";
 import CourseModel from "@/__server__/courses/model";
 import messages from "@/__server__/utils/message.json";

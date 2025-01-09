@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /* eslint-disable @typescript-eslint/no-require-imports */
 import Razorpay from 'razorpay';
 import OrderModel from "@/__server__/orders/model";

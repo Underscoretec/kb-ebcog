@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { NextApiRequest, NextApiResponse } from "next";
 import Registration from "./model";
@@ -7,10 +8,15 @@ import errorResponse from "@/__server__/utils/errorResponse";
 import { sendEmailRegistrationAcknowledgement } from '@/__server__/mail/services';
 import json2xls from 'json2xls';
 import * as fs from 'fs';
-import localizedFormat from 'dayjs/plugin/localizedFormat';
-import dayjs from "dayjs";
 import { formatCourseName } from "@/utils/formatText";
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import dayjs from "dayjs";
+
 dayjs.extend(localizedFormat);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 
 
@@ -142,7 +148,7 @@ const list = async (req: any, res: any) => {
                             'State': user?.address?.state,
                             'Country': user?.address?.country,
                             'Course Name': user?.courseName && formatCourseName(user?.courseName),
-                            'Registered At': user?.createdAt && dayjs(user?.createdAt).format('DD MMMM YYYY, h:mm A'),
+                            'Registered At': user?.createdAt && dayjs(user?.createdAt).tz("Asia/Kolkata").format('DD MMMM YYYY, h:mm A'),
                             'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.key ? 'Yes' : 'No',
                             'Basic Degree Document Uploaded': user?.basicDegreeDocument?.key ? 'Yes' : 'No',
                         })

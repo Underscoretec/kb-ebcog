@@ -5,6 +5,13 @@ import Pagination from "@/common/uicomponents/Pagination";
 import { CircularProgress } from "@mui/material";
 import dayjs from 'dayjs';
 import { formatCourseName } from "@/utils/formatText";
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+
+dayjs.extend(localizedFormat);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -117,7 +124,7 @@ export default function RegisteredUserList() {
                                                             userIdx !== users?.length - 1 ? 'border-b border-gray-200' : '',
                                                             'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
                                                         )}>
-                                                           {dayjs(user?.createdAt).format('DD MMMM YYYY, h:mm A')}
+                                                           {dayjs(user?.createdAt).tz("Asia/Kolkata").format('DD MMMM YYYY, h:mm A')}
                                                         </td>
                                                     </tr>
                                                 ))) :
