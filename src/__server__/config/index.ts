@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import dotenv from "dotenv";
 const envFound = dotenv.config();
 
