@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { NextApiRequest, NextApiResponse } from "next";
 import mongoose from 'mongoose';
 import CourseModel from "@/__server__/courses/model";

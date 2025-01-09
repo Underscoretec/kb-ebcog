@@ -39,6 +39,20 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
         }
     };
 
+    const handleDrop = (event: any) => {
+        event.preventDefault();
+        const selectedFile = event.dataTransfer.files[0];
+        if (selectedFile) {
+            if (!accept.split(',').includes(selectedFile.type)) {
+                setError('Invalid file type. Please upload a JPG, JPEG, PNG, or PDF file.');
+                return;
+            }
+            setFile(selectedFile);
+            onUpload(selectedFile);
+            setError(null);
+        }
+    }
+
     const handleRemoveFile = () => {
         setFile(null);
         onUpload(null);
@@ -51,7 +65,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
                 {label}
             </label>
             {!file ? (
-                <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-300 px-6 py-10">
+                <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-300 px-6 py-10" onDrop={handleDrop} onDragOver={(event) => event.preventDefault()}>
                     <div className="text-center">
                         <PhotoIcon aria-hidden="true" className="mx-auto h-12 w-12 text-gray-300" />
                         <div className="mt-4 flex text-sm text-gray-600">
