@@ -66,9 +66,9 @@ export const useUserHook = () => {
         try {
             const response: any = await doPostApiCall(loginData);
             if (!response.error) {
-                setCookie("token", response.token, 7);
-                // setCookie("UserEmail", response.result.email, 7);
-                setCookie("userId", response.result._id, 7);
+                setCookie("token", response.token);
+                // setCookie("UserEmail", response.result.email, 1);
+                setCookie("userId", response.result._id);
                 await getUserDetails(response.result._id);
                 return response;
                 // alert("Login Successfully");
@@ -123,7 +123,7 @@ export const useUserHook = () => {
         try {
             const res: any = await doGetApiCall(data);
             if (!res.error) {
-                setCookie("userDetails", res.result, 7);
+                setCookie("userDetails", res.result);
                 // return res.result?.items;
             } else {
                 console.error('Error fetching user details:', res.message);
