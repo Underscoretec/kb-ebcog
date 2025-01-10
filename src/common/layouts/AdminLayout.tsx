@@ -3,12 +3,14 @@ import AdminHeader from '@/components/HeaderComponents/AdminHeader';
 import { getCookie } from '@/utils/cookieUtils';
 import { useRouter } from 'next/router';
 import { CircularProgress } from '@mui/material';
+import { useRouteProtection } from '@/utils/pathChecker';
 
 interface AdminLayoutProps {
     children: React.ReactNode;
 }
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
+    useRouteProtection();
     const userDetails = getCookie("userDetails")
     const token = getCookie("token")
     const [authChecking, setAuthChecking] = useState(true);
