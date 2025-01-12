@@ -4,7 +4,9 @@ import { decrypt, encrypt } from './tokenEncryption';
 export const setCookie = (name: string, value: any, expiresDays?: number) => {
     try {
         const encryptedValue = encrypt(value);
-        const options:any = expiresDays ? { expires: expiresDays } : {};
+        // const options:any = expiresDays ? { expires: expiresDays } : { expires: parseInt(process.env.NEXT_PUBLIC_COOKIE_EXPIRY_DAY)}
+        const expires = expiresDays ?? parseInt(process.env.NEXT_PUBLIC_COOKIE_EXPIRY_DAY || '1');
+        const options: any = { expires };
         Cookies.set(name, encryptedValue, options);
     } catch (err) {
         console.error('Error setting encrypted cookie:', err);
