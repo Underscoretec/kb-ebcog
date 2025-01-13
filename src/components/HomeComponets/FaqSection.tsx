@@ -57,15 +57,11 @@ const FaqSection = () => {
             answer: "Yes, the diplomas are internationally recognized and suitable for candidates worldwide. The training and certification adhere to global standards.",
         },
         {
-            question: "12. How much do the diploma programs cost, and are financial aid    options available?",
-            answer: "Detailed fee structures are available upon inquiry. Some financial aid or sponsorship opportunities may be available for eligible applicants.",
-        },
-        {
-            question: "13. Can I enroll in more than one diploma program?",
+            question: "12. Can I enroll in more than one diploma program?",
             answer: "Yes, candidates can choose to enroll in multiple diploma programs sequentially, depending on their professional goals and schedules.",
         },
         {
-            question: "14. What is the significance of EBCOG certification?",
+            question: "13. What is the significance of EBCOG certification?",
             answer: "EBCOG certification signifies a high standard of expertise and training in obstetrics and gynaecology. It is recognized internationally and adds value to a professional’s qualifications.",
         },
     ]

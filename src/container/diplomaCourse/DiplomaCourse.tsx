@@ -183,10 +183,6 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 {
                     "question": "11. Are there any prerequisites for taking this course?",
                     "answer": "A background in obstetrics, gynecology, or internal medicine is recommended. Previous clinical experience in maternal or general medicine will enhance the learning experience."
-                },
-                {
-                    "question": "12. How much does the course cost, and are there any financial aid options?",
-                    "answer": "Detailed fee structures can be obtained through the official course website. Some sponsorship or financial aid options may be available for eligible candidates."
                 }
             ]
         },
@@ -318,10 +314,6 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 {
                     "question": "11. Are there any prerequisites for taking this course?",
                     "answer": "A background in obstetrics, gynecology, or endocrinology is recommended. Prior experience in managing fertility or hormonal disorders will enhance the learning experience."
-                },
-                {
-                    "question": "12. How much does the course cost, and are there any financial aid options?",
-                    "answer": "The course fee details are available on the official program website or upon inquiry. Financial aid or sponsorship opportunities may be available for eligible participants."
                 }
             ]
         },
@@ -478,10 +470,6 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
                 {
                     "question": "11. Are there any prerequisites for taking this course?",
                     "answer": "Applicants should have prior training or experience in Gynecology and a foundational knowledge of endoscopic techniques. This ensures they can fully engage with the advanced content of the course."
-                },
-                {
-                    "question": "12. How much does the course cost, and are there any financial aid options?",
-                    "answer": "Course fees are provided on the official website or by contacting the course administrators. Some financial aid or sponsorship opportunities may be available for eligible applicants."
                 }
             ]
         },
