@@ -75,9 +75,8 @@ const RegistrationCard = () => {
                 else if (result?.data?.code === 'REGISTRATION_CREATED') {
                     trackGAEvent('registration_completed', values)
                     action.resetForm();
-                    toast.success("Thank You For Your Registration, Please check your inbox for further instructions.");
+                    toast.success("Thank you for your registration! Please check your email inbox for further instructions. If you don’t see the email, kindly check your Spam or Junk folder as well.");
                     router.push('/');
-                    // showModal("Thank You For Your Registration", "Please check your inbox for further instructions.", true);
                 }
             } else {
                 console.log('error');
