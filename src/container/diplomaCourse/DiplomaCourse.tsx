@@ -36,7 +36,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "lessons": '40',
             "category": 'High-Risk Pregnancy Care',
             "cardData": {
-                "facultyName": 'Prof. Frank Louwen (Lead)',
+                "facultyName": 'Lead: Prof. Frank Louwen',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
                 "facultyImage": '/if9.png',
@@ -194,7 +194,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "lessons": '40',
             "category": 'Fertility and Hormonal Disorders',
             "cardData": {
-                "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
+                "facultyName": 'Lead: Prof. Basil C. Tarlatzis',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
                 "facultyImage": '/if5.png',
@@ -326,7 +326,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "category": 'Minimally Invasive Gynecological Surgery',
             "cardData": {
                 // "course": 'Gynaecology Endoscopy By Dr Helder Ferreira',
-                "facultyName": 'Dr. Helder Ferreira',
+                "facultyName": 'Lead: Dr. Helder Ferreira',
                 "courseDuration": '1 Week',
                 "totalLearners": "156",
                 "facultyImage": '/if10.png',
@@ -481,7 +481,7 @@ const DiplomaCourse = ({ courseId }: DiplomaCourseProps) => {
             "lessons": '40',
             "category": 'Prenatal Diagnosis and Imaging',
             "cardData": {
-                "facultyName": 'Prof. Asma Khalil',
+                "facultyName": 'Lead: Prof. Asma Khalil',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
                 "facultyImage": '/if4.png',
