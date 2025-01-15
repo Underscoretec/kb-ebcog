@@ -38,7 +38,7 @@ const InternationalFaculty = () => {
     {
       id: "p-0004FMU",
       course: "Diploma in Fetal Medicine and Ultrasound",
-      facultyName: 'Prof. Asma Khalil',
+      facultyName: 'Lead: Prof. Asma Khalil',
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if4.png',
@@ -48,7 +48,7 @@ const InternationalFaculty = () => {
     {
       id: "p-0005RPI",
       course: "Diploma in Reproductive Endocrinology & Infertility",
-      facultyName: 'Prof. Basil C. Tarlatzis (Lead)',
+      facultyName: 'Lead: Prof. Basil C. Tarlatzis',
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if5.png',
@@ -88,7 +88,7 @@ const InternationalFaculty = () => {
     {
       id: "p-0009MM",
       course: "Diploma in Maternal Medicine",
-      facultyName: 'Prof. Frank Louwen (Lead)',
+      facultyName: 'Lead: Prof. Frank Louwen',
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if9.png',
@@ -98,7 +98,7 @@ const InternationalFaculty = () => {
     {
       id: "p-0010GE",
       course: "Diploma in Gynaecology Endoscopy",
-      facultyName: 'Dr. Helder Ferreira',
+      facultyName: 'Lead: Dr. Helder Ferreira',
       courseDuration: '1 week',
       totalLearners: '70',
       facultyImage: '/if10.png',
