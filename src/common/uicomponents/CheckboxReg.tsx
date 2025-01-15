@@ -63,7 +63,7 @@ export default function CheckboxReg({
 
       {selectedCourse === "others" && (
         <div className="mt-4">
-          <label className="block text-sm font-semibold text-[#374151]">Please specify:</label>
+          {/* <label className="block text-sm font-semibold text-[#374151]">Please specify:</label> */}
           <input
             type="text"
             value={otherText}
