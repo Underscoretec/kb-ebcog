@@ -17,7 +17,7 @@ const FacultyProfile = () => {
             "about": "Obstetrics and Perinatology, Maternal-Fetal Medicine, Hypertensive Disorders in Pregnancy, Breech Birth Management.",
             "department": 'maternal-medical',
             "cardData": {
-                "facultyName": 'Prof. Frank Louwen (Lead)',
+                "facultyName": 'Lead: Prof. Frank Louwen',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
                 "facultyImage": '/if9.png',
@@ -147,7 +147,7 @@ const FacultyProfile = () => {
             "about": "Advanced Laparoscopic Surgery, Robotic Gynecological Surgery, Management of Deep Endometriosis, Gynecologic Oncology,Treatment of Genital Prolapse, Correction of Uterovaginal Malformations",
             "department": 'gynaecology-endoscopy',
             "cardData": {
-                "facultyName": 'Dr. Helder Ferreira (Lead)',
+                "facultyName": 'Lead: Dr. Helder Ferreira',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
                 "facultyImage": '/if10.png',
@@ -264,7 +264,7 @@ const FacultyProfile = () => {
             "about": "Twin and Multiple Pregnancies, Fetal Growth Restriction, Hypertensive Disorders in Pregnancy",
             "department": 'fetal-medicine-and-ultrasound',
             "cardData": {
-                "facultyName": 'Prof. Asma Khalil (Lead)',
+                "facultyName": 'Lead: Prof. Asma Khalil',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
                 "facultyImage": '/if4.png',
@@ -347,7 +347,7 @@ const FacultyProfile = () => {
             "about": "Professor Emeritus of Obstetrics-Gynecology and Human Reproduction",
             "department": 'reproductive-endocrinology-and-infertility',
             "cardData": {
-                "facultyName": 'Prof. Basil C. Tarlatzis (Lead)',
+                "facultyName": 'Lead: Prof. Basil C. Tarlatzis',
                 "courseDuration": '1 Week',
                 "totalLearners": "70",
                 "facultyImage": '/if5.png',
