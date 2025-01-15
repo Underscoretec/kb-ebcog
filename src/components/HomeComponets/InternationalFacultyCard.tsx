@@ -39,7 +39,7 @@ const InternationalFacultyCard = (props: any) => {
                 </div> */}
             </div>
             <div className='p-2 sm:p-3 xl:p-4 border border-[#EAEAEA] bg-white border-t-0 rounded-bl-[20px] rounded-br-[20px]'>
-                <div className='font-poppins text-[15px] xs:text-[12px] sm:text-[15px] md:text-[13px] xl:text-base font-normal leading-6 text-[#555555]'>by <span className='text-[#000]'>{props?.data?.facultyName}</span></div>
+                <div className='font-poppins text-[15px] xs:text-[12px] sm:text-[15px] md:text-[13px] xl:text-base font-normal leading-6 text-[#555555]'><span className='text-[#000]'>{props?.data?.facultyName}</span></div>
                 <div className='flex justify-between'>
 
                     <div className='flex gap-3 xl:gap-4 font-montserrat text-[13px] font-semibold leading-[19.5px] text-[#555555] pt-1'>
