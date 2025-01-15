@@ -30,7 +30,7 @@ interface ExtendApiRequest extends NextApiRequest {
 
 const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[Registration-001] Course Registration create api call`);
-    const { fullName, email, whatsAppNumber, address, courseName, } = req.body
+    const { fullName, email, whatsAppNumber, address, courseName, question} = req.body
     try {
         const query: any = { enabled: 1 }
         if (email) {
@@ -78,6 +78,7 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
             // gender: gender,
             latestDegreeCertificate: latestDegreeCertificateObj,
             basicDegreeDocument: basicDegreeDocumentObj,
+            diplomaHearFrom: question,
             createAt: Date.now(),
         }
 
@@ -148,6 +149,7 @@ const list = async (req: any, res: any) => {
                             'State': user?.address?.state,
                             'Country': user?.address?.country,
                             'Course Name': user?.courseName && formatCourseName(user?.courseName),
+                            'Hear about the Diplomas from': user?.diplomaHearFrom,
                             'Registered At': user?.createdAt && dayjs(user?.createdAt).tz("Asia/Kolkata").format('DD MMMM YYYY, h:mm A'),
                             'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.key ? 'Yes' : 'No',
                             'Basic Degree Document Uploaded': user?.basicDegreeDocument?.key ? 'Yes' : 'No',
