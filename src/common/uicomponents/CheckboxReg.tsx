@@ -1,5 +1,4 @@
 import { Radio, RadioGroup } from "@headlessui/react";
-import { useState } from "react";
 import TextAreaField from "./TextArea";
 
 function classNames(...classes: string[]) {
@@ -23,12 +22,6 @@ export default function CheckboxReg({
   required,
   formik
 }: CheckboxRegProps) {
-  const [otherText, setOtherText] = useState("");
-
-  // Handler for the "Others" option to capture the custom input
-  const handleOtherChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setOtherText(e.target.value);
-  };
 
 
   return (
