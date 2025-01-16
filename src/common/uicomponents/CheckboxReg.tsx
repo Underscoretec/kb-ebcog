@@ -12,6 +12,7 @@ interface CheckboxRegProps {
   onChange: (value: any) => void;
   required: boolean;
   formik: any;
+  error?: any;
 }
 
 export default function CheckboxReg({
@@ -20,7 +21,8 @@ export default function CheckboxReg({
   selectedCourse,
   onChange,
   required,
-  formik
+  formik,
+  error
 }: CheckboxRegProps) {
 
 
@@ -56,6 +58,11 @@ export default function CheckboxReg({
               </span>
             </Radio>
           ))}
+          {error && (
+                <div className="text-red-500 text-xs mt-1">
+                    {error}
+                </div>
+            )}
         </RadioGroup>
       </fieldset>
       {selectedCourse === "Others" && (

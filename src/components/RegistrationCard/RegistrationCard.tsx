@@ -63,7 +63,7 @@ const RegistrationCard = () => {
             city: '',
             country: '',
             diplomaCourse: settings[0].value,
-            question: options[0].value,
+            question: '',
             degreeCertificate: null,
             basicDegreeDocument: null,
             otherText:'',
@@ -80,10 +80,10 @@ const RegistrationCard = () => {
             city: Yup.string().required('City/District/Town is required'),
             country: Yup.string().required('Country is required'),
             diplomaCourse: Yup.string().required('Please select a diploma course'),
-            question: Yup.string().required('Please select a option'),
+            question: Yup.string().required('Please select any option'),
             otherText: Yup.string().when('question', (question, schema) => {
                 if (Array.isArray(question) && question.includes('Others')) {
-                    return schema.required('Please specify otherText.');
+                    return schema.required('Text is required');
                 }
                 return schema;
             }),
@@ -214,6 +214,7 @@ const RegistrationCard = () => {
                             selectedCourse={formik.values.question}
                             onChange={(value: any) => { formik.setFieldValue('question', value); trackGAEvent('registration_form_modified', formik.values) }}
                             formik={formik}
+                            error={formik.touched.question && formik.errors.question}
                             required
                         />
 
