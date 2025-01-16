@@ -10,6 +10,8 @@ import AlertModal from '@/common/uicomponents/AlertModal';
 import { useRouter } from 'next/router';
 import { trackGAEvent } from '@/common/utils/gAnalytics';
 import { toast } from 'react-toastify';
+import CheckboxReg from '@/common/uicomponents/CheckboxReg';
+// import CheckboxReg from '@/common/uicomponents/Checkboxreg';
 // import { useRouter } from 'next/router';
 
 const RegistrationCard = () => {
@@ -26,7 +28,7 @@ const RegistrationCard = () => {
     };
 
     const handlelick = () => {
-        if(modalData.redirect){
+        if (modalData.redirect) {
             router.push('/');
         }
         hideModal()
@@ -39,6 +41,19 @@ const RegistrationCard = () => {
         { name: 'Fetal Medicine and Ultrasound', value: 'fetalMedicine_Ultrasound' },
     ];
 
+    const options = [
+        { name: "In Conference", value: "In Conference" },
+        { name: "From Colleague", value: "From Colleague" },
+        { name: "From Collage, Hospital, Industry", value: "From Collage, Hospital, Industry" },
+        { name: "By Email", value: "By Email" },
+        { name: "From Faculty", value: "From Faculty" },
+        { name: "Print Advt", value: "Print Advtt" },
+        { name: "WhatsApp", value: "WhatsApp" },
+        { name: "Website", value: "Website" },
+        { name: "Social Media", value: "Social Media" },
+        { name: "Others", value: "Others" },
+    ];
+
     const formik = useFormik({
         initialValues: {
             fullName: '',
@@ -48,8 +63,10 @@ const RegistrationCard = () => {
             city: '',
             country: '',
             diplomaCourse: settings[0].value,
+            question: '',
             degreeCertificate: null,
             basicDegreeDocument: null,
+            otherText:'',
         },
         validationSchema: Yup.object({
             fullName: Yup.string().required('Please enter your full name.'),
@@ -63,6 +80,13 @@ const RegistrationCard = () => {
             city: Yup.string().required('City/District/Town is required'),
             country: Yup.string().required('Country is required'),
             diplomaCourse: Yup.string().required('Please select a diploma course'),
+            question: Yup.string().required('Please select any option'),
+            otherText: Yup.string().when('question', (question, schema) => {
+                if (Array.isArray(question) && question.includes('Others')) {
+                    return schema.required('Text is required');
+                }
+                return schema;
+            }),
         }),
         onSubmit: async (values, action) => {
             trackGAEvent('registration_submit_clicked', values)
@@ -113,7 +137,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.fullName}
                                 onChange={formik.handleChange}
-                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
+                                onBlur={(event: any) => { formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values) }}
                                 error={formik.touched.fullName && formik.errors.fullName}
                                 requiredDesign
                             />
@@ -124,7 +148,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.email}
                                 onChange={formik.handleChange}
-                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
+                                onBlur={(event: any) => { formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values) }}
                                 error={formik.touched.email && formik.errors.email}
                                 requiredDesign
                             />
@@ -136,7 +160,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.whatsAppNumber}
                                 onChange={formik.handleChange}
-                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
+                                onBlur={(event: any) => { formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values) }}
                                 error={formik.touched.whatsAppNumber && formik.errors.whatsAppNumber}
                                 requiredDesign
                             />
@@ -146,7 +170,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.city}
                                 onChange={formik.handleChange}
-                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
+                                onBlur={(event: any) => { formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values) }}
                                 error={formik.touched.city && formik.errors.city}
                                 requiredDesign
                             />
@@ -159,7 +183,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.state}
                                 onChange={formik.handleChange}
-                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
+                                onBlur={(event: any) => { formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values) }}
                                 error={formik.touched.state && formik.errors.state}
                                 requiredDesign
                             />
@@ -169,7 +193,7 @@ const RegistrationCard = () => {
                                 className='flex flex-col gap-1 w-full md:w-[48%]'
                                 value={formik.values.country}
                                 onChange={formik.handleChange}
-                                onBlur={(event:any)=>{formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values)}}
+                                onBlur={(event: any) => { formik.handleBlur(event); trackGAEvent('registration_form_modified', formik.values) }}
                                 error={formik.touched.country && formik.errors.country}
                                 requiredDesign
                             />
@@ -180,9 +204,21 @@ const RegistrationCard = () => {
                             label="Please choose Diploma course for which you want to Register"
                             settings={settings}
                             selectedCourse={formik.values.diplomaCourse}
-                            onChange={(value: any) => {formik.setFieldValue('diplomaCourse', value); trackGAEvent('registration_form_modified', formik.values)}}
+                            onChange={(value: any) => { formik.setFieldValue('diplomaCourse', value); trackGAEvent('registration_form_modified', formik.values) }}
                             required
                         />
+
+                        <CheckboxReg
+                            label="How did you hear about the Diplomas?"
+                            options={options}
+                            selectedCourse={formik.values.question}
+                            onChange={(value: any) => { formik.setFieldValue('question', value); trackGAEvent('registration_form_modified', formik.values) }}
+                            formik={formik}
+                            error={formik.touched.question && formik.errors.question}
+                            required
+                        />
+
+                        {/* <CheckboxReg/> */}
 
                         <div className='flex gap-2 bg-[#ffe2f2] px-3 py-3 rounded-lg'>
                             <p className='font-bold text-[12px] text-[#E4087F]'>NOTE:</p>

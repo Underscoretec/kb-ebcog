@@ -19,7 +19,7 @@ const sendEmailRegistrationAcknowledgement = async (data: any) => {
                 break;
             case 'reproductiveEndocrinology_Infertility':
                 courseName = 'Diploma in Reproductive Endocrinology & Infertility';
-                pdf = 'Reproductive-endocrinology-infertility.pdf';
+                pdf = 'reproductive-endocrinology-infertility.pdf';
                 break;
             case 'fetalMedicine_Ultrasound':
                 courseName = 'Fetal Medicine and Ultrasound';
