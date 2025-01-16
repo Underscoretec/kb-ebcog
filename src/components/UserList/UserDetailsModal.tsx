@@ -11,7 +11,7 @@ import defaultImage from "../../../public/default.png"
 import { formatCourseName, handleCopy } from '@/utils/formatText';
 
 const UserDetailsModal = ({ closeModal, modalData }: any) => {
-      
+
 
     return (
         <div>
@@ -27,18 +27,18 @@ const UserDetailsModal = ({ closeModal, modalData }: any) => {
                                 <div className='flex gap-4 items-center'>
                                     <FaUserCircle className='text-[60px] text-[#f3bbd0]' />
                                     <div className='font-montserrat text-[20px]'><span className='font-semibold'>Name : </span>{modalData?.fullName}</div>
-                                    <MdOutlineContentCopy className='cursor-pointer' onClick={() => handleCopy(modalData?.fullName, "Name copied successfully !")}/>
+                                    <MdOutlineContentCopy className='cursor-pointer' onClick={() => handleCopy(modalData?.fullName, "Name copied successfully !")} />
                                 </div>
 
                                 <div className='px-8 py-4 bg-[#fff0f6] rounded-md my-3 flex flex-wrap gap-6'>
                                     <div className='w-[95%] lg:w-[45%] 2xl:w-[30%] py-2'>
                                         <div className='font-semibold'>Email</div>
-                                        <div className='flex items-center gap-3 pt-2'>{modalData?.email} <MdOutlineContentCopy className='cursor-pointer' onClick={() => handleCopy(modalData?.email, "Email copied successfully !")}/></div>
+                                        <div className='flex items-center gap-3 pt-2'>{modalData?.email} <MdOutlineContentCopy className='cursor-pointer' onClick={() => handleCopy(modalData?.email, "Email copied successfully !")} /></div>
                                     </div>
                                     <div className='w-[95%] lg:w-[45%] 2xl:w-[30%] py-2'>
                                         <div className='font-semibold'>Whatsapp Number</div>
-                                        <div className='flex items-center gap-3 pt-2'>{modalData?.whatsAppNumber} 
-                                            <MdOutlineContentCopy className='cursor-pointer' onClick={() => handleCopy(modalData?.whatsAppNumber, "Whatsapp No. copied successfully !")}/>
+                                        <div className='flex items-center gap-3 pt-2'>{modalData?.whatsAppNumber}
+                                            <MdOutlineContentCopy className='cursor-pointer' onClick={() => handleCopy(modalData?.whatsAppNumber, "Whatsapp No. copied successfully !")} />
                                         </div>
                                     </div>
                                     <div className='w-[95%] lg:w-[45%] 2xl:w-[30%] py-2'>
@@ -53,6 +53,13 @@ const UserDetailsModal = ({ closeModal, modalData }: any) => {
                                         <div className='font-semibold'>Registration Date</div>
                                         <div className='flex items-center gap-3 pt-2'>{dayjs(modalData?.createdAt).format('DD MMMM YYYY, h:mm A')}</div>
                                     </div>
+                                    <div className='w-[95%] lg:w-[45%] 2xl:w-[30%] py-2'>
+                                        <div className='font-semibold'>Hear about the Diplomas from</div>
+                                        <div className='flex items-center gap-3 pt-2'>
+                                            {modalData?.diplomaHearFrom ? (modalData?.diplomaHearFrom === 'Others' ? modalData?.othersOption : modalData?.diplomaHearFrom) : 'N/A' }
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div className='py-4 px-2 flex flex-wrap gap-8 2xl:gap-20'>
@@ -62,7 +69,7 @@ const UserDetailsModal = ({ closeModal, modalData }: any) => {
                                         {modalData?.basicDegreeDocument ? <div className='shadow-xl w-full rounded-md'>{modalData?.basicDegreeDocument?.mimetype.startsWith('image/') ? (
                                             <div className="flex flex-col items-center justify-center text-gray-600 p-6">
                                                 {/* <FaImage className="w-[100px] h-[100px] text-[#45b5e9]" /> */}
-                                                <ImageComponent src={modalData?.basicDegreeDocument?.key ?`/api/medias?key=${modalData?.basicDegreeDocument?.key}` : defaultImage} alt='image' className='h-[150px] w-auto object-contain' height={500} width={500}/>
+                                                <ImageComponent src={modalData?.basicDegreeDocument?.key ? `/api/medias?key=${modalData?.basicDegreeDocument?.key}` : defaultImage} alt='image' className='h-[150px] w-auto object-contain' height={500} width={500} />
                                                 <div className='text-[16px] text-center pt-4'> {modalData?.basicDegreeDocument?.name}</div>
                                             </div>
                                         ) : (
@@ -77,7 +84,7 @@ const UserDetailsModal = ({ closeModal, modalData }: any) => {
 
                                         {modalData?.latestDegreeCertificate ? <div className='shadow-xl w-full rounded-md'>{modalData?.latestDegreeCertificate?.mimetype.startsWith('image/') ? (
                                             <div className="flex flex-col items-center justify-center text-gray-600 p-6">
-                                                <ImageComponent src={modalData?.latestDegreeCertificate?.key ?`/api/medias?key=${modalData?.latestDegreeCertificate?.key}` : defaultImage} alt='image' className='h-[150px] w-auto object-contain' height={500} width={500}/>
+                                                <ImageComponent src={modalData?.latestDegreeCertificate?.key ? `/api/medias?key=${modalData?.latestDegreeCertificate?.key}` : defaultImage} alt='image' className='h-[150px] w-auto object-contain' height={500} width={500} />
                                                 <div className='text-[16px] text-center pt-4'> {modalData?.latestDegreeCertificate?.name}</div>
                                             </div>
                                         ) : (
