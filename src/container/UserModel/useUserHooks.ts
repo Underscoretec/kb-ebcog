@@ -25,7 +25,7 @@ export const useUserHook = () => {
         );
         formData.append("latestDegreeCertificate", data?.degreeCertificate);
         formData.append("basicDegreeDocument", data?.basicDegreeDocument);
-        formData.append("options", data?.question);
+        formData.append("question", data?.question);
         formData.append("othersReason", data?.otherText);
 
         try {
