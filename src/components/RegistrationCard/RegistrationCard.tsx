@@ -66,6 +66,7 @@ const RegistrationCard = () => {
             question: options[0].value,
             degreeCertificate: null,
             basicDegreeDocument: null,
+            otherText:'',
         },
         validationSchema: Yup.object({
             fullName: Yup.string().required('Please enter your full name.'),
@@ -80,6 +81,7 @@ const RegistrationCard = () => {
             country: Yup.string().required('Country is required'),
             diplomaCourse: Yup.string().required('Please select a diploma course'),
             question: Yup.string().required('Please select a option'),
+            otherText: Yup.string().required('otherText is required')
         }),
         onSubmit: async (values, action) => {
             trackGAEvent('registration_submit_clicked', values)
@@ -206,6 +208,7 @@ const RegistrationCard = () => {
                             options={options}
                             selectedCourse={formik.values.question}
                             onChange={(value: any) => { formik.setFieldValue('question', value); trackGAEvent('registration_form_modified', formik.values) }}
+                            formik={formik}
                             required
                         />
 
