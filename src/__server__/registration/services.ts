@@ -30,7 +30,7 @@ interface ExtendApiRequest extends NextApiRequest {
 
 const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[Registration-001] Course Registration create api call`);
-    const { fullName, email, whatsAppNumber, address, courseName, question} = req.body
+    const { fullName, email, whatsAppNumber, address, courseName, question, othersReason } = req.body
     try {
         const query: any = { enabled: 1 }
         if (email) {
@@ -51,7 +51,7 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
         // @ts-ignore
         const latestDegreeCertificate = req.files?.["latestDegreeCertificate"]?.[0];
         const latestDegreeCertificateObj = {
-            key: latestDegreeCertificate?.key.replace(`${appName}/${nodeEnv}/`,''),
+            key: latestDegreeCertificate?.key.replace(`${appName}/${nodeEnv}/`, ''),
             name: latestDegreeCertificate?.originalname,
             mimetype: latestDegreeCertificate?.mimetype,
             location: latestDegreeCertificate?.location,
@@ -61,7 +61,7 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
         // @ts-ignore
         const basicDegreeDocument = req.files?.['basicDegreeDocument']?.[0];
         const basicDegreeDocumentObj = {
-            key: basicDegreeDocument?.key.replace(`${appName}/${nodeEnv}/`,''),
+            key: basicDegreeDocument?.key.replace(`${appName}/${nodeEnv}/`, ''),
             name: basicDegreeDocument?.originalname,
             mimetype: basicDegreeDocument?.mimetype,
             location: basicDegreeDocument?.location,
@@ -79,12 +79,13 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
             latestDegreeCertificate: latestDegreeCertificateObj,
             basicDegreeDocument: basicDegreeDocumentObj,
             diplomaHearFrom: question,
+            othersOption: othersReason,
             createAt: Date.now(),
         }
 
         const saveRegistration = await new Registration(createObj).save();
         if (saveRegistration) {
-            sendEmailRegistrationAcknowledgement({email: email, name: fullName, courseName: courseName})
+            sendEmailRegistrationAcknowledgement({ email: email, name: fullName, courseName: courseName })
             return res.status(201).json({
                 message: messages['REGISTRATION_CREATED'],
                 error: false,
@@ -92,13 +93,13 @@ const courseRegistration = async (req: ExtendApiRequest, res: NextApiResponse) =
                 result: saveRegistration
             });
         }
-       
-        
+
+
     } catch (error) {
         logger.error(error, "[Registration-001] Error creating new registration! ");
         return res.status(500).json(errorResponse(error));
     }
-    
+
 }
 
 const list = async (req: any, res: any) => {
@@ -107,7 +108,7 @@ const list = async (req: any, res: any) => {
         const dataPerPage = Number(req.query?.dataPerPage) || 25;
         const page = Number(req.query?.page) || 1;
         if (req.user?.role === "admin") {
-            let registeredUsers:any =[];
+            let registeredUsers: any = [];
             const query: any = {
                 enabled: 1,
             }
@@ -117,20 +118,20 @@ const list = async (req: any, res: any) => {
                     { fullName: { $regex: req.query.string, $options: "i" } },
                     { email: { $regex: req.query.string, $options: "i" } },
                     { whatsAppNumber: { $regex: req.query.string, $options: "i" } },
-                    { courseName: {$regex: req.query.string, $options: "i"}}
+                    { courseName: { $regex: req.query.string, $options: "i" } }
                 ];
             }
 
-            
+
 
             registeredUsers = await Registration.find(query).select(["-enabled", "-__v",])
                 .sort('-createdAt').skip(dataPerPage * (page - 1)).limit(dataPerPage);
             const registeredUserCount = await Registration.countDocuments(query)
-            
+
             if (req?.query?.action === "download") {
                 registeredUsers = await Registration.find({ enabled: 1 }).select(["-enabled", "-__v",]).sort('-createdAt');
             }
-            
+
 
             if (registeredUsers?.length > 0) {
 
@@ -138,7 +139,7 @@ const list = async (req: any, res: any) => {
 
                     // eslint-disable-next-line prefer-const
                     let userArr: any = []
-                    
+
 
                     await Promise.all(registeredUsers?.map((user: any) => {
                         userArr.push({
@@ -150,6 +151,7 @@ const list = async (req: any, res: any) => {
                             'Country': user?.address?.country,
                             'Course Name': user?.courseName && formatCourseName(user?.courseName),
                             'Hear about the Diplomas from': user?.diplomaHearFrom,
+                            'Others': user?.othersOption && user?.othersOption,
                             'Registered At': user?.createdAt && dayjs(user?.createdAt).tz("Asia/Kolkata").format('DD MMMM YYYY, h:mm A'),
                             'Latest Degree Certificate Uploaded': user?.latestDegreeCertificate?.key ? 'Yes' : 'No',
                             'Basic Degree Document Uploaded': user?.basicDegreeDocument?.key ? 'Yes' : 'No',
@@ -166,8 +168,8 @@ const list = async (req: any, res: any) => {
                     message: messages["USERS_FOUND"],
                     error: false,
                     code: "USERS_FOUND",
+                    dataCount: registeredUserCount,
                     result: registeredUsers,
-                    dataCount:registeredUserCount
                 });
             } else {
                 return res.status(404).json({
