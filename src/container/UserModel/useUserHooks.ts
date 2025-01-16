@@ -9,6 +9,7 @@ export const useUserHook = () => {
 
     
     async function createCourseRegistrationApi(data: any, action: any) {
+        console.log(data, "data**")
         const formData = new FormData();
         formData.append("fullName", data?.fullName as string);
         formData.append("whatsAppNumber", data?.whatsAppNumber as string);
@@ -24,6 +25,8 @@ export const useUserHook = () => {
         );
         formData.append("latestDegreeCertificate", data?.degreeCertificate);
         formData.append("basicDegreeDocument", data?.basicDegreeDocument);
+        formData.append("options", data?.question);
+        formData.append("othersReason", data?.otherText);
 
         try {
             // dispatch(postQustionRequest(true))

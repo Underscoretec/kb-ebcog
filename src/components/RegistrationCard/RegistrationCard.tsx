@@ -42,16 +42,16 @@ const RegistrationCard = () => {
     ];
 
     const options = [
-        { name: "In Conference", value: "in_conference" },
-        { name: "From Colleague", value: "from_colleague" },
-        { name: "From Collage, Hospital, Industry", value: "from_collage_hospital_industry" },
-        { name: "By Email", value: "by_email" },
-        { name: "From Faculty", value: "from_faculty" },
-        { name: "Print Advt", value: "print_advt" },
-        { name: "WhatsApp", value: "whatsapp" },
-        { name: "Website", value: "website" },
-        { name: "Social Media", value: "social_media" },
-        { name: "Others", value: "others" },
+        { name: "In Conference", value: "In Conference" },
+        { name: "From Colleague", value: "From Colleague" },
+        { name: "From Collage, Hospital, Industry", value: "From Collage, Hospital, Industry" },
+        { name: "By Email", value: "By Email" },
+        { name: "From Faculty", value: "From Faculty" },
+        { name: "Print Advt", value: "Print Advtt" },
+        { name: "WhatsApp", value: "WhatsApp" },
+        { name: "Website", value: "Website" },
+        { name: "Social Media", value: "Social Media" },
+        { name: "Others", value: "Others" },
     ];
 
     const formik = useFormik({
@@ -81,7 +81,12 @@ const RegistrationCard = () => {
             country: Yup.string().required('Country is required'),
             diplomaCourse: Yup.string().required('Please select a diploma course'),
             question: Yup.string().required('Please select a option'),
-            otherText: Yup.string().required('otherText is required')
+            otherText: Yup.string().when('question', (question, schema) => {
+                if (Array.isArray(question) && question.includes('Others')) {
+                    return schema.required('Please specify otherText.');
+                }
+                return schema;
+            }),
         }),
         onSubmit: async (values, action) => {
             trackGAEvent('registration_submit_clicked', values)

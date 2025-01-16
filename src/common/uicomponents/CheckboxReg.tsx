@@ -45,9 +45,9 @@ export default function CheckboxReg({
               value={option?.value}
               aria-label={option?.name}
               className={classNames(
-                optionIdx === 0 ? 'rounded-tl-md rounded-tr-md' : '',
-                optionIdx === options.length - 1 ? 'rounded-bl-md rounded-br-md' : '',
-                'group relative flex cursor-pointer border border-gray-200 p-4 focus:outline-none data-[checked]:z-10 data-[checked]:border-indigo-200 data-[checked]:bg-indigo-50',
+                optionIdx === 0 ? 'rounded-md shadow-md' : '',
+                optionIdx === options.length - 1 ? 'rounded-md shadow-md' : '',
+                'group relative flex cursor-pointer rounded-md shadow-md p-4 focus:outline-none data-[checked]:z-10 data-[checked]:border-indigo-200 data-[checked]:bg-indigo-50',
               )}
             >
               <span
@@ -65,7 +65,7 @@ export default function CheckboxReg({
           ))}
         </RadioGroup>
       </fieldset>
-      {selectedCourse === "others" && (
+      {selectedCourse === "Others" && (
           <TextAreaField
             // label="Write your query"
             rows={4}
