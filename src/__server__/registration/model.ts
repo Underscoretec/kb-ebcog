@@ -67,7 +67,9 @@ const registrationSchema: any = new Schema(
                 type: Number,
             }
         },
-        
+        diplomaHearFrom: {
+            type: String,
+        },
         gender: {
             type: String
         },
