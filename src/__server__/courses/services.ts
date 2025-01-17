@@ -65,6 +65,36 @@ const create = async (req: ExtendApiRequest, res: NextApiResponse) => {
     }
 }
 
+const update = async (req: ExtendApiRequest, res: NextApiResponse) => {
+    logger.info(`[COURSES-003] Course update api call`);
+    const { name, overView, category, duration, type, discountStartDate, discountEndDate, discountValue, price, currency, leadInstructor, faculties, date, } = req.body;
+    try {
+        const courseId = req.query?.courseId;
+        if (!courseId) {
+            return res.status(400).json({
+                message: messages["BAD_REQUEST"],
+                error: true,
+                code: "BAD_REQUEST",
+            })
+        } 
+
+        const courseFound = await Courses.findOne({ _id: courseId });
+        if (!courseFound) {
+            return res.status(400).json({
+                message: messages["COURSE_NOT_FOUND"],
+                error: true,
+                code: "COURSE_NOT_FOUND",
+            });
+        }
+        
+        
+    } catch (error) {
+        logger.error(error, "[COURSES-001] Error in adding Courses")
+        return res.status(500).json(errorResponse(error));
+    }
+    
+};
+
 const list = async (req: ExtendApiRequest, res: NextApiResponse) => {
     logger.info(`[COURSES-002] Get course api call`);
     try {
@@ -144,5 +174,6 @@ const courseDetails = async (req: ExtendApiRequest, res: NextApiResponse) => {
 export default {
     create,
     list,
-    courseDetails
+    courseDetails,
+    update
 }
