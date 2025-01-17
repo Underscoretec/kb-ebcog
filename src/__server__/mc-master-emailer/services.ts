@@ -16,7 +16,7 @@ const importData = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         logger.info("[MMCampaigns importData 001] Call importData function");
         if (req?.query?.fileType === 'uploadExcel') {
-            const workbook = XLSX.readFile('files/userList.xlsx');
+            const workbook = XLSX.readFile('files/TempUserList.xlsx');
             const sheet_name_list = workbook.SheetNames;
             const datas = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
             console.log(datas, '>>>>>>>>>>>XLSX data');
@@ -193,7 +193,7 @@ const sendEmails = async (req: NextApiRequest, res: NextApiResponse) => {
 
                 const campaignList = await MMCampaignsModel.find(query);
                 console.log(campaignList?.length, 'MMCampaigns campaignList count @@@@@@@');
-                const resultJson: any = await checkAndUpdateList(`kb-email-report.json`);
+                const resultJson: any = await checkAndUpdateList(`mcMaster-email-report.json`);
 
                 const datas = campaignList
 

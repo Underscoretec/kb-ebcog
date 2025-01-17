@@ -4,7 +4,8 @@ import { sendEmailWithSES, sendEmailWithNodemeler } from './mail';
 import { logger } from "@/__server__/utils/logger";
 // import errorResponse from "@/__server__/utils/errorResponse";
 import { sendEmailToRegisterUser } from './templates/sendEmailToRegisterUser';
-import { inviteUserToRegister } from '@/__server__/mail/templates/inviteUserToRegister';
+// import { inviteUserToRegister } from '@/__server__/mail/templates/inviteUserToRegister';
+import { mcmDrInvitationTemp } from './templates/macMasterInvite';
 
 const sendEmailRegistrationAcknowledgement = async (data: any) => {
     try {
@@ -67,7 +68,8 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
     logger.info("inviteUserForRegister function call.")
     try {
 
-        const text = inviteUserToRegister(data?.name);
+        // const text = inviteUserToRegister(data?.name);
+        const text = mcmDrInvitationTemp(data?.name, data?.email);
         const template = text.replace(/^\s+|\s+$|\s+(?=\s)/g, '')
 
         if (req?.query?.mailProvider === "SES") {
@@ -78,7 +80,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
                 },
                 Text: {
                     Charset: "UTF-8",
-                    Data: `Exclusive Invitation || EBCOG Diploma Courses || EBCOG officials on 9th Jan`
+                    Data: `Your Online Access to McMaster Textbook of Internal Medicine - South Asia Edition`
                 },
             }
             const sendMailObj: any = {
@@ -86,7 +88,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
                 body: Body,
                 subject: {
                     Charset: "UTF-8",
-                    Data: `Exclusive Invitation || EBCOG Diploma Courses || EBCOG officials on 9th Jan`,
+                    Data: `Your Online Access to McMaster Textbook of Internal Medicine - South Asia Edition`,
                 },
                 count: count
             }
@@ -96,7 +98,7 @@ const inviteUserForRegister = async (data: any, req: any, count: number) => {
             sendEmailWithNodemeler({
                 toEmail: data.email,
                 htmlBody: template,
-                subject: `Exclusive Invitation || EBCOG Diploma Courses || EBCOG officials on 9th Jan`
+                subject: `Your Online Access to McMaster Textbook of Internal Medicine - South Asia Edition`
             })
         }
 
